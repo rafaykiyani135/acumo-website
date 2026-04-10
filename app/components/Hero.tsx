@@ -1,7 +1,10 @@
+import InteractiveParticles from "./InteractiveParticles";
+
 export default function Hero() {
   return (
-    <section className="pt-56 pb-40">
-      <div className="site-grid">
+    <section className="relative pt-56 pb-40 overflow-hidden">
+      <InteractiveParticles />
+      <div className="site-grid relative z-10">
         <div className="col-span-12 flex flex-col items-center text-center animate-fade-up">
           <div className="label-tech mb-12 justify-center after:content-[''] after:w-4 after:h-[1px] after:bg-current after:opacity-50">Engineering Infrastructure Group</div>
           <h1 className="hero-title mb-16">
