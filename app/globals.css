@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Instrument Sans", sans-serif;
+  --font-mono: "Space Mono", monospace;
+  --color-accent: #6366f1;
+}
+
+:root {
+  --bg: #000000;
+  --text-main: #ffffff;
+  --text-muted: #888888;
+  --accent: #6366f1;
+  --grid-line: rgba(255, 255, 255, 0.05);
+}
+
+@layer base {
+  body {
+    background-color: var(--bg);
+    color: var(--text-main);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer components {
+  /* Stripe.dev Grid Layout */
+  .site-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  /* Subtle Technical Grid Lines */
+  .bg-grid {
+    background-image: linear-gradient(var(--grid-line) 1px, transparent 1px),
+                      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 100px 100px;
+    background-position: center top;
+  }
+
+  /* Sleek Editorial Typography Scale */
+  .hero-title {
+    font-size: clamp(4rem, 10vw, 9.5rem);
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+    font-weight: 700;
+  }
+
+  .label-tech {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 400;
+  }
+
+  .label-tech::before {
+    content: '';
+    width: 16px;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.5;
+  }
+
+  /* Section Borders with Plus Symbols */
+  .section-border {
+    border-top: 1px solid var(--grid-line);
+    position: relative;
+  }
+  .section-border::before, .section-border::after {
+    content: '+';
+    position: absolute;
+    top: -9px;
+    color: rgba(255,255,255,0.2);
+    font-family: var(--font-mono);
+    font-size: 14px;
+    font-weight: 400;
+  }
+  .section-border::before { left: -4px; }
+  .section-border::after { right: -4px; }
+
+  .btn-sleek {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 12px 28px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: inline-block;
+    text-align: center;
+    background: transparent;
+    color: white;
+  }
+  .btn-sleek:hover {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+    transform: translateY(-1px);
+  }
+
+  .input-sleek {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 16px;
+    width: 100%;
+    color: white;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+  .input-sleek:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: rgba(255,255,255,0.02);
+  }
+
+  .chart-container {
+    height: 480px;
+    width: 100%;
+  }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
