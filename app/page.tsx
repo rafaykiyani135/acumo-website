@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import StatsBar from "./components/StatsBar";
+import LogoMarquee from "./components/LogoMarquee";
 import Services from "./components/Services";
 import ImpactChart from "./components/ImpactChart";
 import ProcessSection from "./components/ProcessSection";
@@ -50,6 +51,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <StatsBar />
+      <LogoMarquee />
       <Services />
       <ImpactChart />
       <ProcessSection />
