@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Services from "./components/Services";
-import ImpactChart from "./components/ImpactChart";
 import ProcessSection from "./components/ProcessSection";
 import CaseLog from "./components/CaseLog";
 import InquiryForm from "./components/InquiryForm";
@@ -49,7 +48,6 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Services />
-      <ImpactChart />
       <ProcessSection />
       <CaseLog onOpenProject={handleOpenProject} />
       <InquiryForm />

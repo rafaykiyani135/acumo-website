@@ -46,35 +46,84 @@ interface CaseLogProps {
 
 export default function CaseLog({ onOpenProject }: CaseLogProps) {
   return (
-    <section id="case-studies" className="py-40 section-border">
-      <div className="site-grid">
-        <div className="col-span-12 mb-24 flex justify-between items-end">
-          <h2 className="text-7xl font-bold tracking-tighter">Case Log.</h2>
-          <div className="font-mono text-[11px] text-neutral-600 tracking-[0.3em]">ENGINEERING_HISTORY v2.4</div>
+    <section id="case-studies" className="py-24 lg:py-40 w-full relative overflow-hidden bg-black">
+      
+      {/* Background Image Layer */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <img 
+          src="/case-studies-bg.png" 
+          alt="Case Studies Background" 
+          className="w-full h-full object-cover mix-blend-luminosity opacity-100" 
+        />
+      </div>
+
+      <div className="max-w-[1500px] mx-auto px-6 relative z-10">
+        
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-20 gap-8">
+          <div>
+            <div className="flex items-center gap-4 mb-6">
+               <span className="text-indigo-200 text-sm font-mono tracking-widest leading-none font-bold">05</span>
+               <div className="h-[1px] w-12 bg-indigo-200/50"></div>
+               <span className="text-white/60 text-xs tracking-[0.3em] uppercase leading-none font-semibold">Engineering Log</span>
+            </div>
+            
+            <h2 className="text-white font-sans text-[4.5rem] sm:text-[6.5rem] md:text-[8rem] font-black leading-[0.8] tracking-[-0.04em] uppercase">
+              CASE <br className="hidden sm:block" />
+              <span className="text-transparent italic font-serif font-light sm:ml-[4rem] md:ml-[6rem] lg:ml-[8rem] block" style={{ WebkitTextStroke: '2px rgba(255,255,255,0.9)' }}>
+                STUDIES.
+              </span>
+            </h2>
+          </div>
+          
+          <div className="font-mono text-xs text-white/30 tracking-[0.2em] uppercase pb-4">
+            DATA_ARCHIVE_v2.4
+          </div>
         </div>
 
-        <div className="col-span-12">
-          {Object.values(projectsData).map((project, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {Object.values(projectsData).map((project) => (
             <div 
               key={project.id}
-              className={`group border-white/5 py-14 cursor-pointer hover:bg-white/[0.01] transition-all px-6 flex items-center justify-between ${index === 0 ? "border-y" : "border-b"}`}
+              className="group relative flex flex-col bg-[#0a0a0a]/80 backdrop-blur-md border border-white/10 rounded-[5px] cursor-pointer overflow-hidden shadow-2xl transition-all duration-[0.8s] ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-2 hover:border-indigo-200/50 hover:shadow-[0_20px_40px_rgba(199,210,254,0.05)]"
               onClick={() => onOpenProject(project)}
             >
-              <div className="flex items-center space-x-20">
-                <span className="font-mono text-[11px] text-neutral-700">{project.id.padStart(3, '0')}</span>
-                <div>
-                  <h3 className="text-5xl font-bold tracking-tight group-hover:translate-x-3 transition-transform duration-500">{project.title}</h3>
-                  <div className="label-tech !before:hidden opacity-30 mt-3">{project.industry}</div>
-                </div>
+              <div className="w-full h-[320px] overflow-hidden relative bg-[#111]">
+                <img 
+                   src={project.image} 
+                   alt={project.title} 
+                   className="w-full h-full object-cover transform transition-transform duration-[1.5s] ease-out group-hover:scale-105 opacity-50 group-hover:opacity-100 mix-blend-luminosity group-hover:mix-blend-normal"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/20 to-transparent opacity-90"></div>
               </div>
-              <div className="hidden md:flex space-x-8 opacity-40 group-hover:opacity-100 transition-opacity">
-                {project.tech.slice(0, 2).map((t) => (
-                  <span key={t} className="font-mono text-[10px] tracking-widest uppercase">{t.replace('-', '_')}</span>
-                ))}
+
+              <div className="p-8 flex flex-col flex-1">
+                <div className="flex justify-between items-start mb-6">
+                   <span className="font-mono text-[10px] tracking-widest text-indigo-200 uppercase font-semibold">{project.industry.replace('_', ' ')}</span>
+                   <span className="font-mono text-[10px] tracking-[0.2em] text-white/30">{project.id.padStart(2, '0')}/</span>
+                </div>
+
+                <h3 className="text-[2rem] font-bold tracking-tight text-white mb-4 group-hover:text-indigo-200 transition-colors duration-300">
+                  {project.title}
+                </h3>
+
+                <p className="text-[15px] leading-[1.6] text-white/60 mb-8 font-medium max-w-[95%]">
+                  {project.desc}
+                </p>
+
+                <div className="mt-auto pt-6 border-t border-white/10">
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((t) => (
+                       <span key={t} className="px-3 py-1.5 bg-white/5 group-hover:bg-indigo-200/10 group-hover:text-indigo-200 transition-colors duration-500 text-white/70 font-mono text-[10px] tracking-wider rounded-[3px] uppercase border border-white/5 group-hover:border-indigo-200/30">
+                         {t}
+                       </span>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );
