@@ -44,6 +44,60 @@ export default function Services() {
     }
   ];
 
+  const renderGiantText = (id: string, part1: string, part2: string) => {
+    switch (id) {
+      case "01":
+        return (
+          <h3 className="text-white text-[4.5rem] sm:text-[6.5rem] md:text-[8rem] lg:text-[11rem] leading-[0.85] uppercase flex flex-col">
+            <span className="font-sans font-black tracking-[-0.04em] transform transition-transform duration-1000 hover:translate-x-4">
+              {part1}
+            </span>
+            <span className="font-mono font-medium opacity-80 text-[3rem] sm:text-[4rem] md:text-[5.5rem] lg:text-[8rem] tracking-tight transform transition-transform duration-1000 delay-100 hover:translate-x-8 mt-4">
+              {part2}
+            </span>
+          </h3>
+        );
+      case "02":
+        return (
+          <h3 className="text-white text-[5rem] sm:text-[7rem] md:text-[9rem] lg:text-[12rem] leading-[0.8] flex flex-col">
+            <span className="font-serif font-light italic transform transition-transform duration-1000 hover:translate-x-4">
+              {part1}
+            </span>
+            <span className="font-sans font-black tracking-tighter transform transition-transform duration-1000 delay-100 hover:translate-x-8 uppercase ml-8 md:ml-24">
+              {part2}
+            </span>
+          </h3>
+        );
+      case "03":
+        return (
+          <h3 className="text-white font-sans text-[5rem] sm:text-[7rem] md:text-[9rem] lg:text-[12rem] font-bold leading-[0.8] tracking-tighter uppercase relative flex flex-col">
+            <span className="transform transition-transform duration-1000 hover:scale-105 origin-left">
+              {part1}
+            </span>
+            <span className="text-transparent relative tracking-[0.05em] transform transition-transform duration-1000 delay-100 hover:translate-x-4" style={{ WebkitTextStroke: '3px rgba(255,255,255,0.95)' }}>
+              {part2}
+            </span>
+          </h3>
+        );
+      case "04":
+        return (
+          <div className="flex flex-col">
+            <h3 className="text-white font-sans text-[5rem] sm:text-[7rem] md:text-[9rem] lg:text-[12rem] font-black leading-[0.8] tracking-[-0.04em] uppercase transform transition-transform duration-1000 hover:translate-x-4">
+              {part1}
+            </h3>
+            <div className="flex items-center gap-6 mt-6 md:mt-8 transform transition-transform duration-1000 delay-100 hover:translate-x-6">
+               <div className="h-1 w-20 md:w-32 bg-white/60"></div>
+               <span className="text-white font-mono text-[2.5rem] sm:text-[3.5rem] md:text-[5rem] lg:text-[6.5rem] font-medium leading-[0.8] tracking-widest uppercase opacity-70">
+                 {part2}
+               </span>
+            </div>
+          </div>
+        );
+      default:
+        return null;
+    }
+  };
+
   return (
     <section id="services" className="w-full font-sans overflow-hidden bg-black border-y border-white/10 border-t-0">
       <div className="w-full min-h-[600px] md:h-[75vh] lg:h-[90vh] flex flex-col md:flex-row relative">
@@ -86,40 +140,29 @@ export default function Services() {
 
               {/* Active Expanded Content */}
               <div className={`absolute inset-0 flex flex-col justify-center px-6 lg:px-16 transition-all duration-[1.2s] ease-[cubic-bezier(0.16,1,0.3,1)] ${
-                isActive ? 'opacity-100 translate-x-0 delay-100' : 'opacity-0 -translate-x-32 pointer-events-none'
+                isActive ? 'opacity-100 translate-x-0 delay-100 z-30' : 'opacity-0 -translate-x-32 pointer-events-none z-0'
               }`}>
                 
-                <div className="flex flex-col lg:flex-row lg:items-end w-full max-w-[1400px] mx-auto gap-8 lg:gap-16 relative z-30">
+                <div className="flex flex-col w-full max-w-[1400px] mx-auto h-full justify-between py-12 lg:py-20 relative">
                   
-                  {/* Giant Typography Block */}
-                  <div className="flex-1">
+                  {/* Top: Giant Typography Block */}
+                  <div className="mt-4 lg:mt-8">
                     <div className="flex items-center gap-4 mb-6 lg:mb-10 overflow-hidden">
                        <span className="text-white text-xl font-mono tracking-widest leading-none">{svc.id}</span>
                        <div className="h-[1px] w-12 bg-white/30"></div>
-                       <span className="text-indigo-300 text-xs md:text-sm tracking-[0.3em] uppercase leading-none font-semibold">{svc.subtitle}</span>
+                       <span className="text-indigo-200 text-xs md:text-sm tracking-[0.3em] uppercase leading-none font-semibold shadow-black drop-shadow-md">{svc.subtitle}</span>
                     </div>
 
-                    <h3 className="text-white font-sans text-[5rem] sm:text-[7rem] md:text-[9rem] lg:text-[12rem] font-black leading-[0.8] tracking-[-0.04em] uppercase">
-                      <span className="block transform transition-transform duration-1000 delay-100 hover:translate-x-4 cursor-default">
-                        {svc.giantTextPart1}
-                      </span>
-                      <span 
-                        className="text-transparent italic font-serif font-light ml-8 md:ml-16 lg:ml-24 block transform transition-transform duration-1000 delay-200 hover:translate-x-8 cursor-default" 
-                        style={{ WebkitTextStroke: '2px rgba(255,255,255,0.95)' }}
-                      >
-                        {svc.giantTextPart2}
-                      </span>
-                    </h3>
+                    {renderGiantText(svc.id, svc.giantTextPart1, svc.giantTextPart2)}
                   </div>
 
-                  {/* Context Glass Block */}
-                  <div className="lg:max-w-[400px] backdrop-blur-2xl bg-white/5 border border-white/10 p-8 lg:p-10 rounded-[2.5rem] lg:mb-12 shadow-[0_40px_100px_rgba(0,0,0,0.5)] transition-transform duration-[1.5s] hover:-translate-y-2">
-                    <p className="text-white/80 text-[1.1rem] leading-relaxed font-medium mb-10">
-                      {svc.desc}
-                    </p>
-                    <button className="text-white font-bold tracking-[0.2em] uppercase text-[10px] w-full border border-white/30 rounded-full px-8 py-4 hover:bg-white hover:text-black transition-all hover:scale-[1.02] active:scale-95 shadow-[0_0_20px_rgba(255,255,255,0)] hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]">
-                      Explore Architecture ↗
-                    </button>
+                  {/* Bottom: Context Paragraph */}
+                  <div className="max-w-[500px] lg:max-w-[700px] mb-8 lg:mb-0 transition-transform duration-[1.5s] hover:-translate-y-2">
+                    <div className="backdrop-blur-md bg-black/20 border-l-4 border-white/40 p-6 lg:p-8">
+                      <p className="text-white/95 text-[1.05rem] lg:text-[1.2rem] leading-relaxed font-medium drop-shadow-lg">
+                        {svc.desc}
+                      </p>
+                    </div>
                   </div>
 
                 </div>
