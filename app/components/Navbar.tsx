@@ -11,7 +11,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-10 text-[14px] font-mono font-bold uppercase tracking-[0.1em] text-white/70">
             <Link href="#services" className="hover:text-white transition-colors duration-300">Services</Link>
             <Link href="#process" className="hover:text-white transition-colors duration-300">Process</Link>
-            <Link href="#case-studies" className="hover:text-white transition-colors duration-300">Log</Link>
+            <Link href="#case-studies" className="hover:text-white transition-colors duration-300">Our Work</Link>
           </div>
         </div>
         <div className="flex items-center gap-8 text-[13px] font-mono font-bold uppercase tracking-[0.15em] text-black">

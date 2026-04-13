@@ -1,59 +1,34 @@
 import Image from "next/image";
-import { Bayon, Allison } from 'next/font/google';
 import { Terminal, Activity, ChevronRight, Cpu } from 'lucide-react';
-
-const bayon = Bayon({ subsets: ['latin'], weight: '400' });
-const allison = Allison({ subsets: ['latin'], weight: '400' });
 
 export default function Hero() {
   return (
     <section className="relative min-h-[100vh] w-full bg-black overflow-hidden flex flex-col items-center justify-center font-sans">
-      
+
       {/* Background Image / Atmosphere Mask */}
       <div className="absolute inset-0 z-0 pointer-events-none bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-blue-900/30 via-black to-black">
-        <Image 
-          src="/bg-image-hero4.png" 
-          alt="Atmosphere Background" 
-          fill 
-          className="object-cover object-center mix-blend-screen opacity-50" 
-          priority 
+        <Image
+          src="/bg-image-hero4.png"
+          alt="Atmosphere Background"
+          fill
+          className="object-cover object-center mix-blend-screen opacity-50"
+          priority
         />
       </div>
 
       <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 flex flex-col items-center justify-center text-center -mt-32 md:-mt-48">
-        
-        {/* Insane Typography Layout */}
-        <h1 className="flex flex-col items-center justify-center text-white select-none w-full whitespace-nowrap z-20">
-          
-          {/* Top Line */}
-          <div className="flex flex-nowrap justify-center items-center gap-x-3 md:gap-x-6 lg:gap-x-8">
-            <span className={`${bayon.className} text-[7vw] md:text-[6vw] lg:text-[5.5vw] leading-none uppercase tracking-wide text-white`}>
-              YOUR IDEAS
-            </span>
-            <span className={`${allison.className} text-[9vw] md:text-[7.5vw] lg:text-[7vw] leading-none lowercase text-white/90 transform -rotate-2 -mt-2 md:-mt-4 lg:-mt-6`}>
-              plus
-            </span>
-            <span className={`${bayon.className} text-[7vw] md:text-[6vw] lg:text-[5.5vw] leading-none uppercase tracking-wide text-white`}>
-              OUR EXECUTION
-            </span>
-          </div>
 
-          {/* Bottom Line */}
-          <div className="flex flex-nowrap justify-center items-center gap-x-3 md:gap-x-6 lg:gap-x-8 mt-2 md:mt-4 lg:mt-6">
-            <span className={`${allison.className} text-[9vw] md:text-[7.5vw] lg:text-[7vw] leading-none lowercase text-white/90 transform -rotate-2 -mt-2 md:-mt-4 lg:-mt-6`}>
-              equals
-            </span>
-            <span className={`${bayon.className} text-[7vw] md:text-[6vw] lg:text-[5.5vw] leading-none uppercase tracking-wide text-white`}>
-              ENDLESS POSSIBILITIES
-            </span>
-          </div>
-          
+        {/* Clean, High-Conversion Typography Layout */}
+        <h1 className="flex flex-col items-center justify-center text-white z-20 max-w-4xl px-4">
+          <span className="font-sans font-extrabold tracking-tight text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[1.1] text-white">
+            Launch your Product in days, <span className="font-serif italic font-light text-white/80 pr-2">instead of months.</span>
+          </span>
         </h1>
 
         {/* Floating Active Component Preview */}
         <div className="mt-16 md:mt-20 w-full flex justify-center group z-30 relative perspective-[1000px]">
           <div className="relative w-full max-w-xl bg-[#0a0a0a]/90 backdrop-blur-md border border-white/10 rounded-[5px] p-1 transform transition-all duration-[1s] ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-105 hover:-translate-y-4 hover:border-white/20">
-            
+
             {/* Terminal Header */}
             <div className="flex items-center justify-between px-5 py-3 border-b border-white/5 bg-[#111]/80 rounded-t-[4px]">
               <div className="flex items-center gap-3">
@@ -69,26 +44,26 @@ export default function Hero() {
 
             {/* Terminal Body */}
             <div className="p-6 font-mono text-[11px] leading-[1.8] text-left text-white/40 h-[190px] overflow-hidden relative">
-              
+
               {/* Logs container that scrolls up silently on hover */}
               <div className="flex flex-col gap-2 transform transition-transform duration-[2.5s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-[85px] relative z-10 w-full">
-                
+
                 <div className="flex items-start gap-3 opacity-50 group-hover:opacity-100 transition-opacity duration-500 delay-[0ms]">
                   <ChevronRight size={14} className="text-blue-400 mt-0.5 shrink-0" />
                   <span>[SYS]: Initializing edge infrastructure... <span className="text-white/20">ok</span></span>
                 </div>
-                
+
                 <div className="flex items-start gap-3 opacity-50 group-hover:opacity-100 transition-opacity duration-500 delay-[200ms]">
-                   <Activity size={14} className="text-emerald-400 mt-0.5 shrink-0" />
-                   <span className="text-emerald-400/80">Telemetry stream bolted. Global Latency: &lt;12ms</span>
+                  <Activity size={14} className="text-emerald-400 mt-0.5 shrink-0" />
+                  <span className="text-emerald-400/80">Telemetry stream bolted. Global Latency: &lt;12ms</span>
                 </div>
 
                 <div className="flex items-center gap-3 mt-3 mb-3 p-3 bg-white-[0.02] border border-white/5 rounded-[4px] group-hover:bg-white-[0.04] group-hover:border-white/10 transition-colors duration-1000">
                   <Cpu size={14} className="text-white/50" />
                   <div className="flex-1 mx-2">
-                     <div className="h-[2px] w-full bg-white/10 rounded-full overflow-hidden relative">
-                       <div className="h-full bg-blue-500 w-[30%] group-hover:w-[94%] transition-all duration-[2s] ease-[cubic-bezier(0.16,1,0.3,1)] delay-[300ms]"></div>
-                     </div>
+                    <div className="h-[2px] w-full bg-white/10 rounded-full overflow-hidden relative">
+                      <div className="h-full bg-blue-500 w-[30%] group-hover:w-[94%] transition-all duration-[2s] ease-[cubic-bezier(0.16,1,0.3,1)] delay-[300ms]"></div>
+                    </div>
                   </div>
                   <span className="text-white/50 text-[10px] tracking-widest uppercase">CPU_Allocation</span>
                 </div>
