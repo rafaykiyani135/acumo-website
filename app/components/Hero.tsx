@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Bayon, Allison } from 'next/font/google';
+import { Terminal, Activity, ChevronRight, Cpu } from 'lucide-react';
 
 const bayon = Bayon({ subsets: ['latin'], weight: '400' });
 const allison = Allison({ subsets: ['latin'], weight: '400' });
@@ -22,7 +23,7 @@ export default function Hero() {
       <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 flex flex-col items-center justify-center text-center -mt-32 md:-mt-48">
         
         {/* Insane Typography Layout */}
-        <h1 className="flex flex-col items-center justify-center text-white select-none w-full whitespace-nowrap">
+        <h1 className="flex flex-col items-center justify-center text-white select-none w-full whitespace-nowrap z-20">
           
           {/* Top Line */}
           <div className="flex flex-nowrap justify-center items-center gap-x-3 md:gap-x-6 lg:gap-x-8">
@@ -48,6 +49,74 @@ export default function Hero() {
           </div>
           
         </h1>
+
+        {/* Floating Active Component Preview */}
+        <div className="mt-16 md:mt-20 w-full flex justify-center group z-30 relative perspective-[1000px]">
+          <div className="relative w-full max-w-xl bg-[#0a0a0a]/90 backdrop-blur-md border border-white/10 rounded-[5px] p-1 transform transition-all duration-[1s] ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-105 hover:-translate-y-4 hover:border-white/20">
+            
+            {/* Terminal Header */}
+            <div className="flex items-center justify-between px-5 py-3 border-b border-white/5 bg-[#111]/80 rounded-t-[4px]">
+              <div className="flex items-center gap-3">
+                <Terminal size={12} className="text-white/40" />
+                <span className="font-mono text-[9px] font-bold uppercase tracking-[0.2em] text-white/50">acumo-deploy-subsystem</span>
+              </div>
+              <div className="flex gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-white/10 group-hover:bg-red-500/50 transition-colors duration-500"></div>
+                <div className="w-1.5 h-1.5 rounded-full bg-white/10 group-hover:bg-yellow-500/50 transition-colors duration-500 delay-100"></div>
+                <div className="w-1.5 h-1.5 rounded-full bg-white/20 group-hover:bg-green-500/50 transition-colors duration-500 delay-200"></div>
+              </div>
+            </div>
+
+            {/* Terminal Body */}
+            <div className="p-6 font-mono text-[11px] leading-[1.8] text-left text-white/40 h-[190px] overflow-hidden relative">
+              
+              {/* Logs container that scrolls up silently on hover */}
+              <div className="flex flex-col gap-2 transform transition-transform duration-[2.5s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-[85px] relative z-10 w-full">
+                
+                <div className="flex items-start gap-3 opacity-50 group-hover:opacity-100 transition-opacity duration-500 delay-[0ms]">
+                  <ChevronRight size={14} className="text-blue-400 mt-0.5 shrink-0" />
+                  <span>[SYS]: Initializing edge infrastructure... <span className="text-white/20">ok</span></span>
+                </div>
+                
+                <div className="flex items-start gap-3 opacity-50 group-hover:opacity-100 transition-opacity duration-500 delay-[200ms]">
+                   <Activity size={14} className="text-emerald-400 mt-0.5 shrink-0" />
+                   <span className="text-emerald-400/80">Telemetry stream bolted. Global Latency: &lt;12ms</span>
+                </div>
+
+                <div className="flex items-center gap-3 mt-3 mb-3 p-3 bg-white-[0.02] border border-white/5 rounded-[4px] group-hover:bg-white-[0.04] group-hover:border-white/10 transition-colors duration-1000">
+                  <Cpu size={14} className="text-white/50" />
+                  <div className="flex-1 mx-2">
+                     <div className="h-[2px] w-full bg-white/10 rounded-full overflow-hidden relative">
+                       <div className="h-full bg-blue-500 w-[30%] group-hover:w-[94%] transition-all duration-[2s] ease-[cubic-bezier(0.16,1,0.3,1)] delay-[300ms]"></div>
+                     </div>
+                  </div>
+                  <span className="text-white/50 text-[10px] tracking-widest uppercase">CPU_Allocation</span>
+                </div>
+
+                <div className="flex items-start gap-3 opacity-30 group-hover:opacity-100 transition-opacity duration-700 delay-[400ms]">
+                  <ChevronRight size={14} className="text-blue-400 mt-0.5 shrink-0" />
+                  <span>[WORKER]: Compiling production models... <span className="text-yellow-400/80">pending</span></span>
+                </div>
+
+                <div className="flex items-start gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-[1200ms]">
+                  <ChevronRight size={14} className="text-emerald-400 mt-0.5 shrink-0" />
+                  <span className="text-emerald-400/80">[WORKER]: Models deployed. Immutable state locked.</span>
+                </div>
+
+                <div className="flex items-start gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-[1600ms]">
+                  <ChevronRight size={14} className="text-blue-400 mt-0.5 shrink-0" />
+                  <span className="w-[6px] h-[12px] bg-white text-transparent animate-pulse mt-1">_</span>
+                </div>
+
+              </div>
+
+              {/* Top & Bottom Fade out masks */}
+              <div className="absolute top-0 left-0 w-full h-8 bg-gradient-to-b from-[#0a0a0a]/90 to-transparent pointer-events-none z-20"></div>
+              <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-[#0a0a0a] to-transparent pointer-events-none z-20"></div>
+
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Embedded Widgets / Bottom Layout */}
