@@ -1,5 +1,20 @@
 import Image from "next/image";
 import { Terminal, Activity, ChevronRight, Cpu } from 'lucide-react';
+import { FaReact, FaPython, FaGithub, FaNodeJs, FaDocker, FaAws, FaFigma, FaLinux } from 'react-icons/fa';
+import { SiTypescript, SiNextdotjs } from 'react-icons/si';
+
+const ICONS = [
+  { id: 1, Icon: FaReact, color: 'text-blue-400' },
+  { id: 2, Icon: FaPython, color: 'text-yellow-400' },
+  { id: 3, Icon: FaGithub, color: 'text-white' },
+  { id: 4, Icon: SiTypescript, color: 'text-blue-500' },
+  { id: 5, Icon: FaNodeJs, color: 'text-green-500' },
+  { id: 6, Icon: SiNextdotjs, color: 'text-white' },
+  { id: 7, Icon: FaDocker, color: 'text-blue-400' },
+  { id: 8, Icon: FaAws, color: 'text-orange-400' },
+  { id: 9, Icon: FaFigma, color: 'text-pink-400' },
+  { id: 10, Icon: FaLinux, color: 'text-yellow-200' },
+];
 
 export default function Hero() {
   return (
@@ -14,6 +29,28 @@ export default function Hero() {
           className="object-cover object-center mix-blend-screen opacity-50"
           priority
         />
+      </div>
+
+      {/* Animated Earth Arc Orbit */}
+      <div className="absolute inset-0 flex justify-center pointer-events-none z-0 overflow-hidden">
+        <div className="absolute top-[0%] md:top-[5%] w-[200vw] h-[200vw] sm:w-[150vw] sm:h-[150vw] md:w-[140vw] md:h-[140vw] lg:w-[1600px] lg:h-[1600px] rounded-full border border-dashed border-white/10 opacity-60">
+          <div className="w-full h-full relative animate-spin-slow">
+            {ICONS.map((item, index) => {
+              const angle = (index * 360) / ICONS.length;
+              return (
+                <div key={item.id} className="absolute top-0 left-0 w-full h-full" style={{ transform: `rotate(${angle}deg)` }}>
+                  <div className="absolute top-0 left-1/2 -ml-6 -mt-6 w-12 h-12">
+                    <div className="w-full h-full animate-reverse-spin">
+                      <div className="w-full h-full flex items-center justify-center bg-[#0a0a0a] border border-white/20 rounded-full shadow-[0_0_15px_rgba(255,255,255,0.05)]" style={{ transform: `rotate(-${angle}deg)` }}>
+                        <item.Icon className={`w-5 h-5 ${item.color}`} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
 
       <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 flex flex-col items-center justify-center text-center -mt-32 md:-mt-48">
