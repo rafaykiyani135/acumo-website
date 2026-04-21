@@ -20,7 +20,7 @@ const NeuralNetworkAnimation: React.FC<NeuralNetworkAnimationProps> = ({
   animationSpeed = 1 // 1 = normal speed, 2 = 2x faster, 0.5 = half speed
 }) => {
   const svgRef = useRef<SVGSVGElement>(null);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | undefined>(undefined);
 
   useEffect(() => {
     const animate = () => {
