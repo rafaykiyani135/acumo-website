@@ -32,7 +32,8 @@ export default function Hero() {
       </div>
 
       {/* Shooting Star Animation Styles */}
-      <style dangerouslySetInnerHTML={{__html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         @keyframes shootingStar {
           0% { transform: translate3d(0, 0, 0) scale(0.5) rotate(0deg); opacity: 0; }
           1% { opacity: 1; scale(1); }
@@ -46,11 +47,11 @@ export default function Hero() {
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
         {ICONS.map((item, index) => {
           // Spread starting positions cleanly across the viewport
-          const topStart = 10 + ((index * 23) % 80); 
-          const leftStart = 10 + ((index * 37) % 80); 
-          
+          const topStart = 10 + ((index * 23) % 80);
+          const leftStart = 10 + ((index * 37) % 80);
+
           // Target trajectory
-          const targetX = -100 + ((index * 41) % 200); 
+          const targetX = -100 + ((index * 41) % 200);
           const targetY = -100 + ((index * 19) % 200);
 
           // We use massive loop durations (20s - 35s). 
@@ -60,8 +61,8 @@ export default function Hero() {
           const duration = 20 + ((index * 7) % 15); // Total cycle: 20s to 35s
 
           return (
-            <div 
-              key={item.id} 
+            <div
+              key={item.id}
               className="absolute w-10 h-10 md:w-12 md:h-12 opacity-0 flex items-center justify-center bg-[#0a0a0a] border border-white/20 rounded-full shadow-[0_0_15px_rgba(255,255,255,0.05)]"
               style={{
                 top: `${topStart}%`,
@@ -81,12 +82,12 @@ export default function Hero() {
         })}
       </div>
 
-      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 flex flex-col items-center justify-center text-center -mt-32 md:-mt-48">
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 flex flex-col items-center justify-center text-center">
 
         {/* Clean, High-Conversion Typography Layout */}
-        <h1 className="flex flex-col items-center justify-center text-white z-20 max-w-4xl px-4">
-          <span className="font-sans font-extrabold tracking-tight text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[1.1] text-white">
-            Launch your Product in days, <span className="font-serif italic font-light text-white/80 pr-2">instead of months.</span>
+        <h1 className="flex flex-col items-center justify-center text-white z-20 w-full max-w-5xl px-2 sm:px-4">
+          <span className="font-sans font-extrabold tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] leading-[1.2] sm:leading-[1.1] text-white">
+            Launch your Product in days, <span className="block mt-2 sm:mt-0 sm:inline font-serif italic font-light text-white/80 pr-2">instead of months.</span>
           </span>
         </h1>
 
