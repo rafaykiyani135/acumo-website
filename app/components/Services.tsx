@@ -41,7 +41,7 @@ export default function Services() {
   const currentService = services[activeIndex];
 
   return (
-    <section id="services" className="w-full min-h-screen bg-white text-black flex items-center relative overflow-hidden px-6 md:px-20 lg:px-32">
+    <section id="services" className="w-full min-h-screen bg-[#003059] text-white flex items-center relative overflow-hidden px-6 md:px-20 lg:px-32">
       {/* Background Graphic - subtle grid to maintain technical brand identity */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
         <div className="absolute left-0 top-0 w-full h-full bg-grid"></div>
@@ -53,25 +53,25 @@ export default function Services() {
           <div key={activeIndex} className="animate-fade-up" style={{ animationDuration: '1.8s' }}>
             {/* Service Index & Label */}
             <div className="flex items-center gap-4 mb-16 overflow-hidden">
-              <span className="font-mono text-sm tracking-[0.4em] text-black/40 uppercase">
+              <span className="font-mono text-sm tracking-[0.4em] text-white/40 uppercase">
                 {currentService.id} / {services.length}
               </span>
-              <div className="h-[1px] w-12 bg-black/10"></div>
-              <span className="font-mono text-[10px] tracking-[0.3em] uppercase text-indigo-600 font-bold">
+              <div className="h-[1px] w-12 bg-white/20"></div>
+              <span className="font-mono text-[10px] tracking-[0.3em] uppercase text-indigo-300 font-bold">
                 Execution Platform
               </span>
             </div>
 
             {/* Dynamic Title */}
             <div className="mb-14">
-              <h2 className="text-[clamp(3rem,8vw,7.5rem)] font-black tracking-tighter uppercase leading-[0.85] text-black">
+              <h2 className="text-[clamp(3rem,8vw,7.5rem)] font-black tracking-tighter uppercase leading-[0.85] text-white">
                 {currentService.title.map((word, i) => (
                   <span key={i} className="block">{word}</span>
                 ))}
               </h2>
               <div className="mt-8 flex items-center gap-4">
-                <div className="h-2 w-2 rounded-full bg-indigo-600 animate-pulse"></div>
-                <p className="font-mono text-xs md:text-sm tracking-[0.2em] text-black/60 uppercase">
+                <div className="h-2 w-2 rounded-full bg-indigo-400 animate-pulse"></div>
+                <p className="font-mono text-xs md:text-sm tracking-[0.2em] text-white/60 uppercase">
                   {currentService.subtitle}
                 </p>
               </div>
@@ -79,7 +79,7 @@ export default function Services() {
 
             {/* Description Block */}
             <div className="max-w-xl md:max-w-2xl lg:max-w-3xl">
-              <p className="text-xl md:text-2xl lg:text-3xl font-medium leading-[1.3] tracking-tight text-gray-900/80">
+              <p className="text-xl md:text-2xl lg:text-3xl font-medium leading-[1.3] tracking-tight text-white/80">
                 {currentService.desc}
               </p>
             </div>
@@ -94,29 +94,27 @@ export default function Services() {
         </div>
       </div>
 
-      {/* Navigation Controller - Bottom Right */}
       <div className="absolute bottom-12 right-12 md:bottom-24 md:right-24 z-20 flex flex-col items-end gap-6">
         <button
           onClick={nextService}
-          className="group relative flex items-center justify-center w-16 h-16 md:w-20 md:h-20 border border-black/5 rounded-full hover:border-black transition-all duration-700 overflow-hidden cursor-pointer bg-white shadow-sm"
+          className="group relative flex items-center justify-center w-16 h-16 md:w-20 md:h-20 border border-white/20 rounded-full hover:border-white transition-all duration-700 overflow-hidden cursor-pointer bg-[#081659] shadow-sm"
           aria-label="Next Service"
         >
           {/* Fill effect background */}
-          <div className="absolute inset-0 bg-black translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"></div>
+          <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"></div>
 
           <div className="relative z-10 flex flex-col items-center">
-            <ArrowRight className="w-5 h-5 md:w-6 md:h-6 text-black group-hover:text-white group-hover:translate-x-1.5 transition-all duration-500 ease-out" />
+            <ArrowRight className="w-5 h-5 md:w-6 md:h-6 text-white group-hover:text-[#003059] group-hover:translate-x-1.5 transition-all duration-500 ease-out" />
           </div>
         </button>
 
-        {/* Progress Indicators */}
         <div className="flex flex-col items-end gap-1 pointer-events-none">
-          <span className="font-mono text-[9px] tracking-[0.4em] uppercase opacity-30">Shift Protocol</span>
+          <span className="font-mono text-[9px] tracking-[0.4em] uppercase opacity-50 text-white">Shift Protocol</span>
           <div className="flex gap-1">
             {services.map((_, i) => (
               <div
                 key={i}
-                className={`h-1 transition-all duration-500 ${i === activeIndex ? 'w-8 bg-indigo-600' : 'w-3 bg-black/10'}`}
+                className={`h-1 transition-all duration-500 ${i === activeIndex ? 'w-8 bg-indigo-300' : 'w-3 bg-white/20'}`}
               />
             ))}
           </div>

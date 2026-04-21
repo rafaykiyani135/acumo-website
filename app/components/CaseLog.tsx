@@ -46,16 +46,7 @@ interface CaseLogProps {
 
 export default function CaseLog({ onOpenProject }: CaseLogProps) {
   return (
-    <section id="case-studies" className="py-24 lg:py-40 w-full relative overflow-hidden bg-black">
-
-      {/* Background Image Layer */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <img
-          src="/case-studies-bg.png"
-          alt="Case Studies Background"
-          className="w-full h-full object-cover mix-blend-luminosity opacity-100"
-        />
-      </div>
+    <section id="case-studies" className="py-24 lg:py-40 w-full relative overflow-hidden bg-[#003059]">
 
       <div className="max-w-[1500px] mx-auto px-6 relative z-10">
 
