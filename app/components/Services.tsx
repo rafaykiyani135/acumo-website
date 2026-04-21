@@ -1,175 +1,133 @@
 "use client";
 
 import { useState } from "react";
+import { ArrowRight } from "lucide-react";
+import NeuralNetworkAnimation from "./NeuralNetworkAnimation";
 
 export default function Services() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const services = [
     {
       id: "01",
       title: ["DISTRIBUTED", "SYSTEMS"],
       subtitle: "FAULT-TOLERANT ARCHITECTURE",
-      giantTextPart1: "ZERO",
-      giantTextPart2: "LATENCY.",
       desc: "Architecting global consistency and extreme throughput across distributed nodes. We build immutable infrastructure that scales dynamically under any load.",
-      bgImg: "/accordion-img1.png"
     },
     {
       id: "02",
       title: ["AI", "PIPELINES"],
       subtitle: "PRODUCTION GRADE INTELLIGENCE",
-      giantTextPart1: "PURE",
-      giantTextPart2: "LOGIC.",
       desc: "Integrating RAG and fine-tuned LLMs into heavily secured pipelines. Guaranteeing all algorithmic outputs are completely grounded in your proprietary data.",
-      bgImg: "/accordion-img2.png"
     },
     {
       id: "03",
       title: ["TECHNICAL", "INTERFACES"],
       subtitle: "HIGH-DENSITY DATA UIs",
-      giantTextPart1: "FLUID",
-      giantTextPart2: "MOTION.",
       desc: "Crafting technical dashboards tailored for developers and analysts. Prioritizing instant data-visualization and low-latency interactions over generic layouts.",
-      bgImg: "/accordion-img3.png"
     },
     {
       id: "04",
       title: ["CLOUD", "NATIVE"],
       subtitle: "INFRASTRUCTURE AS CODE",
-      giantTextPart1: "SCALE",
-      giantTextPart2: "INFINITE.",
       desc: "Automating the exact path to production. Leveraging Kubernetes and Terraform to build secure, scalable, and completely managed CI/CD environments.",
-      bgImg: "/accordion-img4.png"
     }
   ];
 
-  const renderGiantText = (id: string, part1: string, part2: string) => {
-    switch (id) {
-      case "01":
-        return (
-          <h3 className="text-white text-[4.5rem] sm:text-[6.5rem] md:text-[8rem] lg:text-[11rem] leading-[0.85] uppercase flex flex-col">
-            <span className="font-sans font-black tracking-[-0.04em] transform transition-transform duration-1000 hover:translate-x-4">
-              {part1}
-            </span>
-            <span className="font-mono font-medium opacity-80 text-[3rem] sm:text-[4rem] md:text-[5.5rem] lg:text-[8rem] tracking-tight transform transition-transform duration-1000 delay-100 hover:translate-x-8 mt-4">
-              {part2}
-            </span>
-          </h3>
-        );
-      case "02":
-        return (
-          <h3 className="text-white text-[5rem] sm:text-[7rem] md:text-[9rem] lg:text-[12rem] leading-[0.8] flex flex-col">
-            <span className="font-serif font-light italic transform transition-transform duration-1000 hover:translate-x-4">
-              {part1}
-            </span>
-            <span className="font-sans font-black tracking-tighter transform transition-transform duration-1000 delay-100 hover:translate-x-8 uppercase ml-8 md:ml-24">
-              {part2}
-            </span>
-          </h3>
-        );
-      case "03":
-        return (
-          <h3 className="text-white font-sans text-[5rem] sm:text-[7rem] md:text-[9rem] lg:text-[12rem] font-bold leading-[0.8] tracking-tighter uppercase relative flex flex-col">
-            <span className="transform transition-transform duration-1000 hover:scale-105 origin-left">
-              {part1}
-            </span>
-            <span className="text-transparent relative tracking-[0.05em] transform transition-transform duration-1000 delay-100 hover:translate-x-4" style={{ WebkitTextStroke: '3px rgba(255,255,255,0.95)' }}>
-              {part2}
-            </span>
-          </h3>
-        );
-      case "04":
-        return (
-          <div className="flex flex-col">
-            <h3 className="text-white font-sans text-[5rem] sm:text-[7rem] md:text-[9rem] lg:text-[12rem] font-black leading-[0.8] tracking-[-0.04em] uppercase transform transition-transform duration-1000 hover:translate-x-4">
-              {part1}
-            </h3>
-            <div className="flex items-center gap-6 mt-6 md:mt-8 transform transition-transform duration-1000 delay-100 hover:translate-x-6">
-               <div className="h-1 w-20 md:w-32 bg-white/60"></div>
-               <span className="text-white font-mono text-[2.5rem] sm:text-[3.5rem] md:text-[5rem] lg:text-[6.5rem] font-medium leading-[0.8] tracking-widest uppercase opacity-70">
-                 {part2}
-               </span>
-            </div>
-          </div>
-        );
-      default:
-        return null;
-    }
+  const nextService = () => {
+    setActiveIndex((prev) => (prev + 1) % services.length);
   };
 
+  const currentService = services[activeIndex];
+
   return (
-    <section id="services" className="w-full font-sans overflow-hidden bg-black border-y border-white/10 border-t-0">
-      <div className="w-full min-h-[600px] md:h-[75vh] lg:h-[90vh] flex flex-col md:flex-row relative">
-        {services.map((svc, idx) => {
-          const isHovered = hoveredIndex === idx;
-          const isDefaultExp = hoveredIndex === null && idx === 1; // Default second item open
-          const isActive = isHovered || isDefaultExp;
+    <section id="services" className="w-full min-h-screen bg-white text-black flex items-center relative overflow-hidden px-6 md:px-20 lg:px-32">
+      {/* Background Graphic - subtle grid to maintain technical brand identity */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
+        <div className="absolute left-0 top-0 w-full h-full bg-grid"></div>
+      </div>
 
-          return (
-            <div 
-              key={svc.id}
-              onMouseEnter={() => setHoveredIndex(idx)}
-              onMouseLeave={() => setHoveredIndex(null)}
-              className={`relative border-b md:border-b-0 md:border-r border-white/20 last:border-r-0 transition-all duration-[1s] ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col cursor-pointer ${
-                isActive ? 'md:flex-[4] lg:flex-[5] flex-[2]' : 'md:flex-1 flex-[0.5]'
-              } min-w-0 group overflow-hidden bg-black`}
-            >
-              {/* Background Image Layer */}
-              <div className="absolute inset-0 z-0 transition-transform duration-[2s] ease-out group-hover:scale-105 group-hover:rotate-1 origin-center">
-                <img 
-                  src={svc.bgImg} 
-                  alt={svc.title.join(" ")} 
-                  className={`w-full h-full object-cover transition-opacity duration-1000 ${isActive ? 'opacity-70' : 'opacity-40'}`} 
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-black/40 pointer-events-none"></div>
-                <div className={`absolute inset-0 bg-indigo-900/10 mix-blend-overlay transition-opacity duration-1000 pointer-events-none ${isActive ? 'opacity-100' : 'opacity-0'}`}></div>
-              </div>
+      <div className="flex flex-col lg:flex-row items-center w-full relative z-10 gap-12 lg:gap-20">
+        {/* Main Content Column */}
+        <div className="lg:flex-[1.2] w-full py-20">
+          <div key={activeIndex} className="animate-fade-up" style={{ animationDuration: '1.8s' }}>
+            {/* Service Index & Label */}
+            <div className="flex items-center gap-4 mb-16 overflow-hidden">
+              <span className="font-mono text-sm tracking-[0.4em] text-black/40 uppercase">
+                {currentService.id} / {services.length}
+              </span>
+              <div className="h-[1px] w-12 bg-black/10"></div>
+              <span className="font-mono text-[10px] tracking-[0.3em] uppercase text-indigo-600 font-bold">
+                Execution Platform
+              </span>
+            </div>
 
-              {/* Inactive Tab View (Vertical or Bottom) */}
-              <div className={`absolute bottom-8 left-6 lg:left-10 z-20 transition-all duration-[1s] ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col ${
-                isActive ? 'opacity-0 translate-y-12 pointer-events-none' : 'opacity-100 translate-y-0 delay-200'
-              }`}>
-                <span className="block text-white/40 font-mono text-sm tracking-widest mb-4">{svc.id}</span>
-                <h3 className="text-xl lg:text-3xl font-extrabold tracking-tighter text-white uppercase leading-[1.05]">
-                  {svc.title.map((word, i) => (
-                    <span key={i} className="block">{word}</span>
-                  ))}
-                </h3>
-              </div>
-
-              {/* Active Expanded Content */}
-              <div className={`absolute inset-0 flex flex-col justify-center px-6 lg:px-16 transition-all duration-[1.2s] ease-[cubic-bezier(0.16,1,0.3,1)] ${
-                isActive ? 'opacity-100 translate-x-0 delay-100 z-30' : 'opacity-0 -translate-x-32 pointer-events-none z-0'
-              }`}>
-                
-                <div className="flex flex-col w-full max-w-[1400px] mx-auto h-full justify-between py-12 lg:py-20 relative">
-                  
-                  {/* Top: Giant Typography Block */}
-                  <div className="mt-4 lg:mt-8">
-                    <div className="flex items-center gap-4 mb-6 lg:mb-10 overflow-hidden">
-                       <span className="text-white text-xl font-mono tracking-widest leading-none">{svc.id}</span>
-                       <div className="h-[1px] w-12 bg-white/30"></div>
-                       <span className="text-indigo-200 text-xs md:text-sm tracking-[0.3em] uppercase leading-none font-semibold shadow-black drop-shadow-md">{svc.subtitle}</span>
-                    </div>
-
-                    {renderGiantText(svc.id, svc.giantTextPart1, svc.giantTextPart2)}
-                  </div>
-
-                  {/* Bottom: Context Paragraph */}
-                  <div className="max-w-[500px] lg:max-w-[700px] mb-8 lg:mb-0 transition-transform duration-[1.5s] hover:-translate-y-2">
-                    <div className="backdrop-blur-md bg-black/20 border-l-4 border-white/40 p-6 lg:p-8">
-                      <p className="text-white/95 text-[1.05rem] lg:text-[1.2rem] leading-relaxed font-medium drop-shadow-lg">
-                        {svc.desc}
-                      </p>
-                    </div>
-                  </div>
-
-                </div>
+            {/* Dynamic Title */}
+            <div className="mb-14">
+              <h2 className="text-[clamp(3rem,8vw,7.5rem)] font-black tracking-tighter uppercase leading-[0.85] text-black">
+                {currentService.title.map((word, i) => (
+                  <span key={i} className="block">{word}</span>
+                ))}
+              </h2>
+              <div className="mt-8 flex items-center gap-4">
+                <div className="h-2 w-2 rounded-full bg-indigo-600 animate-pulse"></div>
+                <p className="font-mono text-xs md:text-sm tracking-[0.2em] text-black/60 uppercase">
+                  {currentService.subtitle}
+                </p>
               </div>
             </div>
-          );
-        })}
+
+            {/* Description Block */}
+            <div className="max-w-xl md:max-w-2xl lg:max-w-3xl">
+              <p className="text-xl md:text-2xl lg:text-3xl font-medium leading-[1.3] tracking-tight text-gray-900/80">
+                {currentService.desc}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Animation Column - Visible only on large screens */}
+        <div className="hidden lg:flex lg:flex-1 justify-center items-center h-full pointer-events-none">
+          <div className="w-full max-w-[600px] xl:max-w-[700px] opacity-80">
+            <NeuralNetworkAnimation key={activeIndex} />
+          </div>
+        </div>
+      </div>
+
+      {/* Navigation Controller - Bottom Right */}
+      <div className="absolute bottom-12 right-12 md:bottom-24 md:right-24 z-20 flex flex-col items-end gap-6">
+        <button
+          onClick={nextService}
+          className="group relative flex items-center justify-center w-16 h-16 md:w-20 md:h-20 border border-black/5 rounded-full hover:border-black transition-all duration-700 overflow-hidden cursor-pointer bg-white shadow-sm"
+          aria-label="Next Service"
+        >
+          {/* Fill effect background */}
+          <div className="absolute inset-0 bg-black translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"></div>
+
+          <div className="relative z-10 flex flex-col items-center">
+            <ArrowRight className="w-5 h-5 md:w-6 md:h-6 text-black group-hover:text-white group-hover:translate-x-1.5 transition-all duration-500 ease-out" />
+          </div>
+        </button>
+
+        {/* Progress Indicators */}
+        <div className="flex flex-col items-end gap-1 pointer-events-none">
+          <span className="font-mono text-[9px] tracking-[0.4em] uppercase opacity-30">Shift Protocol</span>
+          <div className="flex gap-1">
+            {services.map((_, i) => (
+              <div
+                key={i}
+                className={`h-1 transition-all duration-500 ${i === activeIndex ? 'w-8 bg-indigo-600' : 'w-3 bg-black/10'}`}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Aesthetic Side Label - Subtle Vertical Text */}
+      <div className="absolute top-1/2 right-4 -translate-y-1/2 rotate-90 origin-right pointer-events-none hidden xl:block">
+        <span className="font-mono text-[10px] tracking-[1em] uppercase opacity-10 whitespace-nowrap">
+          Core Capabilities Matrix 2026
+        </span>
       </div>
     </section>
   );
