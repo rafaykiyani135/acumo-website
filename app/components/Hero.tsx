@@ -31,26 +31,54 @@ export default function Hero() {
         />
       </div>
 
-      {/* Animated Earth Arc Orbit */}
-      <div className="absolute inset-0 flex justify-center pointer-events-none z-0 overflow-hidden">
-        <div className="absolute top-[0%] md:top-[5%] w-[200vw] h-[200vw] sm:w-[150vw] sm:h-[150vw] md:w-[140vw] md:h-[140vw] lg:w-[1600px] lg:h-[1600px] rounded-full border border-dashed border-white/10 opacity-60">
-          <div className="w-full h-full relative animate-spin-slow">
-            {ICONS.map((item, index) => {
-              const angle = (index * 360) / ICONS.length;
-              return (
-                <div key={item.id} className="absolute top-0 left-0 w-full h-full" style={{ transform: `rotate(${angle}deg)` }}>
-                  <div className="absolute top-0 left-1/2 -ml-6 -mt-6 w-12 h-12">
-                    <div className="w-full h-full animate-reverse-spin">
-                      <div className="w-full h-full flex items-center justify-center bg-[#0a0a0a] border border-white/20 rounded-full shadow-[0_0_15px_rgba(255,255,255,0.05)]" style={{ transform: `rotate(-${angle}deg)` }}>
-                        <item.Icon className={`w-5 h-5 ${item.color}`} />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
+      {/* Shooting Star Animation Styles */}
+      <style dangerouslySetInnerHTML={{__html: `
+        @keyframes shootingStar {
+          0% { transform: translate3d(0, 0, 0) scale(0.5) rotate(0deg); opacity: 0; }
+          1% { opacity: 1; scale(1); }
+          14% { opacity: 1; scale(1); }
+          15% { transform: translate3d(var(--tx), var(--ty), 0) scale(0.5) rotate(200deg); opacity: 0; }
+          100% { transform: translate3d(var(--tx), var(--ty), 0) scale(0.5) rotate(200deg); opacity: 0; }
+        }
+      `}} />
+
+      {/* Shooting Stars Background */}
+      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+        {ICONS.map((item, index) => {
+          // Spread starting positions cleanly across the viewport
+          const topStart = 10 + ((index * 23) % 80); 
+          const leftStart = 10 + ((index * 37) % 80); 
+          
+          // Target trajectory
+          const targetX = -100 + ((index * 41) % 200); 
+          const targetY = -100 + ((index * 19) % 200);
+
+          // We use massive loop durations (20s - 35s). 
+          // Because the keyframes only act during the first 15%, the icon is invisible for 85% of the time.
+          // This mathematically guarantees sparse, single-element appearances without JS logic.
+          const delay = (index * 2.5) % 30; // 0s to 30s initial delay stagger
+          const duration = 20 + ((index * 7) % 15); // Total cycle: 20s to 35s
+
+          return (
+            <div 
+              key={item.id} 
+              className="absolute w-10 h-10 md:w-12 md:h-12 opacity-0 flex items-center justify-center bg-[#0a0a0a] border border-white/20 rounded-full shadow-[0_0_15px_rgba(255,255,255,0.05)]"
+              style={{
+                top: `${topStart}%`,
+                left: `${leftStart}%`,
+                ['--tx' as string]: `${targetX}vw`,
+                ['--ty' as string]: `${targetY}vh`,
+                animationName: 'shootingStar',
+                animationDuration: `${duration}s`,
+                animationTimingFunction: 'linear',
+                animationIterationCount: 'infinite',
+                animationDelay: `${delay}s`
+              }}
+            >
+              <item.Icon className={`w-5 h-5 md:w-6 md:h-6 ${item.color} relative z-10`} />
+            </div>
+          );
+        })}
       </div>
 
       <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 flex flex-col items-center justify-center text-center -mt-32 md:-mt-48">
