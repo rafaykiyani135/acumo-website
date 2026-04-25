@@ -30,7 +30,7 @@ export default function InquiryForm() {
                  <span className="text-white/60 text-xs tracking-[0.3em] uppercase leading-none font-semibold">Transmission</span>
               </div>
               
-              <h2 className="text-white font-sans text-[4.5rem] md:text-[6rem] lg:text-[7.5rem] font-black leading-[0.8] tracking-[-0.04em] uppercase mb-10">
+              <h2 className="text-white font-sans text-[clamp(3rem,11vw,7.5rem)] font-black leading-[0.8] tracking-[-0.04em] uppercase mb-10">
                 START A <br />
                 <span className="text-transparent italic font-serif font-light block mt-3" style={{ WebkitTextStroke: '2px rgba(255,255,255,0.9)' }}>
                   PROJECT.
