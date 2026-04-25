@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Terminal, Activity, ChevronRight, Cpu } from 'lucide-react';
+import { Terminal, ChevronRight, Cpu } from 'lucide-react';
 import { FaReact, FaPython, FaGithub, FaNodeJs, FaDocker, FaAws, FaFigma, FaLinux } from 'react-icons/fa';
 import { SiTypescript, SiNextdotjs } from 'react-icons/si';
 
@@ -18,7 +18,7 @@ const ICONS = [
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[100vh] w-full bg-black overflow-hidden flex flex-col items-center justify-center font-sans">
+    <section className="relative min-h-[100svh] w-full bg-black overflow-hidden flex flex-col items-center justify-center font-sans pt-28 pb-20 md:pb-24 lg:py-20">
 
       {/* Background Image / Atmosphere Mask */}
       <div className="absolute inset-0 z-0 pointer-events-none bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-blue-900/30 via-black to-black">
@@ -92,7 +92,7 @@ export default function Hero() {
         </h1>
 
         {/* Floating Active Component Preview */}
-        <div className="mt-16 md:mt-20 w-full flex justify-center group z-30 relative perspective-[1000px]">
+        <div className="mt-14 md:mt-16 lg:mt-20 w-full flex justify-center group z-30 relative perspective-[1000px]">
           <div className="relative w-full max-w-xl bg-[#0a0a0a]/90 backdrop-blur-md border border-white/10 rounded-[5px] p-1 transform transition-all duration-[1s] ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-105 hover:-translate-y-4 hover:border-white/20">
 
             {/* Terminal Header */}
@@ -117,11 +117,6 @@ export default function Hero() {
                 <div className="flex items-start gap-3 opacity-50 group-hover:opacity-100 transition-opacity duration-500 delay-[0ms]">
                   <ChevronRight size={14} className="text-blue-400 mt-0.5 shrink-0" />
                   <span>[SYS]: Initializing edge infrastructure... <span className="text-white/20">ok</span></span>
-                </div>
-
-                <div className="flex items-start gap-3 opacity-50 group-hover:opacity-100 transition-opacity duration-500 delay-[200ms]">
-                  <Activity size={14} className="text-emerald-400 mt-0.5 shrink-0" />
-                  <span className="text-emerald-400/80">Telemetry stream bolted. Global Latency: &lt;12ms</span>
                 </div>
 
                 <div className="flex items-center gap-3 mt-3 mb-3 p-3 bg-white-[0.02] border border-white/5 rounded-[4px] group-hover:bg-white-[0.04] group-hover:border-white/10 transition-colors duration-1000">
@@ -157,33 +152,6 @@ export default function Hero() {
 
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* Embedded Widgets / Bottom Layout */}
-      <div className="absolute w-full bottom-0 left-0 z-10 pb-12 flex flex-col items-center">
-        <div className="relative w-full max-w-[1400px] mx-auto px-6 md:px-12">
-
-          {/* Metrics row rendered for dark backgrounds */}
-          <div className="flex flex-wrap justify-between items-center gap-8 text-white/60 max-w-[1000px] mx-auto pr-16 md:pr-0 border-t border-white/10 pt-8 mt-12">
-            <div className="flex flex-col items-center md:items-start gap-1">
-              <span className="font-mono uppercase tracking-widest text-[10px] text-white/40">Throughput</span>
-              <span className="text-2xl md:text-3xl font-extrabold text-white tracking-tight font-sans">4.2k <span className="text-white/40 text-lg">/sec</span></span>
-            </div>
-            <div className="flex flex-col items-center md:items-start gap-1">
-              <span className="font-mono uppercase tracking-widest text-[10px] text-white/40">Availability</span>
-              <span className="text-2xl md:text-3xl font-extrabold text-white tracking-tight font-sans">99.99%</span>
-            </div>
-            <div className="flex flex-col items-center md:items-start gap-1">
-              <span className="font-mono uppercase tracking-widest text-[10px] text-white/40">Network</span>
-              <span className="text-2xl md:text-3xl font-extrabold text-white tracking-tight font-sans">L7 WAF</span>
-            </div>
-            <div className="flex flex-col items-center md:items-start gap-1">
-              <span className="font-mono uppercase tracking-widest text-[10px] text-white/40">Latency</span>
-              <span className="text-2xl md:text-3xl font-extrabold text-white tracking-tight font-sans">&lt;12 <span className="text-white/40 text-lg">ms</span></span>
-            </div>
-          </div>
-
         </div>
       </div>
     </section>

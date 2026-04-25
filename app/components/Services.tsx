@@ -41,7 +41,7 @@ export default function Services() {
   const currentService = services[activeIndex];
 
   return (
-    <section id="services" className="w-full min-h-screen bg-[#003059] text-white flex items-center relative overflow-hidden px-6 md:px-20 lg:px-32">
+    <section id="services" className="w-full min-h-screen bg-[#003059] text-white flex items-center relative overflow-hidden px-6 md:px-12 lg:px-20 xl:px-32 py-16 lg:py-0">
       {/* Background Graphic - subtle grid to maintain technical brand identity */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
         <div className="absolute left-0 top-0 w-full h-full bg-grid"></div>
@@ -94,7 +94,7 @@ export default function Services() {
         </div>
       </div>
 
-      <div className="absolute bottom-12 right-12 md:bottom-24 md:right-24 z-20 flex flex-col items-end gap-6">
+      <div className="z-20 flex flex-col items-end gap-6 mt-12 lg:mt-0 lg:absolute lg:bottom-12 lg:right-12 xl:bottom-24 xl:right-24 ml-auto">
         <button
           onClick={nextService}
           className="group relative flex items-center justify-center w-16 h-16 md:w-20 md:h-20 border border-white/20 rounded-full hover:border-white transition-all duration-700 overflow-hidden cursor-pointer bg-[#081659] shadow-sm"

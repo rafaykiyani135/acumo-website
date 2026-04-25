@@ -58,9 +58,9 @@ export default function CaseLog({ onOpenProject }: CaseLogProps) {
               <span className="text-white/60 text-xs tracking-[0.3em] uppercase leading-none font-semibold">Engineering Log</span>
             </div>
 
-            <h2 className="text-white font-sans text-[4.5rem] sm:text-[6.5rem] md:text-[8rem] font-black leading-[0.8] tracking-[-0.04em] uppercase">
+            <h2 className="text-white font-sans text-[clamp(3rem,12vw,8rem)] font-black leading-[0.8] tracking-[-0.04em] uppercase">
               CASE <br className="hidden sm:block" />
-              <span className="text-transparent italic font-serif font-light sm:ml-[4rem] md:ml-[6rem] lg:ml-[8rem] block" style={{ WebkitTextStroke: '2px rgba(255,255,255,0.9)' }}>
+              <span className="text-transparent italic font-serif font-light ml-[clamp(1rem,8vw,8rem)] block" style={{ WebkitTextStroke: '2px rgba(255,255,255,0.9)' }}>
                 STUDIES.
               </span>
             </h2>
