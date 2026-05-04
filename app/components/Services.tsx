@@ -41,7 +41,7 @@ export default function Services() {
   const currentService = services[activeIndex];
 
   return (
-    <section id="services" className="w-full min-h-screen bg-[#003059] text-white flex items-center relative overflow-hidden px-6 md:px-12 lg:px-20 xl:px-32 py-16 lg:py-0">
+    <section id="services" className="w-full min-h-screen bg-[linear-gradient(to_top,#5457e6_0%,#5457e6_50%,#003059_100%)] text-white flex items-center relative overflow-hidden px-6 md:px-12 lg:px-20 xl:px-32 py-16 lg:py-0">
       {/* Background Graphic - subtle grid to maintain technical brand identity */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
         <div className="absolute left-0 top-0 w-full h-full bg-grid"></div>

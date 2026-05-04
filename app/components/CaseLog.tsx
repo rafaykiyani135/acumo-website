@@ -46,7 +46,7 @@ interface CaseLogProps {
 
 export default function CaseLog({ onOpenProject }: CaseLogProps) {
   return (
-    <section id="case-studies" className="py-24 lg:py-40 w-full relative overflow-hidden bg-[#003059]">
+    <section id="case-studies" className="py-24 lg:py-40 w-full relative overflow-hidden bg-[linear-gradient(to_top,#5457e6_0%,#5457e6_50%,#003059_100%)]">
 
       <div className="max-w-[1500px] mx-auto px-6 relative z-10">
 
