@@ -51,17 +51,6 @@ export default function Services() {
         {/* Main Content Column */}
         <div className="lg:flex-[1.2] w-full py-20">
           <div key={activeIndex} className="animate-role-fade-in">
-            {/* Service Index & Label */}
-            <div className="flex items-center gap-4 mb-16 overflow-hidden">
-              <span className="font-mono text-sm tracking-[0.4em] text-muted uppercase font-bold">
-                {currentService.id} / {services.length}
-              </span>
-              <div className="h-[1px] w-12 bg-stroke"></div>
-              <span className="font-mono text-[10px] tracking-[0.3em] uppercase text-[#1e3a8a] font-bold">
-                Execution Platform
-              </span>
-            </div>
-
             {/* Dynamic Title */}
             <div className="mb-14">
               <h2 className="text-[clamp(3rem,8vw,7.5rem)] font-spartan font-black tracking-tighter uppercase leading-[0.85] text-text-primary select-none">

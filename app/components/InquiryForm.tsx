@@ -24,12 +24,6 @@ export default function InquiryForm() {
           {/* Left Column - Typography & Info */}
           <div className="lg:w-5/12 flex flex-col justify-between">
             <div>
-              <div className="flex items-center gap-4 mb-8">
-                <span className="text-[#1e3a8a] text-sm font-mono tracking-widest leading-none font-bold">04</span>
-                <div className="h-[1px] w-12 bg-stroke"></div>
-                <span className="text-muted text-xs tracking-[0.3em] uppercase leading-none font-bold font-mono">Transmission</span>
-              </div>
-
               <h2 className="text-text-primary font-spartan text-[clamp(3rem,11vw,7.5rem)] font-black leading-[0.8] tracking-tighter uppercase mb-10 select-none">
                 START A <br />
                 <span className="text-transparent italic font-display font-bold block mt-3" style={{ WebkitTextStroke: '1px hsl(var(--text))' }}>

@@ -58,12 +58,6 @@ export default function CaseLog({ onOpenProject }: CaseLogProps) {
 
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-20 gap-8">
           <div>
-            <div className="flex items-center gap-4 mb-6">
-              <span className="text-[#1e3a8a] text-sm font-mono tracking-widest leading-none font-bold">03</span>
-              <div className="h-[1px] w-12 bg-stroke"></div>
-              <span className="text-muted text-xs tracking-[0.3em] uppercase leading-none font-bold font-mono">Engineering Log</span>
-            </div>
-
             <h2 className="text-text-primary font-spartan text-[clamp(3rem,12vw,8rem)] font-black leading-[0.8] tracking-tighter uppercase select-none">
               CASE <br className="hidden sm:block" />
               <span className="text-transparent italic font-display font-bold ml-[clamp(1rem,8vw,8rem)] block" style={{ WebkitTextStroke: '1px hsl(var(--text))' }}>
