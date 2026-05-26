@@ -1,12 +1,12 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { 
-  PhoneCall, 
-  Search, 
-  CheckCircle2, 
-  Sparkles, 
-  Bot, 
+import {
+  PhoneCall,
+  Search,
+  CheckCircle2,
+  Sparkles,
+  Bot,
   TrendingUp,
   ArrowRight,
   ArrowLeft
@@ -38,7 +38,7 @@ const aeoQuery = {
 
 export default function DiscoverySandbox() {
   const [activeSlide, setActiveSlide] = useState(0); // 0 = Conversational Agents, 1 = AEO
-  
+
   // Chat Simulation State
   const [chatMessages, setChatMessages] = useState<Array<{ sender: string; text: string }>>([]);
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
@@ -48,13 +48,13 @@ export default function DiscoverySandbox() {
   // Voice AI Simulation State
   const [isVoiceActive, setIsVoiceActive] = useState(false);
   const [voiceText, setVoiceText] = useState("Click 'Call AI' to simulate phone assistant...");
-  
+
   // Start chat simulation on component mount
   useEffect(() => {
     setChatMessages([]);
     setCurrentMessageIndex(0);
     setIsTyping(true);
-    
+
     const timer = setTimeout(() => {
       const firstMsg = chatScenario[0];
       setChatMessages([firstMsg]);
@@ -70,11 +70,11 @@ export default function DiscoverySandbox() {
     if (currentMessageIndex >= chatScenario.length || isTyping) return;
 
     const nextMsg = chatScenario[currentMessageIndex];
-    
+
     // Stagger typing effect
     const timer = setTimeout(() => {
       setIsTyping(true);
-      
+
       const typingTimer = setTimeout(() => {
         setChatMessages(prev => [...prev, nextMsg]);
         setCurrentMessageIndex(prev => prev + 1);
@@ -143,7 +143,7 @@ export default function DiscoverySandbox() {
       </div>
 
       <div className="max-w-[1300px] mx-auto px-6 relative z-10">
-        
+
         {/* Section Heading - Minimal & Clean */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-8 border-b border-white/5">
           <div>
@@ -152,10 +152,10 @@ export default function DiscoverySandbox() {
               <div className="h-[1px] w-8 bg-[#60A5FA]/30"></div>
               <span className="text-white/40 text-[10px] tracking-[0.3em] uppercase leading-none font-semibold font-mono font-bold">Operations Platform</span>
             </div>
-            <h2 className="text-5xl md:text-6xl font-black tracking-tighter mb-4 uppercase">
+            <h2 className="text-5xl md:text-6xl font-spartan font-black tracking-tighter mb-4 uppercase text-text-primary">
               AI-NATIVE ENGINE
             </h2>
-            <p className="text-sm font-mono text-white/50 max-w-lg">
+            <p className="text-sm font-mono text-muted max-w-lg">
               Next-generation user acquisition and conversion automation.
             </p>
           </div>
@@ -165,18 +165,16 @@ export default function DiscoverySandbox() {
             <div className="flex items-center gap-2">
               <button
                 onClick={prevSlide}
-                className={`w-9 h-9 border border-white/10 rounded-full flex items-center justify-center transition-all ${
-                  activeSlide === 0 ? "opacity-30 cursor-default" : "hover:border-white hover:bg-white/5"
-                }`}
+                className={`w-9 h-9 border border-white/10 rounded-full flex items-center justify-center transition-all ${activeSlide === 0 ? "opacity-30 cursor-default" : "hover:border-white hover:bg-white/5"
+                  }`}
                 aria-label="Previous Slide"
               >
                 <ArrowLeft size={14} />
               </button>
               <button
                 onClick={nextSlide}
-                className={`w-9 h-9 border border-white/10 rounded-full flex items-center justify-center transition-all ${
-                  activeSlide === 1 ? "opacity-30 cursor-default" : "hover:border-white hover:bg-white/5"
-                }`}
+                className={`w-9 h-9 border border-white/10 rounded-full flex items-center justify-center transition-all ${activeSlide === 1 ? "opacity-30 cursor-default" : "hover:border-white hover:bg-white/5"
+                  }`}
                 aria-label="Next Slide"
               >
                 <ArrowRight size={14} />
@@ -187,12 +185,12 @@ export default function DiscoverySandbox() {
 
         {/* Horizontal Slider Viewport */}
         <div className="w-full overflow-hidden relative">
-          
-          <div 
+
+          <div
             className="flex w-[200%] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
             style={{ transform: `translateX(-${activeSlide * 50}%)` }}
           >
-            
+
             {/* SLIDE 1: Conversational Agents */}
             <div className="w-1/2 pr-0 lg:pr-4 flex-shrink-0 grid lg:grid-cols-12 gap-12 items-center">
               {/* Text Context */}
@@ -201,9 +199,9 @@ export default function DiscoverySandbox() {
                   <Bot size={12} />
                   <span>01. Interactive Agents</span>
                 </div>
-                <h3 className="text-4xl font-extrabold tracking-tight mb-6 uppercase">Conversational Chat & Voice AI</h3>
+                <h3 className="text-3xl md:text-4xl font-spartan font-black tracking-tighter mb-6 uppercase text-text-primary">Conversational Chat & Voice AI</h3>
                 <p className="text-white/60 leading-relaxed text-sm mb-8 font-medium">
-                  Capture lost revenue. Our tailored voice & text receptionists address custom FAQs, gather client context, and commit reservations to calendars natively in real-time, 24/7.
+                  Never miss a booking again. We build AI receptionists that answer inquiries, qualify leads, and schedule appointments in real-time, round the clock, no human required.
                 </p>
 
                 {/* Features List */}
@@ -237,13 +235,12 @@ export default function DiscoverySandbox() {
                 {/* Messages Panel */}
                 <div ref={chatContainerRef} className="flex-1 overflow-y-auto flex flex-col gap-3 font-sans text-xs mb-4">
                   {chatMessages.map((msg, idx) => (
-                    <div 
-                      key={idx} 
-                      className={`max-w-[80%] rounded-[4px] px-3.5 py-2.5 leading-relaxed transition-all duration-300 ${
-                        msg.sender === "user" 
-                          ? "bg-white/5 text-white ml-auto border border-white/5" 
-                          : "bg-[#2563FF]/10 text-[#60A5FA] border border-[#2563FF]/20 mr-auto"
-                      }`}
+                    <div
+                      key={idx}
+                      className={`max-w-[80%] rounded-[4px] px-3.5 py-2.5 leading-relaxed transition-all duration-300 ${msg.sender === "user"
+                        ? "bg-white/5 text-white ml-auto border border-white/5"
+                        : "bg-[#2563FF]/10 text-[#60A5FA] border border-[#2563FF]/20 mr-auto"
+                        }`}
                     >
                       <div className="font-mono text-[8px] uppercase tracking-wider text-white/20 mb-1">
                         {msg.sender === "user" ? "Prospect" : "System Agent"}
@@ -251,7 +248,7 @@ export default function DiscoverySandbox() {
                       {msg.text}
                     </div>
                   ))}
-                  
+
                   {isTyping && (
                     <div className="bg-[#2563FF]/5 text-white/40 border border-white/5 mr-auto rounded-[4px] px-3.5 py-2.5 flex items-center gap-1.5">
                       <span className="w-1.5 h-1.5 bg-white/40 rounded-full animate-bounce"></span>
@@ -269,11 +266,10 @@ export default function DiscoverySandbox() {
                   </div>
                   <button
                     onClick={triggerVoiceDemo}
-                    className={`flex items-center gap-2 px-3 py-1.5 font-mono text-[8px] uppercase tracking-wider font-bold rounded-[2px] transition-all ${
-                      isVoiceActive 
-                        ? 'bg-red-500/20 text-red-400 border border-red-500/30' 
-                        : 'bg-white text-black hover:bg-[#60A5FA]'
-                    }`}
+                    className={`flex items-center gap-2 px-3 py-1.5 font-mono text-[8px] uppercase tracking-wider font-bold rounded-[2px] transition-all ${isVoiceActive
+                      ? 'bg-red-500/20 text-red-400 border border-red-500/30'
+                      : 'bg-white text-black hover:bg-[#60A5FA]'
+                      }`}
                   >
                     <PhoneCall size={10} />
                     {isVoiceActive ? "End Call" : "Call AI"}
@@ -290,9 +286,9 @@ export default function DiscoverySandbox() {
                   <TrendingUp size={12} />
                   <span>02. LLM Discovery Optimization</span>
                 </div>
-                <h3 className="text-4xl font-extrabold tracking-tight mb-6 uppercase">Answer Engine Optimization (AEO)</h3>
+                <h3 className="text-3xl md:text-4xl font-spartan font-black tracking-tighter mb-6 uppercase text-text-primary">Answer Engine Optimization (AEO)</h3>
                 <p className="text-white/60 leading-relaxed text-sm mb-8 font-medium">
-                  We index, shape, and structure your corporate markup specifically for crawlers like GPTBot and OAI-SearchBot. Stand out as the definitive recommendation directly in generative AI citations.
+                  The next search engine is generative AI. We optimize your content so ChatGPT, Claude, and Gemini surface your brand as the trusted answer every time.
                 </p>
 
                 {/* Comparison badge metadata */}
@@ -341,7 +337,7 @@ export default function DiscoverySandbox() {
                 {/* AI Answer Model Representation */}
                 <div className="border border-[#2563FF]/20 bg-[#2563FF]/5 backdrop-blur-md p-5 rounded-[5px] flex flex-col justify-between relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-24 h-24 bg-[#2563FF]/5 rounded-full blur-xl"></div>
-                  
+
                   <div>
                     <div className="flex justify-between items-center pb-2 border-b border-[#2563FF]/20 mb-3 text-[9px] font-mono text-[#60A5FA] uppercase tracking-wider">
                       <span>Generative Synthesizer</span>
@@ -360,7 +356,7 @@ export default function DiscoverySandbox() {
                       <div className="flex gap-2 mt-2 pt-2 border-t border-white/5 font-mono text-[7px] text-[#60A5FA]/60">
                         <span>Citations:</span>
                         {aeoQuery.aeo.citations.map((cite, i) => (
-                          <span key={i} className="underline hover:text-[#60A5FA] cursor-pointer">[{i+1}] {cite.split('/')[0]}</span>
+                          <span key={i} className="underline hover:text-[#60A5FA] cursor-pointer">[{i + 1}] {cite.split('/')[0]}</span>
                         ))}
                       </div>
                     </div>
@@ -378,12 +374,12 @@ export default function DiscoverySandbox() {
 
         {/* Slide Indicator Line dots */}
         <div className="flex justify-center gap-3 mt-12">
-          <button 
+          <button
             onClick={() => setActiveSlide(0)}
             className={`h-1.5 rounded-full transition-all duration-300 ${activeSlide === 0 ? "w-8 bg-[#2563FF]" : "w-2 bg-white/20"}`}
             aria-label="View Slide 1"
           />
-          <button 
+          <button
             onClick={() => setActiveSlide(1)}
             className={`h-1.5 rounded-full transition-all duration-300 ${activeSlide === 1 ? "w-8 bg-[#2563FF]" : "w-2 bg-white/20"}`}
             aria-label="View Slide 2"

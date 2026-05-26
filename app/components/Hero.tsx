@@ -92,7 +92,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="relative min-h-screen w-full bg-bg overflow-hidden flex flex-col items-center justify-center pt-28 pb-24 px-6 md:px-12"
     >
@@ -112,7 +112,7 @@ export default function Hero() {
 
       {/* Hero Content (Centered) */}
       <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center text-center">
-        
+
         {/* Eyebrow
         <div 
           ref={eyebrowRef}
@@ -122,7 +122,7 @@ export default function Hero() {
         </div> */}
 
         {/* Brand Name Title */}
-        <h1 
+        <h1
           ref={nameRef}
           className="name-reveal text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-spartan font-black uppercase tracking-tighter leading-none text-text-primary mb-8 select-none whitespace-nowrap"
         >
@@ -132,7 +132,7 @@ export default function Hero() {
         {/* Dynamic Role Cycling Line */}
         <div className="font-sans text-lg sm:text-2xl text-text-primary/95 mb-6 tracking-tight min-h-[40px] font-medium flex items-center gap-2">
           We build{" "}
-          <span 
+          <span
             key={roleIndex}
             className="font-display italic text-[#1e3a8a] animate-role-fade-in inline-block font-bold text-xl sm:text-3xl"
           >
@@ -142,57 +142,47 @@ export default function Hero() {
         </div>
 
         {/* Product Description */}
-        <p 
+        <p
           ref={descRef}
           className="blur-in font-sans text-xs sm:text-sm md:text-base text-muted max-w-md mb-12 leading-relaxed font-medium"
         >
-          Designing seamless digital interactions by focusing on the unique nuances which bring high-performance AI-native systems to life.
+          Building high-performance AI-native products — from intelligent agents and RAG systems to full-stack SaaS — with obsessive attention to the details that make digital experiences exceptional.
         </p>
 
         {/* CTA Buttons */}
-        <div 
+        <div
           ref={ctaRef}
           className="blur-in flex flex-col sm:flex-row items-center justify-center gap-4 w-full"
         >
           {/* See Works Solid Button */}
-          <a 
+          <a
             href="#case-studies"
-            className="group relative inline-flex items-center justify-center rounded-full text-xs font-bold uppercase tracking-wider px-8 py-4 bg-[#1e3a8a] text-white transition-all duration-300 hover:scale-105 w-full sm:w-auto"
+            className="group relative inline-flex items-center justify-center rounded-full text-xs font-bold uppercase tracking-wider px-8 py-4 bg-text-primary text-bg transition-all duration-300 hover:scale-105 w-full sm:w-auto"
           >
             {/* Ambient accent ring shown on hover */}
             <span className="absolute inset-0 rounded-full p-[1px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 accent-gradient">
               <span className="block w-full h-full bg-bg rounded-full"></span>
             </span>
-            <span className="relative z-10 transition-colors duration-300">
+            <span className="relative z-10 group-hover:text-text-primary transition-colors duration-300">
               See Works
             </span>
           </a>
 
-          {/* Scoping Inquiry Outlined Button */}
-          <a 
+          {/* Scoping Inquiry Solid Indigo Button */}
+          <a
             href="#inquiry"
-            className="group relative inline-flex items-center justify-center rounded-full text-xs font-bold uppercase tracking-wider px-8 py-4 border border-stroke bg-bg text-text-primary transition-all duration-300 hover:scale-105 hover:border-transparent w-full sm:w-auto"
+            className="group relative inline-flex items-center justify-center rounded-full text-xs font-bold uppercase tracking-wider px-8 py-4 bg-[#1e3a8a] text-white transition-all duration-300 hover:scale-105 border border-[#1e3a8a] hover:border-transparent w-full sm:w-auto"
           >
             {/* Ambient accent ring on hover */}
             <span className="absolute inset-0 rounded-full p-[1px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 accent-gradient">
               <span className="block w-full h-full bg-bg rounded-full"></span>
             </span>
-            <span className="relative z-10">
+            <span className="relative z-10 transition-colors duration-300">
               Start scoping
             </span>
           </a>
         </div>
 
-      </div>
-
-      {/* Animated Scroll Indicator */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center pointer-events-none select-none z-20">
-        <span className="font-sans text-[9px] text-muted tracking-[0.25em] mb-3 uppercase font-bold">
-          Scroll
-        </span>
-        <div className="w-[1px] h-10 bg-stroke relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-[#89AACC] to-[#4E85BF] animate-scroll-down rounded-full"></div>
-        </div>
       </div>
     </section>
   );

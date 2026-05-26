@@ -1,5 +1,7 @@
 "use client";
 
+import React from "react";
+
 interface Project {
   id: string;
   title: string;
@@ -46,62 +48,68 @@ interface CaseLogProps {
 
 export default function CaseLog({ onOpenProject }: CaseLogProps) {
   return (
-    <section id="case-studies" className="py-24 lg:py-40 w-full relative overflow-hidden bg-[linear-gradient(to_top,#1E3A8A_0%,#1E3A8A_50%,#0B1220_100%)]">
+    <section id="case-studies" className="py-24 lg:py-40 w-full relative overflow-hidden bg-bg border-b border-white/5">
+      {/* Subtle technical background grid */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.02]">
+        <div className="absolute inset-0 bg-grid"></div>
+      </div>
 
       <div className="max-w-[1500px] mx-auto px-6 relative z-10">
 
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-20 gap-8">
           <div>
             <div className="flex items-center gap-4 mb-6">
-              <span className="text-[#60A5FA] text-sm font-mono tracking-widest leading-none font-bold">05</span>
-              <div className="h-[1px] w-12 bg-[#60A5FA]/50"></div>
-              <span className="text-white/60 text-xs tracking-[0.3em] uppercase leading-none font-semibold">Engineering Log</span>
+              <span className="text-[#1e3a8a] text-sm font-mono tracking-widest leading-none font-bold">03</span>
+              <div className="h-[1px] w-12 bg-stroke"></div>
+              <span className="text-muted text-xs tracking-[0.3em] uppercase leading-none font-bold font-mono">Engineering Log</span>
             </div>
 
-            <h2 className="text-white font-sans text-[clamp(3rem,12vw,8rem)] font-black leading-[0.8] tracking-[-0.04em] uppercase">
+            <h2 className="text-text-primary font-spartan text-[clamp(3rem,12vw,8rem)] font-black leading-[0.8] tracking-tighter uppercase select-none">
               CASE <br className="hidden sm:block" />
-              <span className="text-transparent italic font-serif font-light ml-[clamp(1rem,8vw,8rem)] block" style={{ WebkitTextStroke: '2px rgba(255,255,255,0.9)' }}>
+              <span className="text-transparent italic font-display font-bold ml-[clamp(1rem,8vw,8rem)] block" style={{ WebkitTextStroke: '1px hsl(var(--text))' }}>
                 STUDIES.
               </span>
             </h2>
           </div>
-
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {Object.values(projectsData).map((project) => (
             <div 
               key={project.id}
-              className="group relative flex flex-col bg-[#070D16]/80 backdrop-blur-md border border-white/10 rounded-[5px] cursor-pointer overflow-hidden shadow-2xl transition-all duration-[0.8s] ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-2 hover:border-[#60A5FA]/50 hover:shadow-[0_20px_40px_rgba(96,165,250,0.05)]"
+              className="group relative flex flex-col bg-surface/35 backdrop-blur-sm border border-white/5 rounded-2xl cursor-pointer overflow-hidden shadow-2xl transition-all duration-[0.8s] ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-2 hover:border-[#1e3a8a]/60 hover:shadow-[0_20px_40px_rgba(30,58,138,0.1)]"
               onClick={() => onOpenProject(project)}
             >
-              <div className="w-full h-[320px] overflow-hidden relative bg-[#070D16]">
+              <div className="w-full h-[280px] overflow-hidden relative bg-surface">
                 <img 
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transform transition-transform duration-[1.5s] ease-out group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                  className="w-full h-full object-cover transform transition-transform duration-[1.5s] ease-out group-hover:scale-105 opacity-70 group-hover:opacity-90"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#070D16] via-[#070D16]/20 to-transparent opacity-90"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-transparent opacity-90"></div>
               </div>
 
               <div className="p-8 flex flex-col flex-1">
                 <div className="flex justify-between items-start mb-6">
-                  <span className="font-mono text-[10px] tracking-widest text-[#60A5FA] uppercase font-semibold">{project.industry.replace('_', ' ')}</span>
-                  <span className="font-mono text-[10px] tracking-[0.2em] text-white/30">{project.id.padStart(2, '0')}/</span>
+                  <span className="font-mono text-[9px] tracking-widest text-[#1e3a8a] uppercase font-bold">{project.industry.replace('_', ' ')}</span>
+                  <span className="font-mono text-[10px] tracking-[0.2em] text-muted font-bold">{project.id.padStart(2, '0')}/</span>
                 </div>
 
-                <h3 className="text-[2rem] font-bold tracking-tight text-white mb-4 group-hover:text-[#60A5FA] transition-colors duration-300">
+                <h3 className="text-[1.75rem] font-spartan font-black uppercase tracking-tighter text-text-primary mb-4 group-hover:text-[#1e3a8a] transition-colors duration-300">
                   {project.title}
                 </h3>
 
-                <p className="text-[15px] leading-[1.6] text-white/60 mb-8 font-medium max-w-[95%]">
+                <p className="text-[14px] lg:text-[15px] leading-[1.6] text-muted mb-8 font-medium font-sans max-w-[95%]">
                   {project.desc}
                 </p>
 
-                <div className="mt-auto pt-6 border-t border-white/10">
+                <div className="mt-auto pt-6 border-t border-white/5">
                   <div className="flex flex-wrap gap-2">
                     {project.tech.map((t) => (
-                      <span key={t} className="px-3 py-1.5 bg-white/5 group-hover:bg-[#2563FF]/10 group-hover:text-[#60A5FA] transition-colors duration-500 text-white/70 font-mono text-[10px] tracking-wider rounded-[3px] uppercase border border-white/5 group-hover:border-[#60A5FA]/30">
+                      <span 
+                        key={t} 
+                        className="px-3.5 py-1.5 bg-surface text-muted group-hover:bg-[#1e3a8a]/20 group-hover:text-text-primary transition-all duration-500 font-mono text-[9px] tracking-wider rounded-full uppercase border border-stroke group-hover:border-[#1e3a8a]/30 font-bold"
+                      >
                         {t}
                       </span>
                     ))}
