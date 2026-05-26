@@ -1,31 +1,75 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Instrument Sans", sans-serif;
-  --font-mono: "Space Mono", monospace;
+  --font-sans: var(--font-instrument-sans), sans-serif;
+  --font-display: var(--font-instrument-serif), serif;
+  --font-mono: var(--font-space-mono), monospace;
+  --font-spartan: var(--font-league-spartan), sans-serif;
+  
+  --color-bg: hsl(var(--bg));
+  --color-surface: hsl(var(--surface));
+  --color-text-primary: hsl(var(--text));
+  --color-muted: hsl(var(--muted));
+  --color-stroke: hsl(var(--stroke));
+  
   --color-brand-deep: #1E3A8A;
   --color-brand-vibrant: #2563FF;
   --color-brand-light: #60A5FA;
   --color-brand-bg-dark: #0B1220;
   --color-brand-bg-deep: #070D16;
   --color-accent: #2563FF;
+
+  --animate-role-fade-in: role-fade-in 0.4s ease-out forwards;
 }
 
 :root {
-  --bg: #0B1220;
-  --bg-deep: #070D16;
-  --text-main: #ffffff;
-  --text-muted: #60A5FA;
-  --accent: #2563FF;
-  --accent-light: #60A5FA;
-  --accent-deep: #1E3A8A;
-  --grid-line: rgba(96, 165, 250, 0.07);
+  --bg: 0 0% 4%;
+  --surface: 0 0% 8%;
+  --text: 0 0% 96%;
+  --muted: 0 0% 53%;
+  --stroke: 0 0% 12%;
+  --accent: 0 0% 96%;
+
+  --text-main: hsl(var(--text));
+  --grid-line: rgba(255, 255, 255, 0.03);
+}
+
+@keyframes scroll-down {
+  0% { transform: translateY(-100%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(200%); opacity: 0; }
+}
+
+@keyframes role-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.accent-gradient {
+  background: linear-gradient(90deg, #89AACC 0%, #4E85BF 100%);
+  background-size: 200% 200%;
+  animation: gradient-shift 6s ease infinite;
+}
+
+.animate-scroll-down {
+  animation: scroll-down 1.5s ease-in-out infinite;
+}
+
+.animate-role-fade-in {
+  animation: role-fade-in 0.4s ease-out forwards;
 }
 
 @layer base {
   body {
-    background-color: var(--bg);
-    color: var(--text-main);
+    background-color: hsl(var(--bg));
+    color: hsl(var(--text));
+    font-family: var(--font-sans), sans-serif;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
   }

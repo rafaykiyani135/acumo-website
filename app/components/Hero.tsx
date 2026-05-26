@@ -1,157 +1,197 @@
-import Image from "next/image";
-import { Terminal, ChevronRight, Cpu } from 'lucide-react';
-import { FaReact, FaPython, FaGithub, FaNodeJs, FaDocker, FaAws, FaFigma, FaLinux } from 'react-icons/fa';
-import { SiTypescript, SiNextdotjs } from 'react-icons/si';
+"use client";
 
-const ICONS = [
-  { id: 1, Icon: FaReact, color: 'text-blue-400' },
-  { id: 2, Icon: FaPython, color: 'text-yellow-400' },
-  { id: 3, Icon: FaGithub, color: 'text-white' },
-  { id: 4, Icon: SiTypescript, color: 'text-blue-500' },
-  { id: 5, Icon: FaNodeJs, color: 'text-green-500' },
-  { id: 6, Icon: SiNextdotjs, color: 'text-white' },
-  { id: 7, Icon: FaDocker, color: 'text-blue-400' },
-  { id: 8, Icon: FaAws, color: 'text-orange-400' },
-  { id: 9, Icon: FaFigma, color: 'text-pink-400' },
-  { id: 10, Icon: FaLinux, color: 'text-yellow-200' },
+import React, { useEffect, useRef, useState } from "react";
+import Hls from "hls.js";
+import { gsap } from "gsap";
+
+const ROLES = [
+  "AI Chatbots",
+  "Voice Agents",
+  "AEO Solutions",
+  "Custom Systems"
 ];
 
 export default function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const nameRef = useRef<HTMLHeadingElement>(null);
+  const eyebrowRef = useRef<HTMLDivElement>(null);
+  const descRef = useRef<HTMLParagraphElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
+
+  const [roleIndex, setRoleIndex] = useState(0);
+
+  // Cycle through business roles every 2 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRoleIndex((prev) => (prev + 1) % ROLES.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Initialize HLS video stream
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const streamUrl = "https://stream.mux.com/Aa02T7oM1wH5Mk5EEVDYhbZ1ChcdhRsS2m1NYyx4Ua1g.m3u8";
+
+    if (Hls.isSupported()) {
+      const hls = new Hls({
+        maxMaxBufferLength: 10,
+        enableWorker: true,
+        lowLatencyMode: true
+      });
+      hls.loadSource(streamUrl);
+      hls.attachMedia(video);
+      hls.on(Hls.Events.MANIFEST_PARSED, () => {
+        video.play().catch(err => console.log("HLS play failed:", err));
+      });
+
+      return () => {
+        hls.destroy();
+      };
+    } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+      // Native Apple device HLS support
+      video.src = streamUrl;
+      video.addEventListener("loadedmetadata", () => {
+        video.play().catch(err => console.log("Native HLS play failed:", err));
+      });
+    }
+  }, []);
+
+  // GSAP Entrance Animations
+  useEffect(() => {
+    // Entrance timeline
+    const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+    // Reveal name heading
+    if (nameRef.current) {
+      tl.fromTo(
+        nameRef.current,
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 1.2 },
+        0.1
+      );
+    }
+
+    // Blur in eyebrow, description, and CTAs
+    const elementsToBlur = [];
+    if (eyebrowRef.current) elementsToBlur.push(eyebrowRef.current);
+    if (descRef.current) elementsToBlur.push(descRef.current);
+    if (ctaRef.current) elementsToBlur.push(ctaRef.current);
+
+    if (elementsToBlur.length > 0) {
+      tl.fromTo(
+        elementsToBlur,
+        { opacity: 0, filter: "blur(10px)", y: 20 },
+        { opacity: 1, filter: "blur(0px)", y: 0, duration: 1.0, stagger: 0.1 },
+        0.3
+      );
+    }
+  }, []);
+
   return (
-    <section className="relative min-h-[100svh] w-full bg-[#070D16] overflow-hidden flex flex-col items-center justify-center font-sans pt-28 pb-20 md:pb-24 lg:py-20">
-
-      {/* Background Image / Atmosphere Mask */}
-      <div className="absolute inset-0 z-0 pointer-events-none bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-[#1E3A8A]/30 via-[#070D16] to-[#070D16]">
-        <Image
-          src="/bg-image-hero4.png"
-          alt="Atmosphere Background"
-          fill
-          className="object-cover object-center mix-blend-screen opacity-50"
-          priority
+    <section 
+      ref={containerRef}
+      className="relative min-h-screen w-full bg-bg overflow-hidden flex flex-col items-center justify-center pt-28 pb-24 px-6 md:px-12"
+    >
+      {/* Background Video using HLS Stream */}
+      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden select-none">
+        <video
+          ref={videoRef}
+          muted
+          loop
+          playsInline
+          autoPlay
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full object-cover opacity-100 scale-[1.01]"
         />
+        {/* Cinematic bottom gradient fade to main body */}
+        <div className="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-bg via-bg/40 to-transparent z-20"></div>
       </div>
 
-      {/* Shooting Star Animation Styles */}
-      <style dangerouslySetInnerHTML={{
-        __html: `
-        @keyframes shootingStar {
-          0% { transform: translate3d(0, 0, 0) scale(0.5) rotate(0deg); opacity: 0; }
-          1% { opacity: 1; scale(1); }
-          14% { opacity: 1; scale(1); }
-          15% { transform: translate3d(var(--tx), var(--ty), 0) scale(0.5) rotate(200deg); opacity: 0; }
-          100% { transform: translate3d(var(--tx), var(--ty), 0) scale(0.5) rotate(200deg); opacity: 0; }
-        }
-      `}} />
+      {/* Hero Content (Centered) */}
+      <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center text-center">
+        
+        {/* Eyebrow
+        <div 
+          ref={eyebrowRef}
+          className="blur-in font-sans text-[10px] sm:text-xs text-muted uppercase tracking-[0.35em] mb-6 md:mb-8 font-bold"
+        >
+          TECHNICAL SCOPE &bull; COLLECTION &apos;26
+        </div> */}
 
-      {/* Shooting Stars Background */}
-      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-        {ICONS.map((item, index) => {
-          // Spread starting positions cleanly across the viewport
-          const topStart = 10 + ((index * 23) % 80);
-          const leftStart = 10 + ((index * 37) % 80);
-
-          // Target trajectory
-          const targetX = -100 + ((index * 41) % 200);
-          const targetY = -100 + ((index * 19) % 200);
-
-          // We use massive loop durations (20s - 35s). 
-          // Because the keyframes only act during the first 15%, the icon is invisible for 85% of the time.
-          // This mathematically guarantees sparse, single-element appearances without JS logic.
-          const delay = (index * 2.5) % 30; // 0s to 30s initial delay stagger
-          const duration = 20 + ((index * 7) % 15); // Total cycle: 20s to 35s
-
-          return (
-            <div
-              key={item.id}
-              className="absolute w-10 h-10 md:w-12 md:h-12 opacity-0 flex items-center justify-center bg-[#070D16] border border-white/20 rounded-full shadow-[0_0_15px_rgba(255,255,255,0.05)]"
-              style={{
-                top: `${topStart}%`,
-                left: `${leftStart}%`,
-                ['--tx' as string]: `${targetX}vw`,
-                ['--ty' as string]: `${targetY}vh`,
-                animationName: 'shootingStar',
-                animationDuration: `${duration}s`,
-                animationTimingFunction: 'linear',
-                animationIterationCount: 'infinite',
-                animationDelay: `${delay}s`
-              }}
-            >
-              <item.Icon className={`w-5 h-5 md:w-6 md:h-6 ${item.color} relative z-10`} />
-            </div>
-          );
-        })}
-      </div>
-
-      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 flex flex-col items-center justify-center text-center">
-
-        {/* Clean, High-Conversion Typography Layout */}
-        <h1 className="flex flex-col items-center justify-center text-white z-20 w-full max-w-5xl px-2 sm:px-4">
-          <span className="font-sans font-extrabold tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] leading-[1.2] sm:leading-[1.1] text-white">
-            Launch your Product in days, <span className="block mt-2 sm:mt-0 sm:inline font-serif italic font-light text-white/80 pr-2">instead of months.</span>
-          </span>
+        {/* Brand Name Title */}
+        <h1 
+          ref={nameRef}
+          className="name-reveal text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-spartan font-black uppercase tracking-tighter leading-none text-text-primary mb-8 select-none whitespace-nowrap"
+        >
+          Grow your revenue with Acumo AI
         </h1>
 
-        {/* Floating Active Component Preview */}
-        <div className="mt-14 md:mt-16 lg:mt-20 w-full flex justify-center group z-30 relative perspective-[1000px]">
-          <div className="relative w-full max-w-xl bg-[#070D16]/90 backdrop-blur-md border border-white/10 rounded-[5px] p-1 transform transition-all duration-[1s] ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-105 hover:-translate-y-4 hover:border-white/20">
+        {/* Dynamic Role Cycling Line */}
+        <div className="font-sans text-lg sm:text-2xl text-text-primary/95 mb-6 tracking-tight min-h-[40px] font-medium flex items-center gap-2">
+          We build{" "}
+          <span 
+            key={roleIndex}
+            className="font-display italic text-[#1e3a8a] animate-role-fade-in inline-block font-bold text-xl sm:text-3xl"
+          >
+            {ROLES[roleIndex]}
+          </span>{" "}
+          - engineered for scale.
+        </div>
 
-            {/* Terminal Header */}
-            <div className="flex items-center justify-between px-5 py-3 border-b border-white/5 bg-[#0B1220]/80 rounded-t-[4px]">
-              <div className="flex items-center gap-3">
-                <Terminal size={12} className="text-white/40" />
-                <span className="font-mono text-[9px] font-bold uppercase tracking-[0.2em] text-white/50">acumo-deploy-subsystem</span>
-              </div>
-              <div className="flex gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-white/10 group-hover:bg-red-500/50 transition-colors duration-500"></div>
-                <div className="w-1.5 h-1.5 rounded-full bg-white/10 group-hover:bg-yellow-500/50 transition-colors duration-500 delay-100"></div>
-                <div className="w-1.5 h-1.5 rounded-full bg-white/20 group-hover:bg-green-500/50 transition-colors duration-500 delay-200"></div>
-              </div>
-            </div>
+        {/* Product Description */}
+        <p 
+          ref={descRef}
+          className="blur-in font-sans text-xs sm:text-sm md:text-base text-muted max-w-md mb-12 leading-relaxed font-medium"
+        >
+          Designing seamless digital interactions by focusing on the unique nuances which bring high-performance AI-native systems to life.
+        </p>
 
-            {/* Terminal Body */}
-            <div className="p-6 font-mono text-[11px] leading-[1.8] text-left text-white/40 h-[190px] overflow-hidden relative">
+        {/* CTA Buttons */}
+        <div 
+          ref={ctaRef}
+          className="blur-in flex flex-col sm:flex-row items-center justify-center gap-4 w-full"
+        >
+          {/* See Works Solid Button */}
+          <a 
+            href="#case-studies"
+            className="group relative inline-flex items-center justify-center rounded-full text-xs font-bold uppercase tracking-wider px-8 py-4 bg-[#1e3a8a] text-white transition-all duration-300 hover:scale-105 w-full sm:w-auto"
+          >
+            {/* Ambient accent ring shown on hover */}
+            <span className="absolute inset-0 rounded-full p-[1px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 accent-gradient">
+              <span className="block w-full h-full bg-bg rounded-full"></span>
+            </span>
+            <span className="relative z-10 transition-colors duration-300">
+              See Works
+            </span>
+          </a>
 
-              {/* Logs container that scrolls up silently on hover */}
-              <div className="flex flex-col gap-2 transform transition-transform duration-[2.5s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-[85px] relative z-10 w-full">
+          {/* Scoping Inquiry Outlined Button */}
+          <a 
+            href="#inquiry"
+            className="group relative inline-flex items-center justify-center rounded-full text-xs font-bold uppercase tracking-wider px-8 py-4 border border-stroke bg-bg text-text-primary transition-all duration-300 hover:scale-105 hover:border-transparent w-full sm:w-auto"
+          >
+            {/* Ambient accent ring on hover */}
+            <span className="absolute inset-0 rounded-full p-[1px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 accent-gradient">
+              <span className="block w-full h-full bg-bg rounded-full"></span>
+            </span>
+            <span className="relative z-10">
+              Start scoping
+            </span>
+          </a>
+        </div>
 
-                <div className="flex items-start gap-3 opacity-50 group-hover:opacity-100 transition-opacity duration-500 delay-[0ms]">
-                  <ChevronRight size={14} className="text-[#60A5FA] mt-0.5 shrink-0" />
-                  <span>[SYS]: Initializing edge infrastructure... <span className="text-white/20">ok</span></span>
-                </div>
+      </div>
 
-                <div className="flex items-center gap-3 mt-3 mb-3 p-3 bg-white-[0.02] border border-white/5 rounded-[4px] group-hover:bg-white-[0.04] group-hover:border-white/10 transition-colors duration-1000">
-                  <Cpu size={14} className="text-white/50" />
-                  <div className="flex-1 mx-2">
-                    <div className="h-[2px] w-full bg-white/10 rounded-full overflow-hidden relative">
-                      <div className="h-full bg-[#2563FF] w-[30%] group-hover:w-[94%] transition-all duration-[2s] ease-[cubic-bezier(0.16,1,0.3,1)] delay-[300ms]"></div>
-                    </div>
-                  </div>
-                  <span className="text-white/50 text-[10px] tracking-widest uppercase">CPU_Allocation</span>
-                </div>
-
-                <div className="flex items-start gap-3 opacity-30 group-hover:opacity-100 transition-opacity duration-700 delay-[400ms]">
-                  <ChevronRight size={14} className="text-[#60A5FA] mt-0.5 shrink-0" />
-                  <span>[WORKER]: Compiling production models... <span className="text-yellow-400/80">pending</span></span>
-                </div>
-
-                <div className="flex items-start gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-[1200ms]">
-                  <ChevronRight size={14} className="text-emerald-400 mt-0.5 shrink-0" />
-                  <span className="text-emerald-400/80">[WORKER]: Models deployed. Immutable state locked.</span>
-                </div>
-
-                <div className="flex items-start gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-[1600ms]">
-                  <ChevronRight size={14} className="text-[#60A5FA] mt-0.5 shrink-0" />
-                  <span className="w-[6px] h-[12px] bg-white text-transparent animate-pulse mt-1">_</span>
-                </div>
-
-              </div>
-
-              {/* Top & Bottom Fade out masks */}
-              <div className="absolute top-0 left-0 w-full h-8 bg-gradient-to-b from-[#070D16]/90 to-transparent pointer-events-none z-20"></div>
-              <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-[#070D16] to-transparent pointer-events-none z-20"></div>
-
-            </div>
-          </div>
+      {/* Animated Scroll Indicator */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center pointer-events-none select-none z-20">
+        <span className="font-sans text-[9px] text-muted tracking-[0.25em] mb-3 uppercase font-bold">
+          Scroll
+        </span>
+        <div className="w-[1px] h-10 bg-stroke relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-[#89AACC] to-[#4E85BF] animate-scroll-down rounded-full"></div>
         </div>
       </div>
     </section>
