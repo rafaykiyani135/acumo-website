@@ -12,8 +12,13 @@ const logsList = [
 ];
 
 export default function ProcessSection() {
+  const [mounted, setMounted] = useState(false);
   const [currentTextIdx, setCurrentTextIdx] = useState(0);
   const [heights, setHeights] = useState<number[]>(new Array(72).fill(3));
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Loop dynamic updates for log list text
   useEffect(() => {
@@ -108,55 +113,62 @@ export default function ProcessSection() {
 
           {/* Minimal Floating SVG Waveform (No Bounding Cards/Boxes) */}
           <div className="lg:col-span-7 flex flex-col items-center justify-center min-h-[350px] w-full select-none text-center">
-            
-            <svg 
-              width="240" 
-              height="240" 
-              viewBox="0 0 240 240" 
-              className="text-text-primary drop-shadow-[0_0_20px_rgba(255,255,255,0.18)]"
-            >
-              {heights.map((len, i) => {
-                const angle = (i / 72) * Math.PI * 2;
-                const cos = Math.cos(angle);
-                const sin = Math.sin(angle);
-                
-                // Radius of inner visualizer circle
-                const rInner = 82;
-                const x1 = 120 + rInner * cos;
-                const y1 = 120 + rInner * sin;
-                
-                // Radius of outer dynamic wave point
-                const x2 = 120 + (rInner + len) * cos;
-                const y2 = 120 + (rInner + len) * sin;
-                
-                return (
-                  <line
-                    key={i}
-                    x1={x1}
-                    y1={y1}
-                    x2={x2}
-                    y2={y2}
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                  />
-                );
-              })}
-            </svg>
+            {mounted ? (
+              <>
+                <svg 
+                  width="240" 
+                  height="240" 
+                  viewBox="0 0 240 240" 
+                  className="text-text-primary drop-shadow-[0_0_20px_rgba(255,255,255,0.18)]"
+                >
+                  {heights.map((len, i) => {
+                    const angle = (i / 72) * Math.PI * 2;
+                    const cos = Math.cos(angle);
+                    const sin = Math.sin(angle);
+                    
+                    // Radius of inner visualizer circle
+                    const rInner = 82;
+                    const x1 = 120 + rInner * cos;
+                    const y1 = 120 + rInner * sin;
+                    
+                    // Radius of outer dynamic wave point
+                    const x2 = 120 + (rInner + len) * cos;
+                    const y2 = 120 + (rInner + len) * sin;
+                    
+                    return (
+                      <line
+                        key={i}
+                        x1={x1}
+                        y1={y1}
+                        x2={x2}
+                        y2={y2}
+                        stroke="currentColor"
+                        strokeWidth="2.5"
+                        strokeLinecap="round"
+                      />
+                    );
+                  })}
+                </svg>
 
-            {/* Status updates centered directly underneath */}
-            <div className="mt-12 flex flex-col items-center gap-3">
-              <div className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#1e3a8a] animate-pulse"></span>
-                <span className="font-mono text-[9px] text-[#1e3a8a] uppercase tracking-[0.25em] font-bold">
-                  VOICE AGENT ONLINE
-                </span>
+                {/* Status updates centered directly underneath */}
+                <div className="mt-12 flex flex-col items-center gap-3">
+                  <div className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#1e3a8a] animate-pulse"></span>
+                    <span className="font-mono text-[9px] text-[#1e3a8a] uppercase tracking-[0.25em] font-bold">
+                      VOICE AGENT ONLINE
+                    </span>
+                  </div>
+                  <p className="text-[11px] md:text-xs font-mono text-text-primary tracking-tight font-bold max-w-md h-12 flex items-center justify-center">
+                    {logsList[currentTextIdx]}
+                  </p>
+                </div>
+              </>
+            ) : (
+              // Pulsing placeholder of matching dimensions for perfect layout-shift-free hydration
+              <div className="w-[240px] h-[350px] flex items-center justify-center">
+                <div className="w-20 h-20 rounded-full border border-stroke animate-pulse opacity-20"></div>
               </div>
-              <p className="text-[11px] md:text-xs font-mono text-text-primary tracking-tight font-bold max-w-md h-12 flex items-center justify-center">
-                {logsList[currentTextIdx]}
-              </p>
-            </div>
-
+            )}
           </div>
         </div>
 

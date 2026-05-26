@@ -3,16 +3,48 @@
 import { useState } from "react";
 
 export default function InquiryForm() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [scope, setScope] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSuccess(true);
-    const form = e.target as HTMLFormElement;
-    form.reset();
-    setTimeout(() => {
-      setIsSuccess(false);
-    }, 5000);
+    setIsLoading(true);
+    setErrorMessage("");
+    setIsSuccess(false);
+
+    try {
+      const response = await fetch("/api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, scope }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Transmission failed. Please try again.");
+      }
+
+      setIsSuccess(true);
+      setName("");
+      setEmail("");
+      setScope("");
+      
+      // Auto clear success indicator after 6 seconds
+      setTimeout(() => {
+        setIsSuccess(false);
+      }, 6000);
+    } catch (err: any) {
+      setErrorMessage(err.message || "Failed to dispatch inquiry.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -58,8 +90,11 @@ export default function InquiryForm() {
                     <input
                       type="text"
                       placeholder="Engineering Manager"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
                       className="bg-transparent border-b border-stroke pb-4 text-[1.05rem] text-text-primary placeholder:text-white/10 focus:outline-none focus:border-text-primary transition-colors font-sans"
                       required
+                      disabled={isLoading}
                     />
                   </div>
 
@@ -69,8 +104,11 @@ export default function InquiryForm() {
                     <input
                       type="email"
                       placeholder="name@company.com"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       className="bg-transparent border-b border-stroke pb-4 text-[1.05rem] text-text-primary placeholder:text-white/10 focus:outline-none focus:border-text-primary transition-colors font-sans"
                       required
+                      disabled={isLoading}
                     />
                   </div>
                 </div>
@@ -81,23 +119,36 @@ export default function InquiryForm() {
                   <textarea
                     rows={4}
                     placeholder="System architecture requirements, latency goals, or infrastructure constraints..."
+                    value={scope}
+                    onChange={(e) => setScope(e.target.value)}
                     className="bg-transparent border-b border-stroke pb-4 text-[1.05rem] text-text-primary placeholder:text-white/10 focus:outline-none focus:border-text-primary transition-colors resize-none font-sans"
                     required
+                    disabled={isLoading}
                   ></textarea>
                 </div>
 
                 <div className="flex flex-col sm:flex-row justify-between items-center sm:items-start pt-4 gap-6">
                   <button 
                     type="submit" 
-                    className="w-full sm:w-auto px-10 py-4.5 bg-text-primary text-bg font-bold text-[11px] tracking-widest rounded-full transition-all duration-300 hover:scale-105 active:scale-100 shadow-md uppercase border border-white/5 hover:border-[#1e3a8a]"
+                    disabled={isLoading}
+                    className="w-full sm:w-auto px-10 py-4.5 bg-text-primary text-bg font-bold text-[11px] tracking-widest rounded-full transition-all duration-300 hover:scale-105 active:scale-100 shadow-md uppercase border border-white/5 hover:border-[#1e3a8a] disabled:opacity-50 disabled:cursor-not-allowed shrink-0"
                   >
-                    Dispatch Inquiry
+                    {isLoading ? "Transmitting..." : "Dispatch Inquiry"}
                   </button>
 
                   {isSuccess && (
                     <div className="flex items-center gap-3 bg-[#1e3a8a]/20 border border-[#1e3a8a]/30 px-4 py-2 rounded-full transform transition-all sm:mt-2">
                       <div className="w-2 h-2 rounded-full bg-[#1e3a8a] animate-pulse"></div>
                       <div className="font-mono text-[9px] text-text-primary uppercase tracking-widest font-bold">Transmitted</div>
+                    </div>
+                  )}
+
+                  {errorMessage && (
+                    <div className="flex items-center gap-3 bg-red-500/20 border border-red-500/30 px-4 py-2 rounded-full transform transition-all sm:mt-2">
+                      <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></div>
+                      <div className="font-mono text-[9px] text-red-400 uppercase tracking-widest font-bold truncate max-w-[200px]" title={errorMessage}>
+                        Failed: {errorMessage}
+                      </div>
                     </div>
                   )}
                 </div>
