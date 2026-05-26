@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import DiscoverySandbox from "./components/DiscoverySandbox";
 import Services from "./components/Services";
 import ProcessSection from "./components/ProcessSection";
 import CaseLog from "./components/CaseLog";
@@ -47,6 +48,7 @@ export default function Home() {
     <main className="min-h-screen">
       <Navbar />
       <Hero />
+      <DiscoverySandbox />
       <Services />
       <ProcessSection />
       <CaseLog onOpenProject={handleOpenProject} />

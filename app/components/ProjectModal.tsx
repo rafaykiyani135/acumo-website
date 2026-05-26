@@ -19,11 +19,11 @@ export default function ProjectModal({ isOpen, project, onClose }: ProjectModalP
   if (!isOpen || !project) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/98 backdrop-blur-3xl overflow-y-auto pt-20 pb-20">
-      <div className="w-full max-w-6xl h-fit min-h-[85vh] bg-black border border-white/10 p-16">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-[#0B1220]/98 backdrop-blur-3xl overflow-y-auto pt-20 pb-20">
+      <div className="w-full max-w-6xl h-fit min-h-[85vh] bg-[#070D16] border border-white/10 p-16">
         <div className="flex justify-between items-start mb-24">
           <div className="label-tech">Project_Manifest</div>
-          <button onClick={onClose} className="font-mono text-[12px] hover:text-indigo-500 uppercase tracking-[0.3em] transition-colors">[ Close_X ]</button>
+          <button onClick={onClose} className="font-mono text-[12px] hover:text-[#2563FF] uppercase tracking-[0.3em] transition-colors">[ Close_X ]</button>
         </div>
         <div className="grid md:grid-cols-2 gap-24">
           <div>
@@ -37,8 +37,8 @@ export default function ProjectModal({ isOpen, project, onClose }: ProjectModalP
             </div>
           </div>
           <div>
-            <div className="border border-white/5 p-12 bg-neutral-900/30 mb-12">
-              <div className="label-tech mb-6 !text-indigo-400">Efficiency_Gain</div>
+            <div className="border border-white/5 p-12 bg-[#0B1220]/30 mb-12">
+              <div className="label-tech mb-6 !text-[#60A5FA]">Efficiency_Gain</div>
               <div className="text-4xl font-bold tracking-tight">{project.outcome}</div>
             </div>
             <img src={project.image} alt={project.title} className="w-full border border-white/5 grayscale hover:grayscale-0 transition-all duration-700" />

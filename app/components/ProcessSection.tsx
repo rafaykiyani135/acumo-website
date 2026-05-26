@@ -26,7 +26,7 @@ export default function ProcessSection() {
 
   return (
     <>
-      <section id="process" className="py-24 lg:py-40 bg-black text-white px-6 w-full relative">
+      <section id="process" className="py-24 lg:py-40 bg-[#0B1220] text-white px-6 w-full relative">
         <div className="max-w-[1400px] mx-auto">
 
           {/* Header Area */}
@@ -41,7 +41,7 @@ export default function ProcessSection() {
             </div>
             <button
               onClick={startReview}
-              className="whitespace-nowrap px-6 py-4 rounded-[5px] bg-[#1a1a1a] hover:bg-white hover:text-black border border-white/10 text-white/90 text-[13px] tracking-wide transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.0)] hover:shadow-[0_0_20px_rgba(255,255,255,0.15)] font-medium"
+              className="whitespace-nowrap px-6 py-4 rounded-[5px] bg-[#070D16] hover:bg-white hover:text-black border border-white/10 text-white/90 text-[13px] tracking-wide transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.0)] hover:shadow-[0_0_20px_rgba(96,165,250,0.15)] font-medium"
             >
               Start Architecture Review
             </button>
@@ -54,9 +54,9 @@ export default function ProcessSection() {
             <div className="col-span-1 border border-white/10 rounded-[5px] p-8 flex flex-col justify-between relative overflow-hidden group min-h-[500px]">
               {/* Background Image */}
               <div className="absolute inset-0 z-0">
-                <div className="w-full h-full bg-[#111] transition-transform duration-[1.5s] ease-out group-hover:scale-105">
+                <div className="w-full h-full bg-[#070D16] transition-transform duration-[1.5s] ease-out group-hover:scale-105">
                   <img src="/process-img11.png" alt="Audit" className="w-full h-full object-cover opacity-80" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-black/40"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#070D16]/90 via-[#070D16]/20 to-[#070D16]/40"></div>
                 </div>
               </div>
 
@@ -84,9 +84,9 @@ export default function ProcessSection() {
               <div className="flex-[1.1] border border-white/10 rounded-[5px] p-8 flex flex-col justify-between relative overflow-hidden group min-h-[250px]">
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0">
-                  <div className="w-full h-full bg-[#111] transition-transform duration-[1.5s] ease-out group-hover:scale-105">
+                  <div className="w-full h-full bg-[#070D16] transition-transform duration-[1.5s] ease-out group-hover:scale-105">
                     <img src="/process-img22.png" alt="POC Validation" className="w-full h-full object-cover opacity-80" />
-                    <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/20 to-black/20"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#070D16]/80 via-[#070D16]/20 to-[#070D16]/20"></div>
                   </div>
                 </div>
 
@@ -106,7 +106,7 @@ export default function ProcessSection() {
               <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6 min-h-[250px]">
 
                 {/* Card 03 - Text heavy */}
-                <div className="border border-white/10 bg-[#151515] rounded-[5px] p-8 flex flex-col justify-between group relative overflow-hidden">
+                <div className="border border-white/10 bg-[#070D16] rounded-[5px] p-8 flex flex-col justify-between group relative overflow-hidden">
                   <div className="flex justify-between items-start z-10 relative">
                     <span className="text-white/50 text-[14px] tracking-wide uppercase font-medium">Iterative Build</span>
                     <span className="text-white/50 font-mono text-[13px] tracking-widest">03/</span>
@@ -119,7 +119,7 @@ export default function ProcessSection() {
                   </div>
 
                   <div className="z-10 relative mt-auto">
-                    <button className="px-5 py-3 rounded-[12px] bg-white/5 hover:bg-white/10 border border-white/5 text-white/80 text-[13px] tracking-wide transition-all shadow-sm">
+                    <button className="px-5 py-3 rounded-[12px] bg-white/5 hover:bg-white/10 border border-[#60A5FA]/15 hover:border-[#60A5FA]/30 text-white/80 text-[13px] tracking-wide transition-all shadow-sm">
                       Explore Methodology
                     </button>
                   </div>
@@ -128,9 +128,9 @@ export default function ProcessSection() {
                 {/* Card 04 - Square Image */}
                 <div className="border border-white/10 rounded-[5px] p-8 flex flex-col justify-between relative overflow-hidden group">
                   <div className="absolute inset-0 z-0">
-                    <div className="w-full h-full bg-[#111] transition-transform duration-[1.5s] ease-out group-hover:scale-105">
+                    <div className="w-full h-full bg-[#070D16] transition-transform duration-[1.5s] ease-out group-hover:scale-105">
                       <img src="/process-img44.png" alt="Scale" className="w-full h-full object-cover opacity-80" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#070D16]/80 via-transparent to-transparent"></div>
                     </div>
                   </div>
 
@@ -154,12 +154,12 @@ export default function ProcessSection() {
 
       {/* Cinematic Modal Overlay */}
       {reviewStep > 0 && (
-        <div className={`fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl flex items-center justify-center p-6 lg:p-12 transition-opacity duration-700 ${reviewStep > 4 ? 'opacity-0' : 'opacity-100'}`}>
+        <div className={`fixed inset-0 z-[100] bg-[#070D16]/95 backdrop-blur-xl flex items-center justify-center p-6 lg:p-12 transition-opacity duration-700 ${reviewStep > 4 ? 'opacity-0' : 'opacity-100'}`}>
 
           {/* Progress line */}
           <div className="absolute top-12 left-10 md:left-20 right-10 md:right-20 h-1 bg-white/10 rounded-full overflow-hidden">
             <div
-              className="h-full bg-white transition-all duration-[3.5s] ease-linear"
+              className="h-full bg-[#2563FF] transition-all duration-[3.5s] ease-linear"
               style={{ width: `${(reviewStep / 4) * 100}%` }}
             ></div>
           </div>
@@ -171,16 +171,16 @@ export default function ProcessSection() {
           <div className="w-full max-w-5xl relative h-[60vh] md:h-[70vh] flex items-center justify-center perspective-[1200px]">
 
             {/* Step 1 */}
-            <div className={`absolute w-full h-full bg-[#111] border border-white/10 rounded-[5px] overflow-hidden flex flex-col justify-between p-8 md:p-16 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${reviewStep === 1 ? 'opacity-100 scale-100 translate-y-0' :
+            <div className={`absolute w-full h-full bg-[#070D16] border border-white/10 rounded-[5px] overflow-hidden flex flex-col justify-between p-8 md:p-16 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${reviewStep === 1 ? 'opacity-100 scale-100 translate-y-0' :
               reviewStep > 1 ? 'opacity-0 scale-105 -translate-y-12 blur-sm' :
                 'opacity-0 scale-95 translate-y-12 blur-sm pointer-events-none'
               }`}>
               <div className="absolute inset-0 z-0">
                 <img src="/process-img1.png" className="w-full h-full object-cover opacity-70" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#070D16] via-[#070D16]/60 to-transparent"></div>
               </div>
               <div className="z-10 flex items-center gap-4">
-                <div className="bg-white text-black px-3 py-1 font-mono text-[11px] font-bold tracking-widest">PHASE 01</div>
+                <div className="bg-[#2563FF] text-white px-3 py-1 font-mono text-[11px] font-bold tracking-widest">PHASE 01</div>
                 <span className="text-white/50 tracking-widest uppercase font-medium text-sm">Technical Audit</span>
               </div>
               <div className="z-10 mt-auto">
@@ -190,17 +190,17 @@ export default function ProcessSection() {
             </div>
 
             {/* Step 2 */}
-            <div className={`absolute w-full h-full bg-[#111] border border-white/10 rounded-[5px] overflow-hidden flex flex-col justify-between p-8 md:p-16 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${reviewStep === 2 ? 'opacity-100 scale-100 translate-y-0' :
+            <div className={`absolute w-full h-full bg-[#070D16] border border-white/10 rounded-[5px] overflow-hidden flex flex-col justify-between p-8 md:p-16 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${reviewStep === 2 ? 'opacity-100 scale-100 translate-y-0' :
               reviewStep > 2 ? 'opacity-0 scale-105 -translate-y-12 blur-sm' :
                 'opacity-0 scale-95 translate-y-12 blur-sm pointer-events-none'
               }`}>
               <div className="absolute inset-0 z-0 flex justify-end">
                 <img src="/process-img2.png" className="w-2/3 h-full object-cover opacity-60 relative -right-12" />
-                <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent"></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#070D16] via-[#070D16]/80 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#070D16] via-transparent to-transparent"></div>
               </div>
               <div className="z-10 flex items-center gap-4">
-                <div className="bg-white text-black px-3 py-1 font-mono text-[11px] font-bold tracking-widest">PHASE 02</div>
+                <div className="bg-[#2563FF] text-white px-3 py-1 font-mono text-[11px] font-bold tracking-widest">PHASE 02</div>
                 <span className="text-white/50 tracking-widest uppercase font-medium text-sm">POC Validation</span>
               </div>
               <div className="z-10 mt-auto">
@@ -210,12 +210,12 @@ export default function ProcessSection() {
             </div>
 
             {/* Step 3 */}
-            <div className={`absolute w-full h-full bg-[#0a0a0a] border border-white/10 rounded-[5px] overflow-hidden flex flex-col justify-between p-8 md:p-16 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${reviewStep === 3 ? 'opacity-100 scale-100 translate-y-0' :
+            <div className={`absolute w-full h-full bg-[#070D16] border border-white/10 rounded-[5px] overflow-hidden flex flex-col justify-between p-8 md:p-16 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${reviewStep === 3 ? 'opacity-100 scale-100 translate-y-0' :
               reviewStep > 3 ? 'opacity-0 scale-105 -translate-y-12 blur-sm' :
                 'opacity-0 scale-95 translate-y-12 blur-sm pointer-events-none'
               }`}>
               <div className="z-10 flex items-center gap-4">
-                <div className="bg-white text-black px-3 py-1 font-mono text-[11px] font-bold tracking-widest">PHASE 03</div>
+                <div className="bg-[#2563FF] text-white px-3 py-1 font-mono text-[11px] font-bold tracking-widest">PHASE 03</div>
                 <span className="text-white/50 tracking-widest uppercase font-medium text-sm">Iterative Build</span>
               </div>
               <div className="z-10 mt-auto relative">
@@ -228,16 +228,16 @@ export default function ProcessSection() {
             </div>
 
             {/* Step 4 */}
-            <div className={`absolute w-full h-full bg-[#111] border border-white/10 rounded-[5px] overflow-hidden flex flex-col justify-between p-8 md:p-16 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${reviewStep === 4 ? 'opacity-100 scale-100 translate-y-0' :
+            <div className={`absolute w-full h-full bg-[#070D16] border border-white/10 rounded-[5px] overflow-hidden flex flex-col justify-between p-8 md:p-16 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${reviewStep === 4 ? 'opacity-100 scale-100 translate-y-0' :
               reviewStep > 4 ? 'opacity-0 scale-105 -translate-y-12 blur-sm' :
                 'opacity-0 scale-95 translate-y-12 blur-sm pointer-events-none'
               }`}>
               <div className="absolute inset-0 z-0">
                 <img src="/process-img4.png" className="w-full h-full object-cover opacity-80 scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#070D16] via-[#070D16]/40 to-transparent"></div>
               </div>
               <div className="z-10 flex items-center gap-4">
-                <div className="bg-white text-black px-3 py-1 font-mono text-[11px] font-bold tracking-widest">PHASE 04</div>
+                <div className="bg-[#2563FF] text-white px-3 py-1 font-mono text-[11px] font-bold tracking-widest">PHASE 04</div>
                 <span className="text-white/50 tracking-widest uppercase font-medium text-sm">Scale</span>
               </div>
               <div className="z-10 mt-auto">

@@ -41,7 +41,7 @@ export default function Services() {
   const currentService = services[activeIndex];
 
   return (
-    <section id="services" className="w-full min-h-screen bg-[linear-gradient(to_top,#5457e6_0%,#5457e6_50%,#003059_100%)] text-white flex items-center relative overflow-hidden px-6 md:px-12 lg:px-20 xl:px-32 py-16 lg:py-0">
+    <section id="services" className="w-full min-h-screen bg-[linear-gradient(to_top,#1E3A8A_0%,#1E3A8A_50%,#0B1220_100%)] text-white flex items-center relative overflow-hidden px-6 md:px-12 lg:px-20 xl:px-32 py-16 lg:py-0">
       {/* Background Graphic - subtle grid to maintain technical brand identity */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
         <div className="absolute left-0 top-0 w-full h-full bg-grid"></div>
@@ -57,7 +57,7 @@ export default function Services() {
                 {currentService.id} / {services.length}
               </span>
               <div className="h-[1px] w-12 bg-white/20"></div>
-              <span className="font-mono text-[10px] tracking-[0.3em] uppercase text-indigo-300 font-bold">
+              <span className="font-mono text-[10px] tracking-[0.3em] uppercase text-[#60A5FA] font-bold">
                 Execution Platform
               </span>
             </div>
@@ -70,7 +70,7 @@ export default function Services() {
                 ))}
               </h2>
               <div className="mt-8 flex items-center gap-4">
-                <div className="h-2 w-2 rounded-full bg-indigo-400 animate-pulse"></div>
+                <div className="h-2 w-2 rounded-full bg-[#60A5FA] animate-pulse"></div>
                 <p className="font-mono text-xs md:text-sm tracking-[0.2em] text-white/60 uppercase">
                   {currentService.subtitle}
                 </p>
@@ -97,14 +97,14 @@ export default function Services() {
       <div className="z-20 flex flex-col items-end gap-6 mt-12 lg:mt-0 lg:absolute lg:bottom-12 lg:right-12 xl:bottom-24 xl:right-24 ml-auto">
         <button
           onClick={nextService}
-          className="group relative flex items-center justify-center w-16 h-16 md:w-20 md:h-20 border border-white/20 rounded-full hover:border-white transition-all duration-700 overflow-hidden cursor-pointer bg-[#081659] shadow-sm"
+          className="group relative flex items-center justify-center w-16 h-16 md:w-20 md:h-20 border border-white/20 rounded-full hover:border-white transition-all duration-700 overflow-hidden cursor-pointer bg-[#1E3A8A] shadow-sm"
           aria-label="Next Service"
         >
           {/* Fill effect background */}
           <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"></div>
 
           <div className="relative z-10 flex flex-col items-center">
-            <ArrowRight className="w-5 h-5 md:w-6 md:h-6 text-white group-hover:text-[#003059] group-hover:translate-x-1.5 transition-all duration-500 ease-out" />
+            <ArrowRight className="w-5 h-5 md:w-6 md:h-6 text-white group-hover:text-[#0B1220] group-hover:translate-x-1.5 transition-all duration-500 ease-out" />
           </div>
         </button>
 
@@ -114,7 +114,7 @@ export default function Services() {
             {services.map((_, i) => (
               <div
                 key={i}
-                className={`h-1 transition-all duration-500 ${i === activeIndex ? 'w-8 bg-indigo-300' : 'w-3 bg-white/20'}`}
+                className={`h-1 transition-all duration-500 ${i === activeIndex ? 'w-8 bg-[#60A5FA]' : 'w-3 bg-white/20'}`}
               />
             ))}
           </div>

@@ -28,7 +28,7 @@ const InteractiveParticles: React.FC = () => {
   const REPULSE_STRENGTH = 0.5;
   const RETURN_SPEED = 4.5;
   const FRICTION = 0.95;
-  const COLORS = ["#6366f1", "#ffffff"];
+  const COLORS = ["#2563FF", "#ffffff"];
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -121,7 +121,7 @@ const InteractiveParticles: React.FC = () => {
           if (dist < CONNECT_DISTANCE) {
             ctx.beginPath();
             const opacity = 1 - dist / CONNECT_DISTANCE;
-            ctx.strokeStyle = `rgba(99, 102, 241, ${opacity * 0.25})`;
+            ctx.strokeStyle = `rgba(37, 99, 255, ${opacity * 0.25})`;
             ctx.lineWidth = 0.8;
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);

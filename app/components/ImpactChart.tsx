@@ -33,7 +33,7 @@ export default function ImpactChart() {
       legend: { display: false },
       tooltip: {
         enabled: true,
-        backgroundColor: '#111',
+        backgroundColor: '#070D16',
         titleFont: { family: 'Space Mono', size: 10 },
         bodyFont: { family: 'Space Mono', size: 12 },
         cornerRadius: 0,
@@ -57,12 +57,12 @@ export default function ImpactChart() {
     datasets: [{
       label: 'Acumo_Latency',
       data: [1200, 420, 110, 38, 14, 8],
-      borderColor: '#6366f1',
+      borderColor: '#2563FF',
       borderWidth: 3,
       pointRadius: 0,
       tension: 0.3,
       fill: true,
-      backgroundColor: 'rgba(99, 102, 241, 0.03)'
+      backgroundColor: 'rgba(37, 99, 255, 0.03)'
     }, {
       label: 'Legacy_Systems',
       data: [1200, 1150, 1180, 1120, 1140, 1100],
@@ -75,15 +75,15 @@ export default function ImpactChart() {
   };
 
   return (
-    <section id="impact" className="py-40 section-border bg-neutral-950">
+    <section id="impact" className="py-40 section-border bg-[#0B1220]">
       <div className="site-grid">
         <div className="col-span-12 mb-24 text-center">
           <div className="label-tech justify-center mb-8">Performance Logic</div>
           <h2 className="text-8xl font-bold tracking-tighter">System Telemetry.</h2>
         </div>
         <div className="col-span-12">
-          <div className="border border-white/5 bg-black p-12 relative">
-            <div className="absolute top-6 right-8 font-mono text-[10px] text-neutral-600 tracking-widest">REALTIME_METRIC_STREAM</div>
+          <div className="border border-white/5 bg-[#070D16] p-12 relative">
+            <div className="absolute top-6 right-8 font-mono text-[10px] text-[#60A5FA]/40 tracking-widest">REALTIME_METRIC_STREAM</div>
             <div className="chart-container overflow-hidden">
                <Line options={options} data={data} />
             </div>

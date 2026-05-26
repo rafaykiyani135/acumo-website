@@ -3,18 +3,18 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="py-24 lg:py-32 bg-[linear-gradient(to_top,#5457e6_0%,#5457e6_50%,#003059_100%)] border-t border-white/5 w-full">
+    <footer className="py-24 lg:py-32 bg-[linear-gradient(to_top,#1E3A8A_0%,#1E3A8A_50%,#0B1220_100%)] border-t border-white/5 w-full">
       <div className="max-w-[1400px] mx-auto px-6">
         <div className="grid grid-cols-12 gap-8 lg:gap-16">
           <div className="col-span-12 md:col-span-6 mb-16 md:mb-0">
             <div className="mb-10">
               <Link href="/">
                 <Image 
-                  src="/acumo-logo.png" 
+                  src="/acumo-logo2.png" 
                   alt="Acumo Logo" 
                   width={400} 
                   height={100} 
-                  className="h-24 w-auto object-contain"
+                  className="h-24 w-auto object-contain hover:scale-[1.02] transition-transform duration-300"
                 />
               </Link>
             </div>

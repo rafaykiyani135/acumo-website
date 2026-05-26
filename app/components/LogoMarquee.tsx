@@ -84,7 +84,7 @@ export default function LogoMarquee() {
                 strokeWidth="0" 
                 role="img" 
                 viewBox="0 0 24 24" 
-                className={`h-10 w-10 ${logo.color} flex-shrink-0 transition-transform group-hover:scale-110 drop-shadow-[0_0_8px_rgba(99,102,241,0.3)]`}
+                className={`h-10 w-10 ${logo.color} flex-shrink-0 transition-transform group-hover:scale-110 drop-shadow-[0_0_8px_rgba(37,99,255,0.35)]`}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <title>{logo.title}</title>
@@ -105,7 +105,7 @@ export default function LogoMarquee() {
                 strokeWidth="0" 
                 role="img" 
                 viewBox="0 0 24 24" 
-                className={`h-10 w-10 ${logo.color} flex-shrink-0 transition-transform group-hover:scale-110 drop-shadow-[0_0_8px_rgba(99,102,241,0.3)]`}
+                className={`h-10 w-10 ${logo.color} flex-shrink-0 transition-transform group-hover:scale-110 drop-shadow-[0_0_8px_rgba(37,99,255,0.35)]`}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <title>{logo.title}</title>

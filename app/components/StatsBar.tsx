@@ -55,33 +55,33 @@ function Counter({ end, duration = 2000, decimals = 0 }: CounterProps) {
 
 export default function StatsBar() {
   return (
-    <div className="section-border py-20 relative overflow-hidden bg-black/50 backdrop-blur-sm">
+    <div className="section-border py-20 relative overflow-hidden bg-[#070D16]/50 backdrop-blur-sm">
       <div className="site-grid">
         <div className="col-span-12 md:col-span-3 border-r border-white/5 mb-8 md:mb-0">
           <div className="label-tech !before:hidden mb-4 opacity-40">Throughput</div>
           <div className="text-6xl font-bold tracking-tighter">
             <Counter end={4.2} decimals={1} />
-            <span className="text-indigo-200">k</span>
-            <span className="text-indigo-500 text-2xl font-mono ml-2">/sec</span>
+            <span className="text-[#60A5FA]">k</span>
+            <span className="text-[#2563FF] text-2xl font-mono ml-2">/sec</span>
           </div>
         </div>
         <div className="col-span-12 md:col-span-3 border-r border-white/5 px-0 md:px-8 mb-8 md:mb-0">
           <div className="label-tech !before:hidden mb-4 opacity-40">Availability</div>
           <div className="text-6xl font-bold tracking-tighter">
             <Counter end={99.99} decimals={2} />
-            <span className="text-indigo-500 text-2xl font-mono ml-2">%</span>
+            <span className="text-[#2563FF] text-2xl font-mono ml-2">%</span>
           </div>
         </div>
         <div className="col-span-12 md:col-span-3 border-r border-white/5 px-0 md:px-8 mb-8 md:mb-0">
           <div className="label-tech !before:hidden mb-4 opacity-40">Network</div>
-          <div className="text-6xl font-bold tracking-tighter animate-pulse">L7<span className="text-indigo-500 text-2xl font-mono ml-2">_WAF</span></div>
+          <div className="text-6xl font-bold tracking-tighter animate-pulse">L7<span className="text-[#2563FF] text-2xl font-mono ml-2">_WAF</span></div>
         </div>
         <div className="col-span-12 md:col-span-3 px-0 md:px-8">
           <div className="label-tech !before:hidden mb-4 opacity-40">Latency</div>
           <div className="text-6xl font-bold tracking-tighter">
-            <span className="text-indigo-200 opacity-50">&lt;</span>
+            <span className="text-[#60A5FA] opacity-50">&lt;</span>
             <Counter end={12} />
-            <span className="text-indigo-500 text-2xl font-mono ml-2">ms</span>
+            <span className="text-[#2563FF] text-2xl font-mono ml-2">ms</span>
           </div>
         </div>
       </div>

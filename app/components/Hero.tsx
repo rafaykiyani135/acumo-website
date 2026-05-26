@@ -18,10 +18,10 @@ const ICONS = [
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[100svh] w-full bg-black overflow-hidden flex flex-col items-center justify-center font-sans pt-28 pb-20 md:pb-24 lg:py-20">
+    <section className="relative min-h-[100svh] w-full bg-[#070D16] overflow-hidden flex flex-col items-center justify-center font-sans pt-28 pb-20 md:pb-24 lg:py-20">
 
       {/* Background Image / Atmosphere Mask */}
-      <div className="absolute inset-0 z-0 pointer-events-none bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-blue-900/30 via-black to-black">
+      <div className="absolute inset-0 z-0 pointer-events-none bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-[#1E3A8A]/30 via-[#070D16] to-[#070D16]">
         <Image
           src="/bg-image-hero4.png"
           alt="Atmosphere Background"
@@ -63,7 +63,7 @@ export default function Hero() {
           return (
             <div
               key={item.id}
-              className="absolute w-10 h-10 md:w-12 md:h-12 opacity-0 flex items-center justify-center bg-[#0a0a0a] border border-white/20 rounded-full shadow-[0_0_15px_rgba(255,255,255,0.05)]"
+              className="absolute w-10 h-10 md:w-12 md:h-12 opacity-0 flex items-center justify-center bg-[#070D16] border border-white/20 rounded-full shadow-[0_0_15px_rgba(255,255,255,0.05)]"
               style={{
                 top: `${topStart}%`,
                 left: `${leftStart}%`,
@@ -93,10 +93,10 @@ export default function Hero() {
 
         {/* Floating Active Component Preview */}
         <div className="mt-14 md:mt-16 lg:mt-20 w-full flex justify-center group z-30 relative perspective-[1000px]">
-          <div className="relative w-full max-w-xl bg-[#0a0a0a]/90 backdrop-blur-md border border-white/10 rounded-[5px] p-1 transform transition-all duration-[1s] ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-105 hover:-translate-y-4 hover:border-white/20">
+          <div className="relative w-full max-w-xl bg-[#070D16]/90 backdrop-blur-md border border-white/10 rounded-[5px] p-1 transform transition-all duration-[1s] ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-105 hover:-translate-y-4 hover:border-white/20">
 
             {/* Terminal Header */}
-            <div className="flex items-center justify-between px-5 py-3 border-b border-white/5 bg-[#111]/80 rounded-t-[4px]">
+            <div className="flex items-center justify-between px-5 py-3 border-b border-white/5 bg-[#0B1220]/80 rounded-t-[4px]">
               <div className="flex items-center gap-3">
                 <Terminal size={12} className="text-white/40" />
                 <span className="font-mono text-[9px] font-bold uppercase tracking-[0.2em] text-white/50">acumo-deploy-subsystem</span>
@@ -115,7 +115,7 @@ export default function Hero() {
               <div className="flex flex-col gap-2 transform transition-transform duration-[2.5s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-[85px] relative z-10 w-full">
 
                 <div className="flex items-start gap-3 opacity-50 group-hover:opacity-100 transition-opacity duration-500 delay-[0ms]">
-                  <ChevronRight size={14} className="text-blue-400 mt-0.5 shrink-0" />
+                  <ChevronRight size={14} className="text-[#60A5FA] mt-0.5 shrink-0" />
                   <span>[SYS]: Initializing edge infrastructure... <span className="text-white/20">ok</span></span>
                 </div>
 
@@ -123,14 +123,14 @@ export default function Hero() {
                   <Cpu size={14} className="text-white/50" />
                   <div className="flex-1 mx-2">
                     <div className="h-[2px] w-full bg-white/10 rounded-full overflow-hidden relative">
-                      <div className="h-full bg-blue-500 w-[30%] group-hover:w-[94%] transition-all duration-[2s] ease-[cubic-bezier(0.16,1,0.3,1)] delay-[300ms]"></div>
+                      <div className="h-full bg-[#2563FF] w-[30%] group-hover:w-[94%] transition-all duration-[2s] ease-[cubic-bezier(0.16,1,0.3,1)] delay-[300ms]"></div>
                     </div>
                   </div>
                   <span className="text-white/50 text-[10px] tracking-widest uppercase">CPU_Allocation</span>
                 </div>
 
                 <div className="flex items-start gap-3 opacity-30 group-hover:opacity-100 transition-opacity duration-700 delay-[400ms]">
-                  <ChevronRight size={14} className="text-blue-400 mt-0.5 shrink-0" />
+                  <ChevronRight size={14} className="text-[#60A5FA] mt-0.5 shrink-0" />
                   <span>[WORKER]: Compiling production models... <span className="text-yellow-400/80">pending</span></span>
                 </div>
 
@@ -140,15 +140,15 @@ export default function Hero() {
                 </div>
 
                 <div className="flex items-start gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-[1600ms]">
-                  <ChevronRight size={14} className="text-blue-400 mt-0.5 shrink-0" />
+                  <ChevronRight size={14} className="text-[#60A5FA] mt-0.5 shrink-0" />
                   <span className="w-[6px] h-[12px] bg-white text-transparent animate-pulse mt-1">_</span>
                 </div>
 
               </div>
 
               {/* Top & Bottom Fade out masks */}
-              <div className="absolute top-0 left-0 w-full h-8 bg-gradient-to-b from-[#0a0a0a]/90 to-transparent pointer-events-none z-20"></div>
-              <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-[#0a0a0a] to-transparent pointer-events-none z-20"></div>
+              <div className="absolute top-0 left-0 w-full h-8 bg-gradient-to-b from-[#070D16]/90 to-transparent pointer-events-none z-20"></div>
+              <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-[#070D16] to-transparent pointer-events-none z-20"></div>
 
             </div>
           </div>
