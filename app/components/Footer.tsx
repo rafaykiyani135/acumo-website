@@ -28,7 +28,7 @@ export default function Footer() {
             <div className="mb-6 text-xs font-mono font-bold uppercase tracking-[0.2em] text-text-primary sm:mb-8">Socials</div>
             <ul className="font-mono text-[10px] space-y-5 uppercase tracking-[0.15em] text-muted font-bold">
               <li><a href="#" className="hover:text-text-primary transition-colors">GitHub</a></li>
-              <li><a href="#" className="hover:text-text-primary transition-colors">Insta</a></li>
+              <li><a href="https://www.instagram.com/acumo.ai/" className="hover:text-text-primary transition-colors">Instagram</a></li>
               <li><a href="#" className="hover:text-text-primary transition-colors">LinkedIn</a></li>
             </ul>
           </div>
