@@ -124,17 +124,17 @@ export default function Hero() {
         {/* Brand Name Title */}
         <h1
           ref={nameRef}
-          className="name-reveal w-full max-w-4xl whitespace-nowrap px-2 text-center font-spartan text-[clamp(1rem,2.8vw+0.55rem,3.75rem)] font-black uppercase leading-[0.95] tracking-tighter text-text-primary mb-8 select-none"
+          className="name-reveal px-2 text-center font-spartan text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter leading-[0.95] text-text-primary mb-8 select-none mx-auto max-w-none"
         >
           Grow your revenue with Acumo AI
         </h1>
 
         {/* Dynamic Role Cycling Line */}
-        <div className="font-sans text-lg sm:text-2xl text-text-primary/95 mb-6 tracking-tight min-h-[40px] font-medium max-w-lg text-center px-4 leading-relaxed">
+        <div className="font-sans text-lg sm:text-2xl text-text-primary/95 mb-6 tracking-tight min-h-[40px] font-medium max-w-lg text-center px-4 leading-relaxed whitespace-nowrap">
           We build{" "}
           <span
             key={roleIndex}
-            className="font-display italic text-[#1e3a8a] animate-role-fade-in inline-block font-bold text-xl sm:text-3xl mx-1"
+            className="font-display italic text-[#1e3a8a] animate-role-fade-in inline-block font-bold text-xl sm:text-3xl mx-1 whitespace-nowrap"
           >
             {ROLES[roleIndex]}
           </span>{" "}

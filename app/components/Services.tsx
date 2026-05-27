@@ -54,7 +54,7 @@ export default function Services() {
           <div className="min-w-0 flex-1 py-8 lg:py-20">
             <div key={activeIndex} className="animate-role-fade-in">
               <div className="mb-10 sm:mb-14">
-                <h2 className="break-words font-spartan text-[clamp(2rem,10vw,7.5rem)] font-black uppercase leading-[0.85] tracking-tighter text-text-primary">
+                <h2 className="font-spartan text-[clamp(2rem,10vw,7.5rem)] font-black uppercase leading-[0.85] tracking-tighter text-text-primary">
                   {currentService.title.map((word, i) => (
                     <span key={i} className="block">
                       {word}
@@ -63,7 +63,7 @@ export default function Services() {
                 </h2>
                 <div className="mt-6 flex items-center gap-4 sm:mt-8">
                   <div className="h-2 w-2 shrink-0 rounded-full bg-[#1e3a8a] animate-pulse" />
-                  <p className="break-words font-mono text-[10px] uppercase tracking-[0.15em] text-muted sm:text-xs sm:tracking-[0.2em]">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-muted sm:text-xs sm:tracking-[0.2em]">
                     {currentService.subtitle}
                   </p>
                 </div>
@@ -85,9 +85,7 @@ export default function Services() {
                 <ArrowRight className="relative z-10 h-5 w-5 text-text-primary transition-all duration-500 group-hover:translate-x-1.5 group-hover:text-white" />
               </button>
               <div className="flex flex-col items-center gap-1 sm:items-end">
-                <span className="font-mono text-[9px] font-bold uppercase tracking-[0.3em] text-muted">
-                  Shift Protocol
-                </span>
+             
                 <div className="flex gap-1">
                   {services.map((_, i) => (
                     <div
@@ -120,9 +118,7 @@ export default function Services() {
             <ArrowRight className="relative z-10 h-6 w-6 text-text-primary transition-all duration-500 group-hover:translate-x-1.5 group-hover:text-white" />
           </button>
           <div className="flex flex-col items-end gap-1">
-            <span className="font-mono text-[9px] font-bold uppercase tracking-[0.4em] text-muted">
-              Shift Protocol
-            </span>
+         
             <div className="flex gap-1">
               {services.map((_, i) => (
                 <div

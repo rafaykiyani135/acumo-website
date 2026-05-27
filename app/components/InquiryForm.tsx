@@ -56,9 +56,9 @@ export default function InquiryForm() {
           {/* Left Column - Typography & Info */}
           <div className="lg:w-5/12 flex flex-col justify-between min-w-0">
             <div className="min-w-0">
-              <h2 className="text-text-primary font-spartan text-[clamp(2.5rem,11vw,7.5rem)] font-black leading-[0.8] tracking-tighter uppercase mb-10 select-none break-words">
+              <h2 className="text-text-primary font-spartan text-[clamp(2.5rem,11vw,7.5rem)] font-black leading-[0.8] tracking-[0.03em] uppercase mb-10 select-none break-words">
                 START A <br />
-                <span className="text-transparent text-stroke italic font-display font-bold block mt-3">
+                <span className="text-transparent text-stroke italic font-display font-bold tracking-[0.04em] block mt-3">
                   PROJECT.
                 </span>
               </h2>

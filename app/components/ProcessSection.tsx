@@ -65,7 +65,7 @@ export default function ProcessSection() {
         {/* Section Heading - Minimal & Clean */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-8 border-b border-white/5 min-w-0">
           <div className="min-w-0 w-full">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-spartan font-black tracking-tighter mb-4 uppercase text-text-primary select-none break-words">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-spartan font-black tracking-tighter mb-4 uppercase text-text-primary select-none whitespace-nowrap">
               Conversational Engine
             </h2>
             <p className="text-sm font-mono text-muted max-w-lg">
@@ -81,7 +81,7 @@ export default function ProcessSection() {
               <Bot size={12} />
               <span>Interactive Agents</span>
             </div>
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-spartan font-black tracking-tighter mb-6 uppercase text-text-primary break-words">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-spartan font-black tracking-tighter mb-6 uppercase text-text-primary whitespace-nowrap">
               Conversational Chat & Voice AI
             </h3>
             <p className="text-muted leading-relaxed text-sm mb-8 font-medium">

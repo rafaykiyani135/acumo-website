@@ -58,9 +58,9 @@ export default function CaseLog({ onOpenProject }: CaseLogProps) {
 
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-20 gap-8 min-w-0">
           <div className="min-w-0 w-full">
-            <h2 className="text-text-primary font-spartan text-[clamp(2.5rem,12vw,8rem)] font-black leading-[0.8] tracking-tighter uppercase select-none break-words">
+            <h2 className="text-text-primary font-spartan text-[clamp(2.5rem,12vw,8rem)] font-black leading-[0.8] tracking-[0.03em] uppercase select-none break-words">
               CASE <br className="hidden sm:block" />
-              <span className="text-transparent text-stroke italic font-display font-bold ml-0 sm:ml-[clamp(1rem,8vw,8rem)] block">
+              <span className="text-transparent text-stroke italic font-display font-bold tracking-[0.04em] ml-0 sm:ml-[clamp(1rem,8vw,8rem)] block">
                 STUDIES.
               </span>
             </h2>

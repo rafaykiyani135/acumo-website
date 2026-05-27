@@ -29,7 +29,7 @@ export default function DiscoverySandbox() {
 
       <div className="relative z-10 mx-auto w-full min-w-0 max-w-[1300px] px-4 sm:px-6">
         <div className="mb-12 border-b border-white/5 pb-8 sm:mb-16">
-          <h2 className="mb-4 break-words font-spartan text-3xl font-black uppercase tracking-tighter text-text-primary sm:text-4xl md:text-5xl lg:text-6xl">
+          <h2 className="mb-4 font-spartan text-3xl font-black uppercase tracking-tighter text-text-primary sm:text-4xl md:text-5xl lg:text-6xl">
             AI-NATIVE ENGINE
           </h2>
           <p className="max-w-lg text-sm font-mono text-muted">
@@ -43,7 +43,7 @@ export default function DiscoverySandbox() {
               <TrendingUp size={12} className="shrink-0" />
               <span>LLM Discovery Optimization</span>
             </div>
-            <h3 className="mb-6 break-words font-spartan text-2xl font-black uppercase tracking-tighter text-text-primary sm:text-3xl md:text-4xl">
+            <h3 className="mb-6 font-spartan text-2xl font-black uppercase tracking-tighter text-text-primary sm:text-3xl md:text-4xl">
               Answer Engine Optimization (AEO)
             </h3>
             <p className="mb-8 text-sm font-medium leading-relaxed text-muted">
