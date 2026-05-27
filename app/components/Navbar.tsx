@@ -3,19 +3,26 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { Menu, X } from "lucide-react";
+
+const NAV_LINKS = [
+  { href: "#services", label: "Services" },
+  { href: "#process", label: "Process" },
+  { href: "#case-studies", label: "Our Work" },
+] as const;
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 100);
-      
-      // Determine active section for scroll highlights
+
       const sections = ["services", "process", "case-studies"];
       const scrollPosition = window.scrollY + 200;
-      
+
       for (const section of sections) {
         const el = document.getElementById(section);
         if (el) {
@@ -28,86 +35,143 @@ export default function Navbar() {
         }
       }
     };
-    
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  return (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 md:pt-6 px-6 md:px-12 pointer-events-none">
-      <div 
-        className={`w-full max-w-[1500px] flex items-center justify-between relative px-6 md:px-10 py-3.5 rounded-full backdrop-blur-lg border border-white/10 bg-surface/45 transition-all duration-300 pointer-events-auto ${
-          scrolled ? "shadow-md shadow-black/30 bg-surface/65 border-white/15 py-3" : ""
-        }`}
-      >
-        
-        {/* Left Column: Nav Links */}
-        <div className="flex items-center justify-start z-10">
-          <div className="flex items-center gap-1 sm:gap-2">
-            <Link 
-              href="#services" 
-              className={`font-sans text-[11px] sm:text-xs uppercase tracking-wider rounded-full px-3 py-1.5 transition-all duration-300 ${
-                activeSection === "services" 
-                  ? "text-text-primary bg-stroke/60 font-bold" 
-                  : "text-muted hover:text-text-primary hover:bg-stroke/40"
-              }`}
-            >
-              Services
-            </Link>
-            <Link 
-              href="#process" 
-              className={`font-sans text-[11px] sm:text-xs uppercase tracking-wider rounded-full px-3 py-1.5 transition-all duration-300 ${
-                activeSection === "process" 
-                  ? "text-text-primary bg-stroke/60 font-bold" 
-                  : "text-muted hover:text-text-primary hover:bg-stroke/40"
-              }`}
-            >
-              Process
-            </Link>
-            <Link 
-              href="#case-studies" 
-              className={`font-sans text-[11px] sm:text-xs uppercase tracking-wider rounded-full px-3 py-1.5 transition-all duration-300 ${
-                activeSection === "case-studies" 
-                  ? "text-text-primary bg-stroke/60 font-bold" 
-                  : "text-muted hover:text-text-primary hover:bg-stroke/40"
-              }`}
-            >
-              Our Work
-            </Link>
-          </div>
-        </div>
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflowY = "hidden";
+    } else {
+      document.body.style.overflowY = "";
+    }
+    return () => {
+      document.body.style.overflowY = "";
+    };
+  }, [isOpen]);
 
-        {/* Center Column: Logo (Absolutely centered for perfect balance) */}
-        <div className="absolute left-1/2 -translate-x-1/2 flex justify-center items-center z-10 pointer-events-auto">
-          <Link href="/" className="flex items-center">
-            <Image 
-              src="/acumo-logo2.png" 
-              alt="Acumo Logo" 
-              width={320} 
-              height={80} 
-              className="h-14 md:h-22 w-auto object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.15)] hover:scale-[1.03] transition-transform duration-300"
+  useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth >= 1024) setIsOpen(false);
+    };
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+  const closeMenu = () => setIsOpen(false);
+
+  const linkClass = (section: string) =>
+    `font-sans text-[11px] sm:text-xs uppercase tracking-wider rounded-full px-3 py-1.5 transition-all duration-300 ${
+      activeSection === section
+        ? "text-text-primary bg-stroke/60 font-bold"
+        : "text-muted hover:text-text-primary hover:bg-stroke/40"
+    }`;
+
+  return (
+    <>
+      {/* Mobile & tablet header */}
+      <header className="fixed top-0 left-0 right-0 z-[100] w-full lg:hidden">
+        <div className="w-full bg-black border-b border-white/10 shadow-lg shadow-black/40">
+          <div className="flex h-14 items-center justify-between gap-3 px-4 sm:px-6">
+            <Link href="/" className="min-w-0 shrink" onClick={closeMenu}>
+              <Image
+                src="/acumo-logo2.png"
+                alt="Acumo Logo"
+                width={200}
+                height={50}
+                className="h-8 w-auto max-w-[130px] sm:max-w-[150px] object-contain"
+                priority
+              />
+            </Link>
+
+            <button
+              type="button"
+              onClick={() => setIsOpen((open) => !open)}
+              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 bg-surface/80"
+              aria-expanded={isOpen}
+              aria-label={isOpen ? "Close menu" : "Open menu"}
+            >
+              {isOpen ? (
+                <X className="h-5 w-5 text-text-primary" />
+              ) : (
+                <Menu className="h-5 w-5 text-text-primary" />
+              )}
+            </button>
+          </div>
+
+          {isOpen && (
+            <nav
+              className="border-t border-white/10 bg-black px-4 pb-6 pt-2 sm:px-6"
+              aria-label="Mobile navigation"
+            >
+              <ul className="flex flex-col">
+                {NAV_LINKS.map(({ href, label }) => (
+                  <li key={href}>
+                    <Link
+                      href={href}
+                      onClick={closeMenu}
+                      className="block border-b border-white/5 py-4 font-sans text-sm font-bold uppercase tracking-widest text-muted transition-colors hover:text-text-primary"
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+
+              <Link
+                href="#inquiry"
+                onClick={closeMenu}
+                className="mt-5 flex w-full items-center justify-center rounded-full border border-white/10 bg-surface px-5 py-3.5 font-sans text-xs font-bold uppercase tracking-wider text-text-primary"
+              >
+                Start Project <span className="ml-1 text-sm font-normal">↗</span>
+              </Link>
+            </nav>
+          )}
+        </div>
+      </header>
+
+      {/* Desktop header */}
+      <header className="pointer-events-none fixed top-0 left-0 right-0 z-[100] hidden w-full lg:block lg:px-12 lg:pt-6">
+        <div
+          className={`pointer-events-auto mx-auto flex w-full max-w-[1500px] items-center justify-between rounded-full border border-white/10 bg-surface/45 px-10 py-3.5 backdrop-blur-lg transition-all duration-300 ${
+            scrolled ? "border-white/15 bg-surface/65 py-3 shadow-md shadow-black/30" : ""
+          }`}
+        >
+          <div className="flex items-center gap-2">
+            {NAV_LINKS.map(({ href, label }) => (
+              <Link
+                key={href}
+                href={href}
+                className={linkClass(href.slice(1))}
+              >
+                {label}
+              </Link>
+            ))}
+          </div>
+
+          <Link href="/" className="absolute left-1/2 -translate-x-1/2">
+            <Image
+              src="/acumo-logo2.png"
+              alt="Acumo Logo"
+              width={320}
+              height={80}
+              className="h-14 w-auto object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.15)] transition-transform duration-300 hover:scale-[1.03]"
               priority
             />
           </Link>
-        </div>
 
-        {/* Right Column: CTA */}
-        <div className="flex items-center justify-end z-10">
-          <Link 
-            href="#inquiry" 
-            className="relative group font-sans rounded-full overflow-hidden p-[1px] inline-flex items-center justify-center hover:scale-105 transition-transform duration-300"
+          <Link
+            href="#inquiry"
+            className="group relative inline-flex items-center justify-center overflow-hidden rounded-full p-[1px] font-sans transition-transform duration-300 hover:scale-105"
           >
-            {/* Ambient accent ring shown on hover */}
-            <span className="absolute inset-[-2px] accent-gradient opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"></span>
-            
-            {/* Inner text content wrapped in bg-surface */}
-            <span className="relative z-10 px-4 py-1.5 sm:px-5 sm:py-2 bg-surface text-text-primary rounded-full backdrop-blur-md border border-white/5 flex items-center gap-1 uppercase tracking-wider text-[10px] font-bold">
+            <span className="accent-gradient absolute inset-[-2px] rounded-full opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+            <span className="relative z-10 flex items-center gap-1 rounded-full border border-white/5 bg-surface px-5 py-2 text-[10px] font-bold uppercase tracking-wider text-text-primary backdrop-blur-md">
               Start Project <span className="text-[11px] font-normal">↗</span>
             </span>
           </Link>
         </div>
-
-      </div>
-    </nav>
+      </header>
+    </>
   );
 }

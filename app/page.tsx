@@ -35,17 +35,17 @@ export default function Home() {
     setTimeout(() => setSelectedProject(null), 300); // Wait for fade out if we add it later
   };
 
-  // Prevent scroll when modal is open
+  // Lock vertical scroll when modal is open; never re-enable horizontal scroll
   useEffect(() => {
     if (isModalOpen) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflowY = "hidden";
     } else {
-      document.body.style.overflow = "auto";
+      document.body.style.overflowY = "";
     }
   }, [isModalOpen]);
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen w-full max-w-[100vw] overflow-x-hidden">
       <Navbar />
       <Hero />
       <DiscoverySandbox />

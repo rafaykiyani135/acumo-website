@@ -3,18 +3,18 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="py-24 lg:py-32 bg-bg border-t border-white/5 w-full">
-      <div className="max-w-[1400px] mx-auto px-6">
-        <div className="grid grid-cols-12 gap-8 lg:gap-16">
-          <div className="col-span-12 md:col-span-6 mb-16 md:mb-0">
-            <div className="mb-10">
+    <footer className="w-full overflow-x-hidden border-t border-white/5 bg-bg py-20 sm:py-24 lg:py-32">
+      <div className="mx-auto w-full min-w-0 max-w-[1400px] px-4 sm:px-6">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-16">
+          <div className="mb-8 sm:col-span-2 lg:col-span-6 lg:mb-0">
+            <div className="mb-8 sm:mb-10">
               <Link href="/">
                 <Image
                   src="/acumo-logo2.png"
                   alt="Acumo Logo"
                   width={400}
                   height={100}
-                  className="h-24 w-auto object-contain hover:scale-[1.02] transition-transform duration-300 drop-shadow-[0_0_15px_rgba(255,255,255,0.15)]"
+                  className="h-16 w-auto max-w-[200px] object-contain transition-transform duration-300 hover:scale-[1.02] drop-shadow-[0_0_15px_rgba(255,255,255,0.15)] sm:h-20 lg:h-24"
                   priority
                 />
               </Link>
@@ -24,8 +24,8 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="col-span-6 md:col-span-3 flex flex-col">
-            <div className="text-text-primary text-xs font-mono tracking-[0.2em] uppercase font-bold mb-8">Socials</div>
+          <div className="flex flex-col sm:col-span-1 lg:col-span-3">
+            <div className="mb-6 text-xs font-mono font-bold uppercase tracking-[0.2em] text-text-primary sm:mb-8">Socials</div>
             <ul className="font-mono text-[10px] space-y-5 uppercase tracking-[0.15em] text-muted font-bold">
               <li><a href="#" className="hover:text-text-primary transition-colors">GitHub</a></li>
               <li><a href="#" className="hover:text-text-primary transition-colors">Insta</a></li>
@@ -33,11 +33,11 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="col-span-6 md:col-span-3 flex flex-col">
-            <div className="text-text-primary text-xs font-mono tracking-[0.2em] uppercase font-bold mb-8">Deployment</div>
+          <div className="flex flex-col sm:col-span-1 lg:col-span-3">
+            <div className="mb-6 text-xs font-mono font-bold uppercase tracking-[0.2em] text-text-primary sm:mb-8">Deployment</div>
             <ul className="font-mono text-[10px] space-y-5 uppercase tracking-[0.15em] text-muted/60 font-bold">
-              <li>Sample text 1</li>
-              <li>Sample text 2</li>
+              <li>Edge Runtime Active</li>
+              <li>CI/CD pipeline: Green</li>
             </ul>
           </div>
         </div>

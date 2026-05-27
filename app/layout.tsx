@@ -39,9 +39,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${instrumentSans.variable} ${instrumentSerif.variable} ${spaceMono.variable} ${leagueSpartan.variable} scroll-smooth`}
+      className={`${instrumentSans.variable} ${instrumentSerif.variable} ${spaceMono.variable} ${leagueSpartan.variable} scroll-smooth overflow-x-hidden`}
     >
-      <body className="antialiased bg-grid min-h-screen flex flex-col">
+      <body className="antialiased bg-grid min-h-screen flex flex-col overflow-x-hidden w-full max-w-[100vw]">
         {children}
       </body>
     </html>

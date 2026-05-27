@@ -66,11 +66,17 @@
 }
 
 @layer base {
+  html {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+
   body {
     background-color: hsl(var(--bg));
     color: hsl(var(--text));
     font-family: var(--font-sans), sans-serif;
     overflow-x: hidden;
+    max-width: 100%;
     -webkit-font-smoothing: antialiased;
   }
 }
@@ -224,4 +230,8 @@
 
 .animate-reverse-spin {
   animation: reverseSpin 40s linear infinite;
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1px hsl(var(--text));
 }

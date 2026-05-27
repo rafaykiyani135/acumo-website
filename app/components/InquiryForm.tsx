@@ -48,17 +48,17 @@ export default function InquiryForm() {
   };
 
   return (
-    <section id="inquiry" className="py-24 lg:py-40 bg-[#0b1220] border-t border-white/5 w-full overflow-hidden text-text-primary">
-      <div className="max-w-[1400px] mx-auto px-6">
+    <section id="inquiry" className="w-full overflow-x-hidden border-t border-white/5 bg-[#0b1220] py-20 text-text-primary sm:py-24 lg:py-40">
+      <div className="mx-auto w-full min-w-0 max-w-[1400px] px-4 sm:px-6">
 
-        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
+        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 min-w-0">
 
           {/* Left Column - Typography & Info */}
-          <div className="lg:w-5/12 flex flex-col justify-between">
-            <div>
-              <h2 className="text-text-primary font-spartan text-[clamp(3rem,11vw,7.5rem)] font-black leading-[0.8] tracking-tighter uppercase mb-10 select-none">
+          <div className="lg:w-5/12 flex flex-col justify-between min-w-0">
+            <div className="min-w-0">
+              <h2 className="text-text-primary font-spartan text-[clamp(2.5rem,11vw,7.5rem)] font-black leading-[0.8] tracking-tighter uppercase mb-10 select-none break-words">
                 START A <br />
-                <span className="text-transparent italic font-display font-bold block mt-3" style={{ WebkitTextStroke: '1px hsl(var(--text))' }}>
+                <span className="text-transparent text-stroke italic font-display font-bold block mt-3">
                   PROJECT.
                 </span>
               </h2>

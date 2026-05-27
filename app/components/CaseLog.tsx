@@ -48,19 +48,19 @@ interface CaseLogProps {
 
 export default function CaseLog({ onOpenProject }: CaseLogProps) {
   return (
-    <section id="case-studies" className="py-24 lg:py-40 w-full relative overflow-hidden bg-bg border-b border-white/5">
+    <section id="case-studies" className="relative w-full overflow-x-hidden border-b border-white/5 bg-bg py-20 sm:py-24 lg:py-40">
       {/* Subtle technical background grid */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.02]">
         <div className="absolute inset-0 bg-grid"></div>
       </div>
 
-      <div className="max-w-[1500px] mx-auto px-6 relative z-10">
+      <div className="relative z-10 mx-auto w-full min-w-0 max-w-[1500px] px-4 sm:px-6">
 
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-20 gap-8">
-          <div>
-            <h2 className="text-text-primary font-spartan text-[clamp(3rem,12vw,8rem)] font-black leading-[0.8] tracking-tighter uppercase select-none">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-20 gap-8 min-w-0">
+          <div className="min-w-0 w-full">
+            <h2 className="text-text-primary font-spartan text-[clamp(2.5rem,12vw,8rem)] font-black leading-[0.8] tracking-tighter uppercase select-none break-words">
               CASE <br className="hidden sm:block" />
-              <span className="text-transparent italic font-display font-bold ml-[clamp(1rem,8vw,8rem)] block" style={{ WebkitTextStroke: '1px hsl(var(--text))' }}>
+              <span className="text-transparent text-stroke italic font-display font-bold ml-0 sm:ml-[clamp(1rem,8vw,8rem)] block">
                 STUDIES.
               </span>
             </h2>

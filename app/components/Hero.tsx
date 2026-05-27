@@ -94,7 +94,7 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen w-full bg-bg overflow-hidden flex flex-col items-center justify-center pt-28 pb-24 px-6 md:px-12"
+      className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-x-hidden bg-bg px-4 pb-24 pt-20 sm:px-6 sm:pt-24 md:px-12 lg:pt-28"
     >
       {/* Background Video using HLS Stream */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden select-none">
@@ -111,7 +111,7 @@ export default function Hero() {
       </div>
 
       {/* Hero Content (Centered) */}
-      <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center text-center">
+      <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center text-center min-w-0 w-full">
 
         {/* Eyebrow
         <div 
@@ -124,17 +124,17 @@ export default function Hero() {
         {/* Brand Name Title */}
         <h1
           ref={nameRef}
-          className="name-reveal text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-spartan font-black uppercase tracking-tighter leading-none text-text-primary mb-8 select-none whitespace-nowrap"
+          className="name-reveal w-full max-w-4xl whitespace-nowrap px-2 text-center font-spartan text-[clamp(1rem,2.8vw+0.55rem,3.75rem)] font-black uppercase leading-[0.95] tracking-tighter text-text-primary mb-8 select-none"
         >
           Grow your revenue with Acumo AI
         </h1>
 
         {/* Dynamic Role Cycling Line */}
-        <div className="font-sans text-lg sm:text-2xl text-text-primary/95 mb-6 tracking-tight min-h-[40px] font-medium flex items-center gap-2">
+        <div className="font-sans text-lg sm:text-2xl text-text-primary/95 mb-6 tracking-tight min-h-[40px] font-medium max-w-lg text-center px-4 leading-relaxed">
           We build{" "}
           <span
             key={roleIndex}
-            className="font-display italic text-[#1e3a8a] animate-role-fade-in inline-block font-bold text-xl sm:text-3xl"
+            className="font-display italic text-[#1e3a8a] animate-role-fade-in inline-block font-bold text-xl sm:text-3xl mx-1"
           >
             {ROLES[roleIndex]}
           </span>{" "}

@@ -54,19 +54,18 @@ export default function ProcessSection() {
   }, []);
 
   return (
-    <section id="process" className="py-24 lg:py-40 bg-[#0b1220] border-b border-white/5 w-full overflow-hidden text-text-primary">
-      {/* Background subtle visuals */}
-      <div className="absolute inset-0 pointer-events-none opacity-10">
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[#1e3a8a]/10 rounded-full blur-[180px]"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-[#1e3a8a]/10 rounded-full blur-[180px]"></div>
+    <section id="process" className="relative w-full overflow-x-hidden border-b border-white/5 bg-[#0b1220] py-20 text-text-primary sm:py-24 lg:py-40">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-10">
+        <div className="absolute top-1/4 left-1/4 h-64 w-64 rounded-full bg-[#1e3a8a]/10 blur-[120px] sm:h-[500px] sm:w-[500px] sm:blur-[180px]" />
+        <div className="absolute bottom-1/4 right-1/4 h-64 w-64 rounded-full bg-[#1e3a8a]/10 blur-[120px] sm:h-[500px] sm:w-[500px] sm:blur-[180px]" />
       </div>
 
-      <div className="max-w-[1300px] mx-auto px-6 relative z-10">
+      <div className="relative z-10 mx-auto w-full min-w-0 max-w-[1300px] px-4 sm:px-6">
         
         {/* Section Heading - Minimal & Clean */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-8 border-b border-white/5">
-          <div>
-            <h2 className="text-5xl md:text-6xl font-spartan font-black tracking-tighter mb-4 uppercase text-text-primary select-none">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-8 border-b border-white/5 min-w-0">
+          <div className="min-w-0 w-full">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-spartan font-black tracking-tighter mb-4 uppercase text-text-primary select-none break-words">
               Conversational Engine
             </h2>
             <p className="text-sm font-mono text-muted max-w-lg">
@@ -76,14 +75,13 @@ export default function ProcessSection() {
         </div>
 
         {/* Content Layout */}
-        <div className="grid lg:grid-cols-12 gap-12 items-center">
-          {/* Text Context */}
-          <div className="lg:col-span-5 flex flex-col justify-center font-sans">
+        <div className="flex flex-col gap-12 lg:grid lg:grid-cols-12 lg:items-center lg:gap-12">
+          <div className="min-w-0 font-sans lg:col-span-5">
             <div className="flex items-center gap-2 mb-4 font-mono text-[10px] text-[#1e3a8a] font-bold uppercase tracking-wider">
               <Bot size={12} />
               <span>Interactive Agents</span>
             </div>
-            <h3 className="text-3xl md:text-4xl font-spartan font-black tracking-tighter mb-6 uppercase text-text-primary">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-spartan font-black tracking-tighter mb-6 uppercase text-text-primary break-words">
               Conversational Chat & Voice AI
             </h3>
             <p className="text-muted leading-relaxed text-sm mb-8 font-medium">
@@ -91,7 +89,7 @@ export default function ProcessSection() {
             </p>
 
             {/* Features List */}
-            <div className="grid grid-cols-2 gap-y-4 gap-x-6 font-mono text-[9px] text-muted uppercase tracking-widest font-bold">
+            <div className="grid grid-cols-1 gap-y-4 font-mono text-[9px] font-bold uppercase tracking-wide text-muted sm:grid-cols-2 sm:gap-x-6 sm:tracking-widest">
               <div className="flex items-center gap-2">
                 <CheckCircle2 size={10} className="text-[#1e3a8a]" />
                 <span>Appt Scheduler</span>
@@ -112,14 +110,14 @@ export default function ProcessSection() {
           </div>
 
           {/* Minimal Floating SVG Waveform (No Bounding Cards/Boxes) */}
-          <div className="lg:col-span-7 flex flex-col items-center justify-center min-h-[350px] w-full select-none text-center">
+          <div className="lg:col-span-7 flex flex-col items-center justify-center min-h-[350px] w-full min-w-0 select-none text-center">
             {mounted ? (
               <>
                 <svg 
                   width="240" 
                   height="240" 
                   viewBox="0 0 240 240" 
-                  className="text-text-primary drop-shadow-[0_0_20px_rgba(255,255,255,0.18)]"
+                  className="h-auto w-full max-w-[240px] text-text-primary drop-shadow-[0_0_20px_rgba(255,255,255,0.18)]"
                 >
                   {heights.map((len, i) => {
                     const angle = (i / 72) * Math.PI * 2;
@@ -158,7 +156,7 @@ export default function ProcessSection() {
                       VOICE AGENT ONLINE
                     </span>
                   </div>
-                  <p className="text-[11px] md:text-xs font-mono text-text-primary tracking-tight font-bold max-w-md h-12 flex items-center justify-center">
+                  <p className="text-[11px] md:text-xs font-mono text-text-primary tracking-tight font-bold max-w-md text-center break-words px-2">
                     {logsList[currentTextIdx]}
                   </p>
                 </div>
