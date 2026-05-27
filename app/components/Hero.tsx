@@ -94,7 +94,7 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-x-hidden bg-bg px-4 pb-24 pt-20 sm:px-6 sm:pt-24 md:px-12 lg:pt-28"
+      className="relative flex min-h-[78vh] w-full flex-col items-center justify-center overflow-x-hidden bg-bg px-4 pb-10 pt-20 sm:min-h-[82vh] sm:px-6 sm:pt-24 md:min-h-[86vh] md:px-12 lg:min-h-[90vh] lg:pt-28"
     >
       {/* Background Video using HLS Stream */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden select-none">
