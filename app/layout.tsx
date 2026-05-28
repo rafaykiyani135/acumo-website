@@ -30,6 +30,9 @@ const spaceMono = Space_Mono({
 export const metadata: Metadata = {
   title: "Acumo | Technical Engineering",
   description: "Engineering infrastructure for the ambitious.",
+  icons: {
+    icon: "/acumo-favicon.png",
+  },
 };
 
 export default function RootLayout({
