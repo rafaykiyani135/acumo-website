@@ -15,7 +15,7 @@ export default function ArticlesPage() {
     <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-12">
       <div className="mb-12">
         <h1 className="font-spartan text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tighter text-white mb-4">
-          Articles
+          Acumo Articles
         </h1>
         <p className="font-sans text-white/70 max-w-2xl text-lg">
           Insights, thoughts, and expertise from the Acumo team.
@@ -52,7 +52,7 @@ export default function ArticlesPage() {
           </Link>
         ))}
       </div>
-      
+
       {articles.length === 0 && (
         <div className="text-center py-20 text-white/50 font-sans">
           No articles found. Add some markdown files to the Article Content directory.
