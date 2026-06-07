@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
@@ -9,9 +10,11 @@ const NAV_LINKS = [
   { href: "#services", label: "Services" },
   { href: "#process", label: "Process" },
   { href: "#case-studies", label: "Our Work" },
+  { href: "/articles", label: "Articles" },
 ] as const;
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const [isOpen, setIsOpen] = useState(false);
@@ -62,10 +65,9 @@ export default function Navbar() {
   const closeMenu = () => setIsOpen(false);
 
   const linkClass = (section: string) =>
-    `font-sans text-[11px] sm:text-xs uppercase tracking-wider rounded-full px-3 py-1.5 transition-all duration-300 ${
-      activeSection === section
-        ? "text-text-primary bg-stroke/60 font-bold"
-        : "text-muted hover:text-text-primary hover:bg-stroke/40"
+    `font-sans text-[11px] sm:text-xs uppercase tracking-wider rounded-full px-3 py-1.5 transition-all duration-300 ${activeSection === section
+      ? "text-text-primary bg-stroke/60 font-bold"
+      : "text-muted hover:text-text-primary hover:bg-stroke/40"
     }`;
 
   return (
@@ -106,21 +108,24 @@ export default function Navbar() {
               aria-label="Mobile navigation"
             >
               <ul className="flex flex-col">
-                {NAV_LINKS.map(({ href, label }) => (
-                  <li key={href}>
-                    <Link
-                      href={href}
-                      onClick={closeMenu}
-                      className="block border-b border-white/5 py-4 font-sans text-sm font-bold uppercase tracking-widest text-muted transition-colors hover:text-text-primary"
-                    >
-                      {label}
-                    </Link>
-                  </li>
-                ))}
+                {NAV_LINKS.map(({ href, label }) => {
+                  const targetHref = href.startsWith("#") && pathname !== "/" ? `/${href}` : href;
+                  return (
+                    <li key={href}>
+                      <Link
+                        href={targetHref}
+                        onClick={closeMenu}
+                        className="block border-b border-white/5 py-4 font-sans text-sm font-bold uppercase tracking-widest text-muted transition-colors hover:text-text-primary"
+                      >
+                        {label}
+                      </Link>
+                    </li>
+                  );
+                })}
               </ul>
 
               <Link
-                href="#inquiry"
+                href={pathname !== "/" ? "/#inquiry" : "#inquiry"}
                 onClick={closeMenu}
                 className="mt-5 flex w-full items-center justify-center rounded-full border border-white/10 bg-surface px-5 py-3.5 font-sans text-xs font-bold uppercase tracking-wider text-text-primary"
               >
@@ -134,20 +139,23 @@ export default function Navbar() {
       {/* Desktop header */}
       <header className="pointer-events-none fixed top-0 left-0 right-0 z-[100] hidden w-full lg:block lg:px-12 lg:pt-6">
         <div
-          className={`pointer-events-auto mx-auto flex w-full max-w-[1500px] items-center justify-between rounded-full border border-white/10 bg-surface/45 px-10 py-3.5 backdrop-blur-lg transition-all duration-300 ${
-            scrolled ? "border-white/15 bg-surface/65 py-3 shadow-md shadow-black/30" : ""
-          }`}
+          className={`pointer-events-auto mx-auto flex w-full max-w-[1500px] items-center justify-between rounded-full border border-white/10 bg-surface/45 px-10 py-3.5 backdrop-blur-lg transition-all duration-300 ${scrolled ? "border-white/15 bg-surface/65 py-3 shadow-md shadow-black/30" : ""
+            }`}
         >
           <div className="flex items-center gap-2">
-            {NAV_LINKS.map(({ href, label }) => (
-              <Link
-                key={href}
-                href={href}
-                className={linkClass(href.slice(1))}
-              >
-                {label}
-              </Link>
-            ))}
+            {NAV_LINKS.map(({ href, label }) => {
+              const targetHref = href.startsWith("#") && pathname !== "/" ? `/${href}` : href;
+              const sectionId = href.startsWith("#") ? href.slice(1) : href.slice(1);
+              return (
+                <Link
+                  key={href}
+                  href={targetHref}
+                  className={linkClass(sectionId)}
+                >
+                  {label}
+                </Link>
+              );
+            })}
           </div>
 
           <Link href="/" className="absolute left-1/2 -translate-x-1/2">
@@ -162,7 +170,7 @@ export default function Navbar() {
           </Link>
 
           <Link
-            href="#inquiry"
+            href={pathname !== "/" ? "/#inquiry" : "#inquiry"}
             className="group relative inline-flex items-center justify-center overflow-hidden rounded-full p-[1px] font-sans transition-transform duration-300 hover:scale-105"
           >
             <span className="accent-gradient absolute inset-[-2px] rounded-full opacity-0 transition-opacity duration-300 group-hover:opacity-100" />

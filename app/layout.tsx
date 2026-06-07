@@ -43,9 +43,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${instrumentSans.variable} ${instrumentSerif.variable} ${spaceMono.variable} ${leagueSpartan.variable} scroll-smooth overflow-x-hidden`}
+      className={`${instrumentSans.variable} ${instrumentSerif.variable} ${spaceMono.variable} ${leagueSpartan.variable} scroll-smooth overflow-x-clip`}
     >
-      <body className="antialiased bg-grid min-h-screen flex flex-col overflow-x-hidden w-full max-w-[100vw]">
+      <body className="antialiased bg-grid min-h-screen flex flex-col overflow-x-clip w-full max-w-[100vw]">
         <GoogleAnalytics />
         {children}
       </body>
