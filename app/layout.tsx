@@ -28,6 +28,7 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.acumoai.com"),
   title: "Acumo | Technical Engineering",
   description: "Engineering infrastructure for the ambitious.",
   icons: {
