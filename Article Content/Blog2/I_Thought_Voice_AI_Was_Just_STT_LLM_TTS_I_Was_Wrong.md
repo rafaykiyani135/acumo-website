@@ -1,3 +1,8 @@
+---
+title: "I Thought Voice AI Was Just STT + LLM + TTS. I Was Wrong."
+image: "/voice-blog1.png"
+---
+
 # I Thought Voice AI Was Just STT + LLM + TTS. I Was Wrong.
 
 When I first started building Voice AI applications, I thought the
