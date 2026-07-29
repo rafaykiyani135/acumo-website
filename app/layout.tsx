@@ -100,6 +100,69 @@ export default function RootLayout({
     },
   ];
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "What industries does Acumo work with?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "We're industry-agnostic. We've built AI-native systems across healthcare, real estate, finance, legal, e-commerce, and more. If your business needs intelligent software that scales, we can engineer it — regardless of vertical.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What's the difference between AEO and traditional SEO?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Traditional SEO optimizes for search engine result pages — rankings, backlinks, and keywords. Answer Engine Optimization (AEO) optimizes for generative AI engines like ChatGPT, Claude, Gemini, and Perplexity. Instead of competing for page-one rankings buried under ads, AEO ensures your business is cited directly as the trusted answer when prospects ask AI for recommendations.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What does the engagement process look like?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "It starts with a scoping inquiry where we understand your goals and constraints. From there, we deliver a technical proposal outlining architecture, timeline, and deliverables. Once approved, we move into a focused 2–4 week build cycle with regular checkpoints, then launch and hand off with full documentation.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How long does a typical project take?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Most projects are delivered within 2–4 weeks. Complex multi-system builds or enterprise integrations may extend beyond that, but we scope everything upfront so there are no surprises.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Do you offer ongoing support after launch?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. We offer post-launch support packages that cover maintenance, monitoring, iterative improvements, and scaling as your product grows. You're not left on your own after delivery.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can you integrate with our existing tools and tech stack?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Absolutely. We regularly integrate with CRMs, scheduling tools, payment systems, and existing APIs. Our systems are built to plug into your current infrastructure, not replace it.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Do you white-label your work?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes — everything ships under your brand. We build behind the scenes so your product looks and feels entirely yours, from the interface to the deployment.",
+        },
+      },
+    ],
+  };
+
   return (
     <html
       lang="en"
@@ -121,6 +184,12 @@ export default function RootLayout({
             }}
           />
         ))}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(faqSchema),
+          }}
+        />
         <GoogleAnalytics />
         {children}
       </body>
