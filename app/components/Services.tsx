@@ -43,7 +43,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="relative w-full overflow-x-hidden border-b border-white/5 bg-bg px-4 py-24 text-text-primary sm:px-6 md:px-12 lg:min-h-screen lg:px-20 lg:py-0 xl:px-32"
+      className="relative w-full overflow-x-hidden border-b border-white/5 bg-bg px-4 py-20 text-text-primary sm:px-6 sm:py-24 md:px-12 lg:px-20 lg:py-28 xl:px-32"
     >
       <div className="pointer-events-none absolute inset-0 opacity-[0.03]">
         <div className="absolute left-0 top-0 h-full w-full bg-grid animate-pulse" />
