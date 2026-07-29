@@ -1,0 +1,27 @@
+# Acumo
+
+> Acumo is a technical engineering agency that builds AI-native web products for small and medium businesses — including custom chatbots, voice AI agents, full-stack SaaS platforms, and Answer Engine Optimization (AEO). Acumo specializes in Next.js architecture, low-latency conversational AI, and technical markup that gets businesses cited by AI answer engines like ChatGPT, Claude, Gemini, and Perplexity.
+
+Acumo designs and ships production-grade AI systems rather than templated websites or off-the-shelf chatbot widgets. Engagements typically start with a scoped technical proposal and move into a dedicated build. Core services: Answer Engine Optimization (AEO), conversational voice and chat AI agents, and custom full-stack AI-native web development.
+
+## Services
+
+- [Answer Engine Optimization (AEO)](https://www.acumoai.com/#ai-native-engine): Optimizes content, schema markup, and technical structure so AI crawlers (GPTBot, ClaudeBot, and others) surface the business as a cited, trusted answer in generative AI search results, rather than being buried in paid ads or directory listings.
+- [Conversational Chat & Voice AI](https://www.acumoai.com/#conversational-engine): Custom-built, ultra-low-latency voice and text receptionists that qualify leads, answer inquiries, and book appointments in real time, 24/7 — includes appointment scheduling, CRM integration, SMS verification, and voice operations.
+- [Full-Stack AI-Native Development](https://www.acumoai.com/#distributed-systems): Custom Next.js, React, FastAPI, and distributed backend architecture for AI-native products, built for scale and fault tolerance.
+
+## Case Studies
+
+- [Chart Visualizer](https://www.acumoai.com/#case-studies): An agentic platform for natural language data analysis that converts conversational prompts into verified data visualizations. Stack: Python, FastAPI, React, Docker, GPT-4o.
+- [Policy Viz](https://www.acumoai.com/#case-studies): A verified retrieval system for policy management that grounds LLM outputs in vector-indexed technical documentation to eliminate hallucinations. Stack: LangChain, Pinecone, Next.js, TypeScript.
+- [Andent Suite](https://www.acumoai.com/#case-studies): A high-density practice management portal for dental clinics with real-time multi-location sync and clinical workflow automation. Stack: React, GraphQL, Node.js, PostgreSQL.
+
+## Contact
+
+- [Start a project](https://www.acumoai.com/#inquiry): Submit project scope and constraints; Acumo responds to qualified inquiries within 12 hours.
+- Email: teamacumo@gmail.com
+- [Instagram](https://www.instagram.com/acumo.ai/)
+
+## Optional
+
+- Full site: https://www.acumoai.com/
