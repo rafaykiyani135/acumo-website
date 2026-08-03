@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!article) return { title: 'Article Not Found' };
   return {
     title: `${article.title} | Acumo AI`,
-    description: `Read ${article.title}`,
+    description: article.description || `Read ${article.title}`,
   };
 }
 
@@ -97,7 +97,7 @@ export default async function ArticlePage({
             <div className="relative aspect-video w-full rounded-2xl overflow-hidden mb-12 border border-white/10 bg-white/5">
               <Image
                 src={article.imagePath}
-                alt={article.title}
+                alt={article.imageAlt || article.title}
                 fill
                 priority
                 className="object-cover"

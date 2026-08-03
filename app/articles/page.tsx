@@ -33,7 +33,7 @@ export default function ArticlesPage() {
               <div className="relative aspect-video w-full overflow-hidden bg-white/5">
                 <Image
                   src={article.imagePath}
-                  alt={article.title}
+                  alt={article.imageAlt || article.title}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />

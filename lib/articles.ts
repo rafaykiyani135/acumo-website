@@ -10,6 +10,8 @@ export interface ArticleMetadata {
   date: string;
   readTime: string;
   imagePath: string;
+  imageAlt?: string;
+  description?: string;
   content: string;
 }
 
@@ -65,6 +67,8 @@ export function getArticles(): ArticleMetadata[] {
         date,
         readTime,
         imagePath: data.image || '',
+        imageAlt: data.imageAlt || '',
+        description: data.description || '',
         content
       });
     }
