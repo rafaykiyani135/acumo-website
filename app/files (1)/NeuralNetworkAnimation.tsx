@@ -11,8 +11,8 @@ interface NeuralNetworkAnimationProps {
 }
 
 const NeuralNetworkAnimation: React.FC<NeuralNetworkAnimationProps> = ({
-  inputText = ['How', 'good', 'is', 'acumo?'],
-  outputText = "It's goated!",
+  inputText = ['Ready', 'to', 'increase', 'revenue?'],
+  outputText = "Let's Gooo",
   activationColor = '#4169E1', // Royal blue
   neuronColor = 'white',
   connectionColor = 'black',
@@ -21,6 +21,7 @@ const NeuralNetworkAnimation: React.FC<NeuralNetworkAnimationProps> = ({
 }) => {
   const svgRef = useRef<SVGSVGElement>(null);
   const animationRef = useRef<number | undefined>(undefined);
+  const requestRef = useRef<number | undefined>(undefined);
 
   useEffect(() => {
     const animate = () => {

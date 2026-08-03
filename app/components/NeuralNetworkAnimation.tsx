@@ -13,8 +13,8 @@ interface NeuralNetworkAnimationProps {
 }
 
 const NeuralNetworkAnimation: React.FC<NeuralNetworkAnimationProps> = ({
-    inputText = ['How', 'good', 'is', 'acumo?'],
-    outputText = "It's goated!",
+    inputText = ['Ready', 'to', 'increase', 'revenue?'],
+    outputText = "Let's get to work.",
     activationColor = '#60a5fa', // Light Blue (Brighter for dark mode)
     neuronColor = 'transparent',
     connectionColor = 'white',

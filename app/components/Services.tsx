@@ -10,27 +10,35 @@ export default function Services() {
   const services = [
     {
       id: "01",
-      title: ["DISTRIBUTED", "SYSTEMS"],
-      subtitle: "FAULT-TOLERANT ARCHITECTURE",
-      desc: "Architecting global consistency and extreme throughput across distributed nodes. We build immutable infrastructure that scales dynamically under any load.",
+      title: ["VOICE AI &", "CRM SYSTEMS"],
+      subtitle: "AUTOMATED CALL & BOOKING AGENTS",
+      desc: "Custom Voice AI development engineered for inbound and outbound calls. Seamlessly integrated with CRMs (HubSpot, GoHighLevel, Salesforce) and calendars for instant lead qualification, automated appointment booking, and 24/7 workflow updates.",
+      inputText: ["Voice AI", "Calls", "+ CRM", "Sync"],
+      outputText: "Booked 24/7",
     },
     {
       id: "02",
-      title: ["AI", "PIPELINES"],
-      subtitle: "PRODUCTION GRADE INTELLIGENCE",
-      desc: "Integrating RAG and fine-tuned LLMs into heavily secured pipelines. Guaranteeing all algorithmic outputs are completely grounded in your proprietary data.",
+      title: ["FULL-STACK", "MVP BUILD"],
+      subtitle: "RAPID STARTUP & PRODUCT LAUNCH",
+      desc: "Rapid 0-to-1 full stack MVP development for startups and enterprise innovators. We architect production-ready web and mobile applications with scalable backends, intuitive interfaces, and modern tech stacks built for growth.",
+      inputText: ["0 to 1", "Product", "MVP", "Build"],
+      outputText: "Launch Ready",
     },
     {
       id: "03",
-      title: ["TECHNICAL", "INTERFACES"],
-      subtitle: "HIGH-DENSITY DATA UIs",
-      desc: "Crafting technical dashboards tailored for developers and analysts. Prioritizing instant data-visualization and low-latency interactions over generic layouts.",
+      title: ["WEBSITES &", "BOOKING ENGINE"],
+      subtitle: "HIGH-CONVERTING DIGITAL EXPERIENCE",
+      desc: "Custom website development equipped with automated booking systems, payment gateways, and client portals. Designed for extreme conversion, sub-second load speeds, and effortless scheduling workflows.",
+      inputText: ["High", "Speed", "Booking", "Engine"],
+      outputText: "Converted!",
     },
     {
       id: "04",
-      title: ["CLOUD", "NATIVE"],
-      subtitle: "INFRASTRUCTURE AS CODE",
-      desc: "Automating the exact path to production. Leveraging Kubernetes and Terraform to build secure, scalable, and completely managed CI/CD environments.",
+      title: ["CUSTOM AI &", "AUTOMATIONS"],
+      subtitle: "BESPOKE WORKFLOW INTELLIGENCE",
+      desc: "Tailored AI solutions, custom LLM integrations, and automated business workflows. We connect your proprietary software with custom AI pipelines to streamline operations, reduce friction, and automate repetitive tasks.",
+      inputText: ["Custom", "LLM", "Workflow", "Pipe"],
+      outputText: "Automated",
     }
   ];
 
@@ -45,6 +53,18 @@ export default function Services() {
       id="services"
       className="relative w-full overflow-x-hidden border-b border-white/5 bg-bg px-4 py-20 text-text-primary sm:px-6 sm:py-24 md:px-12 lg:px-20 lg:py-28 xl:px-32"
     >
+      {/* Search Engine & AI Crawler Accessibility Layer */}
+      <div className="sr-only">
+        <h2>Acumo Custom Development Services</h2>
+        <ul>
+          {services.map((s) => (
+            <li key={s.id}>
+              <h3>{s.title.join(" ")} - {s.subtitle}</h3>
+              <p>{s.desc}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
       <div className="pointer-events-none absolute inset-0 opacity-[0.03]">
         <div className="absolute left-0 top-0 h-full w-full bg-grid animate-pulse" />
       </div>
@@ -102,7 +122,11 @@ export default function Services() {
 
           <div className="hidden min-w-0 flex-1 justify-center lg:flex">
             <div className="w-full max-w-[600px] opacity-60 xl:max-w-[700px]">
-              <NeuralNetworkAnimation key={activeIndex} />
+              <NeuralNetworkAnimation
+                key={activeIndex}
+                inputText={currentService.inputText}
+                outputText={currentService.outputText}
+              />
             </div>
           </div>
         </div>
