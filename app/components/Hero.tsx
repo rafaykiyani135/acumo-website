@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import Hls from "hls.js";
+import Image from "next/image";
 import { gsap } from "gsap";
 
 const ROLES = [
@@ -12,7 +12,6 @@ const ROLES = [
 ];
 
 export default function Hero() {
-  const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const nameRef = useRef<HTMLHeadingElement>(null);
   const eyebrowRef = useRef<HTMLDivElement>(null);
@@ -27,37 +26,6 @@ export default function Hero() {
       setRoleIndex((prev) => (prev + 1) % ROLES.length);
     }, 2000);
     return () => clearInterval(interval);
-  }, []);
-
-  // Initialize HLS video stream
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const streamUrl = "https://stream.mux.com/Aa02T7oM1wH5Mk5EEVDYhbZ1ChcdhRsS2m1NYyx4Ua1g.m3u8";
-
-    if (Hls.isSupported()) {
-      const hls = new Hls({
-        maxMaxBufferLength: 10,
-        enableWorker: true,
-        lowLatencyMode: true
-      });
-      hls.loadSource(streamUrl);
-      hls.attachMedia(video);
-      hls.on(Hls.Events.MANIFEST_PARSED, () => {
-        video.play().catch(err => console.log("HLS play failed:", err));
-      });
-
-      return () => {
-        hls.destroy();
-      };
-    } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
-      // Native Apple device HLS support
-      video.src = streamUrl;
-      video.addEventListener("loadedmetadata", () => {
-        video.play().catch(err => console.log("Native HLS play failed:", err));
-      });
-    }
   }, []);
 
   // GSAP Entrance Animations
@@ -96,16 +64,28 @@ export default function Hero() {
       ref={containerRef}
       className="relative flex min-h-[78vh] w-full flex-col items-center justify-center overflow-x-hidden bg-bg px-4 pb-10 pt-20 sm:min-h-[82vh] sm:px-6 sm:pt-24 md:min-h-[86vh] md:px-12 lg:min-h-[90vh] lg:pt-28"
     >
-      {/* Background Video using HLS Stream */}
+      {/* Background Image */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden select-none">
-        <video
-          ref={videoRef}
-          muted
-          loop
-          playsInline
-          autoPlay
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full object-cover opacity-100 scale-[1.01]"
+        {/* Desktop Image */}
+        <Image
+          src="/bg-image-hero5.png"
+          alt="Acumo Hero Background Desktop"
+          fill
+          priority
+          sizes="100vw"
+          className="hidden md:block object-cover object-center opacity-80 scale-[1.01]"
         />
+        {/* Mobile Image */}
+        <Image
+          src="/bg-image-hero5(mobile).png"
+          alt="Acumo Hero Background Mobile"
+          fill
+          priority
+          sizes="100vw"
+          className="block md:hidden object-cover object-center opacity-80 scale-[1.01]"
+        />
+        {/* Dark overlay for optimal text contrast */}
+        <div className="absolute inset-0 bg-bg/10 z-10" />
         {/* Cinematic bottom gradient fade to main body */}
         <div className="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-bg via-bg/40 to-transparent z-20"></div>
       </div>
