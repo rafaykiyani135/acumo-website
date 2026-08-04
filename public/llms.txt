@@ -1,27 +1,37 @@
 # Acumo
 
-> Acumo is a technical engineering agency that builds AI-native web products for small and medium businesses — including custom chatbots, voice AI agents, full-stack SaaS platforms, and Answer Engine Optimization (AEO). Acumo specializes in Next.js architecture, low-latency conversational AI, and technical markup that gets businesses cited by AI answer engines like ChatGPT, Claude, Gemini, and Perplexity.
+> Acumo is a technical engineering agency building AI-native web products for growth-stage businesses and enterprises — including low-latency Voice AI agents, custom AI chatbots, full-stack SaaS MVPs, and Answer Engine Optimization (AEO). Acumo specializes in Next.js architecture, real-time voice pipelines, and technical schema optimization for AI search platforms like ChatGPT, Claude, Gemini, and Perplexity.
 
-Acumo designs and ships production-grade AI systems rather than templated websites or off-the-shelf chatbot widgets. Engagements typically start with a scoped technical proposal and move into a dedicated build. Core services: Answer Engine Optimization (AEO), conversational voice and chat AI agents, and custom full-stack AI-native web development.
+Acumo designs and ships production-grade AI systems rather than templated websites or off-the-shelf widgets. Engagements typically start with a scoped technical proposal and move directly into custom engineering.
 
 ## Services
 
-- [Answer Engine Optimization (AEO)](https://www.acumoai.com/#ai-native-engine): Optimizes content, schema markup, and technical structure so AI crawlers (GPTBot, ClaudeBot, and others) surface the business as a cited, trusted answer in generative AI search results, rather than being buried in paid ads or directory listings.
-- [Conversational Chat & Voice AI](https://www.acumoai.com/#conversational-engine): Custom-built, ultra-low-latency voice and text receptionists that qualify leads, answer inquiries, and book appointments in real time, 24/7 — includes appointment scheduling, CRM integration, SMS verification, and voice operations.
-- [Full-Stack AI-Native Development](https://www.acumoai.com/#distributed-systems): Custom Next.js, React, FastAPI, and distributed backend architecture for AI-native products, built for scale and fault tolerance.
+- [Voice AI & CRM Systems](https://www.acumoai.com/services/voice-ai-crm): Custom voice agents engineered for inbound/outbound calls with real-time lead qualification, 24/7 calendar booking, and CRM integration (HubSpot, GoHighLevel, Salesforce).
+- [Full-Stack MVP Build](https://www.acumoai.com/services/mvp-development): Rapid 0-to-1 web/mobile application builds with scalable backends, modern tech stacks (Next.js, FastAPI, PostgreSQL), and AI integrations.
+- [Websites & Booking Engine](https://www.acumoai.com/services/websites-booking): Ultra-fast custom websites with embedded scheduling, payment gateways, and automated client portals built for conversion.
+- [Custom AI & Automations](https://www.acumoai.com/services/ai-automation): Custom LLM pipelines, RAG implementations, WhatsApp/SMS bots, and automated business operations.
+
+## Articles & Technical Insights
+
+- [What Happens When Your Business Doesn't Reply Fast Enough?](https://www.acumoai.com/articles/what-happens-when-your-business-doesnt-reply-fast-enough): How AI WhatsApp Assistants capture instant leads for appointment-based service businesses.
+- [Voice AI Latency & Infrastructure Region Fix](https://www.acumoai.com/articles/your-voice-ai-isnt-slow-because-of-the-model-its-slow-because-of-where-you-deployed-it): Technical analysis of reducing voice agent response delays by aligning deployment regions.
+- [Demystifying Voice AI Architecture](https://www.acumoai.com/articles/i-thought-voice-ai-was-just-stt-llm-tts-i-was-wrong): Breaking down speech-to-text, LLM inference, and text-to-speech orchestration.
+- [Why Manual Appointment Booking Is Slowing Your Business Down](https://www.acumoai.com/articles/why-manual-appointment-booking-is-slowing-your-business-down): Automating booking flows to maximize lead conversion rates.
 
 ## Case Studies
 
-- [Chart Visualizer](https://www.acumoai.com/#case-studies): An agentic platform for natural language data analysis that converts conversational prompts into verified data visualizations. Stack: Python, FastAPI, React, Docker, GPT-4o.
-- [Policy Viz](https://www.acumoai.com/#case-studies): A verified retrieval system for policy management that grounds LLM outputs in vector-indexed technical documentation to eliminate hallucinations. Stack: LangChain, Pinecone, Next.js, TypeScript.
-- [Andent Suite](https://www.acumoai.com/#case-studies): A high-density practice management portal for dental clinics with real-time multi-location sync and clinical workflow automation. Stack: React, GraphQL, Node.js, PostgreSQL.
+- [Chart Visualizer](https://www.acumoai.com/#case-studies): Agentic natural language data analysis platform converting conversational prompts into charts. Stack: Python, FastAPI, React, Docker, GPT-4o.
+- [Policy Viz](https://www.acumoai.com/#case-studies): Grounded policy retrieval system with zero hallucinations. Stack: LangChain, Pinecone, Next.js, TypeScript.
+- [Andent Suite](https://www.acumoai.com/#case-studies): Practice management portal for dental clinics with real-time multi-location sync. Stack: React, GraphQL, Node.js, PostgreSQL.
 
-## Contact
+## Contact & Engagement
 
-- [Start a project](https://www.acumoai.com/#inquiry): Submit project scope and constraints; Acumo responds to qualified inquiries within 12 hours.
+- [Start a project](https://www.acumoai.com/#inquiry): Submit project scope and constraints; qualified inquiries receive response within 12 hours.
 - Email: teamacumo@gmail.com
 - [Instagram](https://www.instagram.com/acumo.ai/)
 
-## Optional
+## Optional & Resources
 
-- Full site: https://www.acumoai.com/
+- Main Website: https://www.acumoai.com/
+- Sitemap: https://www.acumoai.com/sitemap.xml
+- Articles Index: https://www.acumoai.com/articles
