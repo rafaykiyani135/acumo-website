@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { getArticles } from "@/lib/articles";
 
 const DEFAULT_SITE_URL = "https://www.acumoai.com";
 
@@ -10,12 +11,42 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = getSiteUrl();
   const now = new Date();
 
-  return [
+  const staticPages: MetadataRoute.Sitemap = [
     {
       url: `${siteUrl}/`,
       lastModified: now,
       changeFrequency: "weekly",
-      priority: 1,
+      priority: 1.0,
+    },
+    {
+      url: `${siteUrl}/services`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${siteUrl}/services/mvp-development`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${siteUrl}/services/voice-ai-crm`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${siteUrl}/services/websites-booking`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${siteUrl}/services/ai-automation`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.9,
     },
     {
       url: `${siteUrl}/articles`,
@@ -23,29 +54,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.8,
     },
-    {
-      url: `${siteUrl}/articles/why-manual-appointment-booking-is-slowing-your-business-down`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${siteUrl}/articles/i-thought-voice-ai-was-just-stt-llm-tts-i-was-wrong`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${siteUrl}/articles/your-voice-ai-isnt-slow-because-of-the-model-its-slow-because-of-where-you-deployed-it`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${siteUrl}/articles/what-happens-when-your-business-doesnt-reply-fast-enough`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
   ];
-}
+
+  const articles = getArticles();
+  const articlePages: MetadataRoute.Sitemap = articles.map((article) => {
+    const parsedDate = article.date ? new Date(article.date) : now;
+    const lastModified = isNaN(parsedDate.getTime()) ? now : parsedDate;
+
+    return {
+      url: `${siteUrl}/articles/${article.slug}`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    };
+  });
+
+  return [...staticPages, ...articlePages];
+}

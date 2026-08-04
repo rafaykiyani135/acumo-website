@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import NeuralNetworkAnimation from "./NeuralNetworkAnimation";
 
@@ -12,6 +13,7 @@ export default function Services() {
       id: "01",
       title: ["VOICE AI &", "CRM SYSTEMS"],
       subtitle: "AUTOMATED CALL & BOOKING AGENTS",
+      href: "/services/voice-ai-crm",
       desc: "Custom Voice AI development engineered for inbound and outbound calls. Seamlessly integrated with CRMs (HubSpot, GoHighLevel, Salesforce) and calendars for instant lead qualification, automated appointment booking, and 24/7 workflow updates.",
       inputText: ["Voice AI", "Calls", "+ CRM", "Sync"],
       outputText: "Booked 24/7",
@@ -20,6 +22,7 @@ export default function Services() {
       id: "02",
       title: ["FULL-STACK", "MVP BUILD"],
       subtitle: "RAPID STARTUP & PRODUCT LAUNCH",
+      href: "/services/mvp-development",
       desc: "Rapid 0-to-1 full stack MVP development for startups and enterprise innovators. We architect production-ready web and mobile applications with scalable backends, intuitive interfaces, and modern tech stacks built for growth.",
       inputText: ["0 to 1", "Product", "MVP", "Build"],
       outputText: "Launch Ready",
@@ -28,6 +31,7 @@ export default function Services() {
       id: "03",
       title: ["WEBSITES &", "BOOKING ENGINE"],
       subtitle: "HIGH-CONVERTING DIGITAL EXPERIENCE",
+      href: "/services/websites-booking",
       desc: "Custom website development equipped with automated booking systems, payment gateways, and client portals. Designed for extreme conversion, sub-second load speeds, and effortless scheduling workflows.",
       inputText: ["High", "Speed", "Booking", "Engine"],
       outputText: "Converted!",
@@ -36,6 +40,7 @@ export default function Services() {
       id: "04",
       title: ["CUSTOM AI &", "AUTOMATIONS"],
       subtitle: "BESPOKE WORKFLOW INTELLIGENCE",
+      href: "/services/ai-automation",
       desc: "Tailored AI solutions, custom LLM integrations, and automated business workflows. We connect your proprietary software with custom AI pipelines to streamline operations, reduce friction, and automate repetitive tasks.",
       inputText: ["Custom", "LLM", "Workflow", "Pipe"],
       outputText: "Automated",
@@ -92,6 +97,12 @@ export default function Services() {
               <p className="max-w-3xl text-lg font-medium leading-[1.35] tracking-tight text-text-primary/80 sm:text-xl md:text-2xl lg:text-3xl">
                 {currentService.desc}
               </p>
+              <Link
+                href={currentService.href}
+                className="mt-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-surface/40 px-6 py-3 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-muted transition-all duration-300 hover:border-[#1e3a8a] hover:text-text-primary sm:text-[11px]"
+              >
+                Explore this service <span className="text-[13px] font-normal">↗</span>
+              </Link>
             </div>
 
             <div className="mt-10 flex flex-col items-center gap-4 sm:mt-12 sm:flex-row sm:items-end sm:justify-between lg:hidden">
