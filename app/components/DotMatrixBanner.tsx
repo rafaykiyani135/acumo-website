@@ -338,20 +338,8 @@ export default function DotMatrixBanner() {
               ctx.fill();
             }
             ctx.shadowBlur = 0; // reset shadow
-          } else {
-            // Inactive cell: thin stroke only (~10-15% opacity, no fill)
-            ctx.strokeStyle = "rgba(37, 99, 255, 0.16)";
-            ctx.lineWidth = 1;
-
-            if (isCircle) {
-              ctx.beginPath();
-              ctx.arc(x + radius, y + radius, radius, 0, Math.PI * 2);
-              ctx.stroke();
-            } else {
-              drawRoundedRect(ctx, x, y, cellSize, cellSize, radius * 0.4);
-              ctx.stroke();
-            }
           }
+          // Inactive cells are not rendered (invisible against background)
         }
       }
 
