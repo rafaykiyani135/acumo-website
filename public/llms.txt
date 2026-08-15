@@ -19,6 +19,7 @@ Acumo designs and ships production-grade AI systems rather than templated websit
 - [Demystifying Voice AI Architecture](https://www.acumoai.com/articles/i-thought-voice-ai-was-just-stt-llm-tts-i-was-wrong): Breaking down speech-to-text, LLM inference, and text-to-speech orchestration.
 - [Why Manual Appointment Booking Is Slowing Your Business Down](https://www.acumoai.com/articles/why-manual-appointment-booking-is-slowing-your-business-down): Automating booking flows to maximize lead conversion rates.
 - [The Voice AI Email Capture Problem Nobody Talks About](https://www.acumoai.com/articles/the-voice-ai-email-capture-problem-nobody-talks-about-and-how-we-solved-it): Solving STT/TTS email verification friction and phone lead capture in production voice agents.
+- [Your Business Has the Information. Why Are Your Employees Still Entering It?](https://www.acumoai.com/articles/how-ai-turns-documents-emails-and-customer-requests-into-business-actions): Learn how AI automation can extract information from documents and emails, update CRM systems, and turn customer requests into practical business workflows.
 
 ## Case Studies
 
