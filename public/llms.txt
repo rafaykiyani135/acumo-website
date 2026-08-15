@@ -13,6 +13,7 @@ Acumo designs and ships production-grade AI systems rather than templated websit
 
 ## Articles & Technical Insights
 
+- [Why Event Rental Companies Lose 35% of Revenue to Missed Calls](https://www.acumoai.com/articles/why-event-rental-companies-lose-35percent-of-revenue-to-missed-calls): How voice AI recovers revenue lost to missed calls and books rental events automatically, 24/7.
 - [What Happens When Your Business Doesn't Reply Fast Enough?](https://www.acumoai.com/articles/what-happens-when-your-business-doesnt-reply-fast-enough): How AI WhatsApp Assistants capture instant leads for appointment-based service businesses.
 - [Voice AI Latency & Infrastructure Region Fix](https://www.acumoai.com/articles/your-voice-ai-isnt-slow-because-of-the-model-its-slow-because-of-where-you-deployed-it): Technical analysis of reducing voice agent response delays by aligning deployment regions.
 - [Demystifying Voice AI Architecture](https://www.acumoai.com/articles/i-thought-voice-ai-was-just-stt-llm-tts-i-was-wrong): Breaking down speech-to-text, LLM inference, and text-to-speech orchestration.
