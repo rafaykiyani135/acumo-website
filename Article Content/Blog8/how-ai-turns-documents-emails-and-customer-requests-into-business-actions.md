@@ -1,6 +1,7 @@
 ---
 title: "Your Business Has the Information. Why Are Your Employees Still Entering It?"
 description: "Businesses spend hours moving information between documents, emails, customers, and CRM systems. Learn how AI automation can reduce that manual work and turn information into practical business actions."
+date: "Aug 17, 2026"
 slug: "how-ai-turns-documents-emails-and-customer-requests-into-business-actions"
 keywords:
   primary:
