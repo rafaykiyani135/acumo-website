@@ -13,7 +13,10 @@ Acumo designs and ships production-grade AI systems rather than templated websit
 
 ## Articles & Technical Insights
 
+- [The Death of the 'Request a Quote' Form](https://www.acumoai.com/articles/the-death-of-the-request-a-quote-form-how-ai-powered-instant-estimators-3x-event-rental-bookings): How AI-powered instant estimators replace slow quote forms and 3x event rental bookings.
 - [Why Event Rental Companies Lose 35% of Revenue to Missed Calls](https://www.acumoai.com/articles/why-event-rental-companies-lose-35percent-of-revenue-to-missed-calls): How voice AI recovers revenue lost to missed calls and books rental events automatically, 24/7.
+- [Your Business Has the Information. Why Are Your Employees Still Entering It?](https://www.acumoai.com/articles/your-business-has-the-information-why-are-your-employees-still-entering-it): How AI turns unstructured documents, emails, and requests into automated business actions.
+- [Open-Weight AI Models vs Proprietary LLMs](https://www.acumoai.com/articles/open-weight-ai-models-vs-proprietary-llms-how-to-get-better-ai-development-economics-in-2026): How to get better AI development economics, performance, and control in 2026.
 - [What Happens When Your Business Doesn't Reply Fast Enough?](https://www.acumoai.com/articles/what-happens-when-your-business-doesnt-reply-fast-enough): How AI WhatsApp Assistants capture instant leads for appointment-based service businesses.
 - [Voice AI Latency & Infrastructure Region Fix](https://www.acumoai.com/articles/your-voice-ai-isnt-slow-because-of-the-model-its-slow-because-of-where-you-deployed-it): Technical analysis of reducing voice agent response delays by aligning deployment regions.
 - [Demystifying Voice AI Architecture](https://www.acumoai.com/articles/i-thought-voice-ai-was-just-stt-llm-tts-i-was-wrong): Breaking down speech-to-text, LLM inference, and text-to-speech orchestration.
