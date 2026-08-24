@@ -12,6 +12,7 @@ export interface ArticleMetadata {
   imagePath: string;
   imageAlt?: string;
   description?: string;
+  keywords?: string[];
   content: string;
 }
 
@@ -44,9 +45,9 @@ export function getArticles(): ArticleMetadata[] {
         title = titleMatch ? titleMatch[1] : folder;
       }
       
-      // Generate slug from title
+      // Generate slug from title or custom frontmatter slug
       const titleForSlug = title.replace(/\s*\(.*?\)\s*/g, '');
-      const slug = slugify(titleForSlug, { lower: true, strict: true });
+      const slug = data.slug || slugify(titleForSlug, { lower: true, strict: true });
       
       // Calculate read time
       const wordCount = content.trim().split(/\s+/).length;
@@ -69,6 +70,7 @@ export function getArticles(): ArticleMetadata[] {
         imagePath: data.image || '',
         imageAlt: data.imageAlt || '',
         description: data.description || '',
+        keywords: data.keywords || [],
         content
       });
     }

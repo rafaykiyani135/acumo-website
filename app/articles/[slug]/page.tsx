@@ -22,6 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${article.title} | Acumo AI`,
     description: article.description || `Read ${article.title}`,
+    keywords: article.keywords,
   };
 }
 
