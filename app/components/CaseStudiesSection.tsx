@@ -12,6 +12,7 @@ interface Project {
   desc: string;
   outcome: string;
   tech: string[];
+  screenshots?: string[];
 }
 
 export default function CaseStudiesSection() {

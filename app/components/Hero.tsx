@@ -66,26 +66,14 @@ export default function Hero() {
     >
       {/* Background Image */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden select-none">
-        {/* Desktop Image */}
         <Image
-          src="/bg-image-hero5.png"
-          alt="Acumo Hero Background Desktop"
+          src="/bg-image-hero6.png"
+          alt="Acumo Hero Background"
           fill
           priority
           sizes="100vw"
-          className="hidden md:block object-cover object-center opacity-80 scale-[1.01]"
+          className="object-cover object-center scale-[1.01]"
         />
-        {/* Mobile Image */}
-        <Image
-          src="/bg-image-hero5(mobile).png"
-          alt="Acumo Hero Background Mobile"
-          fill
-          priority
-          sizes="100vw"
-          className="block md:hidden object-cover object-center opacity-80 scale-[1.01]"
-        />
-        {/* Dark overlay for optimal text contrast */}
-        <div className="absolute inset-0 bg-bg/10 z-10" />
         {/* Cinematic bottom gradient fade to main body */}
         <div className="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-bg via-bg/40 to-transparent z-20"></div>
       </div>

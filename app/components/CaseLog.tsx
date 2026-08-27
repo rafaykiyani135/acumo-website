@@ -10,6 +10,7 @@ interface Project {
   desc: string;
   outcome: string;
   tech: string[];
+  screenshots?: string[];
 }
 
 const projectsData: Record<string, Project> = {
@@ -39,6 +40,24 @@ const projectsData: Record<string, Project> = {
     desc: "High-density portal for dentistry clinic management. Features real-time multi-location synchronization and clinical workflow automation.",
     outcome: "Unified 12+ locations into a single pane of glass.",
     tech: ["React", "GraphQL", "Node.js", "PostgreSQL"]
+  },
+  "4": {
+    id: "4",
+    title: "Murad Sweets",
+    industry: "E-COMMERCE & AUTOMATION",
+    image: "/portfolio/murad-sweets/homepage_hero.png",
+    desc: "Full-stack e-commerce platform with custom delivery and pickup features for a Houston-based Bangladeshi sweets business. Engineered with FastAPI Python backend and Next.js frontend, featuring custom box builder, cart management, and real-time admin order fulfillment.",
+    outcome: "Automated pickup/delivery scheduling & unified store operations.",
+    tech: ["Next.js", "FastAPI", "Python", "TypeScript", "Tailwind CSS", "PostgreSQL"],
+    screenshots: [
+      "/portfolio/murad-sweets/homepage_hero.png",
+      "/portfolio/murad-sweets/menu_catalog.png",
+      "/portfolio/murad-sweets/box_builder_modal.png",
+      "/portfolio/murad-sweets/cart_drawer.png",
+      "/portfolio/murad-sweets/admin_dashboard_orders.png",
+      "/portfolio/murad-sweets/order_details_modal.png",
+      "/portfolio/murad-sweets/login_page.png"
+    ]
   }
 };
 
