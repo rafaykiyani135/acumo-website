@@ -94,7 +94,7 @@ export default function Hero() {
           ref={nameRef}
           className="name-reveal px-2 text-center font-spartan text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter leading-[0.95] text-text-primary mb-8 select-none mx-auto max-w-none"
         >
-          Grow your revenue with Acumo AI
+          Grow your revenue with Acumo
         </h1>
 
         {/* Dynamic Role Cycling Line */}
