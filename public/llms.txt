@@ -13,6 +13,8 @@ Acumo designs and ships production-grade AI systems rather than templated websit
 
 ## Articles & Technical Insights
 
+- [What Happens to Customers Who Leave Your Shopify Store Without Buying?](https://www.acumoai.com/articles/shopify-email-sms-automation-customer-retention): Discover how Shopify email and SMS automation can recover abandoned carts, re-engage browsers, nurture subscribers, improve customer retention, and increase ecommerce conversions.
+- [How AI Lead Follow-Up Automation Helps Party Rental Businesses Get More Bookings](https://www.acumoai.com/articles/how-ai-lead-follow-up-automation-helps-party-rental-businesses-get-more-bookings): Learn how AI lead follow-up automation helps party rental businesses turn inquiries into bookings, automate quote follow-up, and recover lost leads.
 - [How We Turned a Spreadsheet Into a Conversational AI Reporting System](https://www.acumoai.com/articles/ai-spreadsheet-automation-conversational-reporting-system): A real-world look at using the OpenAI API to turn natural language into spreadsheet updates, generate charts, and automate monthly PDF reports.
 - [How Rental Businesses Can Get Recommended by ChatGPT, Claude, and Perplexity](https://www.acumoai.com/articles/how-rental-businesses-can-get-recommended-by-chatgpt-claude-and-perplexity-for-local-inquiries): Answer engine optimization (AEO) strategies that make rental companies discoverable and recommendable in AI search.
 - [The Death of the 'Request a Quote' Form](https://www.acumoai.com/articles/the-death-of-the-request-a-quote-form-how-ai-powered-instant-estimators-3x-event-rental-bookings): How AI-powered instant estimators replace slow quote forms and 3x event rental bookings.
