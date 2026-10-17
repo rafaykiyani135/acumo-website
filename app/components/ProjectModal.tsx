@@ -10,6 +10,7 @@ interface ProjectData {
   outcome: string;
   tech: string[];
   screenshots?: string[];
+  taglines?: Record<string, string>;
 }
 
 interface ProjectModalProps {
@@ -95,6 +96,13 @@ export default function ProjectModal({ isOpen, project, onClose }: ProjectModalP
                   className="w-full max-h-[400px] object-cover transition-all duration-500 shadow-md" 
                 />
               </div>
+
+              {/* Tagline for the active screenshot */}
+              {project.taglines?.[currentImage] && (
+                <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted font-bold text-center pt-1">
+                  {project.taglines[currentImage]}
+                </div>
+              )}
 
               {/* Gallery Thumbnails if multiple screenshots */}
               {screenshots.length > 1 && (

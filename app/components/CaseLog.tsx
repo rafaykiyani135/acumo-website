@@ -11,6 +11,7 @@ interface Project {
   outcome: string;
   tech: string[];
   screenshots?: string[];
+  taglines?: Record<string, string>;
 }
 
 const projectsData: Record<string, Project> = {
@@ -58,6 +59,29 @@ const projectsData: Record<string, Project> = {
       "/portfolio/murad-sweets/order_details_modal.webp",
       "/portfolio/murad-sweets/login_page.webp"
     ]
+  },
+  "5": {
+    id: "5",
+    title: "Halo",
+    industry: "VOICE AI & HEALTHCARE",
+    image: "/portfolio/halo-voiceAI/halo-dashboard.webp",
+    desc: "Full-stack AI voice receptionist and analytics console for clinics. Answers inbound calls, books into live calendars, and escalates to staff when needed — with a real-time call dashboard, transcripts with extracted booking data, a no-code agent builder, and conversion and cost analytics.",
+    outcome: "94% of inbound calls handled without staff intervention.",
+    tech: ["Python", "FastAPI", "LangGraph", "React", "Postgres", "Twilio/VAPI", "Cloudflare R2"],
+    screenshots: [
+      "/portfolio/halo-voiceAI/halo-callLog.webp",
+      "/portfolio/halo-voiceAI/halo-dashboard.webp",
+      "/portfolio/halo-voiceAI/halo-agentBuilder.webp",
+      "/portfolio/halo-voiceAI/halo-analytics.webp",
+      "/portfolio/halo-voiceAI/halo-integrations.webp"
+    ],
+    taglines: {
+      "/portfolio/halo-voiceAI/halo-callLog.webp": "Live calls — see every conversation as it happens.",
+      "/portfolio/halo-voiceAI/halo-dashboard.webp": "Call detail — audio, transcript, and booking data in one view.",
+      "/portfolio/halo-voiceAI/halo-agentBuilder.webp": "Agent builder — change how your agent talks and what it can do, no code.",
+      "/portfolio/halo-voiceAI/halo-analytics.webp": "Analytics — know exactly what each call costs and converts.",
+      "/portfolio/halo-voiceAI/halo-integrations.webp": "Integrations — plugs into your calendar, phones, and CRM."
+    }
   }
 };
 
