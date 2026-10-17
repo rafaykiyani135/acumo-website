@@ -61,6 +61,15 @@ export function getArticles(): ArticleMetadata[] {
         day: 'numeric'
       });
       
+      // Normalize keywords: supports string[], nested objects like { primary: [...], secondary: [...] }
+      const rawKeywords = data.keywords;
+      let keywords: string[] = [];
+      if (Array.isArray(rawKeywords)) {
+        keywords = rawKeywords.filter((k: unknown): k is string => typeof k === 'string');
+      } else if (rawKeywords && typeof rawKeywords === 'object') {
+        keywords = Object.values(rawKeywords).flat().filter((k): k is string => typeof k === 'string');
+      }
+
       articles.push({
         title,
         slug,
@@ -70,7 +79,7 @@ export function getArticles(): ArticleMetadata[] {
         imagePath: data.image || '',
         imageAlt: data.imageAlt || '',
         description: data.description || '',
-        keywords: data.keywords || [],
+        keywords,
         content
       });
     }

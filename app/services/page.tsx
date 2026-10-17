@@ -4,9 +4,10 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
-  title: "Services | Acumo AI",
+  title: "Services",
   description:
     "Acumo AI builds AI-native web products for small and medium businesses — full-stack MVPs, websites & booking engines, AI voice agents with CRM, and custom AI automations. Book a free scoping call.",
+  alternates: { canonical: "/services" },
 };
 
 const services = [

@@ -1,6 +1,6 @@
 ---
 title: "I Thought Voice AI Was Just STT + LLM + TTS. I Was Wrong."
-image: "/voice-blog1.png"
+image: "/voice-blog1.webp"
 date: "Jul 21, 2026"
 ---
 

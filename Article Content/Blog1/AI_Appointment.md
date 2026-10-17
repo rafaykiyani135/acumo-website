@@ -1,6 +1,6 @@
 ---
 title: "Why Manual Appointment Booking Is Slowing Your Business Down (And What to Do About It)"
-image: "/AppointmentSetter.png"
+image: "/AppointmentSetter.webp"
 date: "Jul 14, 2026"
 
 ---

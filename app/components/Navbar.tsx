@@ -78,7 +78,7 @@ export default function Navbar() {
           <div className="flex h-14 items-center justify-between gap-3 px-4 sm:px-6">
             <Link href="/" className="min-w-0 shrink" onClick={closeMenu}>
               <Image
-                src="/acumo-logo2.png"
+                src="/acumo-logo2.webp"
                 alt="Acumo Logo"
                 width={200}
                 height={50}
@@ -160,7 +160,7 @@ export default function Navbar() {
 
           <Link href="/" className="absolute left-1/2 -translate-x-1/2">
             <Image
-              src="/acumo-logo2.png"
+              src="/acumo-logo2.webp"
               alt="Acumo Logo"
               width={320}
               height={80}

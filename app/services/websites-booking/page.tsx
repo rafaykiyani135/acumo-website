@@ -4,9 +4,10 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 
 export const metadata: Metadata = {
-  title: "High-Converting Websites with Booking & Payments | Acumo AI",
+  title: "High-Converting Websites with Booking & Payments",
   description:
     "Custom websites with built-in booking, payments, and client portals — built for speed and conversion. Book a free scoping call.",
+  alternates: { canonical: "/services/websites-booking" },
   openGraph: {
     title: "High-Converting Websites with Booking & Payments | Acumo AI",
     description:

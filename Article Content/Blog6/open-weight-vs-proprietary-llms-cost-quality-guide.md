@@ -1,7 +1,7 @@
 ---
 title: "Open-Weight AI Models vs Proprietary LLMs: How to Get Better AI Development Economics in 2026"
 description: "Why hosted open-weight models can deliver a much better price-to-quality ratio than expensive proprietary LLMs, and how developers can use them without buying a GPU."
-image: "/open_weight_vs_proprietary_llms.png"
+image: "/open_weight_vs_proprietary_llms.webp"
 imageAlt: "Open-Weight AI Models vs Proprietary LLMs cost and quality comparison"
 date: "Aug 12, 2026"
 ---

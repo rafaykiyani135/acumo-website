@@ -147,7 +147,7 @@ export default function Footer() {
                 className="inline-block rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-vibrant/60 focus-visible:ring-offset-4 focus-visible:ring-offset-bg"
               >
                 <Image
-                  src="/acumo-logo2.png"
+                  src="/acumo-logo2.webp"
                   alt="Acumo Logo"
                   width={400}
                   height={100}
@@ -213,7 +213,6 @@ export default function Footer() {
           <div className="mt-16 flex flex-col gap-6 border-t border-white/5 pt-8 md:flex-row md:items-center md:justify-between lg:mt-24">
             <div className="flex flex-col gap-3 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-muted/70 sm:flex-row sm:items-center sm:gap-6">
               <span>© {year} Acumo AI</span>
-              <span className="hidden h-3 w-px bg-white/10 sm:block" aria-hidden="true" />
               {/* <span>Made with ❤️ for us, by us</span> */}
             </div>
 

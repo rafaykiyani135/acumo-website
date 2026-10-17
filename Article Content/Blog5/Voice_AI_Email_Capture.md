@@ -1,6 +1,6 @@
 ---
 title: "The Voice AI Email Capture Problem Nobody Talks About (And How We Solved It)"
-image: "/voice_email_capture.png"
+image: "/voice_email_capture.webp"
 date: "Aug 5, 2026"
 description: "Capturing email addresses over phone calls with Voice AI sounds simple until production. Learn why STT/TTS models fail on email verification and how to fix readouts, reduce friction, and implement SMS fallbacks."
 ---

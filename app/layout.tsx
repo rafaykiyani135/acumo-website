@@ -29,8 +29,38 @@ const spaceMono = Space_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.acumoai.com"),
-  title: "Acumo | Technical Engineering",
-  description: "Engineering infrastructure for the ambitious.",
+  title: {
+    default: "Acumo AI | AI Voice Agents, Chatbots & Web Development for SMBs",
+    template: "%s | Acumo AI",
+  },
+  description:
+    "Acumo AI builds custom AI voice agents, chatbots, and AI-native websites for small and medium businesses. Answer every call, automate lead follow-up, and convert more visitors — delivered in 2–4 weeks.",
+  keywords: [
+    "AI voice agent development",
+    "AI chatbot development agency",
+    "voice AI for small business",
+    "AI automation services",
+    "AI-native web development",
+    "answer engine optimization agency",
+    "AI appointment booking agent",
+  ],
+  alternates: {
+    canonical: "./",
+  },
+  openGraph: {
+    type: "website",
+    siteName: "Acumo AI",
+    url: "https://www.acumoai.com",
+    title: "Acumo AI | AI Voice Agents, Chatbots & Web Development for SMBs",
+    description:
+      "Acumo AI builds custom AI voice agents, chatbots, and AI-native websites for small and medium businesses. Answer every call, automate lead follow-up, and convert more visitors — delivered in 2–4 weeks.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Acumo AI | AI Voice Agents, Chatbots & Web Development for SMBs",
+    description:
+      "Acumo AI builds custom AI voice agents, chatbots, and AI-native websites for small and medium businesses. Answer every call, automate lead follow-up, and convert more visitors — delivered in 2–4 weeks.",
+  },
   icons: {
     icon: "/acumo-favicon.png",
   },
@@ -46,7 +76,7 @@ export default function RootLayout({
     "@type": "Organization",
     name: "Acumo",
     url: "https://www.acumoai.com",
-    logo: "https://www.acumoai.com/acumo-logo2.png",
+    logo: "https://www.acumoai.com/acumo-logo2.webp",
     description:
       "Acumo is a technical engineering agency that builds AI-native web products for small and medium businesses — including custom chatbots, voice AI agents, full-stack SaaS platforms, and Answer Engine Optimization (AEO).",
     email: "teamacumo@gmail.com",

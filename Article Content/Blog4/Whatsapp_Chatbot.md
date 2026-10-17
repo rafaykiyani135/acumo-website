@@ -1,7 +1,7 @@
 ---
 title: "What Happens When Your Business Doesn't Reply Fast Enough?"
 description: "AI WhatsApp Assistants for wedding planners, gyms, salons, spas, and service businesses. Respond instantly, capture leads, and provide 24/7 support."
-image: "/whatsapp_chatbot.png"
+image: "/whatsapp_chatbot.webp"
 imageAlt: "AI WhatsApp Assistant chatting with a customer on a mobile phone"
 date: "Jul 21, 2026"
 ---

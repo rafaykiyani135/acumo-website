@@ -1,6 +1,6 @@
 ---
 title: "Your Voice AI Isn't Slow Because of the Model. It's Slow Because of Where You Deployed It."
-image: "/voice-ai-latency-blog.png"
+image: "/voice-ai-latency-blog.webp"
 date: "Jul 29, 2026"
 ---
 

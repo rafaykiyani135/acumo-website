@@ -4,9 +4,10 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 
 export const metadata: Metadata = {
-  title: "Full-Stack MVP Development for Startups | Acumo AI",
+  title: "Full-Stack MVP Development for Startups",
   description:
-    "From idea to launch-ready MVP in 2–8 weeks. Production-grade full-stack builds with scalable backends and modern tech stacks. Book a free 30-minute scoping call.",
+    "From idea to launch-ready MVP in 2—8 weeks. Production-grade full-stack builds with scalable backends and modern tech stacks. Book a free 30-minute scoping call.",
+  alternates: { canonical: "/services/mvp-development" },
   openGraph: {
     title: "Full-Stack MVP Development for Startups | Acumo AI",
     description:

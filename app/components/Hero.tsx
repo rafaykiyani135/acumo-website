@@ -67,7 +67,7 @@ export default function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden select-none">
         <Image
-          src="/bg-image-hero6.png"
+          src="/bg-image-hero6.webp"
           alt="Acumo Hero Background"
           fill
           priority

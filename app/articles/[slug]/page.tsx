@@ -19,10 +19,30 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const resolvedParams = await params;
   const article = getArticleBySlug(resolvedParams.slug);
   if (!article) return { title: 'Article Not Found' };
+  const parsedDate = new Date(article.date);
+  const isoDate = isNaN(parsedDate.getTime()) ? undefined : parsedDate.toISOString();
   return {
-    title: `${article.title} | Acumo AI`,
+    title: article.title,
     description: article.description || `Read ${article.title}`,
     keywords: article.keywords,
+    alternates: {
+      canonical: `/articles/${article.slug}`,
+    },
+    openGraph: {
+      title: article.title,
+      description: article.description || `Read ${article.title}`,
+      type: 'article',
+      url: `/articles/${article.slug}`,
+      publishedTime: isoDate,
+      images: article.imagePath
+        ? [{ url: article.imagePath, alt: article.imageAlt || article.title }]
+        : ['/opengraph-image'],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: article.title,
+      description: article.description || `Read ${article.title}`,
+    },
   };
 }
 
@@ -52,6 +72,63 @@ export default async function ArticlePage({
     notFound();
   }
 
+  const parsedDate = new Date(article.date);
+  const isoDate = isNaN(parsedDate.getTime()) ? new Date().toISOString() : parsedDate.toISOString();
+  const articleUrl = `https://www.acumoai.com/articles/${article.slug}`;
+
+  const blogPostingSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: article.title,
+    description: article.description || undefined,
+    image: article.imagePath ? `https://www.acumoai.com${article.imagePath}` : undefined,
+    datePublished: isoDate,
+    dateModified: isoDate,
+    author: {
+      "@type": "Organization",
+      name: "Acumo AI",
+      url: "https://www.acumoai.com",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Acumo AI",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.acumoai.com/acumo-logo2.webp",
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": articleUrl,
+    },
+    keywords: Array.isArray(article.keywords) ? article.keywords.join(", ") : undefined,
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.acumoai.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Articles",
+        item: "https://www.acumoai.com/articles",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: article.title,
+        item: articleUrl,
+      },
+    ],
+  };
+
   // Extract headings for the Section Index
   const headings: { id: string; title: string; level: number }[] = [];
   const contentLines = article.content.split('\n');
@@ -72,6 +149,14 @@ export default async function ArticlePage({
 
   return (
     <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-12 relative">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <Link 
         href="/articles"
         className="inline-flex items-center gap-2 text-white/50 hover:text-white font-sans text-sm font-bold uppercase tracking-wider mb-8 transition-colors"

@@ -4,9 +4,10 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 
 export const metadata: Metadata = {
-  title: "AI Voice Agents & CRM Integration | Acumo AI",
+  title: "AI Voice Agents & CRM Integration",
   description:
     "Custom AI voice agents that answer every call, qualify leads, and book appointments straight into your CRM. Book a free 30-minute scoping call.",
+  alternates: { canonical: "/services/voice-ai-crm" },
   openGraph: {
     title: "AI Voice Agents & CRM Integration | Acumo AI",
     description:

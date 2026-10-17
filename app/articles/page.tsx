@@ -5,8 +5,9 @@ import { ChevronLeft, ChevronRight, Clock, Calendar, ArrowRight } from 'lucide-r
 import { getArticles } from '@/lib/articles';
 
 export const metadata = {
-  title: 'Articles | Acumo AI',
+  title: 'Articles',
   description: 'Read the latest articles and insights from Acumo AI on business automation and AI engineering.',
+  alternates: { canonical: '/articles' },
 };
 
 const ITEMS_PER_PAGE = 6;

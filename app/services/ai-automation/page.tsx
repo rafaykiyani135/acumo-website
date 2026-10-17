@@ -4,9 +4,10 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 
 export const metadata: Metadata = {
-  title: "Custom AI Integrations & Business Automation | Acumo AI",
+  title: "Custom AI Integrations & Business Automation",
   description:
     "Bespoke LLM integrations and workflow automation that cut manual work and connect your existing tools. Free scoping call.",
+  alternates: { canonical: "/services/ai-automation" },
   openGraph: {
     title: "Custom AI Integrations & Business Automation | Acumo AI",
     description:
