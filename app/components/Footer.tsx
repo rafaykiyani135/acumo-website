@@ -214,7 +214,7 @@ export default function Footer() {
             <div className="flex flex-col gap-3 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-muted/70 sm:flex-row sm:items-center sm:gap-6">
               <span>© {year} Acumo AI</span>
               <span className="hidden h-3 w-px bg-white/10 sm:block" aria-hidden="true" />
-              <span>Made with ❤️ for us, by us</span>
+              {/* <span>Made with ❤️ for us, by us</span> */}
             </div>
 
             <div className="flex items-center justify-between gap-4 md:justify-end">
