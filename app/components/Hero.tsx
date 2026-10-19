@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import { gsap } from "gsap";
 
 const ROLES = [
@@ -10,6 +9,11 @@ const ROLES = [
   "AEO Solutions",
   "Custom Systems"
 ];
+
+// Brand-mapped palette (see globals.css @theme): brand-vibrant #2563FF, brand-light #60A5FA,
+// brand-deep #1E3A8A, brand-bg-deep #070D16.
+const GRID_MASK =
+  "radial-gradient(ellipse 80% 80% at 50% 45%, #000 0%, transparent 85%)";
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -62,95 +66,107 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative flex min-h-[78vh] w-full flex-col items-center justify-center overflow-x-hidden bg-bg px-4 pb-10 pt-20 sm:min-h-[82vh] sm:px-6 sm:pt-24 md:min-h-[86vh] md:px-12 lg:min-h-[90vh] lg:pt-28"
+      className="relative flex min-h-[780px] w-full flex-col overflow-hidden bg-brand-bg-deep pt-24 lg:pt-32 px-[clamp(20px,4vw,56px)]"
     >
-      {/* Background Image */}
-      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden select-none">
-        <Image
-          src="/bg-image-hero6.webp"
-          alt="Acumo Hero Background"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center scale-[1.01]"
+      {/* Background layers */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0 select-none">
+        {/* 1. Corner glows */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: [
+              "radial-gradient(ellipse 55% 75% at 100% 0%, rgba(37,99,255,0.5) 0%, transparent 70%)",
+              "radial-gradient(ellipse 45% 50% at 0% 100%, rgba(30,58,138,0.2) 0%, transparent 100%)",
+            ].join(", "),
+          }}
         />
-        {/* Cinematic bottom gradient fade to main body */}
-        <div className="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-bg via-bg/40 to-transparent z-20"></div>
+
+        {/* 2. Technical grid, faded toward the edges */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: [
+              "linear-gradient(to right, rgba(96,165,250,0.07) 1px, transparent 1px)",
+              "linear-gradient(to bottom, rgba(96,165,250,0.05) 1px, transparent 1px)",
+            ].join(", "),
+            backgroundSize: "120px 120px",
+            maskImage: GRID_MASK,
+            WebkitMaskImage: GRID_MASK,
+          }}
+        />
+
+        {/* 3. Bottom horizon line + soft glow */}
+        <div
+          className="absolute bottom-0 left-[20%] h-[90px] w-[60%]"
+          style={{
+            background:
+              "radial-gradient(ellipse 50% 100% at 50% 100%, rgba(37,99,255,0.3) 0%, transparent 100%)",
+          }}
+        />
+        <div
+          className="absolute bottom-0 left-[8%] h-px w-[84%]"
+          style={{
+            background:
+              "linear-gradient(90deg, transparent 0%, rgba(96,165,250,0.7) 50%, transparent 100%)",
+          }}
+        />
       </div>
 
-      {/* Hero Content (Centered) */}
-      <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center text-center min-w-0 w-full">
-
-        {/* Eyebrow
-        <div 
-          ref={eyebrowRef}
-          className="blur-in font-sans text-[10px] sm:text-xs text-muted uppercase tracking-[0.35em] mb-6 md:mb-8 font-bold"
-        >
-          TECHNICAL SCOPE &bull; COLLECTION &apos;26
-        </div> */}
-
-        {/* Brand Name Title */}
-        <h1
-          ref={nameRef}
-          className="name-reveal px-2 text-center font-spartan text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter leading-[0.95] text-text-primary mb-8 select-none mx-auto max-w-none"
-        >
-          Grow your revenue with Acumo
-        </h1>
-
-        {/* Dynamic Role Cycling Line */}
-        <div className="font-sans text-lg sm:text-2xl text-text-primary/95 mb-6 tracking-tight min-h-[40px] font-medium max-w-lg text-center px-4 leading-relaxed whitespace-nowrap">
-          We build{" "}
-          <span
-            key={roleIndex}
-            className="font-display italic text-[#1e3a8a] animate-role-fade-in inline-block font-bold text-xl sm:text-3xl mx-1 whitespace-nowrap"
+      {/* Hero Content (centered in the remaining space) */}
+      <div className="relative z-10 flex w-full min-w-0 flex-1 items-center justify-center">
+        <div className="mx-auto flex w-full min-w-0 flex-col items-center gap-7 pb-24 pt-[72px] text-center">
+          {/* Brand Name Title */}
+          <h1
+            ref={nameRef}
+            className="name-reveal mx-auto max-w-[20ch] select-none font-spartan text-[clamp(44px,7.4vw,104px)] font-black uppercase leading-[1.02] tracking-[-0.03em] text-text-primary [text-wrap:balance]"
           >
-            {ROLES[roleIndex]}
-          </span>{" "}
-          - engineered for scale.
-        </div>
+            Grow your revenue with{" "}
+            <em className="font-display font-bold italic text-brand-light">Acumo</em>
+          </h1>
 
-        {/* Product Description */}
-        <p
-          ref={descRef}
-          className="blur-in font-sans text-xs sm:text-sm md:text-base text-muted max-w-md mb-12 leading-relaxed font-medium"
-        >
-          Building high-performance AI-native products — from intelligent agents and RAG systems to full-stack SaaS — with obsessive attention to the details that make digital experiences exceptional.
-        </p>
+          {/* Tagline + description */}
+          <div className="flex w-full flex-col items-center gap-3">
+            {/* Dynamic Role Cycling Line */}
+            <div className="min-h-[3.1rem] max-w-xl px-2 text-center font-sans text-[clamp(18px,2vw,22px)] font-medium leading-snug text-[#dce6f7] [text-wrap:balance] sm:min-h-[1.6em]">
+              We build{" "}
+              <span
+                key={roleIndex}
+                className="animate-role-fade-in inline-block whitespace-nowrap font-display text-[1.2em] font-bold italic text-brand-light"
+              >
+                {ROLES[roleIndex]}
+              </span>{" "}
+              - engineered for scale.
+            </div>
 
-        {/* CTA Buttons */}
-        <div
-          ref={ctaRef}
-          className="blur-in flex flex-col sm:flex-row items-center justify-center gap-4 w-full"
-        >
-          {/* See Works Solid Button */}
-          <a
-            href="#case-studies"
-            className="group relative inline-flex items-center justify-center rounded-full text-xs font-bold uppercase tracking-wider px-8 py-4 bg-text-primary text-bg transition-all duration-300 hover:scale-105 w-full sm:w-auto"
+            {/* Product Description */}
+            <p
+              ref={descRef}
+              className="blur-in max-w-[660px] font-sans text-[clamp(15px,1.4vw,18px)] font-normal leading-[1.6] text-muted"
+            >
+              Building high-performance AI-native products — from intelligent agents and RAG systems to full-stack SaaS — with obsessive attention to the details that make digital experiences exceptional.
+            </p>
+          </div>
+
+          {/* CTA Buttons */}
+          <div
+            ref={ctaRef}
+            className="blur-in mt-2 flex flex-wrap items-center justify-center gap-3"
           >
-            {/* Ambient accent ring shown on hover */}
-            <span className="absolute inset-0 rounded-full p-[1px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 accent-gradient">
-              <span className="block w-full h-full bg-bg rounded-full"></span>
-            </span>
-            <span className="relative z-10 group-hover:text-text-primary transition-colors duration-300">
-              See Works
-            </span>
-          </a>
-
-          {/* Scoping Inquiry Solid Indigo Button */}
-          <a
-            href="#inquiry"
-            className="group relative inline-flex items-center justify-center rounded-full text-xs font-bold uppercase tracking-wider px-8 py-4 bg-[#1e3a8a] text-white transition-all duration-300 hover:scale-105 border border-[#1e3a8a] hover:border-transparent w-full sm:w-auto"
-          >
-            {/* Ambient accent ring on hover */}
-            <span className="absolute inset-0 rounded-full p-[1px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 accent-gradient">
-              <span className="block w-full h-full bg-bg rounded-full"></span>
-            </span>
-            <span className="relative z-10 transition-colors duration-300">
+            <a
+              href="#inquiry"
+              className="inline-flex h-12 min-w-[44px] items-center justify-center rounded-[10px] border border-brand-light/50 bg-brand-vibrant/25 px-[26px] font-sans text-[15px] font-medium text-white transition-colors duration-300 hover:bg-brand-vibrant/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-light focus-visible:ring-offset-2 focus-visible:ring-offset-brand-bg-deep"
+            >
               Start scoping
-            </span>
-          </a>
-        </div>
+            </a>
 
+            <a
+              href="#case-studies"
+              className="inline-flex h-12 min-w-[44px] items-center justify-center rounded-[10px] border border-white/30 bg-transparent px-[26px] font-sans text-[15px] font-medium text-white transition-colors duration-300 hover:bg-white/[0.07] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-light focus-visible:ring-offset-2 focus-visible:ring-offset-brand-bg-deep"
+            >
+              See Works
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );
