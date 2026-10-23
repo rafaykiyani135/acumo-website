@@ -150,18 +150,26 @@ export default function Hero() {
           {/* CTA Buttons */}
           <div
             ref={ctaRef}
-            className="blur-in mt-2 flex flex-wrap items-center justify-center gap-3"
+            className="blur-in mt-3 flex flex-wrap items-center justify-center gap-4"
           >
+            {/* Primary CTA - Start scoping */}
             <a
               href="#inquiry"
-              className="inline-flex h-12 min-w-[44px] items-center justify-center rounded-[10px] border border-brand-light/50 bg-brand-vibrant/25 px-[26px] font-sans text-[15px] font-medium text-white transition-colors duration-300 hover:bg-brand-vibrant/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-light focus-visible:ring-offset-2 focus-visible:ring-offset-brand-bg-deep"
+              className="group relative inline-flex items-center justify-center overflow-hidden rounded-full p-[1px] font-sans transition-transform duration-300 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-light focus-visible:ring-offset-2 focus-visible:ring-offset-brand-bg-deep"
             >
-              Start scoping
+              <span className="accent-gradient absolute inset-[-2px] rounded-full opacity-70 transition-opacity duration-300 group-hover:opacity-100" />
+              <span className="relative z-10 flex items-center gap-1.5 rounded-full bg-brand-vibrant px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-white shadow-[0_0_25px_rgba(37,99,255,0.4)] transition-all duration-300 group-hover:bg-brand-vibrant/90">
+                Start scoping
+                <span className="text-sm font-normal transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
+                  ↗
+                </span>
+              </span>
             </a>
 
+            {/* Secondary CTA - See Works */}
             <a
               href="#case-studies"
-              className="inline-flex h-12 min-w-[44px] items-center justify-center rounded-[10px] border border-white/30 bg-transparent px-[26px] font-sans text-[15px] font-medium text-white transition-colors duration-300 hover:bg-white/[0.07] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-light focus-visible:ring-offset-2 focus-visible:ring-offset-brand-bg-deep"
+              className="group relative inline-flex items-center justify-center rounded-full border border-white/15 bg-surface/40 px-7 py-3.5 font-sans text-xs font-bold uppercase tracking-wider text-text-primary backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-white/35 hover:bg-white/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-light focus-visible:ring-offset-2 focus-visible:ring-offset-brand-bg-deep"
             >
               See Works
             </a>
