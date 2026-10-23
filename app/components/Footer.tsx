@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUp, ArrowUpRight, CalendarDays, Mail } from "lucide-react";
 import { FaInstagram } from "react-icons/fa6";
-import DotMatrixBanner from "./DotMatrixBanner";
+import ScratchCard from "./ScratchCard";
 
 const CONTACT_EMAIL = "teamacumo@gmail.com";
 const CALENDLY_URL = "https://calendly.com/teamacumo/30min";
@@ -236,7 +236,7 @@ export default function Footer() {
           </div>
         </div>
       </footer>
-      <DotMatrixBanner />
+      <ScratchCard />
     </>
   );
 }
