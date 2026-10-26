@@ -129,6 +129,37 @@ export default async function ArticlePage({
     ],
   };
 
+  // Build FAQPage schema from a "## FAQ" section with "### Question" subheadings
+  const faqMatch = article.content.match(/^##\s+FAQ\s*$([\s\S]*?)(?=^##\s|(?![\s\S]))/m);
+  const faqEntities = faqMatch
+    ? faqMatch[1]
+        .split(/^###\s+/m)
+        .slice(1)
+        .map((block) => {
+          const [question, ...rest] = block.split('\n');
+          const answer = rest
+            .join(' ')
+            .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+            .replace(/(\*\*|__|\*|_)/g, '')
+            .replace(/\s+/g, ' ')
+            .trim();
+          return { question: question.trim(), answer };
+        })
+        .filter((item) => item.question && item.answer)
+    : [];
+
+  const faqSchema = faqEntities.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqEntities.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: { "@type": "Answer", text: item.answer },
+        })),
+      }
+    : null;
+
   // Extract headings for the Section Index
   const headings: { id: string; title: string; level: number }[] = [];
   const contentLines = article.content.split('\n');
@@ -157,6 +188,12 @@ export default async function ArticlePage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       <Link 
         href="/articles"
         className="inline-flex items-center gap-2 text-white/50 hover:text-white font-sans text-sm font-bold uppercase tracking-wider mb-8 transition-colors"
