@@ -121,6 +121,7 @@ export default function ScratchCard() {
 
     const setup = () => {
       const rect = card.getBoundingClientRect();
+      if (!rect.width || !rect.height || rect.width <= 0 || rect.height <= 0) return;
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
       const isSmall = rect.width < 640;
 

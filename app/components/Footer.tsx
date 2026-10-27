@@ -28,6 +28,7 @@ const FOOTER_COLUMNS: FooterColumn[] = [
       { label: "Voice AI & CRM", href: "/services/voice-ai-crm" },
       { label: "Websites & Booking", href: "/services/websites-booking" },
       { label: "AI & Automations", href: "/services/ai-automation" },
+      { label: "Codebase Cleanup", href: "/services/codebase-cleanup" },
       { label: "All Services", href: "/services" },
     ],
   },

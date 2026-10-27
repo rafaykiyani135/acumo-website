@@ -10,7 +10,7 @@ export const metadata = {
   alternates: { canonical: '/articles' },
 };
 
-const ITEMS_PER_PAGE = 6;
+const ITEMS_PER_PAGE = 18;
 
 export default async function ArticlesPage({
   searchParams,

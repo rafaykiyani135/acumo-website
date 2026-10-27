@@ -48,6 +48,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.9,
     },
+        {
+      url: `${siteUrl}/services/codebase-cleanup`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
     {
       url: `${siteUrl}/articles`,
       lastModified: now,

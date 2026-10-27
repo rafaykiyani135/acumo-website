@@ -36,6 +36,13 @@ const services = [
     title: ["CUSTOM AI &", "AUTOMATIONS"],
     desc: "Bespoke LLM integrations and automated workflows that cut manual work and connect the tools you already use.",
   },
+  {
+    href: "/services/codebase-cleanup",
+    num: "05",
+    title: ["CODEBASE CLEANUP &", "HARDENING"],
+    desc: "Turn your Cursor, Lovable, or Bolt vibe-coded prototype into secure, scalable, production-ready software in 1–2 weeks.",
+    status: "New",
+  },
 ];
 
 export default function ServicesPage() {

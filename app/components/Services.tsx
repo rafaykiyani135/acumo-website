@@ -44,6 +44,15 @@ export default function Services() {
       desc: "Tailored AI solutions, custom LLM integrations, and automated business workflows. We connect your proprietary software with custom AI pipelines to streamline operations, reduce friction, and automate repetitive tasks.",
       inputText: ["Custom", "LLM", "Workflow", "Pipe"],
       outputText: "Automated",
+    },
+    {
+      id: "05",
+      title: ["CODEBASE CLEANUP &", "HARDENING"],
+      subtitle: "VIBE CODE TO SCALABLE PRODUCT",
+      href: "/services/codebase-cleanup",
+      desc: "Turn your Cursor, Lovable, or Bolt vibe-coded prototype into secure, scalable, production-ready software. We audit security holes, eliminate god components, lock down database RLS, and add automated test suites in 1–2 weeks.",
+      inputText: ["Audit", "Harden", "Refactor", "Scale"],
+      outputText: "Production Ready",
     }
   ];
 

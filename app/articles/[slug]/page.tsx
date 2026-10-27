@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { getArticles, getArticleBySlug } from '@/lib/articles';
@@ -161,6 +161,11 @@ export default async function ArticlePage({
     : null;
 
   // Extract headings for the Section Index
+  const allArticles = getArticles();
+  const relatedArticles = allArticles
+    .filter((a) => a.slug !== article.slug)
+    .slice(0, 3);
+
   const headings: { id: string; title: string; level: number }[] = [];
   const contentLines = article.content.split('\n');
   
@@ -264,6 +269,57 @@ export default async function ArticlePage({
           </aside>
         )}
       </div>
+
+      {/* Related Articles Section */}
+      {relatedArticles.length > 0 && (
+        <section className="mt-24 pt-12 border-t border-white/10 pb-16">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+            <div>
+              <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#1e3a8a] font-bold mb-2">
+                Keep Reading
+              </p>
+              <h2 className="font-spartan text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-tight text-white">
+                Related Articles &amp; Insights
+              </h2>
+            </div>
+            <Link
+              href="/articles"
+              className="inline-flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-wider text-white/60 hover:text-white transition-colors"
+            >
+              All Articles <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {relatedArticles.map((rel) => (
+              <Link
+                key={rel.slug}
+                href={`/articles/${rel.slug}`}
+                className="group flex flex-col justify-between p-6 rounded-2xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] hover:border-white/20 transition-all duration-300"
+              >
+                <div>
+                  <div className="flex items-center gap-2 font-mono text-[11px] text-white/50 mb-3 uppercase tracking-wider">
+                    <span>{rel.date}</span>
+                    <span>•</span>
+                    <span>{rel.readTime}</span>
+                  </div>
+                  <h3 className="font-spartan text-lg font-bold uppercase tracking-tight text-white group-hover:text-[#4168c4] transition-colors line-clamp-2 mb-3">
+                    {rel.title}
+                  </h3>
+                  {rel.description && (
+                    <p className="font-sans text-sm text-white/70 line-clamp-3 leading-relaxed">
+                      {rel.description}
+                    </p>
+                  )}
+                </div>
+                <div className="mt-6 flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-wider text-[#4168c4] group-hover:translate-x-1 transition-transform">
+                  Read Article →
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
     </div>
   );
 }

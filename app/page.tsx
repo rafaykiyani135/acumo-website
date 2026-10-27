@@ -4,6 +4,7 @@ import DiscoverySandbox from "./components/DiscoverySandbox";
 import Services from "./components/Services";
 import ProcessSection from "./components/ProcessSection";
 import CaseStudiesSection from "./components/CaseStudiesSection";
+import ArticlesSection from "./components/ArticlesSection";
 import FAQ from "./components/FAQ";
 import InquiryForm from "./components/InquiryForm";
 import Footer from "./components/Footer";
@@ -17,6 +18,7 @@ export default function Home() {
       <Services />
       <ProcessSection />
       <CaseStudiesSection />
+      <ArticlesSection />
       <FAQ />
       <InquiryForm />
       <Footer />
