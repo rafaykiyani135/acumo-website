@@ -10,6 +10,7 @@ Acumo AI designs and ships production-grade AI systems rather than templated web
 - [Full-Stack MVP Build](https://www.acumoai.com/services/mvp-development): Rapid 0-to-1 web/mobile application builds with scalable backends, modern tech stacks (Next.js, FastAPI, PostgreSQL), and AI integrations.
 - [Websites & Booking Engine](https://www.acumoai.com/services/websites-booking): Ultra-fast custom websites with embedded scheduling, payment gateways, and automated client portals built for conversion.
 - [Custom AI & Automations](https://www.acumoai.com/services/ai-automation): Custom LLM pipelines, RAG implementations, WhatsApp/SMS bots, and automated business operations.
+- [AI Document Processing](https://www.acumoai.com/services/ai-document-processing): Custom AI document processing and data entry automation that extracts data from invoices, purchase orders, quotes and emails and pushes it into ERP, CRM and accounting systems.
 
 ## Articles & Technical Insights
 

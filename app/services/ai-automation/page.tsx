@@ -421,6 +421,12 @@ export default function AiAutomationPage() {
               → Building a product that needs these automations? Start with an MVP
             </Link>
             <Link
+              href="/services/ai-document-processing"
+              className="transition-colors duration-300 hover:text-text-primary"
+            >
+              → Automating document-heavy intake? See AI document processing
+            </Link>
+            <Link
               href="/services/websites-booking"
               className="transition-colors duration-300 hover:text-text-primary"
             >

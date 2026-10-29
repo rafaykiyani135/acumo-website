@@ -14,6 +14,7 @@ const STATIC_PATHS = [
   "/services/voice-ai-crm",
   "/services/websites-booking",
   "/services/ai-automation",
+  "/services/ai-document-processing",
   "/services/codebase-cleanup",
   "/articles",
 ];

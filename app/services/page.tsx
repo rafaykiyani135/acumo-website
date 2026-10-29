@@ -43,6 +43,13 @@ const services = [
     desc: "Turn your Cursor, Lovable, or Bolt vibe-coded prototype into secure, scalable, production-ready software in 1–2 weeks.",
     status: "New",
   },
+  {
+    href: "/services/ai-document-processing",
+    num: "06",
+    title: ["AI DOCUMENT", "PROCESSING"],
+    desc: "Extract data from quotes, orders, invoices and emails and push it into your ERP, CRM and accounting systems — no manual re-keying.",
+    status: "New",
+  },
 ];
 
 export default function ServicesPage() {
