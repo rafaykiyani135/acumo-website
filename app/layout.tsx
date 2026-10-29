@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     template: "%s | Acumo AI",
   },
   description:
-    "Acumo AI builds custom AI voice agents, chatbots, and AI-native websites for small and medium businesses. Answer every call, automate lead follow-up, and convert more visitors — delivered in 2–4 weeks.",
+    "Acumo AI builds AI voice agents, chatbots, and AI-native websites for SMBs. Capture every call, automate follow-up, and convert more visitors in 2-4 weeks.",
   keywords: [
     "AI voice agent development",
     "AI chatbot development agency",
@@ -53,13 +53,13 @@ export const metadata: Metadata = {
     url: "https://www.acumoai.com",
     title: "Acumo AI | AI Voice Agents, Chatbots & Web Development for SMBs",
     description:
-      "Acumo AI builds custom AI voice agents, chatbots, and AI-native websites for small and medium businesses. Answer every call, automate lead follow-up, and convert more visitors — delivered in 2–4 weeks.",
+      "Acumo AI builds AI voice agents, chatbots, and AI-native websites for SMBs. Capture every call, automate follow-up, and convert more visitors in 2-4 weeks.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Acumo AI | AI Voice Agents, Chatbots & Web Development for SMBs",
     description:
-      "Acumo AI builds custom AI voice agents, chatbots, and AI-native websites for small and medium businesses. Answer every call, automate lead follow-up, and convert more visitors — delivered in 2–4 weeks.",
+      "Acumo AI builds AI voice agents, chatbots, and AI-native websites for SMBs. Capture every call, automate follow-up, and convert more visitors in 2-4 weeks.",
   },
   icons: {
     icon: "/acumo-favicon.png",
