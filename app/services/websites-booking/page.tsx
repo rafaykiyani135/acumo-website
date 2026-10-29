@@ -4,14 +4,14 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 
 export const metadata: Metadata = {
-  title: "High-Converting Websites with Booking & Payments",
+  title: "Website with Online Booking & Payments",
   description:
-    "Custom websites with built-in booking, payments, and client portals — built for speed and conversion. Book a free scoping call.",
+    "Custom websites with built-in booking, payments and client portals for service businesses. Fast, mobile-first and live in 2–4 weeks. Book a free call.",
   alternates: { canonical: "/services/websites-booking" },
   openGraph: {
-    title: "High-Converting Websites with Booking & Payments | Acumo AI",
+    title: "Website with Online Booking & Payments | Acumo AI",
     description:
-      "Custom websites with integrated booking systems, payment gateways, and client portals, built for fast load times and high conversion.",
+      "Custom websites with built-in booking, payments and client portals for service businesses. Fast, mobile-first and live in 2–4 weeks. Book a free call.",
     type: "website",
     url: "https://www.acumoai.com/services/websites-booking",
   },
@@ -162,9 +162,9 @@ export default function WebsitesBookingPage() {
           </p>
 
           <h1 className="font-spartan text-[clamp(2.2rem,7vw,5.5rem)] font-black uppercase leading-[0.85] tracking-tighter text-text-primary">
-            A website built to
+            Websites that take bookings{" "}
             <span className="block text-transparent text-stroke italic font-display font-bold tracking-[0.04em]">
-              book clients
+              and payments while you sleep
             </span>
           </h1>
 

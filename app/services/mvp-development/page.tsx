@@ -4,14 +4,14 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 
 export const metadata: Metadata = {
-  title: "Full-Stack MVP Development for Startups",
+  title: "AI MVP Development for Startups in 2–4 Weeks",
   description:
-    "From idea to launch-ready MVP in 2-8 weeks. Production-grade full-stack builds with scalable backends and modern tech stacks. Book a free scoping call.",
+    "Launch your AI-powered MVP in 2–4 weeks. Production-ready web and mobile apps with scalable backends, built by an AI-native engineering team.",
   alternates: { canonical: "/services/mvp-development" },
   openGraph: {
-    title: "Full-Stack MVP Development for Startups | Acumo AI",
+    title: "AI MVP Development for Startups in 2–4 Weeks | Acumo AI",
     description:
-      "Production-ready 0-to-1 MVP builds for startups and enterprise teams. From idea to launch in 2–8 weeks. Book a free scoping call.",
+      "Launch your AI-powered MVP in 2–4 weeks. Production-ready web and mobile apps with scalable backends, built by an AI-native engineering team.",
     type: "website",
     url: "https://www.acumoai.com/services/mvp-development",
   },
@@ -170,7 +170,7 @@ export default function MvpDevelopmentPage() {
           </p>
 
           <h1 className="font-spartan text-[clamp(2.5rem,8vw,6.5rem)] font-black uppercase leading-[0.85] tracking-tighter text-text-primary">
-            Launch Your MVP
+            Launch your AI-powered MVP{" "}
             <span className="block text-transparent text-stroke italic font-display font-bold tracking-[0.04em]">
               in weeks, not months
             </span>

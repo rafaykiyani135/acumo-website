@@ -4,14 +4,14 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 
 export const metadata: Metadata = {
-  title: "Custom AI Integrations & Business Automation",
+  title: "Custom AI Automation for Business Workflows",
   description:
-    "Bespoke LLM integrations and workflow automation that cut manual work and connect your existing tools. Free scoping call.",
+    "We build custom AI automation and LLM integrations that connect to your CRM, spreadsheets and internal tools, cutting manual work. Free scoping call.",
   alternates: { canonical: "/services/ai-automation" },
   openGraph: {
-    title: "Custom AI Integrations & Business Automation | Acumo AI",
+    title: "Custom AI Automation for Business Workflows | Acumo AI",
     description:
-      "Custom LLM integrations and automated workflows that connect a business's existing software to reduce manual, repetitive work.",
+      "We build custom AI automation and LLM integrations that connect to your CRM, spreadsheets and internal tools, cutting manual work. Free scoping call.",
     type: "website",
     url: "https://www.acumoai.com/services/ai-automation",
   },
@@ -29,7 +29,7 @@ const serviceSchema = {
   areaServed: "US",
   url: "https://www.acumoai.com/services/ai-automation",
   description:
-    "Acumo AI builds custom LLM integrations and automated workflows that connect a business's existing software to reduce manual, repetitive work.",
+    "Acumo AI builds custom AI automation and AI integrations that connect to a business's existing software and business workflows to reduce manual, repetitive work.",
 };
 
 const faqSchema = {
@@ -38,10 +38,10 @@ const faqSchema = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "What kinds of processes can you automate?",
+      name: "What kinds of business workflows can you automate?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Nearly any repeatable, rules-based process — intake and data entry, lead routing, document review, report generation, CRM cleanup, and notifications between your existing tools. Acumo AI starts with the workflows that eat the most staff hours.",
+        text: "Nearly any repeatable, rules-based business workflow — intake and data entry, lead routing, document review, report generation, CRM cleanup, and notifications between your existing tools. Acumo AI starts with the custom AI automation opportunities that eat the most staff hours.",
       },
     },
     {
@@ -57,7 +57,7 @@ const faqSchema = {
       name: "Can you connect our proprietary software or custom APIs?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. Acumo AI builds custom LLM integrations that connect to proprietary software and private APIs, not just off-the-shelf apps. If a system has an API, it can be automated.",
+        text: "Yes. Acumo AI builds custom AI integrations and LLM pipelines that connect to proprietary software and private APIs, not just off-the-shelf apps. If a system has an API, it can be automated.",
       },
     },
     {
@@ -81,7 +81,7 @@ const faqSchema = {
 
 const deliverables = [
   {
-    title: "Custom LLM integrations",
+    title: "Custom AI integrations",
     detail:
       "AI connected to your tools and your data — automation that understands your business, not just templates.",
   },
@@ -162,9 +162,9 @@ export default function AiAutomationPage() {
           </p>
 
           <h1 className="font-spartan text-[clamp(2.2rem,7vw,5.5rem)] font-black uppercase leading-[0.85] tracking-tighter text-text-primary">
-            Automate the
+            Custom AI automation{" "}
             <span className="block text-transparent text-stroke italic font-display font-bold tracking-[0.04em]">
-              busywork
+              that plugs into your existing workflows
             </span>
           </h1>
 
@@ -182,9 +182,10 @@ export default function AiAutomationPage() {
             <span className="font-bold uppercase tracking-wider text-[#1e3a8a]">
               What Acumo AI does:
             </span>{" "}
-            Acumo AI builds custom LLM integrations and automated workflows that
-            connect a business&apos;s existing software to reduce manual,
-            repetitive work.
+            Yes. Acumo AI builds custom AI automation tools that connect to the
+            software you already use, including your CRM, calendar, spreadsheets and
+            internal systems, so repetitive work like data entry, follow-ups and
+            reporting runs on its own.
           </p>
 
           <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center">

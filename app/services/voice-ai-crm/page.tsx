@@ -4,14 +4,14 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 
 export const metadata: Metadata = {
-  title: "AI Voice Agents & CRM Integration",
+  title: "AI Voice Receptionist for Small Business",
   description:
-    "Custom AI voice agents that answer every call, qualify leads, and book appointments straight into your CRM. Book a free 30-minute scoping call.",
+    "Custom AI voice agents that answer every call, qualify leads and book appointments into HubSpot, GoHighLevel or Salesforce. Live in 2–4 weeks.",
   alternates: { canonical: "/services/voice-ai-crm" },
   openGraph: {
-    title: "AI Voice Agents & CRM Integration | Acumo AI",
+    title: "AI Voice Receptionist for Small Business | Acumo AI",
     description:
-      "Custom AI voice agents that answer calls, qualify leads, and book appointments automatically into your CRM, 24/7.",
+      "Custom AI voice agents that answer every call, qualify leads and book appointments into HubSpot, GoHighLevel or Salesforce. Live in 2–4 weeks.",
     type: "website",
     url: "https://www.acumoai.com/services/voice-ai-crm",
   },
@@ -162,9 +162,9 @@ export default function VoiceAiCrmPage() {
           </p>
 
           <h1 className="font-spartan text-[clamp(2.2rem,7vw,5.5rem)] font-black uppercase leading-[0.85] tracking-tighter text-text-primary">
-            Never Miss a
+            Never miss a booking:{" "}
             <span className="block text-transparent text-stroke italic font-display font-bold tracking-[0.04em]">
-              Booking
+              AI voice agents that answer, qualify and book
             </span>
           </h1>
 
