@@ -15,21 +15,33 @@ export async function generateStaticParams() {
   }));
 }
 
+const TITLE_SUFFIX = ' | Acumo AI';
+
+function seoTitle(title: string): string {
+  const max = 70 - TITLE_SUFFIX.length;
+  if (title.length <= max) return title;
+  const trimmed = title.slice(0, max);
+  const spaceCut = trimmed.slice(0, Math.max(trimmed.lastIndexOf(' '), 0));
+  const base = spaceCut.length >= 40 ? spaceCut : trimmed;
+  return base.replace(/[\s,:;–—-]+$/, '').trim();
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> | { slug: string } }) {
   const resolvedParams = await params;
   const article = getArticleBySlug(resolvedParams.slug);
   if (!article) return { title: 'Article Not Found' };
   const parsedDate = new Date(article.date);
   const isoDate = isNaN(parsedDate.getTime()) ? undefined : parsedDate.toISOString();
+  const sharedTitle = seoTitle(article.title);
   return {
-    title: article.title,
+    title: sharedTitle,
     description: article.description || `Read ${article.title}`,
     keywords: article.keywords,
     alternates: {
       canonical: `/articles/${article.slug}`,
     },
     openGraph: {
-      title: article.title,
+      title: sharedTitle,
       description: article.description || `Read ${article.title}`,
       type: 'article',
       url: `/articles/${article.slug}`,
@@ -40,7 +52,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     },
     twitter: {
       card: 'summary_large_image',
-      title: article.title,
+      title: sharedTitle,
       description: article.description || `Read ${article.title}`,
     },
   };
@@ -247,6 +259,7 @@ export default async function ArticlePage({
             <ReactMarkdown 
               remarkPlugins={[remarkGfm]}
               components={{
+                h1: ({children}) => <h2 className="hidden">{children}</h2>,
                 h2: ({node, children, ...props}) => {
                   const id = generateId(children);
                   return <h2 id={id} {...props}>{children}</h2>;
