@@ -69,7 +69,7 @@ export default function Services() {
     >
       {/* Search Engine & AI Crawler Accessibility Layer */}
       <div className="sr-only">
-        <h2>Acumo Custom Development Services</h2>
+        <h2>Acumo AI Custom Development Services</h2>
         <ul>
           {services.map((s) => (
             <li key={s.id}>

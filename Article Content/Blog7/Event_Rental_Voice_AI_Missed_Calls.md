@@ -53,7 +53,7 @@ An offshore rep does not know that a 30x60 tent needs extra staking on gravel or
 
 ## Deploying Voice AI Without Breaking Existing Operations
 
-Acumo keeps the rollout from disrupting operations with a structured two to four week schedule.
+Acumo AI keeps the rollout from disrupting operations with a structured two to four week schedule.
 
 **Week one: Discovery.** We map inventory, pricing, deposit rules, delivery windows, and the questions your best receptionist asks.
 
@@ -69,4 +69,4 @@ After hours call answering for equipment rental workflows runs identically to we
 
 Missed call automation for rental businesses is proven, not experimental.
 
-Calculate how many inbound leads your rental business misses after 6 PM. Book an [Acumo Voice AI Architecture Demo](https://acumoai.com). We will map your call volume, quantify the revenue bleed, and walk you through a production voice pipeline for your inventory. Bring your call logs. We will bring the architecture.
+Calculate how many inbound leads your rental business misses after 6 PM. Book an [Acumo AI Voice AI Architecture Demo](https://acumoai.com). We will map your call volume, quantify the revenue bleed, and walk you through a production voice pipeline for your inventory. Bring your call logs. We will bring the architecture.

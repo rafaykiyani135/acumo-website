@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 
-// Hardcoded Resend API Key configuration
-const RESEND_API_KEY = "re_RaQD3MEN_9ha1sYzvHpKzfyxqcTF8P64n";
+const RESEND_API_KEY = process.env.RESEND_API_KEY;
 
 export async function POST(request: Request) {
   try {
@@ -9,6 +8,10 @@ export async function POST(request: Request) {
 
     if (!name || !email || !scope) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+    }
+
+    if (!RESEND_API_KEY) {
+      return NextResponse.json({ error: "Email service not configured" }, { status: 500 });
     }
 
     // Direct HTTP POST to Resend API (no package installation required!)
@@ -19,13 +22,13 @@ export async function POST(request: Request) {
         "Authorization": `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "Acumo Inquiry <onboarding@resend.dev>",
+        from: "Acumo AI Inquiry <onboarding@resend.dev>",
         to: ["teamacumo@gmail.com"],
         subject: `New Technical Inquiry from ${name}`,
         html: `
           <div style="font-family: sans-serif; max-width: 600px; color: #111; line-height: 1.6; border: 1px solid #eaeaea; border-radius: 8px; padding: 24px; background-color: #fafafa;">
             <h2 style="color: #1e3a8a; border-bottom: 2px solid #1e3a8a; padding-bottom: 8px; margin-top: 0; font-family: 'League Spartan', sans-serif; text-transform: uppercase;">
-              Acumo Technical Inquiry
+              Acumo AI Technical Inquiry
             </h2>
             <p style="margin: 16px 0;"><strong>Sender Name:</strong> ${name}</p>
             <p style="margin: 16px 0;"><strong>Email Address:</strong> <a href="mailto:${email}" style="color: #1e3a8a; text-decoration: none;">${email}</a></p>

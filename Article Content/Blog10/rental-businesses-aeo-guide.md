@@ -143,7 +143,7 @@ For rental companies, this becomes especially useful for detailed queries. A bus
 
 The goal is not to manufacture mentions or manipulate AI answers. It is to create a consistent, verifiable digital footprint.
 
-## 6. How Acumo Engineers AEO-First Websites
+## 6. How Acumo AI Engineers AEO-First Websites
 
 At Acumo AI, we approach AEO as an engineering problem, not simply a content exercise.
 

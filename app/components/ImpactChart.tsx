@@ -55,7 +55,7 @@ export default function ImpactChart() {
   const data = {
     labels: ['0', '2', '4', '6', '8', '10'],
     datasets: [{
-      label: 'Acumo_Latency',
+      label: 'Acumo AI Latency',
       data: [1200, 420, 110, 38, 14, 8],
       borderColor: '#2563FF',
       borderWidth: 3,

@@ -71,7 +71,7 @@ export default function OpenGraphImage() {
                 letterSpacing: 4,
               }}
             >
-              ACUMO
+              ACUMO AI
             </div>
           </div>
           <div

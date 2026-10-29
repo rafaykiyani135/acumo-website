@@ -77,7 +77,7 @@ A high-reliability alternative is triggering an automated SMS while on the call:
 
 ## Quick Comparison: Standard Voice Capture vs. Optimized Email Capture
 
-| Feature | Standard Tutorial Setup | Production-Grade Acumo Setup |
+| Feature | Standard Tutorial Setup | Production-Grade Acumo AI Setup |
 |---|---|---|
 | **Prompt Trigger** | Abrupt ("What's your email?") | Value-first ("I'll send the quote—what's the best email?") |
 | **TTS Confirmation** | Spells full string with symbols | Formats phonetics cleanly to prevent false user corrections |
@@ -93,4 +93,4 @@ A high-reliability alternative is triggering an automated SMS while on the call:
 - **Targeted Disambiguation**: Don't force users to repeat full emails when only the domain or a single character is in question.
 - **Small Details Win Production**: Email capture doesn't make flashy 30-second Twitter demos, but it is a core bottleneck in real client deployments.
 
-*Building production Voice AI agents or automated lead qualification systems? Explore how Acumo engineers low-latency voice infrastructure and CRM integrations built for real business workflows.*
+*Building production Voice AI agents or automated lead qualification systems? Explore how Acumo AI engineers low-latency voice infrastructure and CRM integrations built for real business workflows.*

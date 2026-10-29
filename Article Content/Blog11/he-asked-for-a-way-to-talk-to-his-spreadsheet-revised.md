@@ -214,4 +214,4 @@ In this case, one request to interact with a spreadsheet through conversation le
 
 The technology was more involved than the original request, but the goal stayed simple: remove unnecessary manual work and make the existing data easier to use.
 
-That is how we approach AI automation at Acumo. We start with the process someone is already doing, identify where time is being lost, and look for practical ways to connect AI with the systems that already matter to the business.
+That is how we approach AI automation at Acumo AI. We start with the process someone is already doing, identify where time is being lost, and look for practical ways to connect AI with the systems that already matter to the business.

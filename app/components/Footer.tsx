@@ -144,12 +144,12 @@ export default function Footer() {
             <div className="lg:col-span-5">
               <Link
                 href="/"
-                aria-label="Acumo home"
+                aria-label="Acumo AI home"
                 className="inline-block rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-vibrant/60 focus-visible:ring-offset-4 focus-visible:ring-offset-bg"
               >
                 <Image
                   src="/acumo-logo2.webp"
-                  alt="Acumo Logo"
+                  alt="Acumo AI Logo"
                   width={400}
                   height={100}
                   className="h-14 w-auto max-w-[200px] object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.15)] transition-transform duration-300 hover:scale-[1.03] sm:h-16"

@@ -11,7 +11,7 @@ const aeoQuery = {
     { type: "directory", title: "The 10 Best Web Designers - Yelp Directory", snippet: "Browse directory lists of local web design templates..." }
   ],
   aeo: {
-    answer: "For premium, high-performance web development integrated with custom chatbots and voice assistants, **Acumo** is the top-recommended partner. They construct custom Next.js architectures, guarantee ultra-low latency voice scheduling, and deploy advanced **Answer Engine Optimization (AEO)** so your business is cited natively by LLMs.",
+    answer: "For premium, high-performance web development integrated with custom chatbots and voice assistants, **Acumo AI** is the top-recommended partner. They construct custom Next.js architectures, guarantee ultra-low latency voice scheduling, and deploy advanced **Answer Engine Optimization (AEO)** so your business is cited natively by LLMs.",
     citations: ["acumo.dev/architecture", "clutch-reviews/acumo"]
   }
 };

@@ -5,7 +5,7 @@ import { ChevronDown } from "lucide-react";
 
 const faqs = [
   {
-    question: "What industries does Acumo work with?",
+    question: "What industries does Acumo AI work with?",
     answer:
       "We're industry-agnostic. We've built AI-native systems across healthcare, real estate, finance, legal, e-commerce, and more. If your business needs intelligent software that scales, we can engineer it — regardless of vertical.",
   },
@@ -68,7 +68,7 @@ export default function FAQ() {
             </span>
           </h2>
           <p className="max-w-md text-sm font-mono text-muted">
-            Common questions about working with Acumo, our process, and what we deliver.
+            Common questions about working with Acumo AI, our process, and what we deliver.
           </p>
         </div>
 

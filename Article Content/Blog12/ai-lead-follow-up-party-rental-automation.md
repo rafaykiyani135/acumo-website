@@ -80,13 +80,13 @@ It can also help with missed calls. If a customer calls while the owner is setti
 
 Acumo AI can build a custom **party rental lead follow up automation** system around the way your business already operates.
 
-Rather than forcing you to change your entire workflow, Acumo can connect AI with your existing CRM, website, forms, calendars, booking tools, and communication channels.
+Rather than forcing you to change your entire workflow, Acumo AI can connect its agents with your existing CRM, website, forms, calendars, booking tools, and communication channels.
 
 The system can automatically respond to new inquiries, qualify potential customers, send follow-up messages, follow up after quotes, re-engage older leads, and notify your team when human intervention is required.
 
 The goal is simple: **stop losing customers because nobody followed up.**
 
-Acumo also builds custom voice and text AI agents for lead qualification and booking, allowing businesses to capture inquiries even when their team is busy or unavailable.
+Acumo AI also builds custom voice and text AI agents for lead qualification and booking, allowing businesses to capture inquiries even when their team is busy or unavailable.
 
 ## Turn More Leads Into Bookings
 

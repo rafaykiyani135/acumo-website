@@ -244,7 +244,7 @@ For some businesses, that may mean automating document processing. For others, i
 
 The right solution depends on the process.
 
-At Acumo, we approach automation from that direction. We start by understanding how a business actually works, identify where time is being lost, and then determine whether AI and automation can solve the problem.
+At Acumo AI, we approach automation from that direction. We start by understanding how a business actually works, identify where time is being lost, and then determine whether AI and automation can solve the problem.
 
 Sometimes the solution is OCR. Sometimes it is CRM automation. Sometimes it is email processing. In many cases, the most useful solution is a combination of several systems working together.
 

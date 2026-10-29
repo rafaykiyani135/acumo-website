@@ -43,7 +43,7 @@ export default async function ArticlesPage({
           Articles & Insights
         </h1>
         <p className="font-sans text-white/70 text-base sm:text-lg leading-relaxed">
-          Real-world engineering, practical AI automation, and technical deep dives from the Acumo team.
+          Real-world engineering, practical AI automation, and technical deep dives from the Acumo AI team.
         </p>
       </div>
 

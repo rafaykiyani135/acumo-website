@@ -79,7 +79,7 @@ export default function Navbar() {
             <Link href="/" className="min-w-0 shrink" onClick={closeMenu}>
               <Image
                 src="/acumo-logo2.webp"
-                alt="Acumo Logo"
+                alt="Acumo AI Logo"
                 width={200}
                 height={50}
                 className="h-8 w-auto max-w-[130px] sm:max-w-[150px] object-contain"
@@ -161,7 +161,7 @@ export default function Navbar() {
           <Link href="/" className="absolute left-1/2 -translate-x-1/2">
             <Image
               src="/acumo-logo2.webp"
-              alt="Acumo Logo"
+              alt="Acumo AI Logo"
               width={320}
               height={80}
               className="h-14 w-auto object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.15)] transition-transform duration-300 hover:scale-[1.03]"

@@ -121,7 +121,7 @@ export default function Hero() {
             className="name-reveal mx-auto max-w-[20ch] select-none font-spartan text-[clamp(44px,7.4vw,104px)] font-black uppercase leading-[1.02] tracking-[-0.03em] text-text-primary [text-wrap:balance]"
           >
             Grow your revenue with{" "}
-            <em className="font-display font-bold italic text-brand-light">Acumo</em>
+            <em className="font-display font-bold italic text-brand-light">Acumo AI</em>
           </h1>
 
           {/* Tagline + description */}

@@ -75,11 +75,11 @@ Comparing traditional quote forms to real-time pricing calculators highlights a 
 
 ---
 
-## The Acumo Solution: Custom Booking Websites Built for Rental Companies
+## The Acumo AI Solution: Custom Booking Websites Built for Rental Companies
 
 Generic website templates and clunky plugins often fail event rental businesses because they are slow, difficult to manage, and can't handle complex rental pricing rules.
 
-Acumo specializes in **custom rental booking engine web development** designed specifically for party and event rental companies:
+Acumo AI specializes in **custom rental booking engine web development** designed specifically for party and event rental companies:
 
 * **Fast, Mobile-Friendly Websites:** We build custom websites that load instantly on smartphones, tablets, and computers without slow plugin lag.
 * **Custom Pricing Engines:** We build a **dynamic pricing calculator party rentals** tool tailored to your exact inventory catalog, surface setup rules, and delivery fees.
@@ -93,4 +93,4 @@ Acumo specializes in **custom rental booking engine web development** designed s
 
 Making high-ticket event clients wait two days for a simple price estimate is a habit of the past. Event rental companies that switch to real-time online estimators win more customers, boost their average order size, and save hundreds of hours of office admin work every year.
 
-Stop letting manual quoting slow down your growth. **[Explore Acumo's custom rental booking engine architectures](https://acumoai.com)** and turn your website into an automated booking machine.
+Stop letting manual quoting slow down your growth. **[Explore Acumo AI's custom rental booking engine architectures](https://acumoai.com)** and turn your website into an automated booking machine.
