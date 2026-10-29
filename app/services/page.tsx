@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Acumo AI builds AI-native web products for small and medium businesses — full-stack MVPs, websites & booking engines, AI voice agents with CRM, and custom AI automations. Book a free scoping call.",
+    "Acumo AI builds AI-native web products: full-stack MVPs, websites & booking engines, AI voice agents with CRM, and custom AI automations. Free scoping call.",
   alternates: { canonical: "/services" },
 };
 

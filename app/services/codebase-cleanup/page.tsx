@@ -6,7 +6,7 @@ import Footer from "../../components/Footer";
 export const metadata: Metadata = {
   title: "Codebase Cleanup & Hardening for AI-Built & Vibe-Coded Apps",
   description:
-    "Built your app with Cursor, Lovable, Bolt.new, or v0? Don't rewrite from scratch. We audit, refactor, and harden AI-generated codebases into secure, scalable production software in 1–2 weeks.",
+    "We audit, refactor, and harden AI-generated apps built in Cursor, Lovable, Bolt.new, or v0 into secure, scalable production software in 1-2 weeks.",
   alternates: { canonical: "/services/codebase-cleanup" },
   openGraph: {
     title: "Codebase Cleanup & Hardening for AI-Built & Vibe-Coded Apps | Acumo AI",
