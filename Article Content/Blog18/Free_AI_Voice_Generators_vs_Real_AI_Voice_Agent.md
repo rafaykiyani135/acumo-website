@@ -1,6 +1,8 @@
 ---
 title: "Free AI Voice Generators vs a Real AI Voice Agent"
 description: "A free AI voice generator makes audio from text. An AI voice agent answers calls, books appointments, and updates your CRM. Learn which one your business actually needs."
+image: "/free-vs-real-voice-agent.webp"
+imageAlt: "AI voice generator versus a full AI voice agent answering a business phone call"
 date: "Nov 6, 2026"
 keywords:
   - free ai voice generator
