@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Acumo AI — Branding Kit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=League+Spartan:wght@700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  /* ============================================================
+     ACUMO AI — BRAND TOKENS
+     ============================================================ */
+  :root {
+    /* Brand core */
+    --brand-vibrant: #2563FF;
+    --brand-deep:    #1E3A8A;
+    --brand-light:   #60A5FA;
+    --brand-signal:  #4168C4;
+
+    /* Surfaces */
+    --bg:      #070D16;
+    --surface: #0B1220;
+    --panel:   #060B19;
+    --raised:  #141414;
+
+    /* Text */
+    --text:   #F5F5F5;
+    --muted:  #878787;
+    --stroke: #1F1F1F;
+
+    /* Support */
+    --emerald: #34D399;
+
+    /* Gradients */
+    --grad-accent: linear-gradient(90deg, #89AACC 0%, #4E85BF 100%);
+    --grad-glow:   radial-gradient(ellipse 55% 75% at 100% 0%, rgba(37,99,255,.5) 0%, transparent 70%);
+    --grid-line:   rgba(255,255,255,.03);
+
+    /* Type */
+    --font-sans:    "Instrument Sans", system-ui, sans-serif;
+    --font-display: "Instrument Serif", Georgia, serif;
+    --font-spartan: "League Spartan", system-ui, sans-serif;
+    --font-mono:    "Space Mono", ui-monospace, monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+  }
+
+  /* technical grid backdrop */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-image:
+      linear-gradient(var(--grid-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 100px 100px;
+    background-position: center top;
+  }
+
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 32px; position: relative; z-index: 1; }
+
+  /* ============================================================
+     HEADER
+     ============================================================ */
+  .topbar {
+    position: sticky; top: 0; z-index: 50;
+    border-bottom: 1px solid var(--stroke);
+    background: rgba(7,13,22,.72);
+    backdrop-filter: blur(16px);
+  }
+  .topbar-inner {
+    max-width: 1180px; margin: 0 auto; padding: 14px 32px;
+    display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  }
+  .brand-lockup { display: flex; align-items: center; gap: 14px; }
+  .brand-lockup img { height: 34px; width: auto; display: block; }
+  .brand-lockup span {
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: .28em;
+    text-transform: uppercase; color: var(--muted); border-left: 1px solid var(--stroke);
+    padding-left: 14px;
+  }
+  .topnav { display: flex; gap: 22px; }
+  .topnav a {
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: .18em;
+    text-transform: uppercase; color: var(--muted); text-decoration: none;
+    transition: color .25s;
+  }
+  .topnav a:hover { color: var(--text); }
+
+  /* ============================================================
+     SECTIONS
+     ============================================================ */
+  section { padding: 88px 0; border-bottom: 1px solid var(--stroke); }
+  .eyebrow {
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: .28em;
+    text-transform: uppercase; color: var(--brand-light);
+    display: flex; align-items: center; gap: 12px; margin-bottom: 18px;
+  }
+  .eyebrow::before { content: ""; width: 16px; height: 1px; background: currentColor; opacity: .6; }
+  h2.section-title {
+    font-family: var(--font-spartan); font-weight: 900; text-transform: uppercase;
+    font-size: clamp(2rem, 4vw, 3.2rem); line-height: .95; letter-spacing: -.02em;
+    margin-bottom: 14px;
+  }
+  .section-lede { color: var(--muted); max-width: 620px; font-size: 15px; }
+
+  /* ============================================================
+     HERO
+     ============================================================ */
+  .hero { padding: 96px 0 80px; position: relative; overflow: hidden; border-bottom: 1px solid var(--stroke); }
+  .hero-glow {
+    position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    background:
+      radial-gradient(ellipse 55% 75% at 100% 0%, rgba(37,99,255,.35) 0%, transparent 70%),
+      radial-gradient(ellipse 45% 50% at 0% 100%, rgba(30,58,138,.2) 0%, transparent 100%);
+  }
+  .hero .wrap { position: relative; z-index: 1; }
+  .hero h1 {
+    font-family: var(--font-spartan); font-weight: 900; text-transform: uppercase;
+    font-size: clamp(2.8rem, 7vw, 6rem); line-height: .98; letter-spacing: -.03em;
+    max-width: 16ch;
+  }
+  .hero h1 em { font-family: var(--font-display); font-style: italic; font-weight: 400; color: var(--brand-light); text-transform: none; }
+  .hero p { color: var(--muted); max-width: 560px; margin-top: 22px; font-size: 16px; }
+  .hero-meta {
+    display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px;
+  }
+  .pill {
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: .16em;
+    text-transform: uppercase; padding: 8px 16px; border-radius: 999px;
+    border: 1px solid var(--stroke); color: var(--muted); background: rgba(20,20,20,.5);
+  }
+  .pill--live { color: var(--text); }
+  .pill--live::before {
+    content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--emerald); margin-right: 8px; vertical-align: middle;
+    box-shadow: 0 0 8px var(--emerald);
+  }
+
+  /* ============================================================
+     COLOR SWATCHES
+     ============================================================ */
+  .swatch-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 40px; }
+  .swatch {
+    border: 1px solid var(--stroke); border-radius: 14px; overflow: hidden;
+    background: var(--surface); cursor: pointer; transition: transform .25s, border-color .25s;
+  }
+  .swatch:hover { transform: translateY(-3px); border-color: rgba(96,165,250,.4); }
+  .swatch-chip { height: 120px; position: relative; }
+  .swatch-chip::after {
+    content: "COPY"; position: absolute; bottom: 10px; right: 12px;
+    font-family: var(--font-mono); font-size: 9px; letter-spacing: .16em;
+    color: rgba(255,255,255,.65); opacity: 0; transition: opacity .2s;
+  }
+  .swatch:hover .swatch-chip::after { opacity: 1; }
+  .swatch-body { padding: 16px 18px 18px; }
+  .swatch-name { font-family: var(--font-sans); font-weight: 600; font-size: 14px; }
+  .swatch-hex { font-family: var(--font-mono); font-size: 11px; color: var(--muted); margin-top: 3px; }
+  .swatch-use { font-size: 12px; color: var(--muted); margin-top: 10px; line-height: 1.5; }
+  .swatch-group-label {
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: .22em; text-transform: uppercase;
+    color: var(--muted); margin: 44px 0 0;
+  }
+  .swatch-group-label:first-of-type { margin-top: 36px; }
+
+  /* ============================================================
+     TYPOGRAPHY
+     ============================================================ */
+  .type-block { border-top: 1px solid var(--stroke); padding: 34px 0; display: grid; grid-template-columns: 220px 1fr; gap: 32px; }
+  .type-block:first-of-type { border-top: none; padding-top: 8px; }
+  .type-meta .font-name { font-weight: 600; font-size: 15px; }
+  .type-meta .font-role { font-family: var(--font-mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--brand-light); margin-top: 6px; }
+  .type-meta .font-note { font-size: 12px; color: var(--muted); margin-top: 12px; line-height: 1.6; }
+  .type-specimen { overflow: hidden; }
+  .spartan { font-family: var(--font-spartan); font-weight: 900; text-transform: uppercase; line-height: .92; letter-spacing: -.02em; font-size: clamp(2rem, 4.5vw, 3.4rem); }
+  .serif { font-family: var(--font-display); font-style: italic; font-size: clamp(2rem, 4.5vw, 3.4rem); line-height: 1; color: var(--brand-light); }
+  .sans { font-family: var(--font-sans); font-size: 26px; line-height: 1.35; max-width: 30ch; }
+  .mono { font-family: var(--font-mono); font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--text); }
+  .glyph-row { font-family: var(--font-mono); font-size: 12px; color: var(--muted); margin-top: 14px; letter-spacing: .08em; word-break: break-word; }
+
+  /* Scale table */
+  .scale { margin-top: 48px; border: 1px solid var(--stroke); border-radius: 14px; overflow: hidden; }
+  .scale-row { display: grid; grid-template-columns: 140px 1fr 130px; gap: 20px; align-items: baseline; padding: 18px 22px; border-top: 1px solid var(--stroke); }
+  .scale-row:first-child { border-top: none; background: rgba(20,20,20,.5); }
+  .scale-row.header span { font-family: var(--font-mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+  .scale-token { font-family: var(--font-mono); font-size: 11px; color: var(--brand-light); }
+  .scale-usage { font-family: var(--font-mono); font-size: 10px; color: var(--muted); text-align: right; }
+
+  /* ============================================================
+     GRADIENTS
+     ============================================================ */
+  .grad-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 40px; }
+  .grad-card { border: 1px solid var(--stroke); border-radius: 14px; overflow: hidden; background: var(--surface); }
+  .grad-sample { height: 90px; }
+  .grad-info { padding: 14px 18px; }
+  .grad-info .name { font-size: 14px; font-weight: 600; }
+  .grad-info code { font-family: var(--font-mono); font-size: 10px; color: var(--muted); display: block; margin-top: 5px; word-break: break-all; }
+
+  /* ============================================================
+     LOGO
+     ============================================================ */
+  .logo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 40px; }
+  .logo-tile {
+    border: 1px solid var(--stroke); border-radius: 14px; min-height: 220px;
+    display: flex; align-items: center; justify-content: center; padding: 32px; position: relative;
+  }
+  .logo-tile.dark { background: var(--panel); }
+  .logo-tile.blue { background: var(--brand-vibrant); }
+  .logo-tile.dark img { height: 96px; width: auto; }
+  .logo-tile .tag {
+    position: absolute; bottom: 12px; left: 16px;
+    font-family: var(--font-mono); font-size: 9px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted);
+  }
+  .logo-tile.blue .tag { color: rgba(255,255,255,.7); }
+  .logo-tile.blue .logo-wordmark {
+    font-family: var(--font-spartan); font-weight: 900; text-transform: uppercase;
+    letter-spacing: .1em; font-size: 34px; color: #fff;
+  }
+  .logo-note { color: var(--muted); font-size: 13px; margin-top: 20px; max-width: 700px; }
+
+  /* ============================================================
+     COMPONENTS
+     ============================================================ */
+  .comp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 40px; }
+  .comp-card { border: 1px solid var(--stroke); border-radius: 14px; background: var(--surface); padding: 32px; }
+  .comp-label { font-family: var(--font-mono); font-size: 9px; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); margin-bottom: 22px; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 6px; cursor: pointer;
+    background: var(--brand-vibrant); color: #fff; border: none; border-radius: 999px;
+    padding: 14px 28px; font-family: var(--font-sans); font-size: 12px; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase;
+    box-shadow: 0 0 25px rgba(37,99,255,.4);
+    transition: transform .25s, background .25s;
+  }
+  .btn-primary:hover { transform: scale(1.04); background: #3b74ff; }
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 6px; cursor: pointer;
+    background: rgba(20,20,20,.4); color: var(--text); border: 1px solid rgba(255,255,255,.15);
+    border-radius: 999px; padding: 14px 28px; font-family: var(--font-sans);
+    font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+    transition: transform .25s, border-color .25s;
+  }
+  .btn-secondary:hover { transform: scale(1.04); border-color: rgba(255,255,255,.35); }
+  .label-tech {
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: .25em;
+    text-transform: uppercase; color: var(--text); display: flex; align-items: center; gap: 12px;
+  }
+  .label-tech::before { content: ""; width: 16px; height: 1px; background: currentColor; opacity: .5; }
+  .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+  .tag {
+    font-family: var(--font-mono); font-size: 9px; letter-spacing: .12em; text-transform: uppercase;
+    padding: 6px 12px; border-radius: 999px; border: 1px solid var(--stroke);
+    color: var(--muted); background: rgba(20,20,20,.5);
+  }
+  .tag.accent { border-color: rgba(30,58,138,.6); color: var(--brand-light); background: rgba(30,58,138,.15); }
+
+  /* ============================================================
+     VOICE & MOTION
+     ============================================================ */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 40px; }
+  .list-plain { list-style: none; }
+  .list-plain li { padding: 14px 0; border-top: 1px solid var(--stroke); font-size: 14px; color: var(--muted); display: flex; gap: 12px; }
+  .list-plain li:first-child { border-top: none; }
+  .list-plain li strong { color: var(--text); font-weight: 600; }
+  .list-plain li::before { content: "+"; font-family: var(--font-mono); color: var(--brand-light); }
+
+  .motion-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+  .motion-chip {
+    border: 1px solid var(--stroke); border-radius: 10px; padding: 12px 16px; background: var(--surface);
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: .08em; color: var(--muted);
+  }
+  .motion-chip b { color: var(--text); display: block; font-family: var(--font-sans); font-size: 13px; letter-spacing: 0; margin-bottom: 3px; }
+
+  /* ============================================================
+     FOOTER
+     ============================================================ */
+  footer { padding: 56px 0 64px; }
+  .footer-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
+  .footer-inner p { font-family: var(--font-mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+  .toast {
+    position: fixed; bottom: 28px; left: 50%; transform: translate(-50%, 20px);
+    background: var(--brand-vibrant); color: #fff; font-family: var(--font-mono);
+    font-size: 11px; letter-spacing: .1em; padding: 12px 22px; border-radius: 999px;
+    opacity: 0; pointer-events: none; transition: all .3s; z-index: 100;
+  }
+  .toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+  @media (max-width: 780px) {
+    .wrap { padding: 0 20px; }
+    .type-block { grid-template-columns: 1fr; gap: 16px; }
+    .logo-grid, .comp-grid, .two-col { grid-template-columns: 1fr; }
+    .scale-row { grid-template-columns: 1fr; gap: 6px; }
+    .scale-usage { text-align: left; }
+    .topnav { display: none; }
+    section { padding: 64px 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand-lockup">
+      <img src="public/acumo-logo2.webp" alt="Acumo AI" />
+      <span>Brand Kit / v1.0</span>
+    </div>
+    <nav class="topnav">
+      <a href="#logo">Logo</a>
+      <a href="#colors">Color</a>
+      <a href="#type">Type</a>
+      <a href="#gradients">Gradient</a>
+      <a href="#components">UI</a>
+      <a href="#voice">Voice</a>
+    </nav>
+  </div>
+</div>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="hero-glow"></div>
+  <div class="wrap">
+    <div class="eyebrow">Acumo AI — Brand Identity</div>
+    <h1>Engineering infrastructure <em>for the ambitious.</em></h1>
+    <p>The visual and verbal system behind Acumo AI: dark, technical, editorial, and built to feel engineered rather than decorated.</p>
+    <div class="hero-meta">
+      <span class="pill pill--live">Design System v1.0</span>
+      <span class="pill">Dark-first</span>
+      <span class="pill">Technical Editorial</span>
+      <span class="pill">acumoai.com</span>
+    </div>
+  </div>
+</header>
+
+<!-- ================= LOGO ================= -->
+<section id="logo">
+  <div class="wrap">
+    <div class="eyebrow">01 — Mark</div>
+    <h2 class="section-title">Logo &amp; Wordmark</h2>
+    <p class="section-lede">The Acumo mark is a nested, continuous-line "A" built from circuit-like strokes and nodes — a literal reference to connected systems and intelligent infrastructure.</p>
+
+    <div class="logo-grid">
+      <div class="logo-tile dark">
+        <img src="public/acumo-logo2.webp" alt="Acumo AI logo on dark" />
+        <span class="tag">Primary / on dark</span>
+      </div>
+      <div class="logo-tile blue">
+        <span class="logo-wordmark">ACUMO AI</span>
+        <span class="tag">Wordmark / on brand blue</span>
+      </div>
+    </div>
+    <p class="logo-note"><strong>Usage:</strong> Keep the mark on dark backgrounds or Acumo Blue. Preserve clear space equal to the height of the inner "A" on all sides. Never stretch, recolor outside the palette, add outlines, or place the white mark on light backgrounds without a dark container.</p>
+  </div>
+</section>
+
+<!-- ================= COLORS ================= -->
+<section id="colors">
+  <div class="wrap">
+    <div class="eyebrow">02 — Color</div>
+    <h2 class="section-title">Color System</h2>
+    <p class="section-lede">A near-black canvas with one electric blue accent. Blue signals intelligence, precision, and product. White is reserved for hierarchy, never decoration. Click any swatch to copy its hex.</p>
+
+    <p class="swatch-group-label">Brand Blue</p>
+    <div class="swatch-grid">
+      <div class="swatch" data-hex="#2563FF">
+        <div class="swatch-chip" style="background:#2563FF"></div>
+        <div class="swatch-body">
+          <div class="swatch-name">Acumo Vibrant</div>
+          <div class="swatch-hex">#2563FF</div>
+          <div class="swatch-use">Primary accent. CTAs, active states, glows, key highlights.</div>
+        </div>
+      </div>
+      <div class="swatch" data-hex="#1E3A8A">
+        <div class="swatch-chip" style="background:#1E3A8A"></div>
+        <div class="swatch-body">
+          <div class="swatch-name">Acumo Deep</div>
+          <div class="swatch-hex">#1E3A8A</div>
+          <div class="swatch-use">Secondary accent. Eyebrows, section labels, hover text on dark.</div>
+        </div>
+      </div>
+      <div class="swatch" data-hex="#60A5FA">
+        <div class="swatch-chip" style="background:#60A5FA"></div>
+        <div class="swatch-body">
+          <div class="swatch-name">Acumo Light</div>
+          <div class="swatch-hex">#60A5FA</div>
+          <div class="swatch-use">Emphasis type, serif italics, focus rings, link hovers.</div>
+        </div>
+      </div>
+      <div class="swatch" data-hex="#4168C4">
+        <div class="swatch-chip" style="background:#4168C4"></div>
+        <div class="swatch-body">
+          <div class="swatch-name">Acumo Signal</div>
+          <div class="swatch-hex">#4168C4</div>
+          <div class="swatch-use">Article links, secondary hover states, subtle accents.</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="swatch-group-label">Surfaces</p>
+    <div class="swatch-grid">
+      <div class="swatch" data-hex="#070D16">
+        <div class="swatch-chip" style="background:#070D16; border-bottom:1px solid #1F1F1F"></div>
+        <div class="swatch-body">
+          <div class="swatch-name">Void</div>
+          <div class="swatch-hex">#070D16</div>
+          <div class="swatch-use">Page background and hero canvas.</div>
+        </div>
+      </div>
+      <div class="swatch" data-hex="#0B1220">
+        <div class="swatch-chip" style="background:#0B1220"></div>
+        <div class="swatch-body">
+          <div class="swatch-name">Surface</div>
+          <div class="swatch-hex">#0B1220</div>
+          <div class="swatch-use">Cards, panels, alternating sections.</div>
+        </div>
+      </div>
+      <div class="swatch" data-hex="#060B19">
+        <div class="swatch-chip" style="background:#060B19"></div>
+        <div class="swatch-body">
+          <div class="swatch-name">Deep Panel</div>
+          <div class="swatch-hex">#060B19</div>
+          <div class="swatch-use">OG images, inset panels, deepest layer.</div>
+        </div>
+      </div>
+      <div class="swatch" data-hex="#141414">
+        <div class="swatch-chip" style="background:#141414"></div>
+        <div class="swatch-body">
+          <div class="swatch-name">Raised</div>
+          <div class="swatch-hex">#141414</div>
+          <div class="swatch-use">Neutral elevated surfaces, inputs, chips.</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="swatch-group-label">Text &amp; Utility</p>
+    <div class="swatch-grid">
+      <div class="swatch" data-hex="#F5F5F5">
+        <div class="swatch-chip" style="background:#F5F5F5"></div>
+        <div class="swatch-body">
+          <div class="swatch-name">Text Primary</div>
+          <div class="swatch-hex">#F5F5F5</div>
+          <div class="swatch-use">Headlines and primary body copy.</div>
+        </div>
+      </div>
+      <div class="swatch" data-hex="#878787">
+        <div class="swatch-chip" style="background:#878787"></div>
+        <div class="swatch-body">
+          <div class="swatch-name">Muted</div>
+          <div class="swatch-hex">#878787</div>
+          <div class="swatch-use">Secondary copy, captions, metadata.</div>
+        </div>
+      </div>
+      <div class="swatch" data-hex="#1F1F1F">
+        <div class="swatch-chip" style="background:#1F1F1F"></div>
+        <div class="swatch-body">
+          <div class="swatch-name">Stroke</div>
+          <div class="swatch-hex">#1F1F1F</div>
+          <div class="swatch-use">Borders, dividers, grid structure.</div>
+        </div>
+      </div>
+      <div class="swatch" data-hex="#34D399">
+        <div class="swatch-chip" style="background:#34D399"></div>
+        <div class="swatch-body">
+          <div class="swatch-name">Operational Green</div>
+          <div class="swatch-hex">#34D399</div>
+          <div class="swatch-use">Status only — "all systems operational", positive signals.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TYPOGRAPHY ================= -->
+<section id="type">
+  <div class="wrap">
+    <div class="eyebrow">03 — Typography</div>
+    <h2 class="section-title">Type System</h2>
+    <p class="section-lede">Four typefaces in strict roles: a heavy geometric display for impact, an italic serif for emphasis, a neutral sans for reading, and a mono for technical metadata.</p>
+
+    <div style="margin-top:48px">
+      <div class="type-block">
+        <div class="type-meta">
+          <div class="font-name">League Spartan</div>
+          <div class="font-role">Display / Headlines</div>
+          <div class="font-note">Weights 700–900. Always uppercase for headlines. Tight tracking (-0.02em) and compressed leading (0.9–1.0).</div>
+        </div>
+        <div class="type-specimen">
+          <div class="spartan">AI-native systems</div>
+          <div class="glyph-row">ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789</div>
+        </div>
+      </div>
+
+      <div class="type-block">
+        <div class="type-meta">
+          <div class="font-name">Instrument Serif</div>
+          <div class="font-role">Editorial / Accent</div>
+          <div class="font-note">Italic only, weight 400. Used to humanize a headline, name the product, or add editorial warmth.</div>
+        </div>
+        <div class="type-specimen">
+          <div class="serif">for the ambitious</div>
+          <div class="glyph-row">ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789</div>
+        </div>
+      </div>
+
+      <div class="type-block">
+        <div class="type-meta">
+          <div class="font-name">Instrument Sans</div>
+          <div class="font-role">Body / UI</div>
+          <div class="font-note">Weights 400–700. Default body face. Generous line-height (1.6) for long-form readability.</div>
+        </div>
+        <div class="type-specimen">
+          <div class="sans">Building high-performance AI-native products with obsessive attention to detail.</div>
+          <div class="glyph-row">ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789</div>
+        </div>
+      </div>
+
+      <div class="type-block">
+        <div class="type-meta">
+          <div class="font-name">Space Mono</div>
+          <div class="font-role">Labels / Metadata</div>
+          <div class="font-note">Weights 400–700. Uppercase, wide tracking (0.18–0.28em). Eyebrows, tags, buttons, nav, code.</div>
+        </div>
+        <div class="type-specimen">
+          <div class="mono">// Technical Engineering<br />// 2026 · Acumo AI</div>
+          <div class="glyph-row">ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scale">
+      <div class="scale-row header">
+        <span>Token</span><span>Sample</span><span>Usage</span>
+      </div>
+      <div class="scale-row">
+        <span class="scale-token">hero-title</span>
+        <span style="font-family:var(--font-spartan);font-weight:900;text-transform:uppercase;font-size:34px;line-height:.9;letter-spacing:-.03em">Grow Revenue</span>
+        <span class="scale-usage">Landing hero</span>
+      </div>
+      <div class="scale-row">
+        <span class="scale-token">section-title</span>
+        <span style="font-family:var(--font-spartan);font-weight:900;text-transform:uppercase;font-size:24px;letter-spacing:-.02em">Section Heading</span>
+        <span class="scale-usage">Section intro</span>
+      </div>
+      <div class="scale-row">
+        <span class="scale-token">body</span>
+        <span style="font-family:var(--font-sans);font-size:15px;color:var(--muted)">Supporting paragraph copy at comfortable measure.</span>
+        <span class="scale-usage">Paragraphs</span>
+      </div>
+      <div class="scale-row">
+        <span class="scale-token">label-tech</span>
+        <span style="font-family:var(--font-mono);font-size:10px;letter-spacing:.25em;text-transform:uppercase">TECHNICAL LABEL</span>
+        <span class="scale-usage">Eyebrows / meta</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GRADIENTS ================= -->
+<section id="gradients">
+  <div class="wrap">
+    <div class="eyebrow">04 — Gradient &amp; Glow</div>
+    <h2 class="section-title">Light &amp; Atmosphere</h2>
+    <p class="section-lede">Blue light is used as atmosphere, not fill. Glows sit behind content; the accent gradient is reserved for button borders and decorative strokes.</p>
+
+    <div class="grad-grid">
+      <div class="grad-card">
+        <div class="grad-sample" style="background:linear-gradient(90deg,#89AACC 0%,#4E85BF 100%)"></div>
+        <div class="grad-info">
+          <div class="name">Accent Gradient</div>
+          <code>linear-gradient(90deg, #89AACC 0%, #4E85BF 100%)</code>
+        </div>
+      </div>
+      <div class="grad-card">
+        <div class="grad-sample" style="background:radial-gradient(ellipse 55% 75% at 100% 0%, rgba(37,99,255,.5) 0%, transparent 70%)"></div>
+        <div class="grad-info">
+          <div class="name">Hero Glow</div>
+          <code>radial-gradient(ellipse 55% 75% at 100% 0%, rgba(37,99,255,.5), transparent 70%)</code>
+        </div>
+      </div>
+      <div class="grad-card">
+        <div class="grad-sample" style="background:radial-gradient(ellipse 50% 100% at 50% 100%, rgba(37,99,255,.3) 0%, transparent 100%)"></div>
+        <div class="grad-info">
+          <div class="name">Horizon Glow</div>
+          <code>radial-gradient(ellipse 50% 100% at 50% 100%, rgba(37,99,255,.3), transparent 100%)</code>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COMPONENTS ================= -->
+<section id="components">
+  <div class="wrap">
+    <div class="eyebrow">05 — Interface</div>
+    <h2 class="section-title">Components</h2>
+    <p class="section-lede">Pill geometry, hairline borders, and mono labels. Interfaces should read as instruments — precise, quiet, and confident.</p>
+
+    <div class="comp-grid">
+      <div class="comp-card">
+        <div class="comp-label">Buttons</div>
+        <button class="btn-primary">Start Scoping <span style="font-weight:400">↗</span></button>
+        <br /><br />
+        <button class="btn-secondary">See Works</button>
+      </div>
+      <div class="comp-card">
+        <div class="comp-label">Labels &amp; Tags</div>
+        <div class="label-tech">Technical Label</div>
+        <div class="tag-row">
+          <span class="tag">MVP Development</span>
+          <span class="tag accent">Voice AI</span>
+          <span class="tag">AEO</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VOICE & MOTION ================= -->
+<section id="voice">
+  <div class="wrap">
+    <div class="eyebrow">06 — Voice &amp; Motion</div>
+    <h2 class="section-title">How We Sound &amp; Move</h2>
+    <p class="section-lede">Acumo speaks like a senior engineer: direct, precise, never hype-driven. Motion is slow-in, fast-out, and always purposeful.</p>
+
+    <div class="two-col">
+      <div>
+        <p class="swatch-group-label" style="margin-top:0">Voice Principles</p>
+        <ul class="list-plain">
+          <li><span><strong>Precise, not loud.</strong> Say the concrete thing. Avoid superlatives and AI buzzwords.</span></li>
+          <li><span><strong>Engineer to engineer.</strong> Respect the reader's intelligence. Explain architecture, not vibes.</span></li>
+          <li><span><strong>Editorial rhythm.</strong> Short sentences. Land the point. Use the serif for warmth, never for filler.</span></li>
+          <li><span><strong>Confident, not arrogant.</strong> Show outcomes. Let the work carry the claim.</span></li>
+        </ul>
+      </div>
+      <div>
+        <p class="swatch-group-label" style="margin-top:0">Motion Tokens</p>
+        <div class="motion-row">
+          <div class="motion-chip"><b>Entrance</b>cubic-bezier(.16,1,.3,1) · 700–1200ms</div>
+          <div class="motion-chip"><b>Hover</b>200–400ms ease-out</div>
+          <div class="motion-chip"><b>Scale</b>1 → 1.03–1.05</div>
+          <div class="motion-chip"><b>Glow</b>opacity 0.4 → 1.0</div>
+          <div class="motion-chip"><b>Marquee</b>40s linear infinite</div>
+          <div class="motion-chip"><b>Fade-up</b>translateY 30px → 0</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:56px">
+      <p class="swatch-group-label" style="margin-top:0">Layout Rules</p>
+      <ul class="list-plain">
+        <li><span><strong>Grid:</strong> 12-column, 24px gutter, max width 1400px, 40px side padding.</span></li>
+        <li><span><strong>Radius:</strong> pills (999px) for actions and tags; 12–16px for cards and panels. No sharp cards.</span></li>
+        <li><span><strong>Borders:</strong> 1px hairlines via <code style="font-family:var(--font-mono);font-size:12px;color:var(--brand-light)">rgba(255,255,255,.05–.15)</code>. Structure comes from lines, not shadows.</span></li>
+        <li><span><strong>Spacing:</strong> section padding 80–160px; content gaps in 8px increments.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap footer-inner">
+    <p>© 2026 Acumo AI — Branding Kit v1.0</p>
+    <p style="color:var(--brand-light)">Engineering infrastructure for the ambitious.</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast">Copied to clipboard</div>
+
+<script>
+  const toast = document.getElementById('toast');
+  let toastTimer;
+
+  document.querySelectorAll('.swatch').forEach((el) => {
+    el.addEventListener('click', async () => {
+      const hex = el.dataset.hex;
+      try {
+        await navigator.clipboard.writeText(hex);
+        toast.textContent = hex + ' copied';
+      } catch {
+        toast.textContent = hex;
+      }
+      toast.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove('show'), 1600);
+    });
+  });
+</script>
+
+</body>
+</html>
