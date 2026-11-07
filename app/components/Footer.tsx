@@ -4,7 +4,7 @@ import { ArrowUp, ArrowUpRight, CalendarDays, Mail } from "lucide-react";
 import { FaInstagram } from "react-icons/fa6";
 import ScratchCard from "./ScratchCard";
 
-const CONTACT_EMAIL = "teamacumo@gmail.com";
+const CONTACT_EMAIL = "hello@acumoai.com";
 const CALENDLY_URL = "https://calendly.com/teamacumo/30min";
 
 type FooterLink = {

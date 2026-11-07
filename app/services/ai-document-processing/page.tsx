@@ -405,10 +405,10 @@ export default function AiDocumentProcessingPage() {
                 Direct Channel
               </div>
               <a
-                href="mailto:teamacumo@gmail.com"
+                href="mailto:hello@acumoai.com"
                 className="font-mono text-lg font-bold tracking-tight text-text-primary hover:text-[#1e3a8a] transition-all duration-300 sm:text-xl"
               >
-                teamacumo@gmail.com
+                hello@acumoai.com
               </a>
             </div>
           </div>

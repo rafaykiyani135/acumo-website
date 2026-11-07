@@ -79,13 +79,13 @@ export default function RootLayout({
     logo: "https://www.acumoai.com/acumo-logo2.webp",
     description:
       "Acumo AI is a technical engineering agency that builds AI-native web products for small and medium businesses — including custom chatbots, voice AI agents, full-stack SaaS platforms, and Answer Engine Optimization (AEO).",
-    email: "teamacumo@gmail.com",
+    email: "hello@acumoai.com",
     sameAs: [
       "https://www.instagram.com/acumo.ai/",
     ],
     contactPoint: {
       "@type": "ContactPoint",
-      email: "teamacumo@gmail.com",
+      email: "hello@acumoai.com",
       contactType: "sales",
       availableLanguage: "English",
     },

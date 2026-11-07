@@ -39,8 +39,8 @@ export default function InquiryForm() {
 
             <div className="mt-20 lg:mt-32 pt-8 border-t border-white/5">
               <div className="font-mono text-[10px] text-muted uppercase tracking-[0.2em] mb-3 font-bold">Direct Channel</div>
-              <a href="mailto:teamacumo@gmail.com" className="text-xl font-bold tracking-tight text-text-primary hover:text-[#1e3a8a] transition-all duration-300 font-mono">
-                teamacumo@gmail.com
+              <a href="mailto:hello@acumoai.com" className="text-xl font-bold tracking-tight text-text-primary hover:text-[#1e3a8a] transition-all duration-300 font-mono">
+                hello@acumoai.com
               </a>
             </div>
           </div>
