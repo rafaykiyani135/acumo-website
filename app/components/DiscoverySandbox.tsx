@@ -20,30 +20,30 @@ export default function DiscoverySandbox() {
   return (
     <section
       id="ai-native"
-      className="relative w-full overflow-x-hidden border-y border-white/5 bg-[#0b1220] py-20 text-text-primary sm:py-24 lg:py-40"
+      className="brand-section relative w-full overflow-x-hidden border-y border-white/5 bg-bg py-20 text-text-primary sm:py-24 lg:py-40"
     >
       <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-10">
-        <div className="absolute top-1/4 left-1/4 h-64 w-64 rounded-full bg-[#1e3a8a]/10 blur-[120px] sm:h-[500px] sm:w-[500px] sm:blur-[180px]" />
-        <div className="absolute bottom-1/4 right-1/4 h-64 w-64 rounded-full bg-[#1e3a8a]/10 blur-[120px] sm:h-[500px] sm:w-[500px] sm:blur-[180px]" />
+        <div className="absolute top-1/4 left-1/4 h-64 w-64 rounded-full bg-[#2563FF]/10 blur-[120px] sm:h-[500px] sm:w-[500px] sm:blur-[180px]" />
+        <div className="absolute bottom-1/4 right-1/4 h-64 w-64 rounded-full bg-[#2563FF]/10 blur-[120px] sm:h-[500px] sm:w-[500px] sm:blur-[180px]" />
       </div>
 
       <div className="relative z-10 mx-auto w-full min-w-0 max-w-[1300px] px-4 sm:px-6">
         <div className="mb-12 border-b border-white/5 pb-8 sm:mb-16">
-          <h2 className="mb-4 font-spartan text-3xl font-black uppercase tracking-tighter text-text-primary sm:text-4xl md:text-5xl lg:text-6xl">
-            AI-NATIVE ENGINE
+          <h2 className="mb-4 font-display text-3xl text-text-primary sm:text-4xl md:text-5xl lg:text-6xl font-normal tracking-[-0.02em]">
+            Get found by{" "}<em className="italic font-display text-brand-vibrant accent-glow">AI search.</em>
           </h2>
-          <p className="max-w-lg text-sm font-mono text-muted">
+          <p className="max-w-lg text-[15px] leading-relaxed font-sans text-muted">
             The next search engine is generative AI. We optimize your content so AI surfaces your brand.
           </p>
         </div>
 
         <div className="flex flex-col gap-12 lg:grid lg:grid-cols-12 lg:items-start lg:gap-12">
           <div className="min-w-0 lg:col-span-5">
-            <div className="mb-4 flex flex-wrap items-center gap-2 font-mono text-[10px] font-bold uppercase tracking-wider text-[#1e3a8a]">
+            <div className="mb-4 flex flex-wrap items-center gap-2 font-mono text-[10px] font-bold uppercase tracking-wider text-[#2563FF]">
               <TrendingUp size={12} className="shrink-0" />
               <span>LLM Discovery Optimization</span>
             </div>
-            <h3 className="mb-6 font-spartan text-2xl font-black uppercase tracking-tighter text-text-primary sm:text-3xl md:text-4xl">
+            <h3 className="mb-6 font-sans text-2xl font-semibold tracking-tight text-text-primary sm:text-3xl md:text-4xl">
               Answer Engine Optimization (AEO)
             </h3>
             <p className="mb-8 text-sm font-medium leading-relaxed text-muted">
@@ -54,7 +54,7 @@ export default function DiscoverySandbox() {
               <div className="w-fit max-w-full rounded-full border border-red-500/20 bg-red-500/5 px-3 py-2 font-mono text-[10px] font-bold uppercase tracking-wide text-red-400 sm:px-4 sm:text-[11px]">
                 SEO: Cluttered Ad Space
               </div>
-              <div className="w-fit max-w-full rounded-full border border-[#1e3a8a]/30 bg-[#1e3a8a]/10 px-3 py-2 font-mono text-[10px] font-bold uppercase tracking-wide text-text-primary sm:px-4 sm:text-[11px]">
+              <div className="w-fit max-w-full rounded-full border border-[#2563FF]/30 bg-[#2563FF]/10 px-3 py-2 font-mono text-[10px] font-bold uppercase tracking-wide text-text-primary sm:px-4 sm:text-[11px]">
                 AEO: Natively Recommended
               </div>
             </div>
@@ -92,27 +92,27 @@ export default function DiscoverySandbox() {
               </p>
             </div>
 
-            <div className="relative flex w-full min-w-0 flex-col justify-between overflow-hidden rounded-xl border border-[#1e3a8a]/20 bg-[#1e3a8a]/5 p-2.5 shadow-lg backdrop-blur-md sm:rounded-2xl sm:p-4">
+            <div className="relative flex w-full min-w-0 flex-col justify-between overflow-hidden rounded-xl border border-[#2563FF]/20 bg-[#2563FF]/5 p-2.5 shadow-lg backdrop-blur-md sm:rounded-2xl sm:p-4">
               <div className="min-w-0">
-                <div className="mb-2 border-b border-[#1e3a8a]/20 pb-1.5 font-mono text-[8px] font-bold uppercase tracking-wide text-[#1e3a8a] sm:mb-3 sm:pb-2 sm:text-xs sm:tracking-wider">
+                <div className="mb-2 border-b border-[#2563FF]/20 pb-1.5 font-mono text-[8px] font-bold uppercase tracking-wide text-[#2563FF] sm:mb-3 sm:pb-2 sm:text-xs sm:tracking-wider">
                   Generative Synthesizer
                 </div>
 
-                <div className="mb-2 flex min-w-0 items-start gap-1.5 rounded-full border border-[#1e3a8a]/20 bg-[#0b1220] px-2 py-1.5 sm:mb-3 sm:gap-2 sm:px-3 sm:py-2">
-                  <Sparkles size={10} className="mt-0.5 shrink-0 text-[#1e3a8a] sm:h-3 sm:w-3" />
-                  <span className="min-w-0 break-words font-mono text-[8px] font-bold leading-snug text-[#1e3a8a] sm:text-[10px]">
+                <div className="mb-2 flex min-w-0 items-start gap-1.5 rounded-full border border-[#2563FF]/20 bg-[#0b1220] px-2 py-1.5 sm:mb-3 sm:gap-2 sm:px-3 sm:py-2">
+                  <Sparkles size={10} className="mt-0.5 shrink-0 text-[#2563FF] sm:h-3 sm:w-3" />
+                  <span className="min-w-0 break-words font-mono text-[8px] font-bold leading-snug text-[#2563FF] sm:text-[10px]">
                     {aeoQuery.query}
                   </span>
                 </div>
 
                 <div className="rounded-lg border border-white/5 bg-bg/85 p-2 sm:p-3">
-                  <div className="mb-2 flex items-center gap-1.5 font-mono text-[7px] font-bold uppercase tracking-wide text-[#1e3a8a] sm:text-[9px] sm:tracking-wider">
+                  <div className="mb-2 flex items-center gap-1.5 font-mono text-[7px] font-bold uppercase tracking-wide text-[#2563FF] sm:text-[9px] sm:tracking-wider">
                     <Bot size={10} className="shrink-0" /> AI Answer Model
                   </div>
                   <p className="break-words text-[10px] leading-relaxed text-text-primary/80 sm:text-sm">
                     {aeoQuery.aeo.answer}
                   </p>
-                  <div className="mt-2 flex flex-wrap gap-x-1.5 gap-y-1 border-t border-white/5 pt-2 font-mono text-[7px] text-[#1e3a8a] sm:mt-3 sm:gap-x-2 sm:text-[10px]">
+                  <div className="mt-2 flex flex-wrap gap-x-1.5 gap-y-1 border-t border-white/5 pt-2 font-mono text-[7px] text-[#2563FF] sm:mt-3 sm:gap-x-2 sm:text-[10px]">
                     <span className="shrink-0">Citations:</span>
                     {aeoQuery.aeo.citations.map((cite, i) => (
                       <span key={i} className="break-all font-bold underline">
@@ -123,7 +123,7 @@ export default function DiscoverySandbox() {
                 </div>
               </div>
 
-              <p className="mt-3 border-t border-[#1e3a8a]/20 pt-2 font-mono text-[8px] font-bold leading-relaxed text-[#1e3a8a] sm:mt-4 sm:pt-3 sm:text-[11px]">
+              <p className="mt-3 border-t border-[#2563FF]/20 pt-2 font-mono text-[8px] font-bold leading-relaxed text-[#2563FF] sm:mt-4 sm:pt-3 sm:text-[11px]">
                 Direct organic citation recommending you directly to qualified prospects.
               </p>
             </div>

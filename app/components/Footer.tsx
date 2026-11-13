@@ -176,7 +176,7 @@ export default function Footer() {
                   className="group relative inline-flex items-center justify-center overflow-hidden rounded-full p-[1px] font-sans transition-transform duration-300 hover:scale-[1.03] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-vibrant/60 focus-visible:ring-offset-4 focus-visible:ring-offset-bg"
                 >
                   <span className="accent-gradient absolute inset-[-2px] rounded-full opacity-40 transition-opacity duration-300 group-hover:opacity-100" />
-                  <span className="relative z-10 flex items-center gap-2 rounded-full bg-surface px-5 py-2.5 text-[11px] font-bold uppercase tracking-wider text-text-primary">
+                  <span className="relative z-10 flex items-center gap-2 rounded-full bg-gradient-to-b from-[#3B74FF] to-brand-vibrant px-5 py-2.5 text-[11px] font-bold uppercase tracking-wider text-white shadow-[0_0_30px_rgba(37,99,255,0.45)]">
                     Book a free scoping call
                     <ArrowUpRight
                       className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"

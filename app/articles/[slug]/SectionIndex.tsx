@@ -40,8 +40,8 @@ export default function SectionIndex({ headings }: { headings: Heading[] }) {
           >
             <a
               href={`#${heading.id}`}
-              className={`block transition-all duration-300 hover:text-[#1e3a8a] ${activeId === heading.id
-                  ? 'text-[#1e3a8a] font-bold border-l-2 border-[#1e3a8a] pl-3 -ml-[14px]'
+              className={`block transition-all duration-300 hover:text-[#2563FF] ${activeId === heading.id
+                  ? 'text-[#2563FF] font-bold border-l-2 border-[#2563FF] pl-3 -ml-[14px]'
                   : 'text-white/70'
                 }`}
             >

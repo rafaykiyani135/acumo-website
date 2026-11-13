@@ -91,7 +91,7 @@ interface CaseLogProps {
 
 export default function CaseLog({ onOpenProject }: CaseLogProps) {
   return (
-    <section id="case-studies" className="relative w-full overflow-x-hidden border-b border-white/5 bg-bg py-20 sm:py-24 lg:py-40">
+    <section id="case-studies" className="brand-section relative w-full overflow-x-hidden border-b border-white/5 bg-bg py-20 sm:py-24 lg:py-40">
       {/* Subtle technical background grid */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.02]">
         <div className="absolute inset-0 bg-grid"></div>
@@ -101,10 +101,10 @@ export default function CaseLog({ onOpenProject }: CaseLogProps) {
 
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-20 gap-8 min-w-0">
           <div className="min-w-0 w-full">
-            <h2 className="text-text-primary font-spartan text-[clamp(2.5rem,12vw,8rem)] font-black leading-[0.8] tracking-[0.03em] uppercase select-none break-words">
-              CASE <br className="hidden sm:block" />
-              <span className="text-transparent text-stroke italic font-display font-bold tracking-[0.04em] ml-0 sm:ml-[clamp(1rem,8vw,8rem)] block">
-                STUDIES.
+            <h2 className="text-text-primary font-display text-[clamp(2.5rem,12vw,8rem)] leading-[0.95] select-none break-words font-normal tracking-[-0.02em]">
+              Case <br className="hidden sm:block" />
+              <span className="italic font-display text-brand-vibrant accent-glow ml-0 sm:ml-[clamp(1rem,8vw,8rem)] block">
+                studies.
               </span>
             </h2>
           </div>
@@ -114,7 +114,7 @@ export default function CaseLog({ onOpenProject }: CaseLogProps) {
           {Object.values(projectsData).map((project) => (
             <div 
               key={project.id}
-              className="group relative flex flex-col bg-surface/35 backdrop-blur-sm border border-white/5 rounded-2xl cursor-pointer overflow-hidden shadow-2xl transition-all duration-[0.8s] ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-2 hover:border-[#1e3a8a]/60 hover:shadow-[0_20px_40px_rgba(30,58,138,0.1)]"
+              className="group relative flex flex-col bg-surface/35 backdrop-blur-sm border border-white/5 rounded-2xl cursor-pointer overflow-hidden shadow-2xl transition-all duration-[0.8s] ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-2 hover:border-[#2563FF]/60 hover:shadow-[0_20px_40px_rgba(30,58,138,0.1)]"
               onClick={() => onOpenProject(project)}
             >
               <div className="w-full h-[280px] overflow-hidden relative bg-surface">
@@ -128,11 +128,11 @@ export default function CaseLog({ onOpenProject }: CaseLogProps) {
 
               <div className="p-8 flex flex-col flex-1">
                 <div className="flex justify-between items-start mb-6">
-                  <span className="font-mono text-[9px] tracking-widest text-[#1e3a8a] uppercase font-bold">{project.industry.replace('_', ' ')}</span>
+                  <span className="font-mono text-[9px] tracking-widest text-[#2563FF] uppercase font-bold">{project.industry.replace('_', ' ')}</span>
                   <span className="font-mono text-[10px] tracking-[0.2em] text-muted font-bold">{project.id.padStart(2, '0')}/</span>
                 </div>
 
-                <h3 className="text-[1.75rem] font-spartan font-black uppercase tracking-tighter text-text-primary mb-4 group-hover:text-[#1e3a8a] transition-colors duration-300">
+                <h3 className="text-[1.75rem] font-sans font-semibold tracking-tight text-text-primary mb-4 group-hover:text-[#2563FF] transition-colors duration-300">
                   {project.title}
                 </h3>
 
@@ -145,7 +145,7 @@ export default function CaseLog({ onOpenProject }: CaseLogProps) {
                     {project.tech.map((t) => (
                       <span 
                         key={t} 
-                        className="px-3.5 py-1.5 bg-surface text-muted group-hover:bg-[#1e3a8a]/20 group-hover:text-text-primary transition-all duration-500 font-mono text-[9px] tracking-wider rounded-full uppercase border border-stroke group-hover:border-[#1e3a8a]/30 font-bold"
+                        className="px-3.5 py-1.5 bg-surface text-muted group-hover:bg-[#2563FF]/20 group-hover:text-text-primary transition-all duration-500 font-mono text-[9px] tracking-wider rounded-full uppercase border border-stroke group-hover:border-[#2563FF]/30 font-bold"
                       >
                         {t}
                       </span>

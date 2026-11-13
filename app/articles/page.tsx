@@ -39,7 +39,7 @@ export default async function ArticlesPage({
       {/* Header Section */}
       <div className="mb-12 max-w-3xl">
 
-        <h1 className="font-spartan text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tighter text-white mb-4 leading-tight">
+        <h1 className="font-display text-4xl sm:text-5xl md:text-6xl text-white mb-4 leading-tight font-normal tracking-[-0.02em]">
           Articles & Insights
         </h1>
         <p className="font-sans text-white/70 text-base sm:text-lg leading-relaxed">
@@ -76,7 +76,7 @@ export default async function ArticlesPage({
                     <div className="lg:col-span-5 p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
                       <div>
                         <div className="flex flex-wrap items-center gap-3 font-sans text-xs font-bold uppercase tracking-wider text-white/50 mb-4">
-                          <span className="inline-flex items-center gap-1.5 text-blue-400 font-semibold px-2.5 py-0.5 rounded-full bg-blue-500/10 border border-blue-500/20">
+                          <span className="inline-flex items-center gap-1.5 text-brand-light font-semibold px-2.5 py-0.5 rounded-full bg-blue-500/10 border border-blue-500/20">
                             Latest Article
                           </span>
                           <span className="inline-flex items-center gap-1">
@@ -90,7 +90,7 @@ export default async function ArticlesPage({
                           </span>
                         </div>
 
-                        <h2 className="font-spartan text-2xl sm:text-3xl font-bold text-white leading-snug group-hover:text-blue-300 transition-colors mb-4 line-clamp-3">
+                        <h2 className="font-display text-2xl sm:text-3xl text-white leading-snug group-hover:text-brand-light transition-colors mb-4 line-clamp-3 font-normal tracking-[-0.02em]">
                           {featuredArticle.title}
                         </h2>
 
@@ -101,7 +101,7 @@ export default async function ArticlesPage({
                         )}
                       </div>
 
-                      <div className="inline-flex items-center gap-2 text-sm font-sans font-bold text-blue-400 group-hover:text-blue-300 transition-colors uppercase tracking-wider">
+                      <div className="inline-flex items-center gap-2 text-sm font-sans font-bold text-brand-light group-hover:text-brand-light transition-colors uppercase tracking-wider">
                         Read Full Article
                         <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                       </div>
@@ -111,7 +111,7 @@ export default async function ArticlesPage({
                   <div className="p-8 sm:p-10 lg:p-12 flex flex-col justify-between">
                     <div>
                       <div className="flex flex-wrap items-center gap-3 font-sans text-xs font-bold uppercase tracking-wider text-white/50 mb-4">
-                        <span className="inline-flex items-center gap-1.5 text-blue-400 font-semibold px-2.5 py-0.5 rounded-full bg-blue-500/10 border border-blue-500/20">
+                        <span className="inline-flex items-center gap-1.5 text-brand-light font-semibold px-2.5 py-0.5 rounded-full bg-blue-500/10 border border-blue-500/20">
                           Latest Article
                         </span>
                         <span className="inline-flex items-center gap-1">
@@ -125,7 +125,7 @@ export default async function ArticlesPage({
                         </span>
                       </div>
 
-                      <h2 className="font-spartan text-3xl sm:text-4xl font-bold text-white leading-snug group-hover:text-blue-300 transition-colors mb-4 max-w-4xl">
+                      <h2 className="font-display text-3xl sm:text-4xl text-white leading-snug group-hover:text-brand-light transition-colors mb-4 max-w-4xl font-normal tracking-[-0.02em]">
                         {featuredArticle.title}
                       </h2>
 
@@ -136,7 +136,7 @@ export default async function ArticlesPage({
                       )}
                     </div>
 
-                    <div className="inline-flex items-center gap-2 text-sm font-sans font-bold text-blue-400 group-hover:text-blue-300 transition-colors uppercase tracking-wider">
+                    <div className="inline-flex items-center gap-2 text-sm font-sans font-bold text-brand-light group-hover:text-brand-light transition-colors uppercase tracking-wider">
                       Read Full Article
                       <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                     </div>
@@ -173,7 +173,7 @@ export default async function ArticlesPage({
                         <span className="w-1 h-1 rounded-full bg-white/30" />
                         <span>{article.readTime}</span>
                       </div>
-                      <h3 className="font-spartan text-xl font-bold text-white leading-tight group-hover:text-blue-300 transition-colors line-clamp-3 mb-3">
+                      <h3 className="font-sans text-xl font-semibold text-white leading-tight group-hover:text-brand-light transition-colors line-clamp-3 mb-3">
                         {article.title}
                       </h3>
                       {article.description && (
@@ -184,7 +184,7 @@ export default async function ArticlesPage({
                     </div>
                   </div>
 
-                  <div className="px-6 pb-6 pt-2 flex items-center gap-1.5 text-xs font-sans font-bold text-white/50 group-hover:text-blue-400 transition-colors uppercase tracking-wider">
+                  <div className="px-6 pb-6 pt-2 flex items-center gap-1.5 text-xs font-sans font-bold text-white/50 group-hover:text-brand-light transition-colors uppercase tracking-wider">
                     Read Article
                     <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
                   </div>

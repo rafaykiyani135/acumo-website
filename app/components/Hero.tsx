@@ -146,6 +146,18 @@ function HeroBackground() {
             "linear-gradient(to bottom, rgba(1,2,6,0.95) 0%, rgba(1,2,6,0.35) 35%, transparent 55%)",
         }}
       />
+
+      {/* bottom hand-off: soft fade into the page colour + horizon line */}
+      <div
+        className="absolute inset-x-0 bottom-0 h-24"
+        style={{ background: "linear-gradient(to bottom, transparent, hsl(var(--bg)))" }}
+      />
+      <div
+        className="absolute bottom-0 left-[10%] h-px w-[80%]"
+        style={{
+          background: "linear-gradient(90deg, transparent, rgba(147,197,253,0.7) 50%, transparent)",
+        }}
+      />
     </div>
   );
 }

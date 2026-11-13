@@ -143,7 +143,7 @@ export default function AiDocumentProcessingPage() {
       <Navbar />
 
       {/* HERO */}
-      <section className="relative w-full overflow-x-hidden border-b border-white/5 bg-bg px-4 pb-20 pt-32 sm:px-6 sm:pb-28 sm:pt-40 lg:px-12 lg:pb-36 lg:pt-48">
+      <section className="brand-section relative w-full overflow-x-hidden border-b border-white/5 bg-bg px-4 pb-20 pt-32 sm:px-6 sm:pb-28 sm:pt-40 lg:px-12 lg:pb-36 lg:pt-48">
         <div className="pointer-events-none absolute inset-0 opacity-[0.03]">
           <div className="absolute inset-0 bg-grid" />
         </div>
@@ -153,9 +153,9 @@ export default function AiDocumentProcessingPage() {
             Acumo AI — AI Document Processing
           </p>
 
-          <h1 className="font-spartan text-[clamp(2.2rem,7vw,5.5rem)] font-black uppercase leading-[0.85] tracking-tighter text-text-primary">
+          <h1 className="font-display text-[clamp(2.2rem,7vw,5.5rem)] leading-[0.95] text-text-primary font-normal tracking-[-0.02em]">
             AI document processing{" "}
-            <span className="block text-transparent text-stroke italic font-display font-bold tracking-[0.04em]">
+            <span className="block italic font-display text-brand-vibrant accent-glow">
               that ends manual data entry
             </span>
           </h1>
@@ -171,7 +171,7 @@ export default function AiDocumentProcessingPage() {
           </p>
 
           <p className="mt-6 max-w-3xl rounded-2xl border border-white/10 bg-surface/40 p-6 font-sans text-base leading-[1.7] text-muted sm:text-[17px]">
-            <span className="font-bold uppercase tracking-wider text-[#1e3a8a]">
+            <span className="font-bold uppercase tracking-wider text-[#2563FF]">
               What Acumo AI does:
             </span>{" "}
             Acumo AI builds custom AI document processing pipelines that read
@@ -186,8 +186,8 @@ export default function AiDocumentProcessingPage() {
               href="#scoping"
               className="group relative inline-flex items-center justify-center overflow-hidden rounded-full p-[1px] font-sans transition-transform duration-300 hover:scale-105"
             >
-              <span className="accent-gradient absolute inset-[-2px] rounded-full opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-              <span className="relative z-10 flex items-center gap-2 rounded-full border border-white/5 bg-surface px-7 py-3.5 text-[11px] font-bold uppercase tracking-wider text-text-primary backdrop-blur-md">
+              <span className="accent-gradient absolute inset-[-2px] rounded-full opacity-80 transition-opacity duration-300 group-hover:opacity-100" />
+              <span className="relative z-10 flex items-center gap-2 rounded-full bg-gradient-to-b from-[#3B74FF] to-brand-vibrant px-7 py-3.5 text-[11px] font-bold uppercase tracking-wider text-white shadow-[0_0_35px_rgba(37,99,255,0.5)]">
                 Book a free document scoping call{" "}
                 <span className="text-[13px] font-normal">↗</span>
               </span>
@@ -203,12 +203,12 @@ export default function AiDocumentProcessingPage() {
       </section>
 
       {/* WHAT'S INCLUDED */}
-      <section className="relative w-full overflow-x-hidden border-b border-white/5 bg-bg py-20 sm:py-24 lg:py-32">
+      <section className="brand-section relative w-full overflow-x-hidden border-b border-white/5 bg-bg py-20 sm:py-24 lg:py-32">
         <div className="mx-auto w-full min-w-0 max-w-[1100px] px-4 sm:px-6">
           <div className="mb-14 sm:mb-20">
-            <h2 className="text-text-primary font-spartan text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[0.85] tracking-tighter uppercase select-none mb-6">
+            <h2 className="text-text-primary font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] select-none mb-6 font-normal tracking-[-0.02em]">
               What&apos;s{" "}
-              <span className="text-transparent text-stroke italic font-display font-bold tracking-[0.04em]">
+              <span className="italic font-display text-brand-vibrant accent-glow">
                 included
               </span>
             </h2>
@@ -224,7 +224,7 @@ export default function AiDocumentProcessingPage() {
                 key={item.title}
                 className="flex flex-col gap-3 bg-bg p-7 sm:p-9"
               >
-                <h3 className="font-spartan text-xl font-bold uppercase tracking-tight text-text-primary">
+                <h3 className="font-sans text-xl font-semibold tracking-tight text-text-primary">
                   {item.title}
                 </h3>
                 <p className="text-[15px] leading-[1.65] text-muted font-medium font-sans">
@@ -237,12 +237,12 @@ export default function AiDocumentProcessingPage() {
       </section>
 
       {/* PROCESS */}
-      <section className="relative w-full overflow-hidden border-b border-white/5 bg-bg py-20 sm:py-24 lg:py-32">
+      <section className="brand-section relative w-full overflow-hidden border-b border-white/5 bg-bg py-20 sm:py-24 lg:py-32">
         <div className="mx-auto w-full min-w-0 max-w-[1100px] px-4 sm:px-6">
           <div className="mb-14 sm:mb-20">
-            <h2 className="font-spartan text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[0.85] tracking-tighter uppercase select-none mb-6">
+            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] select-none mb-6 font-normal tracking-[-0.02em]">
               How the{" "}
-              <span className="text-transparent text-stroke italic font-display font-bold tracking-[0.04em]">
+              <span className="italic font-display text-brand-vibrant accent-glow">
                 build works
               </span>
             </h2>
@@ -259,12 +259,12 @@ export default function AiDocumentProcessingPage() {
                 className="grid grid-cols-1 gap-4 border-b border-white/5 py-8 last:border-b-0 sm:grid-cols-12 sm:gap-8"
               >
                 <div className="sm:col-span-2">
-                  <span className="font-mono text-[10px] tracking-[0.2em] text-[#1e3a8a] uppercase font-bold">
+                  <span className="font-mono text-[10px] tracking-[0.2em] text-[#2563FF] uppercase font-bold">
                     {item.step}
                   </span>
                 </div>
                 <div className="sm:col-span-10">
-                  <h3 className="font-spartan text-lg sm:text-2xl font-bold uppercase tracking-tight text-text-primary mb-2">
+                  <h3 className="font-sans text-lg sm:text-2xl font-semibold tracking-tight text-text-primary mb-2">
                     {item.title}
                   </h3>
                   <p className="max-w-2xl text-[15px] leading-[1.65] text-muted font-medium font-sans">
@@ -278,12 +278,12 @@ export default function AiDocumentProcessingPage() {
       </section>
 
       {/* PROOF */}
-      <section className="relative w-full overflow-hidden border-b border-white/5 bg-bg py-20 sm:py-24 lg:py-32">
+      <section className="brand-section relative w-full overflow-hidden border-b border-white/5 bg-bg py-20 sm:py-24 lg:py-32">
         <div className="mx-auto w-full min-w-0 max-w-[1100px] px-4 sm:px-6">
           <div className="mb-14 sm:mb-20">
-            <h2 className="font-spartan text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[0.85] tracking-tighter uppercase select-none mb-6">
+            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] select-none mb-6 font-normal tracking-[-0.02em]">
               Time{" "}
-              <span className="text-transparent text-stroke italic font-display font-bold tracking-[0.04em]">
+              <span className="italic font-display text-brand-vibrant accent-glow">
                 back
               </span>
             </h2>
@@ -296,7 +296,7 @@ export default function AiDocumentProcessingPage() {
           <div className="flex flex-col gap-6">
             <div className="rounded-2xl border border-white/10 bg-surface/40 p-7 sm:p-10">
               <p className="font-sans text-base leading-[1.7] text-text-primary/85 sm:text-lg">
-                <span className="font-bold text-[#1e3a8a]">
+                <span className="font-bold text-[#2563FF]">
                   Operations teams drowning in intake.
                 </span>{" "}
                 Quotes, orders and invoices arriving by email, each one keyed into a
@@ -307,7 +307,7 @@ export default function AiDocumentProcessingPage() {
             </div>
             <div className="rounded-2xl border border-white/10 bg-surface/40 p-7 sm:p-10">
               <p className="font-sans text-base leading-[1.7] text-text-primary/85 sm:text-lg">
-                <span className="font-bold text-[#1e3a8a]">
+                <span className="font-bold text-[#2563FF]">
                   Multi-system back offices.
                 </span>{" "}
                 The same purchase order entered into an ERP, a CRM and a spreadsheet.
@@ -321,12 +321,12 @@ export default function AiDocumentProcessingPage() {
       </section>
 
       {/* FAQ */}
-      <section className="relative w-full overflow-hidden border-b border-white/5 bg-bg py-20 sm:py-24 lg:py-32">
+      <section className="brand-section relative w-full overflow-hidden border-b border-white/5 bg-bg py-20 sm:py-24 lg:py-32">
         <div className="relative z-10 mx-auto w-full min-w-0 max-w-[1100px] px-4 sm:px-6">
           <div className="mb-14 sm:mb-20">
-            <h2 className="font-spartan text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[0.85] tracking-tighter uppercase select-none mb-6">
+            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] select-none mb-6 font-normal tracking-[-0.02em]">
               Document{" "}
-              <span className="text-transparent text-stroke italic font-display font-bold tracking-[0.04em]">
+              <span className="italic font-display text-brand-vibrant accent-glow">
                 questions
               </span>
             </h2>
@@ -342,7 +342,7 @@ export default function AiDocumentProcessingPage() {
                 className="group border-b border-white/5 last:border-b-0"
               >
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-6 sm:py-8">
-                  <h3 className="font-spartan text-lg sm:text-xl md:text-2xl font-bold uppercase tracking-tight text-text-primary group-open:text-[#1e3a8a] transition-colors duration-300">
+                  <h3 className="font-sans text-lg sm:text-xl md:text-2xl font-semibold tracking-tight text-text-primary group-open:text-[#2563FF] transition-colors duration-300">
                     {faq.name}
                   </h3>
                   <span className="font-mono text-xl text-muted transition-transform duration-300 group-open:rotate-45">
@@ -370,14 +370,14 @@ export default function AiDocumentProcessingPage() {
       {/* CTA */}
       <section
         id="scoping"
-        className="relative w-full overflow-hidden border-b border-white/5 bg-[#0b1220] py-20 text-text-primary sm:py-24 lg:py-40"
+        className="brand-section relative w-full overflow-hidden border-b border-white/5 bg-bg py-20 text-text-primary sm:py-24 lg:py-40"
       >
         <div className="mx-auto w-full min-w-0 max-w-[1100px] px-4 sm:px-6">
           <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
             <div className="min-w-0">
-              <h2 className="font-spartan text-[clamp(2.5rem,8vw,6.5rem)] font-black leading-[0.8] tracking-tighter uppercase select-none">
+              <h2 className="font-display text-[clamp(2.5rem,8vw,6.5rem)] leading-[0.95] select-none font-normal tracking-[-0.02em]">
                 Stop keying{" "}
-                <span className="block text-transparent text-stroke italic font-display font-bold tracking-[0.04em]">
+                <span className="block italic font-display text-brand-vibrant accent-glow">
                   it twice
                 </span>
               </h2>
@@ -392,7 +392,7 @@ export default function AiDocumentProcessingPage() {
                 rel="noopener noreferrer"
                 className="group relative mt-10 inline-flex items-center justify-center overflow-hidden rounded-full p-[1px] font-sans transition-transform duration-300 hover:scale-105"
               >
-                <span className="accent-gradient absolute inset-[-2px] rounded-full opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <span className="accent-gradient absolute inset-[-2px] rounded-full opacity-80 transition-opacity duration-300 group-hover:opacity-100" />
                 <span className="relative z-10 flex items-center gap-2 rounded-full border border-white/5 bg-surface px-8 py-4 text-[11px] font-bold uppercase tracking-wider text-text-primary backdrop-blur-md">
                   Book a free document scoping call{" "}
                   <span className="text-[13px] font-normal">↗</span>
@@ -406,7 +406,7 @@ export default function AiDocumentProcessingPage() {
               </div>
               <a
                 href="mailto:hello@acumoai.com"
-                className="font-mono text-lg font-bold tracking-tight text-text-primary hover:text-[#1e3a8a] transition-all duration-300 sm:text-xl"
+                className="font-mono text-lg font-bold tracking-tight text-text-primary hover:text-[#2563FF] transition-all duration-300 sm:text-xl"
               >
                 hello@acumoai.com
               </a>
@@ -416,7 +416,7 @@ export default function AiDocumentProcessingPage() {
       </section>
 
       {/* INTERNAL LINKS */}
-      <section className="relative w-full overflow-hidden border-b border-white/5 bg-bg py-16 sm:py-20">
+      <section className="brand-section relative w-full overflow-hidden border-b border-white/5 bg-bg py-16 sm:py-20">
         <div className="mx-auto w-full min-w-0 max-w-[1100px] px-4 sm:px-6">
           <div className="flex flex-col gap-3 font-mono text-[11px] uppercase tracking-[0.15em] text-muted">
             <span className="font-bold text-text-primary">Explore further</span>

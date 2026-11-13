@@ -54,10 +54,10 @@ export default function ProcessSection() {
   }, []);
 
   return (
-    <section id="process" className="relative w-full overflow-x-hidden border-b border-white/5 bg-[#0b1220] py-20 text-text-primary sm:py-24 lg:py-40">
+    <section id="process" className="brand-section relative w-full overflow-x-hidden border-b border-white/5 bg-bg py-20 text-text-primary sm:py-24 lg:py-40">
       <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-10">
-        <div className="absolute top-1/4 left-1/4 h-64 w-64 rounded-full bg-[#1e3a8a]/10 blur-[120px] sm:h-[500px] sm:w-[500px] sm:blur-[180px]" />
-        <div className="absolute bottom-1/4 right-1/4 h-64 w-64 rounded-full bg-[#1e3a8a]/10 blur-[120px] sm:h-[500px] sm:w-[500px] sm:blur-[180px]" />
+        <div className="absolute top-1/4 left-1/4 h-64 w-64 rounded-full bg-[#2563FF]/10 blur-[120px] sm:h-[500px] sm:w-[500px] sm:blur-[180px]" />
+        <div className="absolute bottom-1/4 right-1/4 h-64 w-64 rounded-full bg-[#2563FF]/10 blur-[120px] sm:h-[500px] sm:w-[500px] sm:blur-[180px]" />
       </div>
 
       <div className="relative z-10 mx-auto w-full min-w-0 max-w-[1300px] px-4 sm:px-6">
@@ -65,10 +65,10 @@ export default function ProcessSection() {
         {/* Section Heading - Minimal & Clean */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-8 border-b border-white/5 min-w-0">
           <div className="min-w-0 w-full">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-spartan font-black tracking-tighter mb-4 uppercase text-text-primary select-none whitespace-nowrap">
-              Conversational Engine
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display mb-4 text-text-primary select-none font-normal tracking-[-0.02em]">
+              Conversations that{" "}<em className="italic font-display text-brand-vibrant accent-glow">convert.</em>
             </h2>
-            <p className="text-sm font-mono text-muted max-w-lg">
+            <p className="text-[15px] leading-relaxed font-sans text-muted max-w-lg">
               Qualify leads, book appointments, and capture missed revenue 24/7.
             </p>
           </div>
@@ -77,11 +77,11 @@ export default function ProcessSection() {
         {/* Content Layout */}
         <div className="flex flex-col gap-12 lg:grid lg:grid-cols-12 lg:items-center lg:gap-12">
           <div className="min-w-0 font-sans lg:col-span-5">
-            <div className="flex items-center gap-2 mb-4 font-mono text-[10px] text-[#1e3a8a] font-bold uppercase tracking-wider">
+            <div className="flex items-center gap-2 mb-4 font-mono text-[10px] text-[#2563FF] font-bold uppercase tracking-wider">
               <Bot size={12} />
               <span>Interactive Agents</span>
             </div>
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-spartan font-black tracking-tighter mb-6 uppercase text-text-primary whitespace-nowrap">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-sans font-semibold tracking-tight mb-6 text-text-primary whitespace-nowrap">
               Conversational Chat & Voice AI
             </h3>
             <p className="text-muted leading-relaxed text-sm mb-8 font-medium">
@@ -91,19 +91,19 @@ export default function ProcessSection() {
             {/* Features List */}
             <div className="grid grid-cols-1 gap-y-4 font-mono text-[9px] font-bold uppercase tracking-wide text-muted sm:grid-cols-2 sm:gap-x-6 sm:tracking-widest">
               <div className="flex items-center gap-2">
-                <CheckCircle2 size={10} className="text-[#1e3a8a]" />
+                <CheckCircle2 size={10} className="text-[#2563FF]" />
                 <span>Appt Scheduler</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 size={10} className="text-[#1e3a8a]" />
+                <CheckCircle2 size={10} className="text-[#2563FF]" />
                 <span>CRM Integration</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 size={10} className="text-[#1e3a8a]" />
+                <CheckCircle2 size={10} className="text-[#2563FF]" />
                 <span>SMS Verifications</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 size={10} className="text-[#1e3a8a]" />
+                <CheckCircle2 size={10} className="text-[#2563FF]" />
                 <span>Voice Operations</span>
               </div>
             </div>
@@ -151,8 +151,8 @@ export default function ProcessSection() {
                 {/* Status updates centered directly underneath */}
                 <div className="mt-12 flex flex-col items-center gap-3">
                   <div className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#1e3a8a] animate-pulse"></span>
-                    <span className="font-mono text-[9px] text-[#1e3a8a] uppercase tracking-[0.25em] font-bold">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#2563FF] animate-pulse"></span>
+                    <span className="font-mono text-[9px] text-[#2563FF] uppercase tracking-[0.25em] font-bold">
                       VOICE AGENT ONLINE
                     </span>
                   </div>

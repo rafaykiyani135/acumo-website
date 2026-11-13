@@ -9,19 +9,19 @@ export default function ArticlesSection() {
   if (!articles || articles.length === 0) return null;
 
   return (
-    <section className="relative w-full overflow-x-hidden border-b border-white/5 bg-bg py-20 sm:py-24 md:py-28 lg:py-32">
+    <section className="brand-section relative w-full overflow-x-hidden border-b border-white/5 bg-bg py-20 sm:py-24 md:py-28 lg:py-32">
       <div className="mx-auto w-full min-w-0 max-w-[1400px] px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between mb-12 sm:mb-16">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="h-2 w-2 rounded-full bg-[#1e3a8a] animate-pulse" />
+              <div className="h-2 w-2 rounded-full bg-[#2563FF] animate-pulse" />
               <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted sm:text-xs">
                 Engineering &amp; Automation
               </p>
             </div>
-            <h2 className="font-spartan text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase leading-[0.85] tracking-tighter text-text-primary">
+            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] text-text-primary font-normal tracking-[-0.02em]">
               Latest{" "}
-              <span className="text-transparent text-stroke italic font-display font-bold tracking-[0.04em]">
+              <span className="italic font-display text-brand-vibrant accent-glow">
                 Insights
               </span>
             </h2>
@@ -29,7 +29,7 @@ export default function ArticlesSection() {
 
           <Link
             href="/articles"
-            className="group inline-flex items-center gap-2 rounded-full border border-white/10 bg-surface/40 px-6 py-3 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-muted transition-all duration-300 hover:border-[#1e3a8a] hover:text-text-primary sm:text-[11px] self-start sm:self-auto"
+            className="group btn-ghost self-start sm:self-auto"
           >
             Browse all articles{" "}
             <span className="text-[13px] font-normal transition-transform duration-300 group-hover:translate-x-1">
@@ -47,11 +47,11 @@ export default function ArticlesSection() {
             >
               <div>
                 <div className="flex items-center justify-between font-mono text-[11px] uppercase tracking-wider text-muted mb-4">
-                  <span className="text-[#1e3a8a] font-bold">0{idx + 1}</span>
+                  <span className="text-[#2563FF] font-bold">0{idx + 1}</span>
                   <span>{article.readTime}</span>
                 </div>
 
-                <h3 className="font-spartan text-xl sm:text-2xl font-bold uppercase tracking-tight text-text-primary group-hover:text-[#4168c4] transition-colors line-clamp-3 mb-4 leading-snug">
+                <h3 className="font-sans text-xl sm:text-2xl font-semibold tracking-tight text-text-primary group-hover:text-[#60A5FA] transition-colors line-clamp-3 mb-4 leading-snug">
                   {article.title}
                 </h3>
 
@@ -64,7 +64,7 @@ export default function ArticlesSection() {
 
               <div className="mt-8 pt-6 border-t border-white/5 flex items-center justify-between font-mono text-[11px] uppercase tracking-wider text-muted group-hover:text-text-primary">
                 <span>{article.date}</span>
-                <span className="text-[#4168c4] flex items-center gap-1 font-bold group-hover:translate-x-1 transition-transform">
+                <span className="text-[#60A5FA] flex items-center gap-1 font-bold group-hover:translate-x-1 transition-transform">
                   Read <ArrowRight className="w-3.5 h-3.5" />
                 </span>
               </div>

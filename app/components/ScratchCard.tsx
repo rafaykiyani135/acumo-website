@@ -250,7 +250,7 @@ export default function ScratchCard() {
   return (
     <section
       aria-label="Acumo AI scratch card"
-      className="w-full bg-bg px-4 pb-12 sm:px-6 sm:pb-16"
+      className="brand-section w-full bg-bg px-4 pb-12 sm:px-6 sm:pb-16"
     >
       <div className="mx-auto w-full max-w-[1400px]">
         <div

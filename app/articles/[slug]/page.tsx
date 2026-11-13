@@ -223,7 +223,7 @@ export default async function ArticlePage({
         {/* Main Content */}
         <article className="flex-1 w-full max-w-[800px]">
           <div className="mb-10">
-            <h1 className="font-spartan text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tighter text-white mb-6 leading-[1.1]">
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl text-white mb-6 leading-[1.1] font-normal tracking-[-0.02em]">
               {article.title}
             </h1>
             <div className="flex items-center gap-3 font-sans text-sm font-bold uppercase tracking-wider text-white/50">
@@ -249,7 +249,7 @@ export default async function ArticlePage({
             [&_h1]:hidden
             [&_h2]:font-spartan [&_h2]:text-3xl [&_h2]:font-bold [&_h2]:text-white [&_h2]:mt-14 [&_h2]:mb-6
             [&_h3]:font-spartan [&_h3]:text-2xl [&_h3]:font-bold [&_h3]:text-white [&_h3]:mt-10 [&_h3]:mb-4
-            [&_p]:mb-6 [&_a]:text-[#4168c4] hover:[&_a]:underline
+            [&_p]:mb-6 [&_a]:text-[#60A5FA] hover:[&_a]:underline
             [&_strong]:font-bold [&_strong]:text-white
             [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:my-6 [&_li]:mb-2
             [&_table]:w-full [&_table]:my-10 [&_table]:text-left [&_table]:border-collapse
@@ -285,13 +285,13 @@ export default async function ArticlePage({
 
       {/* Related Articles Section */}
       {relatedArticles.length > 0 && (
-        <section className="mt-24 pt-12 border-t border-white/10 pb-16">
+        <section className="brand-section mt-24 pt-12 border-t border-white/10 pb-16">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
             <div>
-              <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#1e3a8a] font-bold mb-2">
+              <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#2563FF] font-bold mb-2">
                 Keep Reading
               </p>
-              <h2 className="font-spartan text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-tight text-white">
+              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl text-white font-normal tracking-[-0.02em]">
                 Related Articles &amp; Insights
               </h2>
             </div>
@@ -316,7 +316,7 @@ export default async function ArticlePage({
                     <span>•</span>
                     <span>{rel.readTime}</span>
                   </div>
-                  <h3 className="font-spartan text-lg font-bold uppercase tracking-tight text-white group-hover:text-[#4168c4] transition-colors line-clamp-2 mb-3">
+                  <h3 className="font-sans text-lg font-semibold tracking-tight text-white group-hover:text-[#60A5FA] transition-colors line-clamp-2 mb-3">
                     {rel.title}
                   </h3>
                   {rel.description && (
@@ -325,7 +325,7 @@ export default async function ArticlePage({
                     </p>
                   )}
                 </div>
-                <div className="mt-6 flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-wider text-[#4168c4] group-hover:translate-x-1 transition-transform">
+                <div className="mt-6 flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-wider text-[#60A5FA] group-hover:translate-x-1 transition-transform">
                   Read Article →
                 </div>
               </Link>

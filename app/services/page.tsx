@@ -57,15 +57,15 @@ export default function ServicesPage() {
     <main className="min-h-screen w-full max-w-[100vw] overflow-x-hidden">
       <Navbar />
 
-      <section className="relative w-full overflow-x-hidden bg-bg px-4 pb-20 pt-32 sm:px-6 sm:pb-28 sm:pt-40 lg:px-12 lg:pb-36 lg:pt-48">
+      <section className="brand-section relative w-full overflow-x-hidden bg-bg px-4 pb-20 pt-32 sm:px-6 sm:pb-28 sm:pt-40 lg:px-12 lg:pb-36 lg:pt-48">
         <div className="pointer-events-none absolute inset-0 opacity-[0.03]">
           <div className="absolute inset-0 bg-grid" />
         </div>
 
         <div className="relative z-10 mx-auto w-full min-w-0 max-w-[1100px]">
-          <h1 className="font-spartan text-[clamp(2.5rem,9vw,7rem)] font-black uppercase leading-[0.85] tracking-tighter text-text-primary">
+          <h1 className="font-display text-[clamp(2.5rem,9vw,7rem)] leading-[0.95] text-text-primary font-normal tracking-[-0.02em]">
             What we{" "}
-            <span className="block text-transparent text-stroke italic font-display font-bold tracking-[0.04em]">
+            <span className="block italic font-display text-brand-vibrant accent-glow">
               build
             </span>
           </h1>
@@ -77,7 +77,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="relative w-full overflow-x-hidden border-t border-white/5 bg-bg pb-24 sm:pb-32">
+      <section className="brand-section relative w-full overflow-x-hidden border-t border-white/5 bg-bg pb-24 sm:pb-32">
         <div className="mx-auto w-full min-w-0 max-w-[1100px] px-4 sm:px-6">
           <div className="flex flex-col">
             {services.map((s) => (
@@ -87,12 +87,12 @@ export default function ServicesPage() {
               >
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-12 md:items-center">
                   <div className="md:col-span-1">
-                    <span className="font-mono text-[11px] tracking-[0.2em] text-[#1e3a8a] uppercase font-bold">
+                    <span className="font-mono text-[11px] tracking-[0.2em] text-[#2563FF] uppercase font-bold">
                       {s.num}
                     </span>
                   </div>
                   <div className="md:col-span-6">
-                    <h2 className="font-spartan text-3xl font-black uppercase leading-[0.9] tracking-tighter text-text-primary sm:text-5xl transition-colors duration-300 group-hover:text-[#1e3a8a]">
+                    <h2 className="font-display text-3xl leading-[0.95] text-text-primary sm:text-5xl transition-colors duration-300 group-hover:text-[#2563FF] font-normal tracking-[-0.02em]">
                       {s.title.map((word, i) => (
                         <span key={i} className="block">
                           {word}
@@ -108,10 +108,10 @@ export default function ServicesPage() {
                   <div className="md:col-span-1 md:text-right">
                     <Link
                       href={s.href}
-                      className="group/link relative inline-flex h-12 w-12 items-center justify-center overflow-hidden rounded-full border border-white/10 bg-surface/50 transition-all duration-700 hover:border-[#1e3a8a]"
+                      className="group/link relative inline-flex h-12 w-12 items-center justify-center overflow-hidden rounded-full border border-white/10 bg-surface/50 transition-all duration-700 hover:border-[#2563FF]"
                       aria-label={`Visit ${s.title.join(" ")}`}
                     >
-                      <span className="absolute inset-0 translate-y-full bg-[#1e3a8a] transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/link:translate-y-0" />
+                      <span className="absolute inset-0 translate-y-full bg-[#2563FF] transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/link:translate-y-0" />
                       <span className="relative z-10 text-text-primary transition-all duration-500 group-hover/link:text-white">
                         ↗
                       </span>

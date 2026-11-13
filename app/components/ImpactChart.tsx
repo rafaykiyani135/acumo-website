@@ -75,7 +75,7 @@ export default function ImpactChart() {
   };
 
   return (
-    <section id="impact" className="py-40 section-border bg-[#0B1220]">
+    <section id="impact" className="brand-section py-40 section-border bg-bg">
       <div className="site-grid">
         <div className="col-span-12 mb-24 text-center">
           <div className="label-tech justify-center mb-8">Performance Logic</div>

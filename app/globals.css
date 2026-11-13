@@ -23,15 +23,15 @@
 }
 
 :root {
-  --bg: 0 0% 4%;
-  --surface: 0 0% 8%;
+  --bg: 222 50% 3%;
+  --surface: 222 38% 8%;
   --text: 0 0% 96%;
-  --muted: 0 0% 53%;
-  --stroke: 0 0% 12%;
-  --accent: 0 0% 96%;
+  --muted: 218 16% 62%;
+  --stroke: 222 28% 14%;
+  --accent: 213 94% 68%;
 
   --text-main: hsl(var(--text));
-  --grid-line: rgba(255, 255, 255, 0.03);
+  --grid-line: rgba(96, 165, 250, 0.05);
 }
 
 @keyframes scroll-down {
@@ -52,7 +52,7 @@
 }
 
 .accent-gradient {
-  background: linear-gradient(90deg, #89AACC 0%, #4E85BF 100%);
+  background: linear-gradient(90deg, #60A5FA 0%, #2563FF 50%, #60A5FA 100%);
   background-size: 200% 200%;
   animation: gradient-shift 6s ease infinite;
 }
@@ -94,10 +94,9 @@
 
   /* Subtle Technical Grid Lines */
   .bg-grid {
-    background-image: linear-gradient(var(--grid-line) 1px, transparent 1px),
-                      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-    background-size: 100px 100px;
-    background-position: center top;
+    background-image: repeating-linear-gradient(90deg, rgba(96,165,250,0.05) 0px, rgba(96,165,250,0.05) 1px, transparent 1px, transparent 6px);
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 0%, transparent 80%);
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 0%, transparent 80%);
   }
 
   /* Sleek Editorial Typography Scale */
@@ -113,7 +112,7 @@
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 0.25em;
-    color: var(--accent);
+    color: hsl(var(--accent));
     display: flex;
     align-items: center;
     gap: 12px;
@@ -145,24 +144,72 @@
   .section-border::before { left: -4px; }
   .section-border::after { right: -4px; }
 
-  .btn-sleek {
-    font-family: var(--font-mono);
-    font-size: 11px;
+  .btn-sleek, .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 9999px;
     border: 1px solid rgba(255,255,255,0.15);
-    padding: 12px 28px;
+    background: rgba(255,255,255,0.04);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    padding: 14px 28px;
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.2em;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    display: inline-block;
-    text-align: center;
-    background: transparent;
-    color: white;
+    letter-spacing: 0.05em;
+    color: hsl(var(--text));
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  .btn-sleek:hover {
-    background: #fff;
-    color: #000;
-    border-color: #fff;
-    transform: translateY(-1px);
+  .btn-sleek:hover, .btn-ghost:hover {
+    border-color: rgba(96,165,250,0.5);
+    background: rgba(255,255,255,0.08);
+  }
+
+  .btn-brand {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 9999px;
+    background: linear-gradient(to bottom, #3B74FF, #2563FF);
+    box-shadow: 0 0 40px rgba(37,99,255,0.5), inset 0 1px 0 rgba(255,255,255,0.25);
+    padding: 14px 28px;
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #fff;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .btn-brand:hover { box-shadow: 0 0 60px rgba(37,99,255,0.8), inset 0 1px 0 rgba(255,255,255,0.3); transform: translateY(-1px); }
+
+  /* Brand section: faint hero line texture + soft top glow, layered behind content */
+  .brand-section {
+    position: relative;
+    isolation: isolate;
+  }
+  .brand-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 45% 35% at 50% 0%, rgba(37,99,255,0.14) 0%, transparent 100%),
+      repeating-linear-gradient(90deg, rgba(96,165,250,0.035) 0px, rgba(96,165,250,0.035) 1px, transparent 1px, transparent 6px);
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, rgba(0,0,0,0.25) 55%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 0%, rgba(0,0,0,0.25) 55%, transparent 100%);
+  }
+  /* First section after the hero picks up the hero's glow for a seamless hand-off */
+  #ai-native.brand-section::before {
+    background:
+      radial-gradient(ellipse 60% 45% at 50% 0%, rgba(37,99,255,0.32) 0%, rgba(30,58,138,0.12) 50%, transparent 100%),
+      radial-gradient(ellipse 20% 12% at 50% 0%, rgba(255,138,91,0.18) 0%, transparent 100%),
+      repeating-linear-gradient(90deg, rgba(96,165,250,0.05) 0px, rgba(96,165,250,0.05) 1px, transparent 1px, transparent 6px);
   }
 
   .input-sleek {
@@ -230,6 +277,10 @@
 
 .animate-reverse-spin {
   animation: reverseSpin 40s linear infinite;
+}
+
+.accent-glow {
+  text-shadow: 0 0 30px rgba(37, 99, 255, 0.45);
 }
 
 .text-stroke {

@@ -11,7 +11,7 @@ export default function Services() {
   const services = [
     {
       id: "01",
-      title: ["VOICE AI &", "CRM SYSTEMS"],
+      title: ["Voice AI &", "CRM Systems"],
       subtitle: "AUTOMATED CALL & BOOKING AGENTS",
       href: "/services/voice-ai-crm",
       desc: "Custom Voice AI development engineered for inbound and outbound calls. Seamlessly integrated with CRMs (HubSpot, GoHighLevel, Salesforce) and calendars for instant lead qualification, automated appointment booking, and 24/7 workflow updates.",
@@ -20,7 +20,7 @@ export default function Services() {
     },
     {
       id: "02",
-      title: ["FULL-STACK", "MVP BUILD"],
+      title: ["Full-Stack", "MVP Build"],
       subtitle: "RAPID STARTUP & PRODUCT LAUNCH",
       href: "/services/mvp-development",
       desc: "Rapid 0-to-1 full stack MVP development for startups and enterprise innovators. We architect production-ready web and mobile applications with scalable backends, intuitive interfaces, and modern tech stacks built for growth.",
@@ -29,7 +29,7 @@ export default function Services() {
     },
     {
       id: "03",
-      title: ["WEBSITES &", "BOOKING ENGINE"],
+      title: ["Websites &", "Booking Engine"],
       subtitle: "HIGH-CONVERTING DIGITAL EXPERIENCE",
       href: "/services/websites-booking",
       desc: "Custom website development equipped with automated booking systems, payment gateways, and client portals. Designed for extreme conversion, sub-second load speeds, and effortless scheduling workflows.",
@@ -38,7 +38,7 @@ export default function Services() {
     },
     {
       id: "04",
-      title: ["CUSTOM AI &", "AUTOMATIONS"],
+      title: ["Custom AI &", "Automations"],
       subtitle: "BESPOKE WORKFLOW INTELLIGENCE",
       href: "/services/ai-automation",
       desc: "Tailored AI solutions, custom LLM integrations, and automated business workflows. We connect your proprietary software with custom AI pipelines to streamline operations, reduce friction, and automate repetitive tasks.",
@@ -47,7 +47,7 @@ export default function Services() {
     },
     {
       id: "05",
-      title: ["CODEBASE CLEANUP &", "HARDENING"],
+      title: ["Codebase Cleanup &", "Hardening"],
       subtitle: "VIBE CODE TO SCALABLE PRODUCT",
       href: "/services/codebase-cleanup",
       desc: "Turn your Cursor, Lovable, or Bolt vibe-coded prototype into secure, scalable, production-ready software. We audit security holes, eliminate god components, lock down database RLS, and add automated test suites in 1–2 weeks.",
@@ -65,7 +65,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="relative w-full overflow-x-hidden border-b border-white/5 bg-bg px-4 py-20 text-text-primary sm:px-6 sm:py-24 md:px-12 lg:px-20 lg:py-28 xl:px-32"
+      className="brand-section relative w-full overflow-x-hidden border-b border-white/5 bg-bg px-4 py-20 text-text-primary sm:px-6 sm:py-24 md:px-12 lg:px-20 lg:py-28 xl:px-32"
     >
       {/* Search Engine & AI Crawler Accessibility Layer */}
       <div className="sr-only">
@@ -88,15 +88,15 @@ export default function Services() {
           <div className="min-w-0 flex-1 py-8 lg:py-20">
             <div key={activeIndex} className="animate-role-fade-in">
               <div className="mb-10 sm:mb-14">
-                <h2 className="font-spartan text-[clamp(2rem,10vw,7.5rem)] font-black uppercase leading-[0.85] tracking-tighter text-text-primary">
+                <h2 className="font-display text-[clamp(2rem,10vw,7.5rem)] leading-[0.95] text-text-primary font-normal tracking-[-0.02em]">
                   {currentService.title.map((word, i) => (
-                    <span key={i} className="block">
+                    <span key={i} className={i === 1 ? "block italic text-brand-vibrant accent-glow" : "block"}>
                       {word}
                     </span>
                   ))}
                 </h2>
                 <div className="mt-6 flex items-center gap-4 sm:mt-8">
-                  <div className="h-2 w-2 shrink-0 rounded-full bg-[#1e3a8a] animate-pulse" />
+                  <div className="h-2 w-2 shrink-0 rounded-full bg-[#2563FF] animate-pulse" />
                   <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-muted sm:text-xs sm:tracking-[0.2em]">
                     {currentService.subtitle}
                   </p>
@@ -108,7 +108,7 @@ export default function Services() {
               </p>
               <Link
                 href={currentService.href}
-                className="mt-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-surface/40 px-6 py-3 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-muted transition-all duration-300 hover:border-[#1e3a8a] hover:text-text-primary sm:text-[11px]"
+                className="mt-8 btn-ghost"
               >
                 Explore this service <span className="text-[13px] font-normal">↗</span>
               </Link>
@@ -118,10 +118,10 @@ export default function Services() {
               <button
                 type="button"
                 onClick={nextService}
-                className="group relative flex h-16 w-16 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-white/10 bg-surface/50 shadow-sm transition-all duration-700 hover:border-[#1e3a8a]"
+                className="group relative flex h-16 w-16 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-white/10 bg-surface/50 shadow-sm transition-all duration-700 hover:border-[#2563FF]"
                 aria-label="Next Service"
               >
-                <div className="absolute inset-0 translate-y-full bg-[#1e3a8a] transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0" />
+                <div className="absolute inset-0 translate-y-full bg-[#2563FF] transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0" />
                 <ArrowRight className="relative z-10 h-5 w-5 text-text-primary transition-all duration-500 group-hover:translate-x-1.5 group-hover:text-white" />
               </button>
               <div className="flex flex-col items-center gap-1 sm:items-end">
@@ -131,7 +131,7 @@ export default function Services() {
                     <div
                       key={i}
                       className={`h-1.5 rounded-full transition-all duration-500 ${
-                        i === activeIndex ? "w-8 bg-[#1e3a8a]" : "w-3 bg-white/10"
+                        i === activeIndex ? "w-8 bg-[#2563FF]" : "w-3 bg-white/10"
                       }`}
                     />
                   ))}
@@ -155,10 +155,10 @@ export default function Services() {
           <button
             type="button"
             onClick={nextService}
-            className="group pointer-events-auto relative flex h-20 w-20 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-white/10 bg-surface/50 shadow-sm transition-all duration-700 hover:border-[#1e3a8a]"
+            className="group pointer-events-auto relative flex h-20 w-20 cursor-pointer items-center justify-center overflow-hidden rounded-full border border-white/10 bg-surface/50 shadow-sm transition-all duration-700 hover:border-[#2563FF]"
             aria-label="Next Service"
           >
-            <div className="absolute inset-0 translate-y-full bg-[#1e3a8a] transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0" />
+            <div className="absolute inset-0 translate-y-full bg-[#2563FF] transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0" />
             <ArrowRight className="relative z-10 h-6 w-6 text-text-primary transition-all duration-500 group-hover:translate-x-1.5 group-hover:text-white" />
           </button>
           <div className="flex flex-col items-end gap-1">
@@ -168,7 +168,7 @@ export default function Services() {
                 <div
                   key={i}
                   className={`h-1.5 rounded-full transition-all duration-500 ${
-                    i === activeIndex ? "w-8 bg-[#1e3a8a]" : "w-3 bg-white/10"
+                    i === activeIndex ? "w-8 bg-[#2563FF]" : "w-3 bg-white/10"
                   }`}
                 />
               ))}

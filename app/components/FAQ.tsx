@@ -51,7 +51,7 @@ export default function FAQ() {
   return (
     <section
       id="faq"
-      className="relative w-full overflow-x-hidden border-b border-white/5 bg-bg py-20 sm:py-24 lg:py-40"
+      className="brand-section relative w-full overflow-x-hidden border-b border-white/5 bg-bg py-20 sm:py-24 lg:py-40"
     >
       {/* Subtle background grid */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.02]">
@@ -61,13 +61,13 @@ export default function FAQ() {
       <div className="relative z-10 mx-auto w-full min-w-0 max-w-[1100px] px-4 sm:px-6">
         {/* Section Header */}
         <div className="mb-16 sm:mb-20">
-          <h2 className="text-text-primary font-spartan text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[0.85] tracking-tighter uppercase select-none mb-6">
-            FREQUENTLY{" "}
-            <span className="text-transparent text-stroke italic font-display font-bold tracking-[0.04em]">
-              ASKED.
+          <h2 className="text-text-primary font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.95] select-none mb-6 font-normal tracking-[-0.02em]">
+            Frequently{" "}
+            <span className="italic font-display text-brand-vibrant accent-glow">
+              asked.
             </span>
           </h2>
-          <p className="max-w-md text-sm font-mono text-muted">
+          <p className="max-w-md text-[15px] leading-relaxed font-sans text-muted">
             Common questions about working with Acumo AI, our process, and what we deliver.
           </p>
         </div>
@@ -86,16 +86,16 @@ export default function FAQ() {
                 aria-expanded={openIndex === index}
               >
                 <div className="flex items-start gap-4 sm:gap-6 min-w-0">
-                  <span className="font-mono text-[10px] tracking-[0.2em] text-[#1e3a8a] uppercase font-bold shrink-0 pt-1">
+                  <span className="font-mono text-[10px] tracking-[0.2em] text-[#2563FF] uppercase font-bold shrink-0 pt-1">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="font-spartan text-lg sm:text-xl md:text-2xl font-bold uppercase tracking-tight text-text-primary group-hover:text-[#1e3a8a] transition-colors duration-300">
+                  <h3 className="font-sans text-lg sm:text-xl md:text-2xl font-semibold tracking-tight text-text-primary group-hover:text-[#2563FF] transition-colors duration-300">
                     {faq.question}
                   </h3>
                 </div>
                 <ChevronDown
                   className={`h-5 w-5 shrink-0 text-muted transition-transform duration-300 ${
-                    openIndex === index ? "rotate-180 text-[#1e3a8a]" : ""
+                    openIndex === index ? "rotate-180 text-[#2563FF]" : ""
                   }`}
                 />
               </button>

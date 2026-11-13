@@ -44,7 +44,7 @@ export default function ProjectModal({ isOpen, project, onClose }: ProjectModalP
           </div>
           <button 
             onClick={onClose} 
-            className="font-mono text-[10px] hover:text-[#1e3a8a] uppercase tracking-[0.3em] transition-colors font-bold cursor-pointer"
+            className="font-mono text-[10px] hover:text-[#2563FF] uppercase tracking-[0.3em] transition-colors font-bold cursor-pointer"
           >
             [ Close_X ]
           </button>
@@ -53,7 +53,7 @@ export default function ProjectModal({ isOpen, project, onClose }: ProjectModalP
         {/* Detailed Grid content */}
         <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-start">
           <div>
-            <h3 className="text-4xl md:text-6xl font-spartan font-black uppercase tracking-tighter text-text-primary mb-8 select-none">
+            <h3 className="text-4xl md:text-6xl font-sans font-semibold tracking-tight text-text-primary mb-8 select-none">
               {project.title}
             </h3>
             
@@ -61,7 +61,7 @@ export default function ProjectModal({ isOpen, project, onClose }: ProjectModalP
               {project.desc}
             </p>
             
-            <div className="text-[10px] font-mono uppercase tracking-[0.35em] text-[#1e3a8a] mb-6 font-bold">
+            <div className="text-[10px] font-mono uppercase tracking-[0.35em] text-[#2563FF] mb-6 font-bold">
               Technical_Stack
             </div>
             <div className="flex flex-wrap gap-2.5 mb-8">
@@ -79,7 +79,7 @@ export default function ProjectModal({ isOpen, project, onClose }: ProjectModalP
           <div>
             {/* Outcome KPI Card */}
             <div className="border border-white/5 p-8 md:p-10 bg-surface/40 rounded-2xl mb-8 shadow-sm">
-              <div className="text-[10px] font-mono uppercase tracking-[0.35em] text-[#1e3a8a] mb-4 font-bold">
+              <div className="text-[10px] font-mono uppercase tracking-[0.35em] text-[#2563FF] mb-4 font-bold">
                 Efficiency_Gain
               </div>
               <div className="text-2xl md:text-3xl font-spartan font-black uppercase tracking-tighter text-text-primary">
@@ -113,7 +113,7 @@ export default function ProjectModal({ isOpen, project, onClose }: ProjectModalP
                       onClick={() => setActiveImage(img)}
                       className={`relative w-16 h-12 rounded-lg overflow-hidden border transition-all duration-300 ${
                         currentImage === img 
-                          ? "border-[#1e3a8a] scale-105 ring-2 ring-[#1e3a8a]/50 opacity-100" 
+                          ? "border-[#2563FF] scale-105 ring-2 ring-[#2563FF]/50 opacity-100" 
                           : "border-white/10 opacity-50 hover:opacity-100"
                       }`}
                     >
