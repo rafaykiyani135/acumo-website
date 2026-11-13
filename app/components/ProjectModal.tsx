@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 interface ProjectData {
   title: string;
@@ -89,11 +90,13 @@ export default function ProjectModal({ isOpen, project, onClose }: ProjectModalP
             
             {/* Visual showcase image */}
             <div className="space-y-4">
-              <div className="overflow-hidden rounded-2xl border border-white/10 bg-surface/80">
-                <img 
+              <div className="relative h-[260px] sm:h-[340px] w-full overflow-hidden rounded-2xl border border-white/10 bg-surface/80">
+                <Image 
                   src={currentImage} 
-                  alt={project.title} 
-                  className="w-full max-h-[400px] object-cover transition-all duration-500 shadow-md" 
+                  alt={project.taglines?.[currentImage] || project.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 550px"
+                  className="object-cover transition-all duration-500 shadow-md" 
                 />
               </div>
 
@@ -117,7 +120,7 @@ export default function ProjectModal({ isOpen, project, onClose }: ProjectModalP
                           : "border-white/10 opacity-50 hover:opacity-100"
                       }`}
                     >
-                      <img src={img} alt={`Screenshot ${idx + 1}`} className="w-full h-full object-cover" />
+                      <Image src={img} alt={`${project.title} screenshot ${idx + 1}`} fill sizes="64px" className="object-cover" />
                     </button>
                   ))}
                 </div>

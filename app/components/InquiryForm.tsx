@@ -1,23 +1,43 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 export default function InquiryForm() {
-  // Load Calendly widget script
+  const sectionRef = useRef<HTMLElement>(null);
+
+  // Lazy-load Calendly widget script when the section is near the viewport
   useEffect(() => {
-    const existing = document.querySelector(
-      'script[src="https://assets.calendly.com/assets/external/widget.js"]'
+    const el = sectionRef.current;
+    if (!el) return;
+
+    const loadCalendly = () => {
+      const existing = document.querySelector(
+        'script[src="https://assets.calendly.com/assets/external/widget.js"]'
+      );
+      if (!existing) {
+        const script = document.createElement("script");
+        script.src = "https://assets.calendly.com/assets/external/widget.js";
+        script.async = true;
+        document.body.appendChild(script);
+      }
+    };
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          loadCalendly();
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "500px" }
     );
-    if (!existing) {
-      const script = document.createElement("script");
-      script.src = "https://assets.calendly.com/assets/external/widget.js";
-      script.async = true;
-      document.body.appendChild(script);
-    }
+
+    observer.observe(el);
+    return () => observer.disconnect();
   }, []);
 
   return (
-    <section id="inquiry" className="brand-section w-full overflow-x-hidden border-t border-white/5 bg-bg py-20 text-text-primary sm:py-24 lg:py-40">
+    <section ref={sectionRef} id="inquiry" className="brand-section w-full overflow-x-hidden border-t border-white/5 bg-bg py-20 text-text-primary sm:py-24 lg:py-40">
       <div className="mx-auto w-full min-w-0 max-w-[1400px] px-4 sm:px-6">
 
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 min-w-0">

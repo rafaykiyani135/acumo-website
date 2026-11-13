@@ -15,6 +15,37 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://www.acumoai.com/services/ai-document-processing",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "AI Document Processing for Service Operations | Acumo AI",
+    description:
+      "Extract data from quotes, orders and invoices in emails and PDFs and push it into your systems. Custom AI document processing for service ops teams.",
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.acumoai.com",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Services",
+      item: "https://www.acumoai.com/services",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "AI Document Processing",
+      item: "https://www.acumoai.com/services/ai-document-processing",
+    },
+  ],
 };
 
 const serviceSchema = {
@@ -358,7 +389,7 @@ export default function AiDocumentProcessingPage() {
 
           <p className="mt-10 font-mono text-[11px] uppercase tracking-[0.15em] text-muted">
             <Link
-              href="/articles/your-business-has-the-information-why-are-your-employees-still-entering-it"
+              href="/articles/how-ai-turns-documents-emails-and-customer-requests-into-business-actions"
               className="transition-colors duration-300 hover:text-text-primary"
             >
               → Why are your employees still entering data? Read the article
@@ -433,7 +464,7 @@ export default function AiDocumentProcessingPage() {
               → Capture the calls and inquiries that start the paperwork
             </Link>
             <Link
-              href="/articles/your-business-has-the-information-why-are-your-employees-still-entering-it"
+              href="/articles/how-ai-turns-documents-emails-and-customer-requests-into-business-actions"
               className="transition-colors duration-300 hover:text-text-primary"
             >
               → Read how AI turns documents and emails into business actions
@@ -448,6 +479,12 @@ export default function AiDocumentProcessingPage() {
         </div>
       </section>
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c"),
+        }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

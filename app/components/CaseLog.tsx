@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 
 interface Project {
   id: string;
@@ -118,10 +119,12 @@ export default function CaseLog({ onOpenProject }: CaseLogProps) {
               onClick={() => onOpenProject(project)}
             >
               <div className="w-full h-[280px] overflow-hidden relative bg-surface">
-                <img 
+                <Image 
                   src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transform transition-transform duration-[1.5s] ease-out group-hover:scale-105 opacity-70 group-hover:opacity-90"
+                  alt={`${project.title} — ${project.industry.replace('_', ' ')} Case Study`}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 480px"
+                  className="object-cover transform transition-transform duration-[1.5s] ease-out group-hover:scale-105 opacity-70 group-hover:opacity-90"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-transparent opacity-90"></div>
               </div>
@@ -136,8 +139,12 @@ export default function CaseLog({ onOpenProject }: CaseLogProps) {
                   {project.title}
                 </h3>
 
-                <p className="text-[14px] lg:text-[15px] leading-[1.6] text-muted mb-8 font-medium font-sans max-w-[95%]">
+                <p className="text-[14px] lg:text-[15px] leading-[1.6] text-muted mb-4 font-medium font-sans max-w-[95%]">
                   {project.desc}
+                </p>
+
+                <p className="text-[12px] font-mono text-[#60A5FA] uppercase tracking-wider font-bold mb-6">
+                  Outcome: {project.outcome}
                 </p>
 
                 <div className="mt-auto pt-6 border-t border-white/5">

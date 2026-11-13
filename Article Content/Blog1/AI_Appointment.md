@@ -1,8 +1,14 @@
 ---
 title: "Why Manual Appointment Booking Is Slowing Your Business Down (And What to Do About It)"
+description: "Manual appointment scheduling costs growing businesses leads and revenue. Learn how 24/7 AI appointment setters qualify inquiries and book calendars automatically."
 image: "/AppointmentSetter.webp"
+imageAlt: "AI appointment setter automatically scheduling client meetings on a business calendar"
 date: "Jul 14, 2026"
-
+keywords:
+  - AI appointment setter
+  - automated appointment booking
+  - AI scheduling assistant for business
+  - 24/7 lead qualification and booking
 ---
 
 # Why Manual Appointment Booking Is Slowing Your Business Down (And What to Do About It)

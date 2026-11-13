@@ -18,6 +18,35 @@ export interface ArticleMetadata {
 
 const ARTICLES_DIR = path.join(process.cwd(), 'Article Content');
 
+function extractFallbackDescription(markdown: string): string {
+  const paragraphs = markdown
+    .split(/\r?\n\r?\n/)
+    .map((block) => block.trim())
+    .filter(
+      (block) =>
+        block.length > 40 &&
+        !block.startsWith('#') &&
+        !block.startsWith('|') &&
+        !block.startsWith('---') &&
+        !block.startsWith('>') &&
+        !block.startsWith('-') &&
+        !block.startsWith('*Prices checked') &&
+        !block.startsWith('*Last checked')
+    );
+
+  if (paragraphs.length === 0) return '';
+  const clean = paragraphs[0]
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/(\*\*|__|\*|_|\`)/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  if (clean.length <= 158) return clean;
+  const cut = clean.slice(0, 155);
+  const lastSpace = cut.lastIndexOf(' ');
+  return `${(lastSpace > 100 ? cut.slice(0, lastSpace) : cut).replace(/[.,;:–—-]+$/, '')}...`;
+}
+
 export function getArticles(): ArticleMetadata[] {
   if (!fs.existsSync(ARTICLES_DIR)) return [];
 
@@ -77,8 +106,8 @@ export function getArticles(): ArticleMetadata[] {
         date,
         readTime,
         imagePath: data.image || '',
-        imageAlt: data.imageAlt || '',
-        description: data.description || '',
+        imageAlt: data.imageAlt || title,
+        description: data.description || extractFallbackDescription(content),
         keywords,
         content
       });

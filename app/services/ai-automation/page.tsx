@@ -15,6 +15,37 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://www.acumoai.com/services/ai-automation",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Custom AI Automation for Business Workflows | Acumo AI",
+    description:
+      "We build custom AI automation and LLM integrations that connect to your CRM, spreadsheets and internal tools, cutting manual work. Free scoping call.",
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.acumoai.com",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Services",
+      item: "https://www.acumoai.com/services",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Custom AI & Automations",
+      item: "https://www.acumoai.com/services/ai-automation",
+    },
+  ],
 };
 
 const serviceSchema = {
@@ -448,6 +479,12 @@ export default function AiAutomationPage() {
         </div>
       </section>
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c"),
+        }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

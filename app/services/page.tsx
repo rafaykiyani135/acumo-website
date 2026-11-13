@@ -8,6 +8,38 @@ export const metadata: Metadata = {
   description:
     "Acumo AI builds AI-native web products: full-stack MVPs, websites & booking engines, AI voice agents with CRM, and custom AI automations. Free scoping call.",
   alternates: { canonical: "/services" },
+  openGraph: {
+    title: "Services | Acumo AI",
+    description:
+      "Acumo AI builds AI-native web products: full-stack MVPs, websites & booking engines, AI voice agents with CRM, and custom AI automations. Free scoping call.",
+    type: "website",
+    url: "https://www.acumoai.com/services",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Services | Acumo AI",
+    description:
+      "Acumo AI builds AI-native web products: full-stack MVPs, websites & booking engines, AI voice agents with CRM, and custom AI automations. Free scoping call.",
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.acumoai.com",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Services",
+      item: "https://www.acumoai.com/services",
+    },
+  ],
 };
 
 const services = [
@@ -133,6 +165,13 @@ export default function ServicesPage() {
           </Link>
         </div>
       </section>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c"),
+        }}
+      />
 
       <Footer />
     </main>

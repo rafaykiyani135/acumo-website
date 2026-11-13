@@ -424,8 +424,12 @@ export default function Hero() {
               <span
                 key={roleIndex}
                 className="animate-role-fade-in inline-block whitespace-nowrap font-display text-[1.2em] font-bold italic text-brand-vibrant [text-shadow:0_0_20px_rgba(37,99,255,0.4)]"
+                aria-hidden="true"
               >
                 {ROLES[roleIndex]}
+              </span>
+              <span className="sr-only">
+                AI Chatbots, Voice Agents, AEO Solutions, and Custom Systems
               </span>{" "}
               that turn conversations into revenue.
             </div>

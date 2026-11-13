@@ -48,12 +48,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       publishedTime: isoDate,
       images: article.imagePath
         ? [{ url: article.imagePath, alt: article.imageAlt || article.title }]
-        : ['/opengraph-image'],
+        : [{ url: '/opengraph-image', width: 1200, height: 630, alt: article.title }],
     },
     twitter: {
       card: 'summary_large_image',
       title: sharedTitle,
       description: article.description || `Read ${article.title}`,
+      images: [article.imagePath || '/opengraph-image'],
     },
   };
 }
@@ -93,27 +94,33 @@ export default async function ArticlePage({
     "@type": "BlogPosting",
     headline: article.title,
     description: article.description || undefined,
-    image: article.imagePath ? `https://www.acumoai.com${article.imagePath}` : undefined,
+    image: article.imagePath
+      ? `https://www.acumoai.com${article.imagePath}`
+      : "https://www.acumoai.com/opengraph-image",
     datePublished: isoDate,
     dateModified: isoDate,
     author: {
       "@type": "Organization",
-      name: "Acumo AI",
+      "@id": "https://www.acumoai.com/#organization",
+      name: "Acumo AI Engineering Team",
       url: "https://www.acumoai.com",
     },
     publisher: {
       "@type": "Organization",
+      "@id": "https://www.acumoai.com/#organization",
       name: "Acumo AI",
       logo: {
         "@type": "ImageObject",
         url: "https://www.acumoai.com/acumo-logo2.webp",
+        width: 400,
+        height: 100,
       },
     },
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": articleUrl,
     },
-    keywords: Array.isArray(article.keywords) ? article.keywords.join(", ") : undefined,
+    keywords: Array.isArray(article.keywords) && article.keywords.length > 0 ? article.keywords.join(", ") : undefined,
   };
 
   const breadcrumbSchema = {
@@ -199,16 +206,16 @@ export default async function ArticlePage({
     <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-12 relative">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema).replace(/</g, "\\u003c") }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c") }}
       />
       {faqSchema && (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c") }}
         />
       )}
       <Link 
@@ -226,8 +233,10 @@ export default async function ArticlePage({
             <h1 className="font-display text-3xl sm:text-4xl md:text-5xl text-white mb-6 leading-[1.1] font-normal tracking-[-0.02em]">
               {article.title}
             </h1>
-            <div className="flex items-center gap-3 font-sans text-sm font-bold uppercase tracking-wider text-white/50">
-              <span>{article.date}</span>
+            <div className="flex flex-wrap items-center gap-3 font-sans text-sm font-bold uppercase tracking-wider text-white/50">
+              <span className="text-[#60A5FA]">By Acumo AI Engineering</span>
+              <span className="w-1 h-1 rounded-full bg-white/50" />
+              <time dateTime={isoDate}>{article.date}</time>
               <span className="w-1 h-1 rounded-full bg-white/50" />
               <span>{article.readTime}</span>
             </div>
@@ -240,13 +249,13 @@ export default async function ArticlePage({
                 alt={article.imageAlt || article.title}
                 fill
                 priority
+                sizes="(max-width: 800px) 100vw, 800px"
                 className="object-cover"
               />
             </div>
           )}
 
           <div className="font-sans text-white/90 text-[17px] leading-[1.8] max-w-none
-            [&_h1]:hidden
             [&_h2]:font-spartan [&_h2]:text-3xl [&_h2]:font-bold [&_h2]:text-white [&_h2]:mt-14 [&_h2]:mb-6
             [&_h3]:font-spartan [&_h3]:text-2xl [&_h3]:font-bold [&_h3]:text-white [&_h3]:mt-10 [&_h3]:mb-4
             [&_p]:mb-6 [&_a]:text-[#60A5FA] hover:[&_a]:underline
@@ -259,7 +268,7 @@ export default async function ArticlePage({
             <ReactMarkdown 
               remarkPlugins={[remarkGfm]}
               components={{
-                h1: ({children}) => <h2 className="hidden">{children}</h2>,
+                h1: () => null,
                 h2: ({node, children, ...props}) => {
                   const id = generateId(children);
                   return <h2 id={id} {...props}>{children}</h2>;

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Bot, CheckCircle2 } from "lucide-react";
 
 const logsList = [
@@ -12,49 +12,68 @@ const logsList = [
 ];
 
 export default function ProcessSection() {
+  const sectionRef = useRef<HTMLElement>(null);
   const [mounted, setMounted] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const [currentTextIdx, setCurrentTextIdx] = useState(0);
   const [heights, setHeights] = useState<number[]>(new Array(72).fill(3));
 
   useEffect(() => {
     setMounted(true);
+    const el = sectionRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { rootMargin: "150px" }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
   }, []);
 
-  // Loop dynamic updates for log list text
+  // Loop dynamic updates for log list text only when visible
   useEffect(() => {
+    if (!isVisible) return;
     const textTimer = setInterval(() => {
       setCurrentTextIdx(prev => (prev + 1) % logsList.length);
     }, 4500);
     return () => clearInterval(textTimer);
-  }, []);
+  }, [isVisible]);
 
-  // requestAnimationFrame real-time voice waveform simulation loop
+  // requestAnimationFrame real-time voice waveform simulation loop (paused off-screen & throttled to ~30fps)
   useEffect(() => {
+    if (!isVisible) return;
     let frameId: number;
     let phase = 0;
+    let lastTime = 0;
 
-    const animate = () => {
-      phase += 0.04;
-      const newHeights = Array.from({ length: 72 }, (_, i) => {
-        // Generate beautiful localized wave peaks that revolve smoothly
-        const peak1 = Math.exp(-Math.pow((i - 18 - Math.sin(phase) * 8) / 3.5, 2)) * 24;
-        const peak2 = Math.exp(-Math.pow((i - 52 - Math.cos(phase * 1.3) * 7) / 4.2, 2)) * 18;
-        const noise = Math.random() * 3.5;
-        
-        // Base dash line thickness (2px) + computed peak waveforms
-        return 2 + Math.max(peak1, peak2) + noise;
-      });
+    const animate = (now: number) => {
+      if (now - lastTime >= 33) {
+        lastTime = now;
+        phase += 0.08;
+        const newHeights = Array.from({ length: 72 }, (_, i) => {
+          // Generate beautiful localized wave peaks that revolve smoothly
+          const peak1 = Math.exp(-Math.pow((i - 18 - Math.sin(phase) * 8) / 3.5, 2)) * 24;
+          const peak2 = Math.exp(-Math.pow((i - 52 - Math.cos(phase * 1.3) * 7) / 4.2, 2)) * 18;
+          const noise = Math.random() * 3.5;
+          
+          // Base dash line thickness (2px) + computed peak waveforms
+          return 2 + Math.max(peak1, peak2) + noise;
+        });
 
-      setHeights(newHeights);
+        setHeights(newHeights);
+      }
       frameId = requestAnimationFrame(animate);
     };
 
     frameId = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(frameId);
-  }, []);
+  }, [isVisible]);
 
   return (
-    <section id="process" className="brand-section relative w-full overflow-x-hidden border-b border-white/5 bg-bg py-20 text-text-primary sm:py-24 lg:py-40">
+    <section ref={sectionRef} id="process" className="brand-section relative w-full overflow-x-hidden border-b border-white/5 bg-bg py-20 text-text-primary sm:py-24 lg:py-40">
       <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-10">
         <div className="absolute top-1/4 left-1/4 h-64 w-64 rounded-full bg-[#2563FF]/10 blur-[120px] sm:h-[500px] sm:w-[500px] sm:blur-[180px]" />
         <div className="absolute bottom-1/4 right-1/4 h-64 w-64 rounded-full bg-[#2563FF]/10 blur-[120px] sm:h-[500px] sm:w-[500px] sm:blur-[180px]" />

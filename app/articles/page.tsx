@@ -5,9 +5,39 @@ import { ChevronLeft, ChevronRight, Clock, Calendar, ArrowRight } from 'lucide-r
 import { getArticles } from '@/lib/articles';
 
 export const metadata = {
-  title: 'Articles',
-  description: 'Read the latest articles and insights from Acumo AI on business automation and AI engineering.',
+  title: 'Articles & Technical Insights',
+  description: 'Read the latest articles and technical deep dives from Acumo AI on Voice AI, LLM automation, and full-stack AI engineering.',
   alternates: { canonical: '/articles' },
+  openGraph: {
+    title: 'Articles & Technical Insights | Acumo AI',
+    description: 'Read the latest articles and technical deep dives from Acumo AI on Voice AI, LLM automation, and full-stack AI engineering.',
+    type: 'website',
+    url: 'https://www.acumoai.com/articles',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Articles & Technical Insights | Acumo AI',
+    description: 'Read the latest articles and technical deep dives from Acumo AI on Voice AI, LLM automation, and full-stack AI engineering.',
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.acumoai.com",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Articles",
+      item: "https://www.acumoai.com/articles",
+    },
+  ],
 };
 
 const ITEMS_PER_PAGE = 18;
@@ -36,6 +66,12 @@ export default async function ArticlesPage({
 
   return (
     <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-12 py-6 sm:py-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c"),
+        }}
+      />
       {/* Header Section */}
       <div className="mb-12 max-w-3xl">
 
@@ -68,6 +104,7 @@ export default async function ArticlesPage({
                         alt={featuredArticle.imageAlt || featuredArticle.title}
                         fill
                         priority
+                        sizes="(max-width: 1024px) 100vw, 700px"
                         className="object-cover transition-transform duration-700 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent lg:hidden" />
@@ -162,6 +199,7 @@ export default async function ArticlesPage({
                           src={article.imagePath}
                           alt={article.imageAlt || article.title}
                           fill
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 380px"
                           className="object-cover transition-transform duration-500 group-hover:scale-105"
                         />
                       </div>

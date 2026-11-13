@@ -1,8 +1,14 @@
 ---
 title: "The Voice AI Email Capture Problem Nobody Talks About (And How We Solved It)"
 image: "/voice_email_capture.webp"
+imageAlt: "AI voice agent verifying a caller email address over the phone with SMS fallback"
 date: "Aug 5, 2026"
 description: "Capturing email addresses over phone calls with Voice AI sounds simple until production. Learn why STT/TTS models fail on email verification and how to fix readouts, reduce friction, and implement SMS fallbacks."
+keywords:
+  - voice AI email capture
+  - AI voice agent phone verification
+  - STT email transcription accuracy
+  - voice AI SMS fallback
 ---
 
 # The Voice AI Email Capture Problem Nobody Talks About (And How We Solved It)

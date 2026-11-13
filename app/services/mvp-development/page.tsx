@@ -15,6 +15,37 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://www.acumoai.com/services/mvp-development",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "AI MVP Development for Startups in 2–4 Weeks | Acumo AI",
+    description:
+      "Launch your AI-powered MVP in 2–4 weeks. Production-ready web and mobile apps with scalable backends, built by an AI-native engineering team.",
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.acumoai.com",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Services",
+      item: "https://www.acumoai.com/services",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Full-Stack MVP Development",
+      item: "https://www.acumoai.com/services/mvp-development",
+    },
+  ],
 };
 
 const serviceSchema = {
@@ -449,6 +480,12 @@ export default function MvpDevelopmentPage() {
         </div>
       </section>
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c"),
+        }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

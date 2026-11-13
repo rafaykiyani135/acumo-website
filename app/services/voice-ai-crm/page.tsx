@@ -15,6 +15,37 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://www.acumoai.com/services/voice-ai-crm",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "AI Voice Receptionist for Small Business | Acumo AI",
+    description:
+      "Custom AI voice agents that answer every call, qualify leads and book appointments into HubSpot, GoHighLevel or Salesforce. Live in 2–4 weeks.",
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.acumoai.com",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Services",
+      item: "https://www.acumoai.com/services",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Voice AI & CRM Systems",
+      item: "https://www.acumoai.com/services/voice-ai-crm",
+    },
+  ],
 };
 
 const serviceSchema = {
@@ -442,6 +473,12 @@ export default function VoiceAiCrmPage() {
         </div>
       </section>
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c"),
+        }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

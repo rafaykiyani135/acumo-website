@@ -1,7 +1,14 @@
 ---
 title: "Your Voice AI Isn't Slow Because of the Model. It's Slow Because of Where You Deployed It."
+description: "How co-locating your backend server, database, and telephony region eliminates sequential tool-call latency in production AI voice agents without changing a line of code."
 image: "/voice-ai-latency-blog.webp"
+imageAlt: "Server region latency optimization for real-time AI voice agents"
 date: "Jul 29, 2026"
+keywords:
+  - voice AI latency optimization
+  - reduce AI voice agent delay
+  - voice AI tool call latency
+  - server region deployment voice AI
 ---
 
 # Your Voice AI Isn't Slow Because of the Model. It's Slow Because of Where You Deployed It.

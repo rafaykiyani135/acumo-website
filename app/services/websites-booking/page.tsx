@@ -15,6 +15,37 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://www.acumoai.com/services/websites-booking",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Website with Online Booking & Payments | Acumo AI",
+    description:
+      "Custom websites with built-in booking, payments and client portals for service businesses. Fast, mobile-first and live in 2–4 weeks. Book a free call.",
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.acumoai.com",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Services",
+      item: "https://www.acumoai.com/services",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Websites & Booking Engine",
+      item: "https://www.acumoai.com/services/websites-booking",
+    },
+  ],
 };
 
 const serviceSchema = {
@@ -440,6 +471,12 @@ export default function WebsitesBookingPage() {
         </div>
       </section>
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c"),
+        }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

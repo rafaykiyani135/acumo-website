@@ -53,6 +53,15 @@ export default function Services() {
       desc: "Turn your Cursor, Lovable, or Bolt vibe-coded prototype into secure, scalable, production-ready software. We audit security holes, eliminate god components, lock down database RLS, and add automated test suites in 1–2 weeks.",
       inputText: ["Audit", "Harden", "Refactor", "Scale"],
       outputText: "Production Ready",
+    },
+    {
+      id: "06",
+      title: ["AI Document", "Processing"],
+      subtitle: "AUTOMATED DATA EXTRACTION & INTAKE",
+      href: "/services/ai-document-processing",
+      desc: "Extract structured data from quotes, purchase orders, invoices, and emails and route it directly into your ERP, CRM, and accounting systems — eliminating manual re-keying.",
+      inputText: ["PDFs", "Emails", "Extract", "Route"],
+      outputText: "Synced!",
     }
   ];
 
@@ -68,17 +77,21 @@ export default function Services() {
       className="brand-section relative w-full overflow-x-hidden border-b border-white/5 bg-bg px-4 py-20 text-text-primary sm:px-6 sm:py-24 md:px-12 lg:px-20 lg:py-28 xl:px-32"
     >
       {/* Search Engine & AI Crawler Accessibility Layer */}
-      <div className="sr-only">
+      <nav aria-label="Acumo AI Custom Development Services" className="sr-only">
         <h2>Acumo AI Custom Development Services</h2>
         <ul>
           {services.map((s) => (
             <li key={s.id}>
-              <h3>{s.title.join(" ")} - {s.subtitle}</h3>
+              <h3>
+                <Link href={s.href}>
+                  {s.title.join(" ")} - {s.subtitle}
+                </Link>
+              </h3>
               <p>{s.desc}</p>
             </li>
           ))}
         </ul>
-      </div>
+      </nav>
       <div className="pointer-events-none absolute inset-0 opacity-[0.03]">
         <div className="absolute left-0 top-0 h-full w-full bg-grid animate-pulse" />
       </div>

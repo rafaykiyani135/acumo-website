@@ -1,7 +1,14 @@
 ---
 title: "I Thought Voice AI Was Just STT + LLM + TTS. I Was Wrong."
+description: "Why building a production AI voice agent requires far more than wiring Speech-to-Text, an LLM, and Text-to-Speech together — from turn-taking to latency and interruption handling."
 image: "/voice-blog1.webp"
+imageAlt: "Voice AI pipeline architecture diagram showing STT, LLM orchestration, and TTS"
 date: "Jul 21, 2026"
+keywords:
+  - voice AI architecture
+  - STT LLM TTS pipeline
+  - building production AI voice agents
+  - voice AI turn detection and latency
 ---
 
 # I Thought Voice AI Was Just STT + LLM + TTS. I Was Wrong.

@@ -74,9 +74,16 @@ export default function RootLayout({
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": "https://www.acumoai.com/#organization",
     name: "Acumo AI",
+    alternateName: "Acumo",
     url: "https://www.acumoai.com",
-    logo: "https://www.acumoai.com/acumo-logo2.webp",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://www.acumoai.com/acumo-logo2.webp",
+      width: 400,
+      height: 100,
+    },
     description:
       "Acumo AI is a technical engineering agency that builds AI-native web products for small and medium businesses — including custom chatbots, voice AI agents, full-stack SaaS platforms, and Answer Engine Optimization (AEO).",
     email: "hello@acumoai.com",
@@ -91,106 +98,16 @@ export default function RootLayout({
     },
   };
 
-  const serviceSchemas = [
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      serviceType: "Answer Engine Optimization (AEO)",
-      provider: { "@type": "Organization", name: "Acumo AI" },
-      url: "https://www.acumoai.com/#ai-native-engine",
-      description:
-        "Optimizes content, schema markup, and technical structure so AI crawlers (GPTBot, ClaudeBot, and others) surface the business as a cited, trusted answer in generative AI search results.",
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      serviceType: "Conversational Chat & Voice AI Agents",
-      provider: { "@type": "Organization", name: "Acumo AI" },
-      url: "https://www.acumoai.com/#conversational-engine",
-      description:
-        "Custom-built, ultra-low-latency voice and text AI agents that qualify leads, answer inquiries, and book appointments in real time, 24/7 — includes appointment scheduling, CRM integration, SMS verification, and voice operations.",
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      serviceType: "Full-Stack AI-Native Web Development",
-      provider: { "@type": "Organization", name: "Acumo AI" },
-      url: "https://www.acumoai.com/#distributed-systems",
-      description:
-        "Custom Next.js, React, FastAPI, and distributed backend architecture for AI-native products, built for scale and fault tolerance.",
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      serviceType: "Custom AI Chatbot Development",
-      provider: { "@type": "Organization", name: "Acumo AI" },
-      url: "https://www.acumoai.com/#services",
-      description:
-        "Production-grade AI chatbots with RAG pipelines and fine-tuned LLMs, grounded in proprietary data to eliminate hallucinations and deliver verified, context-aware responses.",
-    },
-  ];
-
-  const faqSchema = {
+  const websiteSchema = {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: "What industries does Acumo AI work with?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "We're industry-agnostic. We've built AI-native systems across healthcare, real estate, finance, legal, e-commerce, and more. If your business needs intelligent software that scales, we can engineer it — regardless of vertical.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "What's the difference between AEO and traditional SEO?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Traditional SEO optimizes for search engine result pages — rankings, backlinks, and keywords. Answer Engine Optimization (AEO) optimizes for generative AI engines like ChatGPT, Claude, Gemini, and Perplexity. Instead of competing for page-one rankings buried under ads, AEO ensures your business is cited directly as the trusted answer when prospects ask AI for recommendations.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "What does the engagement process look like?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "It starts with a scoping inquiry where we understand your goals and constraints. From there, we deliver a technical proposal outlining architecture, timeline, and deliverables. Once approved, we move into a focused 2–4 week build cycle with regular checkpoints, then launch and hand off with full documentation.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "How long does a typical project take?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Most projects are delivered within 2–4 weeks. Complex multi-system builds or enterprise integrations may extend beyond that, but we scope everything upfront so there are no surprises.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Do you offer ongoing support after launch?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Yes. We offer post-launch support packages that cover maintenance, monitoring, iterative improvements, and scaling as your product grows. You're not left on your own after delivery.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Can you integrate with our existing tools and tech stack?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Absolutely. We regularly integrate with CRMs, scheduling tools, payment systems, and existing APIs. Our systems are built to plug into your current infrastructure, not replace it.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Do you white-label your work?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Yes — everything ships under your brand. We build behind the scenes so your product looks and feels entirely yours, from the interface to the deployment.",
-        },
-      },
-    ],
+    "@type": "WebSite",
+    "@id": "https://www.acumoai.com/#website",
+    name: "Acumo AI",
+    alternateName: ["Acumo", "acumoai.com"],
+    url: "https://www.acumoai.com/",
+    publisher: {
+      "@id": "https://www.acumoai.com/#organization",
+    },
   };
 
   return (
@@ -202,22 +119,13 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema),
+            __html: JSON.stringify(organizationSchema).replace(/</g, "\\u003c"),
           }}
         />
-        {serviceSchemas.map((schema, i) => (
-          <script
-            key={i}
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify(schema),
-            }}
-          />
-        ))}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(faqSchema),
+            __html: JSON.stringify(websiteSchema).replace(/</g, "\\u003c"),
           }}
         />
         <GoogleAnalytics />

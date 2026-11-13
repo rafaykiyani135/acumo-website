@@ -15,6 +15,37 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://www.acumoai.com/services/codebase-cleanup",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Codebase Cleanup & Hardening for AI-Built & Vibe-Coded Apps | Acumo AI",
+    description:
+      "Turn your vibe-coded prototype into investor-grade, production-ready software. We fix security holes, untangle spaghetti components, and optimize databases in 1–2 weeks.",
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.acumoai.com",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Services",
+      item: "https://www.acumoai.com/services",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Codebase Cleanup & Hardening",
+      item: "https://www.acumoai.com/services/codebase-cleanup",
+    },
+  ],
 };
 
 const serviceSchema = {
@@ -499,6 +530,12 @@ export default function CodebaseCleanupPage() {
         </div>
       </section>
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c"),
+        }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
