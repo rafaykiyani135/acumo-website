@@ -15,6 +15,7 @@ Acumo AI designs and ships production-grade AI systems rather than templated web
 
 ## Articles & Technical Insights
 
+- [Sales Coaches Sell on Calls. So Why Is No One Answering Yours?](https://www.acumoai.com/articles/voice-ai-for-sales-coaches): A sales coach is on a coaching call when the next lead rings. A voice agent can answer, qualify, and book the discovery call into your calendar and CRM. Buy the bundle if it fits, but keep your number, your discovery script, your call records, and your data contract portable.
 - [Free AI Voice Generators vs a Real AI Voice Agent](https://www.acumoai.com/articles/free-ai-voice-generators-vs-a-real-ai-voice-agent): A free AI voice generator makes audio from text. An AI voice agent answers calls, books appointments, and updates your CRM. Learn which one your business actually needs.
 - [What a Voice AI Minute Really Costs in 2026](https://www.acumoai.com/articles/what-voice-ai-minute-really-costs-2026): Vendors quote $0.05 a minute. The real voice AI bill is $0.08 to $0.25 once you add STT, LLM, voice, telephony and concurrency.
 - [Agentic Document Processing and the EU AI Act in 2026](https://www.acumoai.com/articles/agentic-document-processing-eu-ai-act-2026): The EU AI Act's high-risk deadline moved to December 2027. Here's what agentic document processing teams should build now, and what already applies.
