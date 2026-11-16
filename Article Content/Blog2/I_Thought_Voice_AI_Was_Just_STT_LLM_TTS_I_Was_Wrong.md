@@ -33,7 +33,7 @@ itself.
 
 ## 1. Your Voice Model Can Make or Break the Experience
 
-Initially, I assumed that any good-quality ElevenLabs voice would be
+Initially, I assumed that any good-quality [ElevenLabs voice](https://raw.githubusercontent.com/thorwebdev/elevenlabs-docs/main/voices/default-voices.mdx) would be
 enough. If it sounded realistic in a short demo, it was probably good
 enough for production.
 
@@ -90,8 +90,8 @@ noticeable during a live conversation.
 
 After simplifying several of my system prompts, I consistently saw
 response latency improve by roughly **100--200 milliseconds**,
-particularly with faster models like **Claude Haiku 4.5** and
-**GPT-4.1**.
+particularly with faster models like **[Claude Haiku 4.5](https://blog.rottenwifi.com/anthropics-claude-haiku-4-5-delivers-flagship-level-results-at-lower-cost-with-important-limits/)** and
+**[GPT-4.1](https://themodelpress.com/explainers/openai-models-list)**.
 
 Did the AI suddenly become smarter?
 
