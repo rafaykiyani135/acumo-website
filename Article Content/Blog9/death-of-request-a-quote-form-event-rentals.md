@@ -26,7 +26,7 @@ Static contact forms fail because they don't match how people shop today. When a
 When your sales process relies on manual desk work, three major problems slow down your business:
 
 1. **Customer Impatience:** Having to re-enter event details on multiple vendor websites frustrates buyers. The rental business that shows clear pricing first captures the customer before competitors even open their inbox.
-2. **Wasted Staff Time:** Your team spends 15 to 25 minutes on every single inquiry—checking tent sizes, looking up delivery addresses on Google Maps, and typing up estimates for leads that never convert.
+2. **Wasted Staff Time:** Your team spends 15 to 25 minutes on every single inquiry—checking tent sizes, looking up delivery addresses on [Google Maps](https://developers.google.com/maps/documentation/distance-matrix/overview), and typing up estimates for leads that never convert.
 3. **Missed Upsell Revenue:** An emailed PDF quote gives the customer one rigid price. It doesn't let them easily see how adding lighting, sidewalls, or heaters would fit into their budget.
 
 Using an **automated rental estimate tool** turns your website into an automated sales team that works for you 24 hours a day, 7 days a week.
@@ -89,8 +89,8 @@ Acumo AI specializes in **custom rental booking engine web development** designe
 
 * **Fast, Mobile-Friendly Websites:** We build custom websites that load instantly on smartphones, tablets, and computers without slow plugin lag.
 * **Custom Pricing Engines:** We build a **dynamic pricing calculator party rentals** tool tailored to your exact inventory catalog, surface setup rules, and delivery fees.
-* **Accurate Distance Calculation:** We connect Google Maps distance tools directly to your site so delivery costs are calculated accurately every single time.
-* **Instant Deposit Collection:** Collect online deposits using Stripe at the exact moment customer intent is highest, locking in bookings before competitors even see the lead.
+* **Accurate Distance Calculation:** We connect [Google Maps distance tools](https://developers.google.com/maps/documentation/distance-matrix/overview) directly to your site so delivery costs are calculated accurately every single time.
+* **Instant Deposit Collection:** Collect online deposits using [Stripe](https://stripe.com/gb/use-cases/platforms) at the exact moment customer intent is highest, locking in bookings before competitors even see the lead.
 * **Simple Inventory Integration:** Connects seamlessly into **instant quoting software for event rentals** workflows and your management software so your office team receives clean, complete job details automatically.
 
 ---
