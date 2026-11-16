@@ -23,11 +23,11 @@ Run the numbers. One hundred monthly leads, a 15% missed call rate, and a $4,000
 
 Rental operators do not need night-shift staff.
 
-**The Twilio and SIP telephony layer.** The call lands through Twilio or another SIP provider and anchors before the first ring completes. No hold music, no menus.
+**The [Twilio](https://www.twilio.com/en-us/voice/api) and SIP telephony layer.** The call lands through Twilio or another SIP provider and anchors before the first ring completes. No hold music, no menus.
 
 **Real-time speech-to-text and LLM reasoning.** Audio converts to text in under 500 milliseconds of speech-to-text latency. A deterministic intent classifier knows the difference between "do you have a 30x60 tent" and "is delivery extra", while the LLM reasons over your catalog and pricing rules to answer naturally.
 
-**CRM synchronization.** Everything spoken is written to your CRM in real time. With a GoHighLevel voice AI integration for rentals, the agent updates records and triggers follow-ups.
+**CRM synchronization.** Everything spoken is written to your CRM in real time. With a [GoHighLevel voice AI integration](https://help.gohighlevel.com/support/solutions/articles/155000003911-ai-voice-agents-overview) for rentals, the agent updates records and triggers follow-ups.
 
 ## The Exact Call-to-Booking Workflow
 
