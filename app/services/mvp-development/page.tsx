@@ -4,22 +4,22 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 
 export const metadata: Metadata = {
-  title: "AI MVP Development for Startups in 2–4 Weeks",
+  title: "AI MVP Development: Launch in 2–8 Weeks",
   description:
-    "Launch your AI-powered MVP in 2–4 weeks. Production-ready web and mobile apps with scalable backends, built by an AI-native engineering team.",
+    "Production-ready full-stack MVP with AI built in, scalable backend, auth and payments. From idea to launch in 2–8 weeks. Book a free scoping call.",
   alternates: { canonical: "/services/mvp-development" },
   openGraph: {
-    title: "AI MVP Development for Startups in 2–4 Weeks | Acumo AI",
+    title: "AI MVP Development: Launch in 2–8 Weeks | Acumo AI",
     description:
-      "Launch your AI-powered MVP in 2–4 weeks. Production-ready web and mobile apps with scalable backends, built by an AI-native engineering team.",
+      "Production-ready full-stack MVP with AI built in, scalable backend, auth and payments. From idea to launch in 2–8 weeks. Book a free scoping call.",
     type: "website",
     url: "https://www.acumoai.com/services/mvp-development",
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI MVP Development for Startups in 2–4 Weeks | Acumo AI",
+    title: "AI MVP Development: Launch in 2–8 Weeks | Acumo AI",
     description:
-      "Launch your AI-powered MVP in 2–4 weeks. Production-ready web and mobile apps with scalable backends, built by an AI-native engineering team.",
+      "Production-ready full-stack MVP with AI built in, scalable backend, auth and payments. From idea to launch in 2–8 weeks. Book a free scoping call.",
   },
 };
 
