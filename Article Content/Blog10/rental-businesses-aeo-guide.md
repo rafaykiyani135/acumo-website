@@ -60,7 +60,7 @@ That is the core of an effective **AEO strategy for event businesses** and other
 
 Good AEO starts with technical accessibility.
 
-AI systems need to discover and interpret your website. Your robots.txt configuration should therefore be reviewed rather than blindly blocking AI crawlers. Depending on the platform and its current policies, this can include crawlers such as GPTBot, ClaudeBot, and PerplexityBot.
+AI systems need to discover and interpret your website. Your robots.txt configuration should therefore be reviewed rather than blindly blocking AI crawlers. Depending on the platform and its current policies, this can include crawlers such as [GPTBot](https://botview.app/gptbot-robots-txt), ClaudeBot, and PerplexityBot.
 
 This is one part of **GPTBot optimization local search**. Crawler access alone does not guarantee recommendations, but unnecessarily preventing discovery makes it harder for systems to use your website as a source.
 
