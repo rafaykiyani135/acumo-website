@@ -4,22 +4,22 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 
 export const metadata: Metadata = {
-  title: "Website with Online Booking & Payments",
+  title: "Booking Website for Service Businesses",
   description:
-    "Custom websites with built-in booking, payments and client portals for service businesses. Fast, mobile-first and live in 2–4 weeks. Book a free call.",
+    "Custom booking website for service businesses, with online booking, payments and client portals. Fast, mobile-first, live in 2–4 weeks. Book a free call.",
   alternates: { canonical: "/services/websites-booking" },
   openGraph: {
-    title: "Website with Online Booking & Payments | Acumo AI",
+    title: "Booking Website for Service Businesses | Acumo AI",
     description:
-      "Custom websites with built-in booking, payments and client portals for service businesses. Fast, mobile-first and live in 2–4 weeks. Book a free call.",
+      "Custom booking website for service businesses, with online booking, payments and client portals. Fast, mobile-first, live in 2–4 weeks. Book a free call.",
     type: "website",
     url: "https://www.acumoai.com/services/websites-booking",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Website with Online Booking & Payments | Acumo AI",
+    title: "Booking Website for Service Businesses | Acumo AI",
     description:
-      "Custom websites with built-in booking, payments and client portals for service businesses. Fast, mobile-first and live in 2–4 weeks. Book a free call.",
+      "Custom booking website for service businesses, with online booking, payments and client portals. Fast, mobile-first, live in 2–4 weeks. Book a free call.",
   },
 };
 
