@@ -4,22 +4,22 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 
 export const metadata: Metadata = {
-  title: "AI Voice Receptionist for Small Business",
+  title: "AI Voice Agent That Answers Every Call",
   description:
-    "Custom AI voice agents that answer every call, qualify leads and book appointments into HubSpot, GoHighLevel or Salesforce. Live in 2–4 weeks.",
+    "AI voice agent that answers every call, qualifies leads and books into HubSpot, GoHighLevel or Salesforce. Live in 2–4 weeks. Book a free scoping call.",
   alternates: { canonical: "/services/voice-ai-crm" },
   openGraph: {
-    title: "AI Voice Receptionist for Small Business | Acumo AI",
+    title: "AI Voice Agent That Answers Every Call | Acumo AI",
     description:
-      "Custom AI voice agents that answer every call, qualify leads and book appointments into HubSpot, GoHighLevel or Salesforce. Live in 2–4 weeks.",
+      "AI voice agent that answers every call, qualifies leads and books into HubSpot, GoHighLevel or Salesforce. Live in 2–4 weeks. Book a free scoping call.",
     type: "website",
     url: "https://www.acumoai.com/services/voice-ai-crm",
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Voice Receptionist for Small Business | Acumo AI",
+    title: "AI Voice Agent That Answers Every Call | Acumo AI",
     description:
-      "Custom AI voice agents that answer every call, qualify leads and book appointments into HubSpot, GoHighLevel or Salesforce. Live in 2–4 weeks.",
+      "AI voice agent that answers every call, qualifies leads and books into HubSpot, GoHighLevel or Salesforce. Live in 2–4 weeks. Book a free scoping call.",
   },
 };
 
@@ -410,6 +410,16 @@ export default function VoiceAiCrmPage() {
                 Book a free 30-minute scoping call for your voice AI project.
                 We&apos;ll map your call flow and CRM setup and show you exactly
                 what the agent will handle — no obligation.
+              </p>
+              <p className="mt-6 max-w-md text-[15px] leading-[1.6] text-muted font-medium font-sans">
+                Wondering what it costs? Read{" "}
+                <Link
+                  href="/articles/what-voice-ai-minute-really-costs-2026"
+                  className="text-text-primary underline underline-offset-4 hover:text-brand-vibrant"
+                >
+                  what a voice AI minute really costs in 2026
+                </Link>
+                .
               </p>
               <a
                 href="https://calendly.com/teamacumo/30min"
