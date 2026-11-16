@@ -30,9 +30,9 @@ A voice agent plugs that leak by answering every time, asking the two or three q
 
 Voice AI consolidated in three weeks, and the deal you sign now may decide how hard it is to switch later.
 
-Model vendors moved up to the whole agent in that window, starting with Mistral pairing Voxtral 3 with a voice agent SDK on 20 October. ElevenLabs shipped Eleven Realtime, its first speech to speech models, on the same day, with ElevenAgents as the recommended way to deploy them. Cartesia shipped Managed Agents, a hosted end to end agent platform, on 29 October, and Deepgram agreed to acquire Daily, the maker of the open source Pipecat framework, also on 29 October.
+Model vendors moved up to the whole agent in that window, starting with Mistral pairing [Voxtral 3](https://mistral.ai/news/voxtral-3/) with a voice agent SDK on 20 October. ElevenLabs shipped [Eleven Realtime](https://cellcog.ai/blog/eleven-realtime/), its first speech to speech models, on the same day, with ElevenAgents as the recommended way to deploy them. Cartesia shipped [Managed Agents](https://www.cartesia.ai/blog/managed-agents), a hosted end to end agent platform, on 29 October, and Deepgram agreed to [acquire Daily](https://deepgram.com/blog/daily-pipecat-deepgram), the maker of the open source Pipecat framework, also on 29 October.
 
-Suites absorbed the agent layer at the same time, with Salesforce signing a definitive agreement to acquire Cresta on 2 November and build its voice agents into Service Cloud. Dialpad and Ada announced a merger on 4 November, and ElevenLabs added native integrations for ElevenAgents with Genesys Cloud, Amazon Connect, Five9, and NiCE CXone on the same day.
+Suites absorbed the agent layer at the same time, with Salesforce signing a definitive agreement to [acquire Cresta](https://futurumgroup.com/insights/salesforce-moves-to-acquire-cresta/) on 2 November and build its voice agents into Service Cloud. Dialpad and Ada announced a [merger](https://www.dialpad.com/press/dialpad-and-ada/) on 4 November, and ElevenLabs added [native integrations](https://www.cxspy.com/weekly/2026-11-09) for ElevenAgents with Genesys Cloud, Amazon Connect, Five9, and NiCE CXone on the same day.
 
 That is a lot of change for three weeks, so it is not a reason to panic, but it is a reason to read the contract before you sign it.
 
@@ -50,13 +50,13 @@ Those wins are real, and they are also the reason lock in creeps in quietly, bec
 
 The bill arrives at the first switch, and the first switch usually comes sooner than you expect. It always does.
 
-Leaderboards keep changing hands, as Google said on 15 September that Gemini 3.8 Live Extended Thinking ranked first on Artificial Analysis Speech to Speech Quality Index. Cartesia said on 29 October that Managed Agents ranked first of 30 on Artificial Analysis Speech Agent Arena, which means two boards, six weeks apart, produced two number ones. Tie your contract to one vendor's models and you have bought its roadmap, not today's ranking.
+Leaderboards keep changing hands, as Google said on 15 September that Gemini 3.8 Live Extended Thinking ranked first on [Artificial Analysis Speech to Speech Quality Index](https://artificialanalysis.ai/speech-to-speech/arena). Cartesia said on 29 October that Managed Agents ranked first of 30 on [Artificial Analysis Speech Agent Arena](https://artificialanalysis.ai/speech-to-speech/arena), which means two boards, six weeks apart, produced two number ones. Tie your contract to one vendor's models and you have bought its roadmap, not today's ranking.
 
-Models retire on the vendor's calendar, and Google's preview Live models on the Gemini API are scheduled to shut down from 17 November 2026. A platform that treats models as replaceable parts has a path through that kind of retirement, while a bundle that fused the model into the agent may not.
+Models retire on the vendor's calendar, and Google's preview Live models on the Gemini API are [scheduled to shut down](https://aiwiz.uk/blog/gemini-3-8-live/) from 17 November 2026. A platform that treats models as replaceable parts has a path through that kind of retirement, while a bundle that fused the model into the agent may not.
 
-Cost control moves to the vendor too, because Dialpad and Ada said it plainly when they noted that owning the network and the models gives them control over core costs. That control is theirs, not yours, and on a single bundled usage charge you cannot see which layer drives the bill, so you cannot trade a cheaper voice for a better recogniser on one call type.
+Cost control moves to the vendor too, because [Dialpad and Ada](https://www.dialpad.com/press/dialpad-and-ada/) said it plainly when they noted that owning the network and the models gives them control over core costs. That control is theirs, not yours, and on a single bundled usage charge you cannot see which layer drives the bill, so you cannot trade a cheaper voice for a better recogniser on one call type.
 
-Integrations follow the owner's roadmap as well, even though both deals promise continuity for today. Salesforce says Cresta will keep supporting the contact centre and telephony platforms its customers use today, and Dialpad and Ada say existing integrations keep running as configured. Those promises cover today, but where the next connector gets built is the acquirer's call.
+Integrations follow the owner's roadmap as well, even though both deals promise continuity for today. Salesforce says [Cresta will keep supporting](https://futurumgroup.com/insights/salesforce-moves-to-acquire-cresta/) the contact centre and telephony platforms its customers use today, and Dialpad and Ada say existing integrations keep running as configured. Those promises cover today, but where the next connector gets built is the acquirer's call.
 
 ## Your phone number
 
@@ -130,7 +130,7 @@ The agent should hand the call to you, or take a message and book a callback, wi
 
 ### How much does a voice agent cost for a coach?
 
-There is no single price, because the cost is the platform fee plus speech recognition, the language model, speech synthesis, and telephony, per minute. Our earlier article on voice AI pricing in 2026 breaks down the per minute ranges, and the honest answer is to price it per booked discovery call, not per minute. If the agent books one extra discovery call a week that you would have missed, that is the number that matters.
+There is no single price, because the cost is the platform fee plus speech recognition, the language model, speech synthesis, and telephony, per minute. Our earlier article on [voice AI pricing in 2026](https://www.acumoai.com/articles/what-voice-ai-minute-really-costs-2026) breaks down the per minute ranges, and the honest answer is to price it per booked discovery call, not per minute. If the agent books one extra discovery call a week that you would have missed, that is the number that matters.
 
 ### Should I buy my voice agent from one full-stack vendor?
 
@@ -142,8 +142,17 @@ Vendor lock-in is when leaving a voice agent provider means rebuilding more than
 
 ### What happens to existing Cresta and Ada customers after the deals?
 
-According to the announcements, Dialpad and Ada customers keep their existing contracts, account teams and support, and current integrations keep running as configured. Salesforce says Cresta will keep supporting the contact centre and telephony platforms its customers use today, and expects the deal to close in the first quarter of its fiscal 2028, subject to regulatory approvals. Neither statement commits to a roadmap beyond today's integrations.
+According to the announcements, [Dialpad and Ada](https://www.dialpad.com/press/dialpad-and-ada/) customers keep their existing contracts, account teams and support, and current integrations keep running as configured. Salesforce says [Cresta will keep supporting](https://futurumgroup.com/insights/salesforce-moves-to-acquire-cresta/) the contact centre and telephony platforms its customers use today, and expects the deal to close in the first quarter of its fiscal 2028, subject to regulatory approvals. Neither statement commits to a roadmap beyond today's integrations.
 
 ## Sources
 
 - [Voice AI consolidation: what buyers should keep portable (Callaro, November 2026)](https://www.callaro.ai/blog/voice-ai-consolidation-november-2026)
+- [Voxtral 3: Speech-to-Text, TTS and Voice Agents (Mistral, October 2026)](https://mistral.ai/news/voxtral-3/)
+- [Eleven Realtime: ElevenLabs Speech-to-Speech Agents (CellCog, citing ElevenLabs, October 2026)](https://cellcog.ai/blog/eleven-realtime/)
+- [Introducing Managed Agents (Cartesia, 29 October 2026)](https://www.cartesia.ai/blog/managed-agents)
+- [Deepgram is acquiring Daily, makers of Pipecat (Deepgram, 29 October 2026)](https://deepgram.com/blog/daily-pipecat-deepgram)
+- [Salesforce Moves to Acquire Cresta (Futurum Group, 3 November 2026, citing Salesforce)](https://futurumgroup.com/insights/salesforce-moves-to-acquire-cresta/)
+- [Dialpad and Ada combining to build the agentic operating system for customer work (Dialpad, 4 November 2026)](https://www.dialpad.com/press/dialpad-and-ada/)
+- [ElevenAgents contact center integrations (CXSpy, 9 November 2026, citing ElevenLabs)](https://www.cxspy.com/weekly/2026-11-09)
+- [Speech Agent Arena Leaderboard (Artificial Analysis)](https://artificialanalysis.ai/speech-to-speech/arena)
+- [Gemini 3.8 Live and TTS: pricing, benchmarks and known issues (AIWiz, citing Google deprecations page)](https://aiwiz.uk/blog/gemini-3-8-live/)
