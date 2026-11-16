@@ -1,6 +1,6 @@
 ---
-title: "Your Business Has the Information. Why Are Your Employees Still Entering It?"
-description: "Businesses spend hours moving information between documents, emails, customers, and CRM systems. Learn how AI automation can reduce that manual work and turn information into practical business actions."
+title: "AI Document Processing for Service Businesses"
+description: "AI document processing extracts data from quotes, invoices, emails and PDFs and pushes it into your CRM, ERP or accounting system. No manual re-keying."
 date: "Aug 17, 2026"
 slug: "how-ai-turns-documents-emails-and-customer-requests-into-business-actions"
 keywords:
@@ -26,7 +26,7 @@ keywords:
     - AI automation for CRM systems
 ---
 
-# Your Business Has the Information. Why Are Your Employees Still Entering It?
+# AI Document Processing for Service Businesses
 
 A friend of mine had a routine that was difficult to justify once you looked closely at it.
 
@@ -251,4 +251,6 @@ Sometimes the solution is OCR. Sometimes it is CRM automation. Sometimes it is e
 The technology can change depending on the business.
 
 The goal stays the same: **reduce repetitive work, keep information organized, and give your team more time to focus on the work that actually needs them.**
+
+If that sounds like your business, read how we approach [AI document processing for service operations](/services/ai-document-processing), or [book a free 30-minute scoping call](https://calendly.com/teamacumo/30min) and we will map where your team is losing time to manual entry.
 
