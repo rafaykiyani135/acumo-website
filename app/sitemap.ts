@@ -31,15 +31,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${siteUrl}/services/mvp-development`,
-      lastModified: new Date("2026-10-15"),
+      lastModified: new Date("2026-11-16"),
     },
     {
       url: `${siteUrl}/services/voice-ai-crm`,
-      lastModified: new Date("2026-10-15"),
+      lastModified: new Date("2026-11-16"),
     },
     {
       url: `${siteUrl}/services/websites-booking`,
-      lastModified: new Date("2026-10-15"),
+      lastModified: new Date("2026-11-16"),
     },
     {
       url: `${siteUrl}/services/ai-automation`,
