@@ -30,9 +30,9 @@ The argument is not that open models have completely replaced proprietary LLMs. 
 
 Open-weight models have improved rapidly, especially for coding and reasoning workloads.
 
-Models such as DeepSeek V4, Qwen and other open-weight releases can now be accessed through hosted inference providers without requiring developers to own the hardware needed to run them.
+Models such as [DeepSeek V4](https://developer.nvidia.com/blog/build-with-deepseek-v4-using-nvidia-blackwell-and-gpu-accelerated-endpoints/), [Qwen](https://www.alibabacloud.com/en/solutions/generative-ai/qwen?_p_lc=1) and other open-weight releases can now be accessed through hosted inference providers without requiring developers to own the hardware needed to run them.
 
-DeepSeek V4 is a good example of this shift. NVIDIA's hosted endpoint currently provides access to DeepSeek V4 Pro and V4 Flash, while also offering deployment paths for teams that eventually want to self-host. DeepSeek V4 models support up to a 1 million token context window and are explicitly designed for coding and agentic workloads.
+DeepSeek V4 is a good example of this shift. [NVIDIA's hosted endpoint](https://developer.nvidia.com/blog/build-with-deepseek-v4-using-nvidia-blackwell-and-gpu-accelerated-endpoints/) currently provides access to DeepSeek V4 Pro and V4 Flash, while also offering deployment paths for teams that eventually want to self-host. DeepSeek V4 models support up to a 1 million token context window and are explicitly designed for coding and agentic workloads.
 
 That changes the equation considerably.
 
@@ -61,7 +61,7 @@ You get an API endpoint, send your request, receive the output, and pay accordin
 
 For example, NVIDIA's current DeepSeek V4 endpoint provides a hosted API as well as self-hosting options.
 
-OpenCode Zen is another example of the hosted approach. It provides access to multiple models through OpenCode rather than requiring developers to manage their own infrastructure.
+[OpenCode Zen](https://docs.docker.com/ai/docker-agent/providers/opencode-zen/) is another example of the hosted approach. It provides access to multiple models through OpenCode rather than requiring developers to manage their own infrastructure.
 
 The interesting part is that the model can be open-weight without your development environment needing to be local.
 
@@ -79,7 +79,7 @@ Neither answers the question most developers actually care about:
 
 A proprietary model can be significantly better on a difficult coding task and still be worse value overall if the improvement doesn't matter for the majority of your workload.
 
-Recent pricing illustrates how large the gap can become. DeepSeek V4 Flash, for example, was reported in August 2026 at \$0.14 per million input tokens and \$0.28 per million output tokens. Reuters, citing Artificial Analysis, reported an average benchmark-test cost of around \$0.03 for V4 Flash.
+Recent pricing illustrates how large the gap can become. DeepSeek V4 Flash, for example, was [reported in August 2026](https://www.procommun.info/blog/deepseek-v4-flash-cost-per-task/) at \$0.14 per million input tokens and \$0.28 per million output tokens. Reuters, citing Artificial Analysis, reported an average benchmark-test cost of around \$0.03 for V4 Flash.
 
 The exact prices will change. They always do.
 
@@ -171,7 +171,7 @@ Another reason I think this trend matters is that the gap isn't static.
 
 Open-weight models are improving.
 
-DeepSeek V4 is already a good example. NVIDIA describes V4 Pro as a 1.6 trillion parameter model with 49 billion active parameters, while V4 Flash has 284 billion total parameters with 13 billion active parameters. Both support 1 million token contexts.
+DeepSeek V4 is already a good example. [NVIDIA describes](https://developer.nvidia.com/blog/build-with-deepseek-v4-using-nvidia-blackwell-and-gpu-accelerated-endpoints/) V4 Pro as a 1.6 trillion parameter model with 49 billion active parameters, while V4 Flash has 284 billion total parameters with 13 billion active parameters. Both support 1 million token contexts.
 
 There is also growing evidence that open-weight models can perform competitively on specific coding and reasoning workloads. For example, recent research using DeepSeek V4 Pro reported strong repository-level feature development results under a specific coding-agent setup.
 
