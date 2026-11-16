@@ -49,7 +49,7 @@ A voice agent makes sense when [calls go unanswered](/articles/why-event-rental-
 
 Our advice: prototype the voice with a free tool to hear what your brand could sound like, then build the agent for one narrow, high-volume call type before adding others.
 
-Acumo AI builds [custom voice agents](https://www.acumoai.com/services/voice-ai-crm) that connect to your calendar and CRM and hand off to a person when a call needs one. Book a free 30-minute scoping call and we will tell you whether a voice agent fits your calls, or whether a free tool will do.
+Acumo AI builds [custom voice agents](https://www.acumoai.com/services/voice-ai-crm) that connect to your calendar and CRM and hand off to a person when a call needs one. Before you budget for one, read [what a voice AI minute really costs in 2026](https://www.acumoai.com/articles/what-voice-ai-minute-really-costs-2026). Book a free 30-minute scoping call and we will tell you whether a voice agent fits your calls, or whether a free tool will do.
 
 [Book a free scoping call](https://calendly.com/teamacumo/30min)
 
