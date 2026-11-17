@@ -1,5 +1,5 @@
 ---
-title: "Google Killed Opal. If Your Business Runs on a Platform You Don't Own, You're Next"
+title: "Google Shut Down Opal. If Your Business Runs on a Platform You Don't Own, You're Next"
 description: "Google turned Opal off on 17 November 2026 with no migration path. Your workflows stop running, your files stay in Drive but can't run. Prompt-only platforms die with the platform. Code you own doesn't."
 slug: "google-opal-shutdown-code-ownership"
 date: "Nov 18, 2026"
@@ -14,7 +14,7 @@ keywords:
   - AI workflow migration
 ---
 
-# Google Killed Opal. If Your Business Runs on a Platform You Don't Own, You're Next
+# Google Shut Down Opal. If Your Business Runs on a Platform You Don't Own, You're Next
 
 Google turned Opal off on 17 November 2026, and there is no migration path. Your workflows stop running, your files stay in Google Drive but cannot run on their own, and the lesson is blunt. Prompt-only tools die with the platform. Code you own does not.
 
