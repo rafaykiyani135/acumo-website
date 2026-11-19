@@ -74,7 +74,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="brand-section relative w-full overflow-x-hidden border-b border-white/5 bg-bg px-4 py-20 text-text-primary sm:px-6 sm:py-24 md:px-12 lg:px-20 lg:py-28 xl:px-32"
+      className="brand-section relative w-full overflow-x-hidden bg-bg px-4 py-20 text-text-primary sm:px-6 sm:py-24 md:px-12 lg:px-20 lg:py-28 xl:px-32"
     >
       {/* Search Engine & AI Crawler Accessibility Layer */}
       <nav aria-label="Acumo AI Custom Development Services" className="sr-only">

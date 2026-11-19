@@ -37,7 +37,7 @@ export default function InquiryForm() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="inquiry" className="brand-section w-full overflow-x-hidden border-t border-white/5 bg-bg py-20 text-text-primary sm:py-24 lg:py-40">
+    <section ref={sectionRef} id="inquiry" className="brand-section relative w-full overflow-x-hidden bg-bg py-20 text-text-primary sm:py-24 lg:py-40">
       <div className="mx-auto w-full min-w-0 max-w-[1400px] px-4 sm:px-6">
 
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 min-w-0">

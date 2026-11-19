@@ -202,12 +202,32 @@
     -webkit-mask-image: linear-gradient(to bottom, #000 0%, rgba(0,0,0,0.25) 55%, transparent 100%);
     mask-image: linear-gradient(to bottom, #000 0%, rgba(0,0,0,0.25) 55%, transparent 100%);
   }
-  /* First section after the hero picks up the hero's glow for a seamless hand-off */
+  /* First section after the hero picks up a subtle blue accent without blurring the boundary */
   #ai-native.brand-section::before {
     background:
-      radial-gradient(ellipse 60% 45% at 50% 0%, rgba(37,99,255,0.32) 0%, rgba(30,58,138,0.12) 50%, transparent 100%),
-      radial-gradient(ellipse 20% 12% at 50% 0%, rgba(255,138,91,0.18) 0%, transparent 100%),
-      repeating-linear-gradient(90deg, rgba(96,165,250,0.05) 0px, rgba(96,165,250,0.05) 1px, transparent 1px, transparent 6px);
+      radial-gradient(ellipse 55% 40% at 50% 0%, rgba(37,99,255,0.22) 0%, rgba(30,58,138,0.1) 50%, transparent 100%),
+      radial-gradient(ellipse 18% 10% at 50% 0%, rgba(255,138,91,0.1) 0%, transparent 100%),
+      repeating-linear-gradient(90deg, rgba(96,165,250,0.04) 0px, rgba(96,165,250,0.04) 1px, transparent 1px, transparent 6px);
+  }
+  /* Crisp luminous top hairline separating consecutive sections */
+  #ai-native.brand-section::after,
+  .brand-section + .brand-section::after,
+  .section-divider::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    z-index: 20;
+    pointer-events: none;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.06) 0%,
+      rgba(96, 165, 250, 0.42) 50%,
+      rgba(255, 255, 255, 0.06) 100%
+    );
+    box-shadow: 0 1px 16px rgba(37, 99, 255, 0.16);
   }
 
   .input-sleek {

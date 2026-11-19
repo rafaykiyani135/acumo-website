@@ -122,7 +122,7 @@ export default function Footer() {
   return (
     <>
       <footer
-        className="relative w-full overflow-x-hidden border-t border-white/5 bg-bg pt-20 pb-10 sm:pt-24 lg:pt-28"
+        className="section-divider relative w-full overflow-x-hidden bg-bg pt-20 pb-10 sm:pt-24 lg:pt-28"
         aria-labelledby="footer-heading"
       >
         <h2 id="footer-heading" className="sr-only">

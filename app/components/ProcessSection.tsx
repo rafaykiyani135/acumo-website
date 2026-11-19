@@ -73,7 +73,7 @@ export default function ProcessSection() {
   }, [isVisible]);
 
   return (
-    <section ref={sectionRef} id="process" className="brand-section relative w-full overflow-x-hidden border-b border-white/5 bg-bg py-20 text-text-primary sm:py-24 lg:py-40">
+    <section ref={sectionRef} id="process" className="brand-section relative w-full overflow-x-hidden bg-bg py-20 text-text-primary sm:py-24 lg:py-40">
       <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-10">
         <div className="absolute top-1/4 left-1/4 h-64 w-64 rounded-full bg-[#2563FF]/10 blur-[120px] sm:h-[500px] sm:w-[500px] sm:blur-[180px]" />
         <div className="absolute bottom-1/4 right-1/4 h-64 w-64 rounded-full bg-[#2563FF]/10 blur-[120px] sm:h-[500px] sm:w-[500px] sm:blur-[180px]" />

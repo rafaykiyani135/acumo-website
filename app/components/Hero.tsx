@@ -393,7 +393,7 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative flex min-h-[860px] w-full flex-col overflow-hidden bg-brand-bg-deep px-[clamp(20px,4vw,56px)] pt-24 sm:pt-28 lg:min-h-[1000px] lg:pt-36"
+      className="relative flex min-h-[860px] w-full flex-col overflow-hidden bg-brand-bg-deep px-[clamp(20px,4vw,56px)] pt-24 pb-16 sm:pt-28 sm:pb-20 lg:min-h-[1000px] lg:pt-36 lg:pb-24"
     >
       <HeroBackground />
 
@@ -485,10 +485,10 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Product cards: larger, more visible; only the bottom edge is clipped */}
+        {/* Product cards: full rounded frames sit cleanly above the hero horizon */}
         <div
           ref={cardsRef}
-          className="hero-cards-scroll -mx-[clamp(20px,4vw,56px)] mt-auto flex translate-y-12 snap-x snap-mandatory items-end gap-4 overflow-x-auto px-[clamp(20px,4vw,56px)] pt-16 md:mx-0 md:grid md:snap-none md:grid-cols-3 md:gap-7 md:overflow-visible md:px-0"
+          className="hero-cards-scroll -mx-[clamp(20px,4vw,56px)] mt-auto flex snap-x snap-mandatory items-end gap-4 overflow-x-auto px-[clamp(20px,4vw,56px)] pt-16 pb-6 md:mx-0 md:grid md:snap-none md:grid-cols-3 md:gap-7 md:overflow-visible md:px-0 md:pb-0"
         >
           <Frame
             label="AI Chatbot"

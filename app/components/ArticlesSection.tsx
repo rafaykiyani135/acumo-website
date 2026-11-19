@@ -9,7 +9,7 @@ export default function ArticlesSection() {
   if (!articles || articles.length === 0) return null;
 
   return (
-    <section className="brand-section relative w-full overflow-x-hidden border-b border-white/5 bg-bg py-20 sm:py-24 md:py-28 lg:py-32">
+    <section className="brand-section relative w-full overflow-x-hidden bg-bg py-20 sm:py-24 md:py-28 lg:py-32">
       <div className="mx-auto w-full min-w-0 max-w-[1400px] px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between mb-12 sm:mb-16">
           <div>

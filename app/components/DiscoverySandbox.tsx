@@ -20,7 +20,7 @@ export default function DiscoverySandbox() {
   return (
     <section
       id="ai-native"
-      className="brand-section relative w-full overflow-x-hidden border-y border-white/5 bg-bg py-20 text-text-primary sm:py-24 lg:py-40"
+      className="brand-section relative w-full overflow-x-hidden bg-bg py-20 text-text-primary sm:py-24 lg:py-40"
     >
       <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-10">
         <div className="absolute top-1/4 left-1/4 h-64 w-64 rounded-full bg-[#2563FF]/10 blur-[120px] sm:h-[500px] sm:w-[500px] sm:blur-[180px]" />

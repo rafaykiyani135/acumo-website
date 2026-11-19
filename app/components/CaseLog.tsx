@@ -92,7 +92,7 @@ interface CaseLogProps {
 
 export default function CaseLog({ onOpenProject }: CaseLogProps) {
   return (
-    <section id="case-studies" className="brand-section relative w-full overflow-x-hidden border-b border-white/5 bg-bg py-20 sm:py-24 lg:py-40">
+    <section id="case-studies" className="brand-section relative w-full overflow-x-hidden bg-bg py-20 sm:py-24 lg:py-40">
       {/* Subtle technical background grid */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.02]">
         <div className="absolute inset-0 bg-grid"></div>

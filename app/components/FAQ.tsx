@@ -51,7 +51,7 @@ export default function FAQ() {
   return (
     <section
       id="faq"
-      className="brand-section relative w-full overflow-x-hidden border-b border-white/5 bg-bg py-20 sm:py-24 lg:py-40"
+      className="brand-section relative w-full overflow-x-hidden bg-bg py-20 sm:py-24 lg:py-40"
     >
       {/* Subtle background grid */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.02]">
