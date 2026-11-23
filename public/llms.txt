@@ -14,6 +14,7 @@ Acumo AI designs and ships production-grade AI systems rather than templated web
 - [Codebase Cleanup & Hardening](https://www.acumoai.com/services/codebase-cleanup): Audits, refactors, and hardens AI-generated and vibe-coded applications built in Cursor, Lovable, Bolt.new, or v0 into secure, scalable production software in 1–2 weeks.
 
 ## Articles & Technical Insights
+- [Your Real Estate Team Does Not Need 10 Tools. It Needs One Platform That Fits How You Work](https://www.acumoai.com/articles/all-in-one-real-estate-platform-small-teams): A small real estate team pays for a CRM, an IDX website, a showing app, and transaction software that never talk to each other. One unified platform replaces that stack with one system, one pipeline, and data the team owns.
 - [Google Shut Down Opal. If Your Business Runs on a Platform You Don't Own, You're Next](https://www.acumoai.com/articles/google-opal-shutdown-code-ownership): Google turned Opal off on 17 November 2026 with no migration path. Your workflows stop running, your files stay in Drive but can't run. Prompt-only platforms die with the platform. Code you own doesn't.
 
 - [Sales Coaches Sell on Calls. So Why Is No One Answering Yours?](https://www.acumoai.com/articles/voice-ai-for-sales-coaches): A sales coach is on a coaching call when the next lead rings. A voice agent can answer, qualify, and book the discovery call into your calendar and CRM. Buy the bundle if it fits, but keep your number, your discovery script, your call records, and your data contract portable.
